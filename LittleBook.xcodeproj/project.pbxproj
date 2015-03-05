@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		671E94481AA5EFCA00697DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E94461AA5EFCA00697DBD /* ViewController.m */; };
 		671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E944A1AA5F5F500697DBD /* ReadViewController.m */; };
+		675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */; };
+		675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */; };
 		6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6171AA69EFE009E78DD /* HPTabBarItem.m */; };
 		6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61B1AA69EFE009E78DD /* HPTabBarChildController.m */; };
 		6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61D1AA69EFE009E78DD /* HPTarBarController.m */; };
@@ -49,6 +51,10 @@
 		671E94461AA5EFCA00697DBD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		671E94491AA5F5F500697DBD /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		671E944A1AA5F5F500697DBD /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
+		675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchImageView.h; sourceTree = "<group>"; };
+		675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
+		675EAE8D1AA80A0200B13BD3 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		6777D6161AA69EFE009E78DD /* HPTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarItem.h; sourceTree = "<group>"; };
 		6777D6171AA69EFE009E78DD /* HPTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTabBarItem.m; sourceTree = "<group>"; };
 		6777D61A1AA69EFE009E78DD /* HPTabBarChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarChildController.h; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				675EAE891AA809DD00B13BD3 /* HPTextView */,
 				6777D6151AA69EFE009E78DD /* HPTabBarController */,
 			);
 			path = HPKit;
@@ -143,6 +150,17 @@
 				6777D6491AA6AAA9009E78DD /* FinanceViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		675EAE891AA809DD00B13BD3 /* HPTextView */ = {
+			isa = PBXGroup;
+			children = (
+				675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */,
+				675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */,
+				675EAE8D1AA80A0200B13BD3 /* DemoViewController.h */,
+				675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */,
+			);
+			path = HPTextView;
 			sourceTree = "<group>";
 		};
 		6777D6151AA69EFE009E78DD /* HPTabBarController */ = {
@@ -353,6 +371,7 @@
 				671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */,
 				6777D6421AA6A9D4009E78DD /* NSString+StringKit.m in Sources */,
 				6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */,
+				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
 				6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
@@ -368,6 +387,7 @@
 				6777D6441AA6A9D4009E78DD /* UIScreen+ScreenKit.m in Sources */,
 				6777D63D1AA6A9D4009E78DD /* NSArray+ArrayKit.m in Sources */,
 				6777D6411AA6A9D4009E78DD /* NSString+NSHash.m in Sources */,
+				675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */,
 				6777D63F1AA6A9D4009E78DD /* NSDate+DateKit.m in Sources */,
 				6777D6451AA6A9D4009E78DD /* UIScrollView+DXRefresh.m in Sources */,
 			);

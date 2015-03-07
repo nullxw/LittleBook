@@ -12,6 +12,32 @@ static const float kHPTabBarItemMarginTop = 20.0;
 
 @implementation HPTabBarItem
 
+- (void)awakeFromNib
+{
+    [self registerGestures];
+}
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        [self registerGestures];
+    }
+    return self;
+}
+
+- (void)registerGestures
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTabBar:)];
+    [self addGestureRecognizer:tap];
+}
+
+- (void)tapTabBar:(UIGestureRecognizer *)gesture
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(didClickTabBar:)]) {
+        [_delegate didClickTabBar:self];
+    }
+}
+
 - (void)startHideAnimationWithDuration:(float)duration completion:(void (^)(void))completion
 {
     float ox = self.center.x;
@@ -34,9 +60,11 @@ static const float kHPTabBarItemMarginTop = 20.0;
     float ox = self.center.x;
     float oy = self.center.y;
     
+    self.center = CGPointMake(ox, oy - kHPTabBarItemMarginTop);
+    
     [UIView animateWithDuration:duration animations:^{
         
-        self.center = CGPointMake(ox, oy + kHPTabBarItemMarginTop);
+        self.center = CGPointMake(ox, oy);
         //...other animations
         
     } completion:^(BOOL finished) {
@@ -45,27 +73,5 @@ static const float kHPTabBarItemMarginTop = 20.0;
         }
     }];
 }
-
-
-- (id)copyWithZone:(NSZone *)zone
-{
-    HPTabBarItem *copyItem = [[[self class] allocWithZone:zone] init];
-    copyItem.backgroundColor = self.backgroundColor;
-    copyItem.frame = self.frame;
-    copyItem.tag = self.tag;
-    //... copy other attributes
-    return copyItem;
-}
-
-- (id)mutableCopyWithZone:(NSZone *)zone
-{
-    HPTabBarItem *copyItem = [[[self class] allocWithZone:zone] init];
-    copyItem.backgroundColor = self.backgroundColor;
-    copyItem.frame = self.frame;
-    copyItem.tag = self.tag;
-    //... copy other attributes
-    return copyItem;
-}
-
 
 @end

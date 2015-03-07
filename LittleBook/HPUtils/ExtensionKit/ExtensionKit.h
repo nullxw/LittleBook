@@ -6,11 +6,12 @@
 //  Copyright (c) 2014年 Hu Peng. All rights reserved.
 //
 #import "UIViewController+ControllerKit.h"
-#import "NSString+StringKit.h"
-#import "NSDate+DateKit.h"
-#import "UIImage+ImageKit.h"
-#import "UIView+ViewKit.h"
-#import "UIScreen+ScreenKit.h"
-#import "NSData+DataKit.h"
 #import "NSDictionary+DictionaryKit.h"
+#import "NSString+StringKit.h"
+#import "UIScreen+ScreenKit.h"
+#import "UIImage+ImageKit.h"
 #import "NSArray+ArrayKit.h"
+#import "UIColor+ColorKit.h"
+#import "NSDate+DateKit.h"
+#import "UIView+ViewKit.h"
+#import "NSData+DataKit.h"

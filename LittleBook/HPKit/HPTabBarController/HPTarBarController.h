@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPPresentViewController.h"
 
 @class HPTabBarItem, HPTabBarChildController;
 
-@interface HPTarBarController : UIViewController
-
-@property (nonatomic, strong) IBOutletCollection(HPTabBarItem) NSArray *tabBarItems;
+@interface HPTarBarController : HPPresentViewController
 
 - (void)openViewController:(HPTabBarChildController *)childViewController
                 fromTabBar:(HPTabBarItem *)tabBar

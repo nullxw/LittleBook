@@ -16,14 +16,10 @@
 
 @implementation FinanceViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)back:(id)sender
@@ -31,7 +27,8 @@
     HPTarBarController *rootViewController = (HPTarBarController *)self.parentViewController;
     
     [rootViewController closeViewController:self
-                                   toTabBar:rootViewController.tabBarItems[self.navigationBar.tag] animated:YES
+                                   toTabBar:self.navigationBarOfTabBarController
+                                   animated:YES
                                  completion:nil];
 }
 

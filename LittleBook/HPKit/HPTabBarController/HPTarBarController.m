@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-static const float kHPTabBarControllerAnimationDuration = 2.0;
+static const float kHPTabBarControllerAnimationDuration = 1.0;
 
 #import "HPTarBarController.h"
 #import "HPTabBarChildController.h"
@@ -17,7 +17,6 @@ static const float kHPTabBarControllerAnimationDuration = 2.0;
 @end
 
 @implementation HPTarBarController
-
 
 - (void)viewDidLoad
 {
@@ -30,9 +29,8 @@ static const float kHPTabBarControllerAnimationDuration = 2.0;
                 completion:(void (^)(void))completion
 
 {
-    CGRect rect = tabBar.frame;
-    
-    childViewController.navigationBar = [tabBar mutableCopy];
+    CGRect rect = [self.view convertRect:tabBar.frame fromView:tabBar.superview];
+    childViewController.navigationBarOfTabBarController = tabBar;
     
     if (!flag) {
         
@@ -50,11 +48,12 @@ static const float kHPTabBarControllerAnimationDuration = 2.0;
     
     [self addChildViewController:childViewController];
     [self.view addSubview:childViewController.view];
-    
-    if (childViewController.navigationBar) {
-        [childViewController.navigationBar startShowAnimationWithDuration:kHPTabBarControllerAnimationDuration completion:nil];
+
+    if (childViewController.navigationBarOfSelf) {
+        [childViewController.navigationBarOfSelf startShowAnimationWithDuration:kHPTabBarControllerAnimationDuration completion:nil];
     }
     childViewController.view.alpha = 0.0;
+    
     [UIView animateWithDuration:kHPTabBarControllerAnimationDuration animations:^{
         
         childViewController.view.alpha = 1.0;
@@ -73,7 +72,7 @@ static const float kHPTabBarControllerAnimationDuration = 2.0;
                    animated:(BOOL)flag
                  completion:(void (^)(void))completion
 {
-    CGRect rect = tabBar.frame;
+    CGRect rect = [self.view convertRect:tabBar.frame fromView:tabBar.superview];
 
     if (!flag) {
 
@@ -85,8 +84,8 @@ static const float kHPTabBarControllerAnimationDuration = 2.0;
         }
         return;
     }
-    if (childViewController.navigationBar) {
-        [childViewController.navigationBar startHideAnimationWithDuration:kHPTabBarControllerAnimationDuration completion:nil];
+    if (childViewController.navigationBarOfSelf) {
+        [childViewController.navigationBarOfSelf startHideAnimationWithDuration:kHPTabBarControllerAnimationDuration completion:nil];
     }
     
     [UIView animateWithDuration:kHPTabBarControllerAnimationDuration animations:^{

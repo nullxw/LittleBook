@@ -27,6 +27,14 @@
 		6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D63A1AA6A9D4009E78DD /* UIView+ViewKit.m */; };
 		6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D63C1AA6A9D4009E78DD /* UIViewController+ControllerKit.m */; };
 		6777D64A1AA6AAA9009E78DD /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6491AA6AAA9009E78DD /* FinanceViewController.m */; };
+		67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19E51AAB034600F97940 /* LBSectionView.m */; };
+		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
+		67EF19F01AAB165500F97940 /* LBNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EF1AAB165500F97940 /* LBNavigationBar.m */; };
+		67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F21AAB1A8E00F97940 /* UIColor+ColorKit.m */; };
+		67EF19F61AAB3DF700F97940 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F51AAB3DF700F97940 /* SettingViewController.m */; };
+		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
+		67EF19FE1AAB484700F97940 /* HPPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19FD1AAB484700F97940 /* HPPresentViewController.m */; };
+		67EF1A011AAB4E4100F97940 /* HPPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF1A001AAB4E4100F97940 /* HPPresentView.m */; };
 		67F7B6871AA2F3D00032A5FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6861AA2F3D00032A5FD /* main.m */; };
 		67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6891AA2F3D00032A5FD /* AppDelegate.m */; };
 		67F7B68D1AA2F3D00032A5FD /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B68B1AA2F3D00032A5FD /* LittleBook.xcdatamodeld */; };
@@ -88,6 +96,22 @@
 		6777D63C1AA6A9D4009E78DD /* UIViewController+ControllerKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ControllerKit.m"; sourceTree = "<group>"; };
 		6777D6481AA6AAA9009E78DD /* FinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceViewController.h; sourceTree = "<group>"; };
 		6777D6491AA6AAA9009E78DD /* FinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceViewController.m; sourceTree = "<group>"; };
+		67EF19E41AAB034600F97940 /* LBSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSectionView.h; sourceTree = "<group>"; };
+		67EF19E51AAB034600F97940 /* LBSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSectionView.m; sourceTree = "<group>"; };
+		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
+		67EF19EC1AAB0FBA00F97940 /* HPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLine.m; sourceTree = "<group>"; };
+		67EF19EE1AAB165500F97940 /* LBNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNavigationBar.h; sourceTree = "<group>"; };
+		67EF19EF1AAB165500F97940 /* LBNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNavigationBar.m; sourceTree = "<group>"; };
+		67EF19F11AAB1A8E00F97940 /* UIColor+ColorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorKit.h"; sourceTree = "<group>"; };
+		67EF19F21AAB1A8E00F97940 /* UIColor+ColorKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorKit.m"; sourceTree = "<group>"; };
+		67EF19F41AAB3DF700F97940 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		67EF19F51AAB3DF700F97940 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		67EF19F81AAB43D400F97940 /* LBAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppContext.h; sourceTree = "<group>"; };
+		67EF19F91AAB43D400F97940 /* LBAppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppContext.m; sourceTree = "<group>"; };
+		67EF19FC1AAB484700F97940 /* HPPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPresentViewController.h; sourceTree = "<group>"; };
+		67EF19FD1AAB484700F97940 /* HPPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPresentViewController.m; sourceTree = "<group>"; };
+		67EF19FF1AAB4E4100F97940 /* HPPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPresentView.h; sourceTree = "<group>"; };
+		67EF1A001AAB4E4100F97940 /* HPPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPresentView.m; sourceTree = "<group>"; };
 		67F7B6811AA2F3D00032A5FD /* LittleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7B6851AA2F3D00032A5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F7B6861AA2F3D00032A5FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,8 +147,10 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				67EF19EA1AAB0FBA00F97940 /* HPLineView */,
 				675EAE891AA809DD00B13BD3 /* HPTextView */,
 				6777D6151AA69EFE009E78DD /* HPTabBarController */,
+				67EF19FB1AAB483400F97940 /* HPPresentController */,
 			);
 			path = HPKit;
 			sourceTree = "<group>";
@@ -142,12 +168,14 @@
 			children = (
 				671E94451AA5EFCA00697DBD /* ViewController.h */,
 				671E94461AA5EFCA00697DBD /* ViewController.m */,
-				671E94491AA5F5F500697DBD /* ReadViewController.h */,
-				671E944A1AA5F5F500697DBD /* ReadViewController.m */,
 				6777D6221AA6A8BB009E78DD /* OfficeViewController.h */,
 				6777D6231AA6A8BB009E78DD /* OfficeViewController.m */,
+				671E94491AA5F5F500697DBD /* ReadViewController.h */,
+				671E944A1AA5F5F500697DBD /* ReadViewController.m */,
 				6777D6481AA6AAA9009E78DD /* FinanceViewController.h */,
 				6777D6491AA6AAA9009E78DD /* FinanceViewController.m */,
+				67EF19F41AAB3DF700F97940 /* SettingViewController.h */,
+				67EF19F51AAB3DF700F97940 /* SettingViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				6777D6261AA6A9D4009E78DD /* ExtensionKit.h */,
+				67EF19F11AAB1A8E00F97940 /* UIColor+ColorKit.h */,
+				67EF19F21AAB1A8E00F97940 /* UIColor+ColorKit.m */,
 				6777D6271AA6A9D4009E78DD /* NSArray+ArrayKit.h */,
 				6777D6281AA6A9D4009E78DD /* NSArray+ArrayKit.m */,
 				6777D6291AA6A9D4009E78DD /* NSData+DataKit.h */,
@@ -206,6 +236,46 @@
 			path = ExtensionKit;
 			sourceTree = "<group>";
 		};
+		67EF19E31AAB02C200F97940 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				67EF19E41AAB034600F97940 /* LBSectionView.h */,
+				67EF19E51AAB034600F97940 /* LBSectionView.m */,
+				67EF19EE1AAB165500F97940 /* LBNavigationBar.h */,
+				67EF19EF1AAB165500F97940 /* LBNavigationBar.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		67EF19EA1AAB0FBA00F97940 /* HPLineView */ = {
+			isa = PBXGroup;
+			children = (
+				67EF19EB1AAB0FBA00F97940 /* HPLine.h */,
+				67EF19EC1AAB0FBA00F97940 /* HPLine.m */,
+			);
+			path = HPLineView;
+			sourceTree = "<group>";
+		};
+		67EF19F71AAB43B800F97940 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				67EF19F81AAB43D400F97940 /* LBAppContext.h */,
+				67EF19F91AAB43D400F97940 /* LBAppContext.m */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		67EF19FB1AAB483400F97940 /* HPPresentController */ = {
+			isa = PBXGroup;
+			children = (
+				67EF19FC1AAB484700F97940 /* HPPresentViewController.h */,
+				67EF19FD1AAB484700F97940 /* HPPresentViewController.m */,
+				67EF19FF1AAB4E4100F97940 /* HPPresentView.h */,
+				67EF1A001AAB4E4100F97940 /* HPPresentView.m */,
+			);
+			path = HPPresentController;
+			sourceTree = "<group>";
+		};
 		67F7B6781AA2F3D00032A5FD = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +297,8 @@
 		67F7B6831AA2F3D00032A5FD /* LittleBook */ = {
 			isa = PBXGroup;
 			children = (
+				67EF19F71AAB43B800F97940 /* Context */,
+				67EF19E31AAB02C200F97940 /* Views */,
 				671E94421AA5EFCA00697DBD /* ViewControllers */,
 				671E942D1AA5E12000697DBD /* HPKit */,
 				671E942E1AA5E12000697DBD /* HPUtils */,
@@ -370,12 +442,17 @@
 				6777D64A1AA6AAA9009E78DD /* FinanceViewController.m in Sources */,
 				671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */,
 				6777D6421AA6A9D4009E78DD /* NSString+StringKit.m in Sources */,
+				67EF19F61AAB3DF700F97940 /* SettingViewController.m in Sources */,
 				6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */,
 				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
+				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
 				6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
+				67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */,
 				6777D6431AA6A9D4009E78DD /* UIImage+ImageKit.m in Sources */,
+				67EF19FE1AAB484700F97940 /* HPPresentViewController.m in Sources */,
+				67EF19F01AAB165500F97940 /* LBNavigationBar.m in Sources */,
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
@@ -383,11 +460,14 @@
 				671E94481AA5EFCA00697DBD /* ViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				6777D6241AA6A8BB009E78DD /* OfficeViewController.m in Sources */,
+				67EF1A011AAB4E4100F97940 /* HPPresentView.m in Sources */,
 				6777D63E1AA6A9D4009E78DD /* NSData+DataKit.m in Sources */,
 				6777D6441AA6A9D4009E78DD /* UIScreen+ScreenKit.m in Sources */,
 				6777D63D1AA6A9D4009E78DD /* NSArray+ArrayKit.m in Sources */,
 				6777D6411AA6A9D4009E78DD /* NSString+NSHash.m in Sources */,
 				675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */,
+				67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */,
+				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,
 				6777D63F1AA6A9D4009E78DD /* NSDate+DateKit.m in Sources */,
 				6777D6451AA6A9D4009E78DD /* UIScrollView+DXRefresh.m in Sources */,
 			);

@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPTabBarItem : UIView <NSCopying, NSMutableCopying>
+@class HPTabBarItem;
+
+@protocol HPTabBarItemProtocol <NSObject>
+
+- (void)didClickTabBar:(HPTabBarItem *)tabbar;
+
+@end
+
+@interface HPTabBarItem : UIView
+
+@property (nonatomic, assign) IBOutlet id <HPTabBarItemProtocol> delegate;
 
 - (void)startHideAnimationWithDuration:(float)duration completion:(void (^)(void))completion;
 

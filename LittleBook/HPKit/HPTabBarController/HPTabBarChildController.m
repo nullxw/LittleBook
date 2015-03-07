@@ -7,6 +7,7 @@
 //
 
 #import "HPTabBarChildController.h"
+#import "HPTarBarController.h"
 #import "HPTabBarItem.h"
 
 @interface HPTabBarChildController ()
@@ -21,13 +22,17 @@
     self.view.clipsToBounds = TRUE;
 }
 
-
-- (void)setNavigationBar:(HPTabBarItem *)navigationBar
+- (void)closeViewController:(HPTabBarChildController *)childViewController
+                   animated:(BOOL)flag
+                 completion:(void (^)(void))completion
 {
-    _navigationBar = navigationBar;
-    _navigationBar.center = CGPointMake(CGRectGetWidth(self.view.bounds) * 0.5, CGRectGetHeight(navigationBar.bounds)*0.5);
-    _navigationBar.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    [self.view addSubview:_navigationBar];
+    HPTarBarController *rootViewController = (HPTarBarController *)self.parentViewController;
+    
+    [rootViewController closeViewController:self
+                                   toTabBar:self.navigationBarOfTabBarController
+                                   animated:flag
+                                 completion:completion];
+
 }
 
 @end

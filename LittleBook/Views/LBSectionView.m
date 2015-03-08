@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib
 {
-    
+    self.clipsToBounds = TRUE;
     self.layer.cornerRadius = 5.0;
 }
 

@@ -6,15 +6,8 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-typedef enum {
-    HPPresentViewMovingDirectionNone,
-    HPPresentViewMovingDirectionUp,
-    HPPresentViewMovingDirectionDown,
-    HPPresentViewMovingDirectionLeft,
-    HPPresentViewMovingDirectionRight
-}HPPresentViewMovingDirection;
 
-static const float kHPPresentViewMovingRatio = 0.25;
+
 
 #import "HPPresentView.h"
 
@@ -23,11 +16,29 @@ static const float kHPPresentViewMovingRatio = 0.25;
     CGPoint _startPoint;
     CGPoint _oriCenter;
     HPPresentViewMovingDirection _movingDirection;
+    HPPresentViewMovingDirection _enabledMovingDirections;
 }
-
 @end
 
 @implementation HPPresentView
+
+
+- (void)awakeFromNib
+{
+    _enabledMovingDirections = HPPresentViewMovingDirectionDown |
+                               HPPresentViewMovingDirectionLeft |
+                               HPPresentViewMovingDirectionRight;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        _enabledMovingDirections = HPPresentViewMovingDirectionDown |
+                                   HPPresentViewMovingDirectionLeft |
+                                   HPPresentViewMovingDirectionRight;
+    }
+    return self;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -49,6 +60,11 @@ static const float kHPPresentViewMovingRatio = 0.25;
     float dx = (point.x - _startPoint.x) * kHPPresentViewMovingRatio;
     float dy = (point.y - _startPoint.y) * kHPPresentViewMovingRatio;
     
+    
+    if ((_movingDirection & _enabledMovingDirections) == 0) {
+        return;
+    }
+    
     if (_movingDirection == HPPresentViewMovingDirectionLeft || _movingDirection == HPPresentViewMovingDirectionRight) {
         self.center = CGPointMake(self.center.x + dx, self.center.y);
     } else {
@@ -58,17 +74,35 @@ static const float kHPPresentViewMovingRatio = 0.25;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    
-    
-    self.center = _oriCenter;
+    if (_delegate && [_delegate respondsToSelector:@selector(presentView:shouldDismiss:)]) {
+        
+        float movingRatio = 0.0;
+        
+        if (_movingDirection == HPPresentViewMovingDirectionLeft || _movingDirection == HPPresentViewMovingDirectionRight) {
+            movingRatio = (self.center.x - _oriCenter.x)/CGRectGetWidth(self.bounds);
+        } else {
+            movingRatio = (self.center.y - _oriCenter.y)/CGRectGetHeight(self.bounds);
+        }
+        
+        movingRatio = fabsf(movingRatio);
+        
+        if ([_delegate presentView:self shouldDismiss:movingRatio]) {
+            if (_delegate && [_delegate respondsToSelector:@selector(presentViewWillMovingFromSuperview:movingDriection:)]) {
+                [_delegate presentViewWillMovingFromSuperview:self movingDriection:_movingDirection];
+            }
+        } else {
+            self.center = _oriCenter;
+        }
+        
+    } else {
+        self.center = _oriCenter;
+    }
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self touchesEnded:touches withEvent:event];
 }
-
 
 - (HPPresentViewMovingDirection)movingDirectionFromPoint:(CGPoint)startPoint toPoint:(CGPoint)toPoint
 {
@@ -81,6 +115,11 @@ static const float kHPPresentViewMovingRatio = 0.25;
     } else {
         return dy > 0 ? HPPresentViewMovingDirectionDown : HPPresentViewMovingDirectionUp;
     }
+}
+
+- (void)enabledMovingDirections:(HPPresentViewMovingDirection)directions
+{
+    _enabledMovingDirections = directions;
 }
 
 @end

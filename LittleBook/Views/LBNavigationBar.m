@@ -7,7 +7,6 @@
 //
 
 #import "LBNavigationBar.h"
-#import "ExtensionKit.h"
 
 @implementation LBNavigationBar
 

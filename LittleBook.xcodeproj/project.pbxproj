@@ -11,6 +11,14 @@
 		671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E944A1AA5F5F500697DBD /* ReadViewController.m */; };
 		675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */; };
 		675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */; };
+		676EE3501AAC3A100076B715 /* UIViewController+HPPresentViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE34F1AAC3A100076B715 /* UIViewController+HPPresentViewExt.m */; };
+		676EE3531AAC3CFC0076B715 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3521AAC3CFC0076B715 /* LoginViewController.m */; };
+		676EE35A1AAC59A50076B715 /* PanelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3591AAC59A50076B715 /* PanelSettingViewController.m */; };
+		676EE35D1AAC5A230076B715 /* CustomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE35C1AAC5A230076B715 /* CustomSettingViewController.m */; };
+		676EE3631AAC5A4F0076B715 /* NotificationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3621AAC5A4F0076B715 /* NotificationSettingViewController.m */; };
+		676EE3661AAC5A630076B715 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3651AAC5A630076B715 /* AboutViewController.m */; };
+		676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3681AAC61020076B715 /* NotificationContentView.m */; };
+		676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE36B1AAC610F0076B715 /* NotificationDotView.m */; };
 		6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6171AA69EFE009E78DD /* HPTabBarItem.m */; };
 		6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61B1AA69EFE009E78DD /* HPTabBarChildController.m */; };
 		6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61D1AA69EFE009E78DD /* HPTarBarController.m */; };
@@ -63,6 +71,24 @@
 		675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		675EAE8D1AA80A0200B13BD3 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		676EE34E1AAC3A100076B715 /* UIViewController+HPPresentViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HPPresentViewExt.h"; sourceTree = "<group>"; };
+		676EE34F1AAC3A100076B715 /* UIViewController+HPPresentViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HPPresentViewExt.m"; sourceTree = "<group>"; };
+		676EE3511AAC3CFC0076B715 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		676EE3521AAC3CFC0076B715 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		676EE3541AAC43930076B715 /* LBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMacros.h; sourceTree = "<group>"; };
+		676EE3571AAC44B60076B715 /* LittleBook.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LittleBook.pch; sourceTree = "<group>"; };
+		676EE3581AAC59A50076B715 /* PanelSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelSettingViewController.h; sourceTree = "<group>"; };
+		676EE3591AAC59A50076B715 /* PanelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelSettingViewController.m; sourceTree = "<group>"; };
+		676EE35B1AAC5A230076B715 /* CustomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingViewController.h; sourceTree = "<group>"; };
+		676EE35C1AAC5A230076B715 /* CustomSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingViewController.m; sourceTree = "<group>"; };
+		676EE3611AAC5A4F0076B715 /* NotificationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingViewController.h; sourceTree = "<group>"; };
+		676EE3621AAC5A4F0076B715 /* NotificationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingViewController.m; sourceTree = "<group>"; };
+		676EE3641AAC5A630076B715 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		676EE3651AAC5A630076B715 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		676EE3671AAC61020076B715 /* NotificationContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationContentView.h; sourceTree = "<group>"; };
+		676EE3681AAC61020076B715 /* NotificationContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationContentView.m; sourceTree = "<group>"; };
+		676EE36A1AAC610F0076B715 /* NotificationDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationDotView.h; sourceTree = "<group>"; };
+		676EE36B1AAC610F0076B715 /* NotificationDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationDotView.m; sourceTree = "<group>"; };
 		6777D6161AA69EFE009E78DD /* HPTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarItem.h; sourceTree = "<group>"; };
 		6777D6171AA69EFE009E78DD /* HPTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTabBarItem.m; sourceTree = "<group>"; };
 		6777D61A1AA69EFE009E78DD /* HPTabBarChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarChildController.h; sourceTree = "<group>"; };
@@ -176,6 +202,16 @@
 				6777D6491AA6AAA9009E78DD /* FinanceViewController.m */,
 				67EF19F41AAB3DF700F97940 /* SettingViewController.h */,
 				67EF19F51AAB3DF700F97940 /* SettingViewController.m */,
+				676EE3511AAC3CFC0076B715 /* LoginViewController.h */,
+				676EE3521AAC3CFC0076B715 /* LoginViewController.m */,
+				676EE3581AAC59A50076B715 /* PanelSettingViewController.h */,
+				676EE3591AAC59A50076B715 /* PanelSettingViewController.m */,
+				676EE35B1AAC5A230076B715 /* CustomSettingViewController.h */,
+				676EE35C1AAC5A230076B715 /* CustomSettingViewController.m */,
+				676EE3611AAC5A4F0076B715 /* NotificationSettingViewController.h */,
+				676EE3621AAC5A4F0076B715 /* NotificationSettingViewController.m */,
+				676EE3641AAC5A630076B715 /* AboutViewController.h */,
+				676EE3651AAC5A630076B715 /* AboutViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +279,10 @@
 				67EF19E51AAB034600F97940 /* LBSectionView.m */,
 				67EF19EE1AAB165500F97940 /* LBNavigationBar.h */,
 				67EF19EF1AAB165500F97940 /* LBNavigationBar.m */,
+				676EE3671AAC61020076B715 /* NotificationContentView.h */,
+				676EE3681AAC61020076B715 /* NotificationContentView.m */,
+				676EE36A1AAC610F0076B715 /* NotificationDotView.h */,
+				676EE36B1AAC610F0076B715 /* NotificationDotView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +301,7 @@
 			children = (
 				67EF19F81AAB43D400F97940 /* LBAppContext.h */,
 				67EF19F91AAB43D400F97940 /* LBAppContext.m */,
+				676EE3541AAC43930076B715 /* LBMacros.h */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -272,6 +313,8 @@
 				67EF19FD1AAB484700F97940 /* HPPresentViewController.m */,
 				67EF19FF1AAB4E4100F97940 /* HPPresentView.h */,
 				67EF1A001AAB4E4100F97940 /* HPPresentView.m */,
+				676EE34E1AAC3A100076B715 /* UIViewController+HPPresentViewExt.h */,
+				676EE34F1AAC3A100076B715 /* UIViewController+HPPresentViewExt.m */,
 			);
 			path = HPPresentController;
 			sourceTree = "<group>";
@@ -309,6 +352,7 @@
 				67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */,
 				67F7B68B1AA2F3D00032A5FD /* LittleBook.xcdatamodeld */,
 				67F7B6841AA2F3D00032A5FD /* Supporting Files */,
+				676EE3571AAC44B60076B715 /* LittleBook.pch */,
 			);
 			path = LittleBook;
 			sourceTree = "<group>";
@@ -442,12 +486,16 @@
 				6777D64A1AA6AAA9009E78DD /* FinanceViewController.m in Sources */,
 				671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */,
 				6777D6421AA6A9D4009E78DD /* NSString+StringKit.m in Sources */,
+				676EE3501AAC3A100076B715 /* UIViewController+HPPresentViewExt.m in Sources */,
+				676EE35A1AAC59A50076B715 /* PanelSettingViewController.m in Sources */,
 				67EF19F61AAB3DF700F97940 /* SettingViewController.m in Sources */,
 				6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */,
 				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
+				676EE3661AAC5A630076B715 /* AboutViewController.m in Sources */,
 				6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */,
+				676EE35D1AAC5A230076B715 /* CustomSettingViewController.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
 				67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */,
 				6777D6431AA6A9D4009E78DD /* UIImage+ImageKit.m in Sources */,
@@ -456,8 +504,11 @@
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
+				676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */,
+				676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */,
 				67F7B68D1AA2F3D00032A5FD /* LittleBook.xcdatamodeld in Sources */,
 				671E94481AA5EFCA00697DBD /* ViewController.m in Sources */,
+				676EE3531AAC3CFC0076B715 /* LoginViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				6777D6241AA6A8BB009E78DD /* OfficeViewController.m in Sources */,
 				67EF1A011AAB4E4100F97940 /* HPPresentView.m in Sources */,
@@ -469,6 +520,7 @@
 				67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,
 				6777D63F1AA6A9D4009E78DD /* NSDate+DateKit.m in Sources */,
+				676EE3631AAC5A4F0076B715 /* NotificationSettingViewController.m in Sources */,
 				6777D6451AA6A9D4009E78DD /* UIScrollView+DXRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +643,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleBook/LittleBook.pch";
 				INFOPLIST_FILE = LittleBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,6 +655,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleBook/LittleBook.pch";
 				INFOPLIST_FILE = LittleBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

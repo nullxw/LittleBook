@@ -8,6 +8,7 @@
 
 
 typedef enum {
+    HPPresentViewControllerAnimationDirectionNone,
     HPPresentViewControllerAnimationDirectionFromTop,
     HPPresentViewControllerAnimationDirectionFromBottom,
     HPPresentViewControllerAnimationDirectionFromLeft,

@@ -8,7 +8,6 @@
 
 #import "ReadViewController.h"
 #import "LBSectionView.h"
-#import "ExtensionKit.h"
 
 @interface ReadViewController ()
 
@@ -21,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _sectionView.separateLineColor = [UIColor colorWithR:246 g:245 b:243 a:1.0];
+    _sectionView.separateLineColor = LB_LIGHT_GRAY_LINE_COLOR;
     _sectionView.sectionNumber = 3;
 }
 

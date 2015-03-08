@@ -8,7 +8,6 @@
 
 static const float kHPPresentViewControllerAnimationDuration = 1.0;
 
-
 #import "HPPresentViewController.h"
 
 @interface HPPresentViewController ()
@@ -19,8 +18,10 @@ static const float kHPPresentViewControllerAnimationDuration = 1.0;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad];       
 }
+
+#pragma mark - present and dismiss view controller
 
 - (void)presentViewController:(UIViewController *)viewControllerToPresent
                 fromDirection:(HPPresentViewControllerAnimationDirection)direction
@@ -125,9 +126,6 @@ static const float kHPPresentViewControllerAnimationDuration = 1.0;
             completion();
         }
     }];
-
-
-
 }
 
 @end

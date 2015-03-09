@@ -8,6 +8,7 @@
 
 #import "NotificationSettingViewController.h"
 #import "UIViewController+HPPresentViewExt.h"
+#import "LBAppContext.h"
 
 @interface NotificationSettingViewController ()
 
@@ -18,9 +19,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
+#pragma mark - events
+
+- (IBAction)switchValueChanged:(UISwitch *)sender
+{
+    NSMutableDictionary *settings = [LBAppContext context].settings;
+    
+    switch (sender.tag) {
+        case 0:
+            settings[kLBNotificationSettingLowStorage] = @(sender.on);
+            break;
+        case 1:
+            settings[kLBNotificationSettingChargeUp] = @(sender.on);
+            break;
+        case 2:
+            settings[kLBNotificationSettingCalendar] = @(sender.on);
+            break;
+        default:
+            break;
+    }
+    [[LBAppContext context] updateSettings];
+}
 
 #pragma mark - HPPresentViewProtocol
 

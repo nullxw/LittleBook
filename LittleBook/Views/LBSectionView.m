@@ -14,7 +14,7 @@
 - (void)awakeFromNib
 {
     self.clipsToBounds = TRUE;
-    self.layer.cornerRadius = 5.0;
+    self.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
 }
 
 - (void)setSectionNumber:(NSUInteger)sectionNumber

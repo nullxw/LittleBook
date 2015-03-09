@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class LBAppSettings;
+static NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
+static NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
+static NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
 
 @interface LBAppContext : NSObject
 
 + (instancetype)context;
 
-@property (nonatomic, strong) LBAppSettings *settings;
+@property (nonatomic, strong) NSMutableDictionary *settings;
 
-@end
-
-@interface LBAppSettings : NSObject
+- (void)updateSettings;
 
 @end

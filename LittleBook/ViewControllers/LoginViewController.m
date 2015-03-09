@@ -28,8 +28,8 @@
     
     _sectionView.separateLineColor = LB_LIGHT_GRAY_LINE_COLOR;
     _sectionView.sectionNumber = 3;
-    _userNameContainer.layer.cornerRadius = 5.0;
-    _passwordContainer.layer.cornerRadius = 5.0;
+    _userNameContainer.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
+    _passwordContainer.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
     _userNameContainer.layer.borderWidth = LB_ONE_PX_SIZE;
     _passwordContainer.layer.borderWidth = LB_ONE_PX_SIZE;
     _userNameContainer.layer.borderColor = LB_INPUT_FIELD_BORDER_COLOR;

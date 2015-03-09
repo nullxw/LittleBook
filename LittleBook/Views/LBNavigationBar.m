@@ -13,8 +13,8 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.layer.cornerRadius = 5.0;
-    self.layer.borderWidth  = 1.0/[UIScreen mainScreen].scale;
+    self.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
+    self.layer.borderWidth  = LB_ONE_PX_SIZE;
     self.layer.borderColor  = [UIColor colorWithR:220 g:220 b:220 a:1.0].CGColor;
 }
 

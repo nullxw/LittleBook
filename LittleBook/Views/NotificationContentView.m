@@ -14,7 +14,7 @@
 {
     self.layer.borderColor = [UIColor blackColor].CGColor;
     self.layer.borderWidth = LB_ONE_PX_SIZE;
-    self.layer.cornerRadius = 5.0;
+    self.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
 }
 
 @end

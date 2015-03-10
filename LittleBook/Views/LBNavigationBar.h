@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HPTabBarItem.h"
+#import "HPTabBar.h"
 
-@interface LBNavigationBar : HPTabBarItem
+@interface LBNavigationBar : HPTabBar
 
 @property (nonatomic, strong) IBOutlet UIImageView *navigtaionBarIcon;
 @property (nonatomic, strong) IBOutlet UILabel *navigtaionBarTitle;

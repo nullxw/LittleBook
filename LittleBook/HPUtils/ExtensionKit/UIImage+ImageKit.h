@@ -17,6 +17,8 @@ typedef enum {
 
 @interface UIImage (ImageKit)
 
+- (UIImage *)clipToRect:(CGRect)rect;
+
 - (UIImage *)scaleToSize:(CGSize)size;
 - (UIImage *)scaleToSize:(CGSize)size position:(ILSImageExtensionImageClipPosition)position;
 - (UIImage *)compositeWithImage:(UIImage *)image;

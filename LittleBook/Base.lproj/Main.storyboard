@@ -214,7 +214,7 @@
         <scene sceneID="KUS-k2-Z28">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lzf-Hr-B20" customClass="LoginViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ywT-SJ-ceV" customClass="HPPresentView">
+                    <view key="view" contentMode="scaleToFill" id="ywT-SJ-ceV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -243,7 +243,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="NUe-F8-Brq" id="1sI-Tp-L06"/>
                                     <outlet property="navigtaionBarIcon" destination="u2N-Up-aJl" id="Vbk-Mu-okN"/>
                                     <outlet property="navigtaionBarSubtitle" destination="pwj-UW-SaN" id="BFJ-ve-HYa"/>
                                     <outlet property="navigtaionBarTitle" destination="2Oq-FD-Ux8" id="bcy-d3-QU7"/>
@@ -401,7 +400,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dse-fG-b5n">
                                         <rect key="frame" x="220" y="20" width="41" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="social_icon_weibo">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -418,9 +417,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="delegate" destination="Lzf-Hr-B20" id="LSu-LT-EyL"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="navigationBarOfSelf" destination="kYw-6U-MHT" id="sJ2-0h-Z3b"/>
@@ -437,7 +433,7 @@
         <scene sceneID="C38-3V-aQy">
             <objects>
                 <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D9R-HI-eiN" customClass="AboutViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x2v-cK-jzn" customClass="HPPresentView">
+                    <view key="view" contentMode="scaleToFill" id="x2v-cK-jzn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -466,7 +462,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="NUe-F8-Brq" id="xFc-Ta-VNg"/>
                                     <outlet property="navigtaionBarIcon" destination="Ebw-4D-SGf" id="ko7-xN-g9I"/>
                                     <outlet property="navigtaionBarSubtitle" destination="BIb-9s-kTR" id="XZc-Sd-g81"/>
                                     <outlet property="navigtaionBarTitle" destination="bZs-Nv-HO8" id="9c6-ch-X7U"/>
@@ -499,9 +494,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="delegate" destination="D9R-HI-eiN" id="Ku6-2N-PGC"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="navigationBarOfSelf" destination="LSf-Gj-sZ2" id="sQq-8s-b0G"/>
@@ -515,7 +507,7 @@
         <scene sceneID="GT7-is-nk5">
             <objects>
                 <viewController storyboardIdentifier="NotificationSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X46-Dt-93N" customClass="NotificationSettingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xMg-f7-OGU" customClass="HPPresentView">
+                    <view key="view" contentMode="scaleToFill" id="xMg-f7-OGU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -653,7 +645,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="NUe-F8-Brq" id="NFj-RU-BdQ"/>
                                     <outlet property="navigtaionBarIcon" destination="2b9-FB-zbg" id="mfp-iL-7nZ"/>
                                     <outlet property="navigtaionBarSubtitle" destination="bTN-dt-UxC" id="xJr-KS-FXM"/>
                                     <outlet property="navigtaionBarTitle" destination="lYm-F9-eko" id="y7f-S3-kBH"/>
@@ -661,9 +652,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="delegate" destination="X46-Dt-93N" id="gj9-j5-Vzd"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="navigationBarOfSelf" destination="MVF-I3-EgH" id="KXQ-rC-i7Y"/>
@@ -677,7 +665,7 @@
         <scene sceneID="9lu-pa-fnV">
             <objects>
                 <viewController storyboardIdentifier="CustomSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O5H-Mw-V8q" customClass="CustomSettingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lyd-Xs-CJ1" customClass="HPPresentView">
+                    <view key="view" contentMode="scaleToFill" id="lyd-Xs-CJ1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -706,7 +694,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="NUe-F8-Brq" id="50C-bg-CZm"/>
                                     <outlet property="navigtaionBarIcon" destination="PTE-vq-VAr" id="3sH-WK-WQH"/>
                                     <outlet property="navigtaionBarSubtitle" destination="NiK-w3-jaY" id="ykW-Yt-ApB"/>
                                     <outlet property="navigtaionBarTitle" destination="Q0G-7h-Eig" id="fbD-5L-i4f"/>
@@ -714,10 +701,10 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="delegate" destination="O5H-Mw-V8q" id="rp3-LE-9Eb"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="navigationBarOfSelf" destination="Kyu-YI-kye" id="D8V-Z5-obi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbr-m1-Jzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -727,7 +714,7 @@
         <scene sceneID="heP-fK-8I6">
             <objects>
                 <viewController storyboardIdentifier="PanelSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tnm-lC-un6" customClass="PanelSettingViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cGL-bk-Hdx" customClass="HPPresentView">
+                    <view key="view" contentMode="scaleToFill" id="cGL-bk-Hdx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -756,7 +743,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="delegate" destination="NUe-F8-Brq" id="9zB-yD-k6F"/>
                                     <outlet property="navigtaionBarIcon" destination="2Nq-hK-FGz" id="dV5-ma-861"/>
                                     <outlet property="navigtaionBarSubtitle" destination="Go4-6B-MpJ" id="YTd-g8-qgn"/>
                                     <outlet property="navigtaionBarTitle" destination="qHz-LC-RAJ" id="LTW-7W-ugw"/>
@@ -765,7 +751,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="ehD-3e-U8F" customClass="LBTableView">
                                 <rect key="frame" x="10" y="100" width="300" height="468"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="panelSettingCell" id="d4j-IB-CPl" customClass="PanelSettingCell">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="44"/>
@@ -775,19 +761,11 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tZh-oh-QsZ">
                                                     <rect key="frame" x="20" y="0.0" width="260" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2gH-tZ-l7T">
-                                                    <rect key="frame" x="265" y="41" width="15" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -803,10 +781,10 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <outlet property="delegate" destination="Tnm-lC-un6" id="OUm-S7-Gk1"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="navigationBarOfSelf" destination="5mg-AR-aag" id="sbB-hg-naE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4q-iD-h2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -990,6 +968,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="lf1-UM-NQ4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="2c4-1g-2uj" customClass="LBSectionView">
+                                        <rect key="frame" x="8" y="510" width="300" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lne-Qh-9g4">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="back_icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="back:" destination="Spd-GF-Nyi" eventType="touchUpInside" id="BrC-Tj-3oi"/>
+                                                    <action selector="back:" destination="lQZ-bI-vXU" eventType="touchUpInside" id="sf1-zp-Fps"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Ky-ho-xiY">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
+                                                <state key="normal" title="LITTLE BOOK">
+                                                    <color key="titleColor" red="0.48627450979999998" green="0.76078431369999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dRc-We-kLu">
+                                                <rect key="frame" x="200" y="0.0" width="100" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal" title="编辑/Edit">
+                                                    <color key="titleColor" red="0.48627450979999998" green="0.76078431369999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="PDv-qF-FxC" customClass="LBNavigationBar">
                                 <rect key="frame" x="10" y="20" width="300" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1020,53 +1041,18 @@
                                     <outlet property="navigtaionBarTitle" destination="v3j-ht-MGa" id="vBd-UM-MUc"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" id="2c4-1g-2uj" customClass="LBSectionView">
-                                <rect key="frame" x="10" y="506" width="300" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lne-Qh-9g4">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="back_icon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="back:" destination="Spd-GF-Nyi" eventType="touchUpInside" id="BrC-Tj-3oi"/>
-                                            <action selector="back:" destination="lQZ-bI-vXU" eventType="touchUpInside" id="sf1-zp-Fps"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Ky-ho-xiY">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
-                                        <state key="normal" title="LITTLE BOOK">
-                                            <color key="titleColor" red="0.48627450979999998" green="0.76078431369999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dRc-We-kLu">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                                        <state key="normal" title="编辑/Edit">
-                                            <color key="titleColor" red="0.48627450979999998" green="0.76078431369999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="lf1-UM-NQ4" id="ufB-Fz-LYz"/>
                         <outlet property="navigationBarOfSelf" destination="PDv-qF-FxC" id="4tv-Y4-Bd6"/>
                         <outlet property="sectionView" destination="2c4-1g-2uj" id="GrD-sO-O20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbY-TU-HQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773" y="-381"/>
+            <point key="canvasLocation" x="773" y="-391"/>
         </scene>
         <!--Office View Controller-->
         <scene sceneID="sdO-zY-xzD">
@@ -1076,6 +1062,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="yeb-eY-3hD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="9lt-wu-jmL" customClass="LBSectionView">
+                                        <rect key="frame" x="10" y="510" width="299.99996423721507" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lwL-gA-K1S">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="back_icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="back:" destination="lQZ-bI-vXU" eventType="touchUpInside" id="3PX-Iw-lyg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oiD-GE-XAd">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
+                                                <state key="normal" title="LITTLE BOOK">
+                                                    <color key="titleColor" red="0.48627450980392156" green="0.76078431372549016" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tcr-S8-2vy">
+                                                <rect key="frame" x="200" y="0.0" width="99.999991059303568" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal" title="编辑/Edit">
+                                                    <color key="titleColor" red="0.48627450979999998" green="0.76078431369999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="Ks6-Ya-YCv" customClass="LBNavigationBar">
                                 <rect key="frame" x="10" y="20" width="300" height="60"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1106,45 +1134,11 @@
                                     <outlet property="navigtaionBarTitle" destination="jxP-Wg-uOx" id="HDE-wn-cDT"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" id="9lt-wu-jmL" customClass="LBSectionView">
-                                <rect key="frame" x="10" y="506" width="300" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lwL-gA-K1S">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="back_icon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="back:" destination="lQZ-bI-vXU" eventType="touchUpInside" id="3PX-Iw-lyg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oiD-GE-XAd">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
-                                        <state key="normal" title="LITTLE BOOK">
-                                            <color key="titleColor" red="0.48627450980392156" green="0.76078431372549016" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tcr-S8-2vy">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                                        <state key="normal" title="编辑/Edit">
-                                            <color key="titleColor" red="0.48627450979999998" green="0.76078431369999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="yeb-eY-3hD" id="8xl-CI-DhI"/>
                         <outlet property="navigationBarOfSelf" destination="Ks6-Ya-YCv" id="S9Y-8d-pZX"/>
                         <outlet property="sectionView" destination="9lt-wu-jmL" id="N9T-F0-mqY"/>
                     </connections>

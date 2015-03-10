@@ -1,16 +1,14 @@
 //
-//  HPTabBarItem.m
+//  HPTabBar.m
 //  LittleBook
 //
 //  Created by hupeng on 15/3/3.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-static const float kHPTabBarItemMarginTop = 20.0;
+#import "HPTabBar.h"
 
-#import "HPTabBarItem.h"
-
-@implementation HPTabBarItem
+@implementation HPTabBar
 
 - (void)awakeFromNib
 {
@@ -45,7 +43,7 @@ static const float kHPTabBarItemMarginTop = 20.0;
     
     [UIView animateWithDuration:duration animations:^{
         
-        self.center = CGPointMake(ox, oy - kHPTabBarItemMarginTop);
+        self.center = CGPointMake(ox, oy - kHPTabBarMarginTop);
         //...other animations
         
     } completion:^(BOOL finished) {
@@ -60,7 +58,7 @@ static const float kHPTabBarItemMarginTop = 20.0;
     float ox = self.center.x;
     float oy = self.center.y;
     
-    self.center = CGPointMake(ox, oy - kHPTabBarItemMarginTop);
+    self.center = CGPointMake(ox, oy - kHPTabBarMarginTop);
     
     [UIView animateWithDuration:duration animations:^{
         

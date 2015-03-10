@@ -7,7 +7,7 @@
 //
 
 #import "PanelSettingViewController.h"
-#import "UIViewController+HPPresentViewExt.h"
+//#import "UIViewController+HPPresentViewExt.h"
 #import "PanelSettingCell.h"
 #import "PanelStyleManager.h"
 
@@ -21,6 +21,7 @@
 {
     [super viewDidLoad];
 }
+
 #pragma mark - UITableViewDataSource and UITableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -34,16 +35,17 @@
     [cell setupCellWithPanelStyle:[PanelStyleManager defaultManager].panelStyles[indexPath.row]];
     return cell;
 }
-#pragma mark - HPPresentViewProtocol
 
-- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
-{
-    return movingRatio > 0.25;
-}
-
-- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
-{
-    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
-}
+//#pragma mark - HPPresentViewProtocol
+//
+//- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
+//{
+//    return movingRatio > 0.25;
+//}
+//
+//- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
+//{
+//    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
+//}
 
 @end

@@ -15,7 +15,7 @@
 #import "AboutViewController.h"
 #import "LBNavigationBar.h"
 
-@interface SettingViewController ()<HPPresentViewProtocol, HPTabBarItemProtocol>
+@interface SettingViewController ()<HPPresentViewProtocol, HPTabBarProtocol>
 
 @end
 
@@ -38,9 +38,9 @@
     [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
 }
 
-#pragma mark - HPTabBarItemProtocol
+#pragma mark - HPTabBarProtocol
 
-- (void)didClickTabBar:(HPTabBarItem *)tabbar
+- (void)didClickTabBar:(HPTabBar *)tabbar
 {
     HPTabBarChildController *vc = nil;
     NSInteger tag = tabbar.tag;

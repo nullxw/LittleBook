@@ -19,6 +19,19 @@
 
 @implementation UIImage (ImageKit)
 
+- (UIImage *)clipToRect:(CGRect)rect
+{
+    float w = self.size.width;
+    float h = self.size.height;
+
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
+    [self drawInRect:CGRectMake(-rect.origin.x, -rect.origin.y, w, h)];
+    UIImage *output = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return output;
+}
+
+
 - (UIImage *)scaleToSize:(CGSize)size
 {
     return [self scaleToSize:size position:ILSImageExtensionImageClipPositionTopLeft];
@@ -50,7 +63,6 @@
     }
     
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
-    
     switch (position) {
         case ILSImageExtensionImageClipPositionTopLeft:
             [self drawInRect:CGRectMake(-2, -2, dw + 4, dh + 4)]; // -2 fix bug : iphone 6 6p 图片出现白边

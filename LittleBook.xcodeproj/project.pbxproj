@@ -23,7 +23,7 @@
 		676EE3661AAC5A630076B715 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3651AAC5A630076B715 /* AboutViewController.m */; };
 		676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3681AAC61020076B715 /* NotificationContentView.m */; };
 		676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE36B1AAC610F0076B715 /* NotificationDotView.m */; };
-		6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6171AA69EFE009E78DD /* HPTabBarItem.m */; };
+		6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6171AA69EFE009E78DD /* HPTabBar.m */; };
 		6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61B1AA69EFE009E78DD /* HPTabBarChildController.m */; };
 		6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61D1AA69EFE009E78DD /* HPTarBarController.m */; };
 		6777D6241AA6A8BB009E78DD /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6231AA6A8BB009E78DD /* OfficeViewController.m */; };
@@ -100,8 +100,8 @@
 		676EE3681AAC61020076B715 /* NotificationContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationContentView.m; sourceTree = "<group>"; };
 		676EE36A1AAC610F0076B715 /* NotificationDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationDotView.h; sourceTree = "<group>"; };
 		676EE36B1AAC610F0076B715 /* NotificationDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationDotView.m; sourceTree = "<group>"; };
-		6777D6161AA69EFE009E78DD /* HPTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarItem.h; sourceTree = "<group>"; };
-		6777D6171AA69EFE009E78DD /* HPTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTabBarItem.m; sourceTree = "<group>"; };
+		6777D6161AA69EFE009E78DD /* HPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBar.h; sourceTree = "<group>"; };
+		6777D6171AA69EFE009E78DD /* HPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTabBar.m; sourceTree = "<group>"; };
 		6777D61A1AA69EFE009E78DD /* HPTabBarChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarChildController.h; sourceTree = "<group>"; };
 		6777D61B1AA69EFE009E78DD /* HPTabBarChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTabBarChildController.m; sourceTree = "<group>"; };
 		6777D61C1AA69EFE009E78DD /* HPTarBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTarBarController.h; sourceTree = "<group>"; };
@@ -251,8 +251,8 @@
 		6777D6151AA69EFE009E78DD /* HPTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				6777D6161AA69EFE009E78DD /* HPTabBarItem.h */,
-				6777D6171AA69EFE009E78DD /* HPTabBarItem.m */,
+				6777D6161AA69EFE009E78DD /* HPTabBar.h */,
+				6777D6171AA69EFE009E78DD /* HPTabBar.m */,
 				6777D61C1AA69EFE009E78DD /* HPTarBarController.h */,
 				6777D61D1AA69EFE009E78DD /* HPTarBarController.m */,
 				6777D61A1AA69EFE009E78DD /* HPTabBarChildController.h */,
@@ -522,7 +522,7 @@
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
 				676EE3661AAC5A630076B715 /* AboutViewController.m in Sources */,
 				6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */,
-				6777D61E1AA69EFE009E78DD /* HPTabBarItem.m in Sources */,
+				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
 				676EE35D1AAC5A230076B715 /* CustomSettingViewController.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
 				67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */,

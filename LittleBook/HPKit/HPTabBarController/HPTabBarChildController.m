@@ -8,9 +8,9 @@
 
 #import "HPTabBarChildController.h"
 #import "HPTarBarController.h"
-#import "HPTabBarItem.h"
+#import "HPTabBar.h"
 
-@interface HPTabBarChildController ()
+@interface HPTabBarChildController () <HPTabBarProtocol>
 
 @end
 
@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     self.view.clipsToBounds = TRUE;
+    self.navigationBarOfSelf.delegate = self;
 }
 
 - (void)closeViewController:(HPTabBarChildController *)childViewController
@@ -35,4 +36,12 @@
 
 }
 
+#pragma mark - HPTabBarProtocol
+
+- (void)didClickTabBar:(HPTabBar *)tabbar
+{
+    [self closeViewController:self
+                     animated:YES
+                   completion:nil];
+}
 @end

@@ -75,7 +75,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if (_delegate && [_delegate respondsToSelector:@selector(presentView:shouldDismiss:)]) {
-        
+
         float movingRatio = 0.0;
         
         if (_movingDirection == HPPresentViewMovingDirectionLeft || _movingDirection == HPPresentViewMovingDirectionRight) {

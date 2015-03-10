@@ -9,17 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "HPPresentViewController.h"
 
-@class HPTabBarItem, HPTabBarChildController;
+@class HPTabBar, HPTabBarChildController;
 
 @interface HPTarBarController : HPPresentViewController
 
 - (void)openViewController:(HPTabBarChildController *)childViewController
-                fromTabBar:(HPTabBarItem *)tabBar
+                fromTabBar:(HPTabBar *)tabBar
                   animated:(BOOL)flag
                 completion:(void (^)(void))completion;
 
 - (void)closeViewController:(HPTabBarChildController *)childViewController
-                   toTabBar:(HPTabBarItem *)tabBar
+                   toTabBar:(HPTabBar *)tabBar
                    animated:(BOOL)flag
                  completion:(void (^)(void))completion;
 

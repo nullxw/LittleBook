@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "UIViewController+HPPresentViewExt.h"
+//#import "UIViewController+HPPresentViewExt.h"
 #import "LBSectionView.h"
 
 #define LB_INPUT_FIELD_BORDER_COLOR [UIColor colorWithR:126 g:179 b:222 a:1.0].CGColor
@@ -37,16 +37,16 @@
     
 }
 
-#pragma mark - HPPresentViewProtocol
-
-- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
-{
-    return movingRatio > 0.25;
-}
-
-- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
-{
-    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
-}
+//#pragma mark - HPPresentViewProtocol
+//
+//- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
+//{
+//    return movingRatio > 0.25;
+//}
+//
+//- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
+//{
+//    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
+//}
 
 @end

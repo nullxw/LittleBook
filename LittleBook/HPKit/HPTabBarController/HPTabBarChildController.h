@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "HPPresentViewController.h"
 
-@class HPTabBarItem;
+@class HPTabBar;
 
 @interface HPTabBarChildController : HPPresentViewController
 
-@property (nonatomic, strong) HPTabBarItem *navigationBarOfTabBarController;
+@property (nonatomic, strong) HPTabBar *navigationBarOfTabBarController;
 
-@property (nonatomic, strong) IBOutlet HPTabBarItem *navigationBarOfSelf;
+@property (nonatomic, strong) IBOutlet UIView *contentView;
+
+@property (nonatomic, strong) IBOutlet HPTabBar *navigationBarOfSelf;
 
 - (void)closeViewController:(HPTabBarChildController *)childViewController
                    animated:(BOOL)flag

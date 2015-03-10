@@ -8,7 +8,7 @@
 
 #import "FinanceViewController.h"
 #import "HPTarBarController.h"
-#import "HPTabBarItem.h"
+#import "HPTabBar.h"
 
 @interface FinanceViewController ()
 

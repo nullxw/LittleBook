@@ -7,7 +7,7 @@
 //
 
 #import "NotificationSettingViewController.h"
-#import "UIViewController+HPPresentViewExt.h"
+//#import "UIViewController+HPPresentViewExt.h"
 #import "LBAppContext.h"
 
 @interface NotificationSettingViewController ()
@@ -43,16 +43,16 @@
     [[LBAppContext context] updateSettings];
 }
 
-#pragma mark - HPPresentViewProtocol
-
-- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
-{
-    return movingRatio > 0.25;
-}
-
-- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
-{
-    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
-}
+//#pragma mark - HPPresentViewProtocol
+//
+//- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
+//{
+//    return movingRatio > 0.25;
+//}
+//
+//- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
+//{
+//    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
+//}
 
 @end

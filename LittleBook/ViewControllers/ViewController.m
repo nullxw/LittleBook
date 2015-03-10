@@ -13,7 +13,7 @@
 #import "LBNavigationBar.h"
 #import "LBSectionView.h"
 
-@interface ViewController () <HPTabBarItemProtocol>
+@interface ViewController () <HPTabBarProtocol>
 
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
 
@@ -55,9 +55,9 @@
                      completion:nil];
 }
 
-#pragma mark - HPTabBarItemProtocol
+#pragma mark - HPTabBarProtocol
 
-- (void)didClickTabBar:(HPTabBarItem *)tabbar
+- (void)didClickTabBar:(HPTabBar *)tabbar
 {
     HPTabBarChildController *vc = nil;
     NSInteger tag = tabbar.tag;

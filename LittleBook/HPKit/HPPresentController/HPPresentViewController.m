@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-static const float kHPPresentViewControllerAnimationDuration = 1.0;
+static const float kHPPresentViewControllerAnimationDuration = 0.45;
 
 #import "HPPresentViewController.h"
 

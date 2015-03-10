@@ -12,6 +12,7 @@
 @interface PanelSettingCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *checkBoxView;
 
 @end
 
@@ -25,9 +26,20 @@
     _descriptionLabel.layer.borderColor  = LB_BLUE_LINE_COLOR.CGColor;
 }
 
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [super willMoveToSuperview:newSuperview];
+    
+    float offsetX = 20;
+    _descriptionLabel.frame = CGRectMake(offsetX, CGRectGetMinY(_descriptionLabel.frame), CGRectGetWidth(self.bounds) - 2 * offsetX, CGRectGetHeight(_descriptionLabel.frame));
+    _checkBoxView.frame = CGRectMake(CGRectGetMaxX(_descriptionLabel.frame) - 20, CGRectGetMaxY(_descriptionLabel.frame) - 20, CGRectGetWidth(_checkBoxView.frame), CGRectGetHeight(_checkBoxView.frame));
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+    
+    _checkBoxView.hidden = !selected;
 }
 
 - (void)setupCellWithPanelStyle:(PanelStyle *)panelStyle

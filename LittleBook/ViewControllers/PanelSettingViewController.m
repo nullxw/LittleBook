@@ -36,16 +36,9 @@
     return cell;
 }
 
-//#pragma mark - HPPresentViewProtocol
-//
-//- (BOOL)presentView:(HPPresentView *)presentView shouldDismiss:(float)movingRatio
-//{
-//    return movingRatio > 0.25;
-//}
-//
-//- (void)presentViewWillMovingFromSuperview:(HPPresentView *)presentView movingDriection:(HPPresentViewMovingDirection)direction
-//{
-//    [self dismissViewControllerAnimated:YES completion:nil movingDirection:direction];
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
 
 @end

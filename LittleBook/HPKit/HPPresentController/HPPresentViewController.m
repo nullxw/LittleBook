@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-static const float kHPPresentViewControllerAnimationDuration = 0.45;
+static const float kHPPresentViewControllerAnimationDuration = 0.6;
 
 #import "HPPresentViewController.h"
 
@@ -67,7 +67,7 @@ static const float kHPPresentViewControllerAnimationDuration = 0.45;
     [self addChildViewController:viewControllerToPresent];
     [self.view addSubview:viewControllerToPresent.view];
     
-    [UIView animateWithDuration:kHPPresentViewControllerAnimationDuration animations:^{
+    [UIView animateWithDuration:kHPPresentViewControllerAnimationDuration delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
         
         viewControllerToPresent.view.frame = self.view.bounds;
         

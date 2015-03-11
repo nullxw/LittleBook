@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "HPTabBarChildController.h"
 
+@interface NotificationSetting : NSObject
+
+@property (nonatomic, strong) NSString *notificationKey;
+@property (nonatomic, strong) NSString *notificationDesc;
+
+@end
+
 @interface NotificationSettingViewController : HPTabBarChildController
 
 @end

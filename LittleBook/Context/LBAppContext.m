@@ -43,13 +43,13 @@ static NSString *kLBAppSettingKey        = @"kLBAppSettingKey";
         if (!self.settings) {
             self.settings = @{kLBNotificationSettingLowStorage : @(FALSE),
                               kLBNotificationSettingChargeUp   : @(FALSE),
-                              kLBNotificationSettingCalendar   : @(FALSE)}.mutableCopy;
+                              kLBNotificationSettingCalendar   : @(FALSE),
+                              kLBPanelSetting                  : @"paperColor"}.mutableCopy;
             [_userDefaults setObject:self.settings forKey:kLBAppSettingKey];
         }
     }
     return self;
 }
-
 
 - (void)updateSettings
 {

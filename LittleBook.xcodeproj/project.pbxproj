@@ -39,6 +39,7 @@
 		6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D63A1AA6A9D4009E78DD /* UIView+ViewKit.m */; };
 		6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D63C1AA6A9D4009E78DD /* UIViewController+ControllerKit.m */; };
 		6777D64A1AA6AAA9009E78DD /* FinanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6491AA6AAA9009E78DD /* FinanceViewController.m */; };
+		67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */; };
 		67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19E51AAB034600F97940 /* LBSectionView.m */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19F01AAB165500F97940 /* LBNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EF1AAB165500F97940 /* LBNavigationBar.m */; };
@@ -133,6 +134,8 @@
 		6777D63C1AA6A9D4009E78DD /* UIViewController+ControllerKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ControllerKit.m"; sourceTree = "<group>"; };
 		6777D6481AA6AAA9009E78DD /* FinanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceViewController.h; sourceTree = "<group>"; };
 		6777D6491AA6AAA9009E78DD /* FinanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceViewController.m; sourceTree = "<group>"; };
+		67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingCell.h; sourceTree = "<group>"; };
+		67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingCell.m; sourceTree = "<group>"; };
 		67EF19E41AAB034600F97940 /* LBSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSectionView.h; sourceTree = "<group>"; };
 		67EF19E51AAB034600F97940 /* LBSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSectionView.m; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				67634C721AADE391009FD0FA /* LBTableView.m */,
 				67634C741AADE5DA009FD0FA /* PanelSettingCell.h */,
 				67634C751AADE5DA009FD0FA /* PanelSettingCell.m */,
+				67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */,
+				67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				676EE35D1AAC5A230076B715 /* CustomSettingViewController.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
 				67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */,
+				67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */,
 				6777D6431AA6A9D4009E78DD /* UIImage+ImageKit.m in Sources */,
 				67EF19FE1AAB484700F97940 /* HPPresentViewController.m in Sources */,
 				67EF19F01AAB165500F97940 /* LBNavigationBar.m in Sources */,

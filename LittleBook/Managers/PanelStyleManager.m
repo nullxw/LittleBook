@@ -41,17 +41,18 @@
             NSDictionary *panelColorInfo = panelInfo[@"panelColor"];
             NSDictionary *fontColorInfo  = panelInfo[@"fontColor"];
             
+            panelStyle.styleName = panelInfo[@"styleName"];
             panelStyle.panelDesc = panelInfo[@"description"];
-            panelStyle.panelColor  = [UIColor colorWithR:[panelColorInfo[@"r"] floatValue]
-                                                      g:[panelColorInfo[@"g"] floatValue]
-                                                      b:[panelColorInfo[@"b"] floatValue]
-                                                      a:[panelColorInfo[@"a"] floatValue]];
-            panelStyle.fontColor   = [UIColor colorWithR:[fontColorInfo[@"r"] floatValue]
-                                                    g:[fontColorInfo[@"g"] floatValue]
-                                                    b:[fontColorInfo[@"b"] floatValue]
-                                                    a:[fontColorInfo[@"a"] floatValue]];
-            panelStyle.font        = [UIFont fontWithName:panelInfo[@"fontName"]
-                                                     size:[panelInfo[@"fontSize"] floatValue]];
+            panelStyle.panelColor= [UIColor colorWithR:[panelColorInfo[@"r"] floatValue]
+                                                     g:[panelColorInfo[@"g"] floatValue]
+                                                     b:[panelColorInfo[@"b"] floatValue]
+                                                     a:[panelColorInfo[@"a"] floatValue]];
+            panelStyle.fontColor = [UIColor colorWithR:[fontColorInfo[@"r"] floatValue]
+                                                     g:[fontColorInfo[@"g"] floatValue]
+                                                     b:[fontColorInfo[@"b"] floatValue]
+                                                     a:[fontColorInfo[@"a"] floatValue]];
+            panelStyle.font      = [UIFont fontWithName:panelInfo[@"fontName"]
+                                                   size:[panelInfo[@"fontSize"] floatValue]];
             
             [panelStyles addObject:panelStyle];
         }

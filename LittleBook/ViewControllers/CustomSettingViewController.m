@@ -11,6 +11,8 @@
 
 @interface CustomSettingViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation CustomSettingViewController

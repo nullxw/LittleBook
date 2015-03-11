@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-static const float kHPTabBarControllerAnimationDuration = 0.45;
+static const float kHPTabBarControllerAnimationDuration = 0.6;
 
 #import "HPTarBarController.h"
 #import "HPTabBarChildController.h"
@@ -46,8 +46,7 @@ static const float kHPTabBarControllerAnimationDuration = 0.45;
         }
         return;
     }
-    
-    
+
     [self prepareForAnimation:rect];
     
     childViewController.view.frame = CGRectMake(0, CGRectGetMinY(rect), CGRectGetWidth(self.view.bounds), CGRectGetHeight(rect));
@@ -60,7 +59,8 @@ static const float kHPTabBarControllerAnimationDuration = 0.45;
         [childViewController.navigationBarOfSelf startShowAnimationWithDuration:kHPTabBarControllerAnimationDuration completion:nil];
     }
     
-    [UIView animateWithDuration:kHPTabBarControllerAnimationDuration animations:^{
+    
+    [UIView animateWithDuration:kHPTabBarControllerAnimationDuration delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
         childViewController.view.frame = self.view.bounds;
         childViewController.contentView.alpha = 1.0;
         childViewController.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(childViewController.view.frame), CGRectGetHeight(childViewController.view.frame));
@@ -68,12 +68,25 @@ static const float kHPTabBarControllerAnimationDuration = 0.45;
         _topFakeView.frame = CGRectMake(0, -CGRectGetHeight(_topFakeView.frame), CGRectGetWidth(_topFakeView.frame), CGRectGetHeight(_topFakeView.frame));
         _bottomFakeView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds), CGRectGetWidth(_bottomFakeView.frame), CGRectGetHeight(_bottomFakeView.frame));
     } completion:^(BOOL finished) {
-        
         if (completion) {
             completion();
         }
     }];
     
+//    [UIView animateWithDuration:kHPTabBarControllerAnimationDuration animations:^{
+//        
+//        childViewController.view.frame = self.view.bounds;
+//        childViewController.contentView.alpha = 1.0;
+//        childViewController.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(childViewController.view.frame), CGRectGetHeight(childViewController.view.frame));
+//        
+//        _topFakeView.frame = CGRectMake(0, -CGRectGetHeight(_topFakeView.frame), CGRectGetWidth(_topFakeView.frame), CGRectGetHeight(_topFakeView.frame));
+//        _bottomFakeView.frame = CGRectMake(0, CGRectGetHeight(self.view.bounds), CGRectGetWidth(_bottomFakeView.frame), CGRectGetHeight(_bottomFakeView.frame));
+//    } completion:^(BOOL finished) {
+//        
+//        if (completion) {
+//            completion();
+//        }
+//    }];
 }
 
 - (void)closeViewController:(HPTabBarChildController *)childViewController

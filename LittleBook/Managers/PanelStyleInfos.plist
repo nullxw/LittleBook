@@ -31,6 +31,8 @@
 		<string></string>
 		<key>fontSize</key>
 		<integer>0</integer>
+		<key>styleName</key>
+		<string>paperColor</string>
 	</dict>
 	<dict>
 		<key>fontColor</key>
@@ -61,6 +63,8 @@
 		<string></string>
 		<key>fontSize</key>
 		<integer>0</integer>
+		<key>styleName</key>
+		<string>blackboard</string>
 	</dict>
 	<dict>
 		<key>fontColor</key>
@@ -91,6 +95,8 @@
 		<string></string>
 		<key>fontSize</key>
 		<integer>0</integer>
+		<key>styleName</key>
+		<string>eyeStyle</string>
 	</dict>
 	<dict>
 		<key>fontColor</key>
@@ -121,6 +127,8 @@
 		<string></string>
 		<key>fontSize</key>
 		<integer>0</integer>
+		<key>styleName</key>
+		<string>panelColor</string>
 	</dict>
 </array>
 </plist>

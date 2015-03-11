@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *panelDesc;
 @property (nonatomic, strong) UIFont   *font;
 @property (nonatomic, strong) UIColor  *fontColor;
-
+@property (nonatomic, strong) NSString *styleName;
 @end
 
 @interface PanelStyleManager : NSObject

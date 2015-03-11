@@ -11,6 +11,7 @@
 static NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
 static NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
 static NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
+static NSString *kLBPanelSetting                  = @"kLBPanelSetting";
 
 @interface LBAppContext : NSObject
 

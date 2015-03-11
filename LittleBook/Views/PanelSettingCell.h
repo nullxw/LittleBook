@@ -12,6 +12,7 @@
 
 @interface PanelSettingCell : UITableViewCell
 
+
 - (void)setupCellWithPanelStyle:(PanelStyle *)panelStyle;
 
 @end

@@ -12,4 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *descLabel;
 @property (nonatomic, weak) IBOutlet UISwitch *switchView;
+@property (nonatomic, weak) IBOutlet UIView *descContainer;
+
 @end

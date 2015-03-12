@@ -90,7 +90,6 @@
     return [date getWeekIndex] == [self getWeekIndex];
 }
 
-
 - (NSInteger)getWeekIndex
 {
     NSCalendar *cal = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
@@ -104,5 +103,12 @@
     } else {
         return comps.weekOfYear;
     }
+}
+
+- (NSString *)formattedString:(NSString *)pattern
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = pattern;
+    return [formatter stringFromDate:self];
 }
 @end

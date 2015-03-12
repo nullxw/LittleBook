@@ -14,9 +14,16 @@
 @end
 @implementation NotificationSettingCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [super willMoveToSuperview:newSuperview];
+    
+    float offsetX = 30;
+    _descContainer.center = CGPointMake(offsetX + CGRectGetWidth(_descContainer.frame) * 0.5, CGRectGetHeight(self.bounds));
+    
+    _switchView.center = CGPointMake(CGRectGetMaxX(_descContainer.frame) + 100, _descContainer.center.y);
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

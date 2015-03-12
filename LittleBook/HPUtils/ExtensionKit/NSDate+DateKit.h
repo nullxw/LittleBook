@@ -20,4 +20,6 @@
 
 - (NSInteger)getWeekIndex;
 
+- (NSString *)formattedString:(NSString *)pattern;
+
 @end

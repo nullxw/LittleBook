@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		671E94481AA5EFCA00697DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E94461AA5EFCA00697DBD /* ViewController.m */; };
 		671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E944A1AA5F5F500697DBD /* ReadViewController.m */; };
+		674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */; };
+		674E5EA01AB1D36400F3415F /* CustomSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */; };
+		674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5EA21AB1E0CB00F3415F /* LBCalButton.m */; };
 		675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */; };
 		675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */; };
 		67634C731AADE391009FD0FA /* LBTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C721AADE391009FD0FA /* LBTableView.m */; };
@@ -72,6 +75,11 @@
 		671E94461AA5EFCA00697DBD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		671E94491AA5F5F500697DBD /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		671E944A1AA5F5F500697DBD /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
+		674E5E9C1AB1D35600F3415F /* CustomSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingHeaderView.h; sourceTree = "<group>"; };
+		674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingHeaderView.m; sourceTree = "<group>"; };
+		674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSettingHeaderView.xib; sourceTree = "<group>"; };
+		674E5EA11AB1E0CB00F3415F /* LBCalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCalButton.h; sourceTree = "<group>"; };
+		674E5EA21AB1E0CB00F3415F /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
 		675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchImageView.h; sourceTree = "<group>"; };
 		675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		675EAE8D1AA80A0200B13BD3 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
@@ -313,6 +321,11 @@
 				67634C751AADE5DA009FD0FA /* PanelSettingCell.m */,
 				67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */,
 				67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */,
+				674E5E9C1AB1D35600F3415F /* CustomSettingHeaderView.h */,
+				674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */,
+				674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */,
+				674E5EA11AB1E0CB00F3415F /* LBCalButton.h */,
+				674E5EA21AB1E0CB00F3415F /* LBCalButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -497,6 +510,7 @@
 				67F7B6931AA2F3D00032A5FD /* Main.storyboard in Resources */,
 				67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */,
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
+				674E5EA01AB1D36400F3415F /* CustomSettingHeaderView.xib in Resources */,
 				67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +552,7 @@
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
+				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */,
 				676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */,
 				67F7B68D1AA2F3D00032A5FD /* LittleBook.xcdatamodeld in Sources */,
@@ -556,6 +571,7 @@
 				67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,
 				6777D63F1AA6A9D4009E78DD /* NSDate+DateKit.m in Sources */,
+				674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */,
 				676EE3631AAC5A4F0076B715 /* NotificationSettingViewController.m in Sources */,
 				6777D6451AA6A9D4009E78DD /* UIScrollView+DXRefresh.m in Sources */,
 			);

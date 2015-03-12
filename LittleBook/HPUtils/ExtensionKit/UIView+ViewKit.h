@@ -11,5 +11,6 @@
 @interface UIView (ViewKit)
 
 - (UIImage *)viewShot;
++ (instancetype)loadNib;
 
 @end

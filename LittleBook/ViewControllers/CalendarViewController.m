@@ -1,21 +1,23 @@
 //
-//  ReadListViewController.m
+//  CalendarViewController.m
 //  LittleBook
 //
-//  Created by hupeng on 15/3/3.
+//  Created by 胡鹏 on 15/3/14.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "ReadViewController.h"
+#import "CalendarViewController.h"
+#import "UIViewController+LBSegueExt.h"
 #import "LBSectionView.h"
 
-@interface ReadViewController ()
+@interface CalendarViewController ()
 
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
 
+
 @end
 
-@implementation ReadViewController
+@implementation CalendarViewController
 
 - (void)viewDidLoad
 {
@@ -24,10 +26,9 @@
     _sectionView.sectionNumber = 3;
 }
 
-- (IBAction)back:(id)sender
+- (IBAction)dismiss:(id)sender
 {
-    [self closeViewController:self
-                     animated:YES
-                   completion:nil];
+    [self dismissViewControllerPresentFromRight];
 }
+
 @end

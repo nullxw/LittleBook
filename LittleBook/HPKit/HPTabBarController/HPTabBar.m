@@ -10,32 +10,6 @@
 
 @implementation HPTabBar
 
-- (void)awakeFromNib
-{
-    [self registerGestures];
-}
-
-- (instancetype)init
-{
-    if (self = [super init]) {
-        [self registerGestures];
-    }
-    return self;
-}
-
-- (void)registerGestures
-{
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTabBar:)];
-    [self addGestureRecognizer:tap];
-}
-
-- (void)tapTabBar:(UIGestureRecognizer *)gesture
-{
-    if (_delegate && [_delegate respondsToSelector:@selector(didClickTabBar:)]) {
-        [_delegate didClickTabBar:self];
-    }
-}
-
 - (void)startHideAnimationWithDuration:(float)duration completion:(void (^)(void))completion
 {
     float ox = self.center.x;

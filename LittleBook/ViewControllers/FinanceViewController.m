@@ -19,17 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (IBAction)back:(id)sender
-{
-    HPTarBarController *rootViewController = (HPTarBarController *)self.parentViewController;
-    
-    [rootViewController closeViewController:self
-                                   toTabBar:self.navigationBarOfTabBarController
-                                   animated:YES
-                                 completion:nil];
 }
 
 @end

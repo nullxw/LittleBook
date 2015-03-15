@@ -10,7 +10,7 @@
 #import "HPTarBarController.h"
 #import "HPTabBar.h"
 
-@interface HPTabBarChildController () <HPTabBarProtocol>
+@interface HPTabBarChildController ()
 
 @end
 
@@ -20,28 +20,29 @@
 {
     [super viewDidLoad];
     self.view.clipsToBounds = TRUE;
-    self.navigationBarOfSelf.delegate = self;
 }
 
-- (void)closeViewController:(HPTabBarChildController *)childViewController
-                   animated:(BOOL)flag
-                 completion:(void (^)(void))completion
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationBar) {
+        [self.navigationBar startShowAnimationWithDuration:LB_SPRING_ANIMATION_TIME completion:nil];
+    }
+}
+
+ - (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (IBAction)dismiss
 {
     HPTarBarController *rootViewController = (HPTarBarController *)self.parentViewController;
     
     [rootViewController closeViewController:self
-                                   toTabBar:self.navigationBarOfTabBarController
-                                   animated:flag
-                                 completion:completion];
+                                   animated:TRUE
+                                 completion:nil];
 
 }
 
-#pragma mark - HPTabBarProtocol
-
-- (void)didClickTabBar:(HPTabBar *)tabbar
-{
-    [self closeViewController:self
-                     animated:YES
-                   completion:nil];
-}
 @end

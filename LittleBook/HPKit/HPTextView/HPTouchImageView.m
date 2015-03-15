@@ -66,9 +66,9 @@ typedef enum {
     pinchGesture.delegate = self;
     [self addGestureRecognizer:pinchGesture];
     
-    UIRotationGestureRecognizer *rotateGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
-    rotateGesture.delegate = self;
-    [self addGestureRecognizer:rotateGesture];
+//    UIRotationGestureRecognizer *rotateGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
+//    rotateGesture.delegate = self;
+//    [self addGestureRecognizer:rotateGesture];
 }
 
 #pragma mark - gesture handlers

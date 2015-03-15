@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		671E94481AA5EFCA00697DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E94461AA5EFCA00697DBD /* ViewController.m */; };
 		671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E944A1AA5F5F500697DBD /* ReadViewController.m */; };
+		6721C2171AB3F8AB00D1FF99 /* LBRoundCornerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2161AB3F8AB00D1FF99 /* LBRoundCornerButton.m */; };
+		6721C2201AB3FB7100D1FF99 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C21F1AB3FB7100D1FF99 /* CalendarViewController.m */; };
+		6721C2231AB3FCEB00D1FF99 /* CustomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2221AB3FCEB00D1FF99 /* CustomSettingViewController.m */; };
+		6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */; };
+		6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22C1AB406B900D1FF99 /* LBPresentFromRightSegue.m */; };
+		6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22F1AB407A400D1FF99 /* LBTabbarSegue.m */; };
+		6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2321AB40D2900D1FF99 /* UIViewController+LBSegueExt.m */; };
+		6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2361AB40F2400D1FF99 /* HPPresentView.m */; };
+		6721C23A1AB4249600D1FF99 /* LBReadListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2391AB4249600D1FF99 /* LBReadListCell.m */; };
+		6721C23D1AB426AD00D1FF99 /* LBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C23C1AB426AD00D1FF99 /* LBSearchBar.m */; };
+		6721C2401AB42F1300D1FF99 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C23F1AB42F1300D1FF99 /* EditViewController.m */; };
+		6721C2431AB43CCD00D1FF99 /* LBEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2421AB43CCD00D1FF99 /* LBEditView.m */; };
+		6721C2481AB43D5500D1FF99 /* LBRoundCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2471AB43D5500D1FF99 /* LBRoundCornerView.m */; };
+		6721C24B1AB441AB00D1FF99 /* LBTextEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C24A1AB441AB00D1FF99 /* LBTextEditCell.m */; };
+		6741156E1AB46F1800346CD8 /* LBRoundCornerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6741156D1AB46F1800346CD8 /* LBRoundCornerImageView.m */; };
+		674115711AB4746A00346CD8 /* LBImageEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674115701AB4746A00346CD8 /* LBImageEditView.m */; };
+		674115731AB474AF00346CD8 /* LBImageEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674115721AB474AF00346CD8 /* LBImageEditView.xib */; };
+		674115761AB4788700346CD8 /* ImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 674115751AB4788700346CD8 /* ImageFilterManager.m */; };
 		674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */; };
 		674E5EA01AB1D36400F3415F /* CustomSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */; };
 		674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5EA21AB1E0CB00F3415F /* LBCalButton.m */; };
@@ -18,10 +36,8 @@
 		67634C761AADE5DA009FD0FA /* PanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C751AADE5DA009FD0FA /* PanelSettingCell.m */; };
 		67634C7A1AADE625009FD0FA /* PanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* PanelStyleManager.m */; };
 		67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */; };
-		676EE3501AAC3A100076B715 /* UIViewController+HPPresentViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE34F1AAC3A100076B715 /* UIViewController+HPPresentViewExt.m */; };
 		676EE3531AAC3CFC0076B715 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3521AAC3CFC0076B715 /* LoginViewController.m */; };
 		676EE35A1AAC59A50076B715 /* PanelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3591AAC59A50076B715 /* PanelSettingViewController.m */; };
-		676EE35D1AAC5A230076B715 /* CustomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE35C1AAC5A230076B715 /* CustomSettingViewController.m */; };
 		676EE3631AAC5A4F0076B715 /* NotificationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3621AAC5A4F0076B715 /* NotificationSettingViewController.m */; };
 		676EE3661AAC5A630076B715 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3651AAC5A630076B715 /* AboutViewController.m */; };
 		676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3681AAC61020076B715 /* NotificationContentView.m */; };
@@ -49,8 +65,6 @@
 		67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F21AAB1A8E00F97940 /* UIColor+ColorKit.m */; };
 		67EF19F61AAB3DF700F97940 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F51AAB3DF700F97940 /* SettingViewController.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
-		67EF19FE1AAB484700F97940 /* HPPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19FD1AAB484700F97940 /* HPPresentViewController.m */; };
-		67EF1A011AAB4E4100F97940 /* HPPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF1A001AAB4E4100F97940 /* HPPresentView.m */; };
 		67F7B6871AA2F3D00032A5FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6861AA2F3D00032A5FD /* main.m */; };
 		67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6891AA2F3D00032A5FD /* AppDelegate.m */; };
 		67F7B68D1AA2F3D00032A5FD /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B68B1AA2F3D00032A5FD /* LittleBook.xcdatamodeld */; };
@@ -75,6 +89,41 @@
 		671E94461AA5EFCA00697DBD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		671E94491AA5F5F500697DBD /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		671E944A1AA5F5F500697DBD /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
+		6721C2151AB3F8AB00D1FF99 /* LBRoundCornerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRoundCornerButton.h; sourceTree = "<group>"; };
+		6721C2161AB3F8AB00D1FF99 /* LBRoundCornerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRoundCornerButton.m; sourceTree = "<group>"; };
+		6721C21E1AB3FB7100D1FF99 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		6721C21F1AB3FB7100D1FF99 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		6721C2211AB3FCEB00D1FF99 /* CustomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingViewController.h; sourceTree = "<group>"; };
+		6721C2221AB3FCEB00D1FF99 /* CustomSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingViewController.m; sourceTree = "<group>"; };
+		6721C2281AB4003F00D1FF99 /* LBPresentFromBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromBottomSegue.h; sourceTree = "<group>"; };
+		6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPresentFromBottomSegue.m; sourceTree = "<group>"; };
+		6721C22B1AB406B900D1FF99 /* LBPresentFromRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromRightSegue.h; sourceTree = "<group>"; };
+		6721C22C1AB406B900D1FF99 /* LBPresentFromRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPresentFromRightSegue.m; sourceTree = "<group>"; };
+		6721C22E1AB407A400D1FF99 /* LBTabbarSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTabbarSegue.h; sourceTree = "<group>"; };
+		6721C22F1AB407A400D1FF99 /* LBTabbarSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTabbarSegue.m; sourceTree = "<group>"; };
+		6721C2311AB40D2900D1FF99 /* UIViewController+LBSegueExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LBSegueExt.h"; sourceTree = "<group>"; };
+		6721C2321AB40D2900D1FF99 /* UIViewController+LBSegueExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LBSegueExt.m"; sourceTree = "<group>"; };
+		6721C2351AB40F2400D1FF99 /* HPPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPresentView.h; sourceTree = "<group>"; };
+		6721C2361AB40F2400D1FF99 /* HPPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPresentView.m; sourceTree = "<group>"; };
+		6721C2381AB4249600D1FF99 /* LBReadListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBReadListCell.h; sourceTree = "<group>"; };
+		6721C2391AB4249600D1FF99 /* LBReadListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBReadListCell.m; sourceTree = "<group>"; };
+		6721C23B1AB426AD00D1FF99 /* LBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSearchBar.h; sourceTree = "<group>"; };
+		6721C23C1AB426AD00D1FF99 /* LBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSearchBar.m; sourceTree = "<group>"; };
+		6721C23E1AB42F1300D1FF99 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		6721C23F1AB42F1300D1FF99 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		6721C2411AB43CCD00D1FF99 /* LBEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBEditView.h; sourceTree = "<group>"; };
+		6721C2421AB43CCD00D1FF99 /* LBEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBEditView.m; sourceTree = "<group>"; };
+		6721C2461AB43D5500D1FF99 /* LBRoundCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRoundCornerView.h; sourceTree = "<group>"; };
+		6721C2471AB43D5500D1FF99 /* LBRoundCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRoundCornerView.m; sourceTree = "<group>"; };
+		6721C2491AB441AB00D1FF99 /* LBTextEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTextEditCell.h; sourceTree = "<group>"; };
+		6721C24A1AB441AB00D1FF99 /* LBTextEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTextEditCell.m; sourceTree = "<group>"; };
+		6741156C1AB46F1800346CD8 /* LBRoundCornerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBRoundCornerImageView.h; sourceTree = "<group>"; };
+		6741156D1AB46F1800346CD8 /* LBRoundCornerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBRoundCornerImageView.m; sourceTree = "<group>"; };
+		6741156F1AB4746A00346CD8 /* LBImageEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImageEditView.h; sourceTree = "<group>"; };
+		674115701AB4746A00346CD8 /* LBImageEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBImageEditView.m; sourceTree = "<group>"; };
+		674115721AB474AF00346CD8 /* LBImageEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBImageEditView.xib; sourceTree = "<group>"; };
+		674115741AB4788700346CD8 /* ImageFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterManager.h; sourceTree = "<group>"; };
+		674115751AB4788700346CD8 /* ImageFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterManager.m; sourceTree = "<group>"; };
 		674E5E9C1AB1D35600F3415F /* CustomSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingHeaderView.h; sourceTree = "<group>"; };
 		674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingHeaderView.m; sourceTree = "<group>"; };
 		674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSettingHeaderView.xib; sourceTree = "<group>"; };
@@ -91,16 +140,12 @@
 		67634C781AADE625009FD0FA /* PanelStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelStyleManager.h; sourceTree = "<group>"; };
 		67634C791AADE625009FD0FA /* PanelStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelStyleManager.m; sourceTree = "<group>"; };
 		67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PanelStyleInfos.plist; sourceTree = "<group>"; };
-		676EE34E1AAC3A100076B715 /* UIViewController+HPPresentViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HPPresentViewExt.h"; sourceTree = "<group>"; };
-		676EE34F1AAC3A100076B715 /* UIViewController+HPPresentViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HPPresentViewExt.m"; sourceTree = "<group>"; };
 		676EE3511AAC3CFC0076B715 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		676EE3521AAC3CFC0076B715 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		676EE3541AAC43930076B715 /* LBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMacros.h; sourceTree = "<group>"; };
 		676EE3571AAC44B60076B715 /* LittleBook.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LittleBook.pch; sourceTree = "<group>"; };
 		676EE3581AAC59A50076B715 /* PanelSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelSettingViewController.h; sourceTree = "<group>"; };
 		676EE3591AAC59A50076B715 /* PanelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelSettingViewController.m; sourceTree = "<group>"; };
-		676EE35B1AAC5A230076B715 /* CustomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingViewController.h; sourceTree = "<group>"; };
-		676EE35C1AAC5A230076B715 /* CustomSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingViewController.m; sourceTree = "<group>"; };
 		676EE3611AAC5A4F0076B715 /* NotificationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingViewController.h; sourceTree = "<group>"; };
 		676EE3621AAC5A4F0076B715 /* NotificationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingViewController.m; sourceTree = "<group>"; };
 		676EE3641AAC5A630076B715 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -156,10 +201,6 @@
 		67EF19F51AAB3DF700F97940 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		67EF19F81AAB43D400F97940 /* LBAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppContext.h; sourceTree = "<group>"; };
 		67EF19F91AAB43D400F97940 /* LBAppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppContext.m; sourceTree = "<group>"; };
-		67EF19FC1AAB484700F97940 /* HPPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPresentViewController.h; sourceTree = "<group>"; };
-		67EF19FD1AAB484700F97940 /* HPPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPresentViewController.m; sourceTree = "<group>"; };
-		67EF19FF1AAB4E4100F97940 /* HPPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPresentView.h; sourceTree = "<group>"; };
-		67EF1A001AAB4E4100F97940 /* HPPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPresentView.m; sourceTree = "<group>"; };
 		67F7B6811AA2F3D00032A5FD /* LittleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7B6851AA2F3D00032A5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F7B6861AA2F3D00032A5FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,10 +236,10 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				6721C2341AB40F2400D1FF99 /* HPPresentView */,
 				67EF19EA1AAB0FBA00F97940 /* HPLineView */,
 				675EAE891AA809DD00B13BD3 /* HPTextView */,
 				6777D6151AA69EFE009E78DD /* HPTabBarController */,
-				67EF19FB1AAB483400F97940 /* HPPresentController */,
 			);
 			path = HPKit;
 			sourceTree = "<group>";
@@ -216,26 +257,54 @@
 			children = (
 				671E94451AA5EFCA00697DBD /* ViewController.h */,
 				671E94461AA5EFCA00697DBD /* ViewController.m */,
+				67EF19F41AAB3DF700F97940 /* SettingViewController.h */,
+				67EF19F51AAB3DF700F97940 /* SettingViewController.m */,
+				6721C21E1AB3FB7100D1FF99 /* CalendarViewController.h */,
+				6721C21F1AB3FB7100D1FF99 /* CalendarViewController.m */,
 				6777D6221AA6A8BB009E78DD /* OfficeViewController.h */,
 				6777D6231AA6A8BB009E78DD /* OfficeViewController.m */,
 				671E94491AA5F5F500697DBD /* ReadViewController.h */,
 				671E944A1AA5F5F500697DBD /* ReadViewController.m */,
 				6777D6481AA6AAA9009E78DD /* FinanceViewController.h */,
 				6777D6491AA6AAA9009E78DD /* FinanceViewController.m */,
-				67EF19F41AAB3DF700F97940 /* SettingViewController.h */,
-				67EF19F51AAB3DF700F97940 /* SettingViewController.m */,
 				676EE3511AAC3CFC0076B715 /* LoginViewController.h */,
 				676EE3521AAC3CFC0076B715 /* LoginViewController.m */,
 				676EE3581AAC59A50076B715 /* PanelSettingViewController.h */,
 				676EE3591AAC59A50076B715 /* PanelSettingViewController.m */,
-				676EE35B1AAC5A230076B715 /* CustomSettingViewController.h */,
-				676EE35C1AAC5A230076B715 /* CustomSettingViewController.m */,
 				676EE3611AAC5A4F0076B715 /* NotificationSettingViewController.h */,
 				676EE3621AAC5A4F0076B715 /* NotificationSettingViewController.m */,
 				676EE3641AAC5A630076B715 /* AboutViewController.h */,
 				676EE3651AAC5A630076B715 /* AboutViewController.m */,
+				6721C2211AB3FCEB00D1FF99 /* CustomSettingViewController.h */,
+				6721C2221AB3FCEB00D1FF99 /* CustomSettingViewController.m */,
+				6721C23E1AB42F1300D1FF99 /* EditViewController.h */,
+				6721C23F1AB42F1300D1FF99 /* EditViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6721C2271AB4003F00D1FF99 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				6721C2281AB4003F00D1FF99 /* LBPresentFromBottomSegue.h */,
+				6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */,
+				6721C22B1AB406B900D1FF99 /* LBPresentFromRightSegue.h */,
+				6721C22C1AB406B900D1FF99 /* LBPresentFromRightSegue.m */,
+				6721C22E1AB407A400D1FF99 /* LBTabbarSegue.h */,
+				6721C22F1AB407A400D1FF99 /* LBTabbarSegue.m */,
+				6721C2311AB40D2900D1FF99 /* UIViewController+LBSegueExt.h */,
+				6721C2321AB40D2900D1FF99 /* UIViewController+LBSegueExt.m */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		6721C2341AB40F2400D1FF99 /* HPPresentView */ = {
+			isa = PBXGroup;
+			children = (
+				6721C2351AB40F2400D1FF99 /* HPPresentView.h */,
+				6721C2361AB40F2400D1FF99 /* HPPresentView.m */,
+			);
+			path = HPPresentView;
 			sourceTree = "<group>";
 		};
 		675EAE891AA809DD00B13BD3 /* HPTextView */ = {
@@ -255,6 +324,8 @@
 				67634C781AADE625009FD0FA /* PanelStyleManager.h */,
 				67634C791AADE625009FD0FA /* PanelStyleManager.m */,
 				67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */,
+				674115741AB4788700346CD8 /* ImageFilterManager.h */,
+				674115751AB4788700346CD8 /* ImageFilterManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -307,6 +378,14 @@
 		67EF19E31AAB02C200F97940 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6721C2151AB3F8AB00D1FF99 /* LBRoundCornerButton.h */,
+				6721C2161AB3F8AB00D1FF99 /* LBRoundCornerButton.m */,
+				6721C2461AB43D5500D1FF99 /* LBRoundCornerView.h */,
+				6721C2471AB43D5500D1FF99 /* LBRoundCornerView.m */,
+				6741156C1AB46F1800346CD8 /* LBRoundCornerImageView.h */,
+				6741156D1AB46F1800346CD8 /* LBRoundCornerImageView.m */,
+				6721C23B1AB426AD00D1FF99 /* LBSearchBar.h */,
+				6721C23C1AB426AD00D1FF99 /* LBSearchBar.m */,
 				67EF19E41AAB034600F97940 /* LBSectionView.h */,
 				67EF19E51AAB034600F97940 /* LBSectionView.m */,
 				67EF19EE1AAB165500F97940 /* LBNavigationBar.h */,
@@ -317,15 +396,24 @@
 				676EE36B1AAC610F0076B715 /* NotificationDotView.m */,
 				67634C711AADE391009FD0FA /* LBTableView.h */,
 				67634C721AADE391009FD0FA /* LBTableView.m */,
-				67634C741AADE5DA009FD0FA /* PanelSettingCell.h */,
-				67634C751AADE5DA009FD0FA /* PanelSettingCell.m */,
-				67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */,
-				67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */,
 				674E5E9C1AB1D35600F3415F /* CustomSettingHeaderView.h */,
 				674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */,
 				674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */,
 				674E5EA11AB1E0CB00F3415F /* LBCalButton.h */,
 				674E5EA21AB1E0CB00F3415F /* LBCalButton.m */,
+				67634C741AADE5DA009FD0FA /* PanelSettingCell.h */,
+				67634C751AADE5DA009FD0FA /* PanelSettingCell.m */,
+				67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */,
+				67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */,
+				6721C2381AB4249600D1FF99 /* LBReadListCell.h */,
+				6721C2391AB4249600D1FF99 /* LBReadListCell.m */,
+				6721C2411AB43CCD00D1FF99 /* LBEditView.h */,
+				6721C2421AB43CCD00D1FF99 /* LBEditView.m */,
+				6721C2491AB441AB00D1FF99 /* LBTextEditCell.h */,
+				6721C24A1AB441AB00D1FF99 /* LBTextEditCell.m */,
+				6741156F1AB4746A00346CD8 /* LBImageEditView.h */,
+				674115701AB4746A00346CD8 /* LBImageEditView.m */,
+				674115721AB474AF00346CD8 /* LBImageEditView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,19 +437,6 @@
 			path = Context;
 			sourceTree = "<group>";
 		};
-		67EF19FB1AAB483400F97940 /* HPPresentController */ = {
-			isa = PBXGroup;
-			children = (
-				67EF19FC1AAB484700F97940 /* HPPresentViewController.h */,
-				67EF19FD1AAB484700F97940 /* HPPresentViewController.m */,
-				67EF19FF1AAB4E4100F97940 /* HPPresentView.h */,
-				67EF1A001AAB4E4100F97940 /* HPPresentView.m */,
-				676EE34E1AAC3A100076B715 /* UIViewController+HPPresentViewExt.h */,
-				676EE34F1AAC3A100076B715 /* UIViewController+HPPresentViewExt.m */,
-			);
-			path = HPPresentController;
-			sourceTree = "<group>";
-		};
 		67F7B6781AA2F3D00032A5FD = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +458,7 @@
 		67F7B6831AA2F3D00032A5FD /* LittleBook */ = {
 			isa = PBXGroup;
 			children = (
+				6721C2271AB4003F00D1FF99 /* Segues */,
 				67634C771AADE609009FD0FA /* Managers */,
 				67EF19F71AAB43B800F97940 /* Context */,
 				67EF19E31AAB02C200F97940 /* Views */,
@@ -509,6 +585,7 @@
 			files = (
 				67F7B6931AA2F3D00032A5FD /* Main.storyboard in Resources */,
 				67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */,
+				674115731AB474AF00346CD8 /* LBImageEditView.xib in Resources */,
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
 				674E5EA01AB1D36400F3415F /* CustomSettingHeaderView.xib in Resources */,
 				67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */,
@@ -533,37 +610,49 @@
 				671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */,
 				6777D6421AA6A9D4009E78DD /* NSString+StringKit.m in Sources */,
 				67634C7A1AADE625009FD0FA /* PanelStyleManager.m in Sources */,
-				676EE3501AAC3A100076B715 /* UIViewController+HPPresentViewExt.m in Sources */,
+				6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */,
 				676EE35A1AAC59A50076B715 /* PanelSettingViewController.m in Sources */,
+				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
+				6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */,
 				67EF19F61AAB3DF700F97940 /* SettingViewController.m in Sources */,
 				6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */,
+				6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */,
 				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
 				676EE3661AAC5A630076B715 /* AboutViewController.m in Sources */,
 				6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */,
+				674115711AB4746A00346CD8 /* LBImageEditView.m in Sources */,
+				6721C2431AB43CCD00D1FF99 /* LBEditView.m in Sources */,
+				6721C2231AB3FCEB00D1FF99 /* CustomSettingViewController.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
-				676EE35D1AAC5A230076B715 /* CustomSettingViewController.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
 				67EF19E61AAB034600F97940 /* LBSectionView.m in Sources */,
 				67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */,
+				6721C2171AB3F8AB00D1FF99 /* LBRoundCornerButton.m in Sources */,
+				6721C2481AB43D5500D1FF99 /* LBRoundCornerView.m in Sources */,
 				6777D6431AA6A9D4009E78DD /* UIImage+ImageKit.m in Sources */,
-				67EF19FE1AAB484700F97940 /* HPPresentViewController.m in Sources */,
 				67EF19F01AAB165500F97940 /* LBNavigationBar.m in Sources */,
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
+				6721C23D1AB426AD00D1FF99 /* LBSearchBar.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
 				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */,
 				676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */,
 				67F7B68D1AA2F3D00032A5FD /* LittleBook.xcdatamodeld in Sources */,
+				6721C2201AB3FB7100D1FF99 /* CalendarViewController.m in Sources */,
 				671E94481AA5EFCA00697DBD /* ViewController.m in Sources */,
 				676EE3531AAC3CFC0076B715 /* LoginViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				6777D6241AA6A8BB009E78DD /* OfficeViewController.m in Sources */,
-				67EF1A011AAB4E4100F97940 /* HPPresentView.m in Sources */,
+				6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */,
+				6721C24B1AB441AB00D1FF99 /* LBTextEditCell.m in Sources */,
+				674115761AB4788700346CD8 /* ImageFilterManager.m in Sources */,
+				6741156E1AB46F1800346CD8 /* LBRoundCornerImageView.m in Sources */,
 				67634C761AADE5DA009FD0FA /* PanelSettingCell.m in Sources */,
 				6777D63E1AA6A9D4009E78DD /* NSData+DataKit.m in Sources */,
 				6777D6441AA6A9D4009E78DD /* UIScreen+ScreenKit.m in Sources */,
+				6721C23A1AB4249600D1FF99 /* LBReadListCell.m in Sources */,
 				6777D63D1AA6A9D4009E78DD /* NSArray+ArrayKit.m in Sources */,
 				6777D6411AA6A9D4009E78DD /* NSString+NSHash.m in Sources */,
 				67634C731AADE391009FD0FA /* LBTableView.m in Sources */,
@@ -571,6 +660,7 @@
 				67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,
 				6777D63F1AA6A9D4009E78DD /* NSDate+DateKit.m in Sources */,
+				6721C2401AB42F1300D1FF99 /* EditViewController.m in Sources */,
 				674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */,
 				676EE3631AAC5A4F0076B715 /* NotificationSettingViewController.m in Sources */,
 				6777D6451AA6A9D4009E78DD /* UIScrollView+DXRefresh.m in Sources */,

@@ -7,19 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HPPresentViewController.h"
 
 @class HPTabBar, HPTabBarChildController;
 
-@interface HPTarBarController : HPPresentViewController
+@interface HPTarBarController : UIViewController
 
-- (void)openViewController:(HPTabBarChildController *)childViewController
-                fromTabBar:(HPTabBar *)tabBar
-                  animated:(BOOL)flag
-                completion:(void (^)(void))completion;
+@property (nonatomic, assign) HPTabBar *seletectedTabbar;
+@property (nonatomic, strong) UIImageView *topFakeView;
+@property (nonatomic, strong) UIImageView *bottomFakeView;
 
 - (void)closeViewController:(HPTabBarChildController *)childViewController
-                   toTabBar:(HPTabBar *)tabBar
                    animated:(BOOL)flag
                  completion:(void (^)(void))completion;
 

@@ -6,14 +6,10 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 #import "ViewController.h"
-#import "FinanceViewController.h"
-#import "SettingViewController.h"
-#import "OfficeViewController.h"
-#import "ReadViewController.h"
-#import "LBNavigationBar.h"
 #import "LBSectionView.h"
+#import "HPTabBar.h"
 
-@interface ViewController () <HPTabBarProtocol>
+@interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
 
@@ -33,51 +29,11 @@
     _sectionView.sectionNumber = 3;
 }
 
-#pragma mark - section button event
+#pragma mark - tabbar events
 
-- (IBAction)didClickSection:(UIButton *)sender
+- (IBAction)didClickTabBar:(UIButton *)sender
 {
-    UIViewController *vc = nil;
-    NSInteger tag = sender.tag;
-    
-    switch (tag) {
-        case 1:
-            vc = [SettingViewController loadFromStoryboard];
-            break;
-            
-        default:
-            break;
-    }
-
-    [self presentViewController:vc
-                  fromDirection:HPPresentViewControllerAnimationDirectionFromBottom
-                       animated:YES
-                     completion:nil];
-}
-
-#pragma mark - HPTabBarProtocol
-
-- (void)didClickTabBar:(HPTabBar *)tabbar
-{
-    HPTabBarChildController *vc = nil;
-    NSInteger tag = tabbar.tag;
-    switch (tag) {
-        case 0:
-            vc = [OfficeViewController loadFromStoryboard];
-            break;
-        case 1:
-            vc = [ReadViewController loadFromStoryboard];
-            break;
-        case 2:
-            vc = [FinanceViewController loadFromStoryboard];
-            break;
-        default:
-            break;
-    }
-    [self openViewController:vc
-                  fromTabBar:tabbar
-                    animated:YES
-                  completion:nil];
+    self.seletectedTabbar = (HPTabBar *)sender.superview;
 }
 
 @end

@@ -35,6 +35,7 @@
         HPLine *line = [HPLine verticalLineWithHeight:h];
         line.center = CGPointMake(offsetX, h * 0.5);
         line.backgroundColor = self.separateLineColor;
+        line.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin;
         [self addSubview:line];
     }
 }

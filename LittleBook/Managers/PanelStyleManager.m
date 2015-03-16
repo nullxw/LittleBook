@@ -16,14 +16,7 @@
 
 + (instancetype)defaultManager
 {
-    static PanelStyleManager *_defaultManager = nil;
-    static dispatch_once_t token;
-    dispatch_once(&token, ^{
-        if (!_defaultManager) {
-            _defaultManager = [[PanelStyleManager alloc] init];
-        }
-    });
-    return _defaultManager;
+    CREATE_SINGLETON_INSTANCE([[PanelStyleManager alloc] init]);
 }
 
 - (instancetype)init

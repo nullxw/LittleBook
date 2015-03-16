@@ -39,7 +39,7 @@ HPTouchImageViewProtocol
     
     _dataSource = [[NSMutableArray alloc] initWithCapacity:0];
     
-    _imageEditMenuView.separateLineColor = [UIColor colorWithRed:32.0/255.0 green:38.0/255.0 blue:56.0/255.0 alpha:1.0];
+    _imageEditMenuView.separateLineColor = [UIColor whiteColor];
     _imageEditMenuView.sectionNumber = 3;
     
     NSDictionary *picInfo = @{kTextEditCellTitle : @"图片",

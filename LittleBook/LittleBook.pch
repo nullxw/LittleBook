@@ -9,6 +9,8 @@
 #ifndef LittleBook_LittleBook_pch
 #define LittleBook_LittleBook_pch
 
+#define MR_SHORTHAND 1
+#import "CoreData+MagicalRecord.h"
 #import "LBMacros.h"
 #import "ExtensionKit.h"
 

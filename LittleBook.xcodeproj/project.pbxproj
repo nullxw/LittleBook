@@ -12,6 +12,7 @@
 		6712E8BF1AB72FF800E2B428 /* IndexInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8BE1AB72FF800E2B428 /* IndexInfo.m */; };
 		6712E8C21AB72FF900E2B428 /* Appendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8C11AB72FF900E2B428 /* Appendix.m */; };
 		6712E8C51AB72FF900E2B428 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8C41AB72FF900E2B428 /* Document.m */; };
+		6712E8C81AB731FE00E2B428 /* AppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8C71AB731FE00E2B428 /* AppendixFileManager.m */; };
 		671E94481AA5EFCA00697DBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E94461AA5EFCA00697DBD /* ViewController.m */; };
 		671E944B1AA5F5F500697DBD /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671E944A1AA5F5F500697DBD /* ReadViewController.m */; };
 		6721C2171AB3F8AB00D1FF99 /* LBRoundCornerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2161AB3F8AB00D1FF99 /* LBRoundCornerButton.m */; };
@@ -129,6 +130,8 @@
 		6712E8C11AB72FF900E2B428 /* Appendix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appendix.m; sourceTree = "<group>"; };
 		6712E8C31AB72FF900E2B428 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
 		6712E8C41AB72FF900E2B428 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		6712E8C61AB731FE00E2B428 /* AppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppendixFileManager.h; sourceTree = "<group>"; };
+		6712E8C71AB731FE00E2B428 /* AppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppendixFileManager.m; sourceTree = "<group>"; };
 		671E94451AA5EFCA00697DBD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		671E94461AA5EFCA00697DBD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		671E94491AA5F5F500697DBD /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 		67634C771AADE609009FD0FA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				6712E8C61AB731FE00E2B428 /* AppendixFileManager.h */,
+				6712E8C71AB731FE00E2B428 /* AppendixFileManager.m */,
 				67634C781AADE625009FD0FA /* PanelStyleManager.h */,
 				67634C791AADE625009FD0FA /* PanelStyleManager.m */,
 				67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */,
@@ -927,6 +932,7 @@
 				6777D6411AA6A9D4009E78DD /* NSString+NSHash.m in Sources */,
 				67634C731AADE391009FD0FA /* LBTableView.m in Sources */,
 				677A31851AB723C60030FD08 /* AppendixManager.m in Sources */,
+				6712E8C81AB731FE00E2B428 /* AppendixFileManager.m in Sources */,
 				675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */,
 				67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */,
 				677A31E51AB727830030FD08 /* MagicalRecord.m in Sources */,

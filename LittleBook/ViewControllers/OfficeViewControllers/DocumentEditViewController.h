@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EditViewController : UIViewController
+@interface DocumentEditViewController : UIViewController
 
 @end

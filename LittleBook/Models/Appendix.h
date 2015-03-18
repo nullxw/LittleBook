@@ -13,7 +13,7 @@
 @interface Appendix : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * appendixID;
-@property (nonatomic, retain) NSNumber * documentID;
+@property (nonatomic, retain) NSNumber * parentID;
 @property (nonatomic, retain) NSString * frame;
 @property (nonatomic, retain) NSString * userID;
 

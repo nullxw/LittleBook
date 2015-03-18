@@ -12,7 +12,7 @@
 @implementation Appendix
 
 @dynamic appendixID;
-@dynamic documentID;
+@dynamic parentID;
 @dynamic frame;
 @dynamic userID;
 

@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HPFileSystem.h"
 
-@interface AppendixManager : NSObject
+@interface DocumentAppendixManager : HPFileSystem
 
-+ (AppendixManager *)defaultManager;
++ (DocumentAppendixManager *)defaultManager;
 
 @end

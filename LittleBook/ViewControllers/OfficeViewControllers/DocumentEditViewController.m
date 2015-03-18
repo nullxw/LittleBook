@@ -6,12 +6,12 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "EditViewController.h"
+#import "DocumentEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
 #import "LBSectionView.h"
 #import "LBEditView.h"
 
-@interface EditViewController () <UITextFieldDelegate, UITextViewDelegate>
+@interface DocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation EditViewController
+@implementation DocumentEditViewController
 
 - (void)viewDidLoad
 {

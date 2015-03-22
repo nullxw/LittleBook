@@ -13,5 +13,6 @@
 #import "CoreData+MagicalRecord.h"
 #import "LBMacros.h"
 #import "ExtensionKit.h"
+#import "UserManager.h"
 
 #endif

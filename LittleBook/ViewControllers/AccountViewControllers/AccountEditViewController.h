@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Account;
+
 @interface AccountEditViewController : UIViewController
+
+@property (nonatomic, strong) Account *account;
 
 @end

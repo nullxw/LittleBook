@@ -35,6 +35,8 @@
             break;
     }
     
+    [self.parentViewController viewWillAppear:YES];
+    
     [UIView animateWithDuration:0.25 animations:^{
         self.view.frame = toRect;
     } completion:^(BOOL finished) {
@@ -58,6 +60,8 @@
     [sourceViewController.navigationController.view addSubview:viewControllerToPresent.view];
     
     [sourceViewController removeFromParentViewController];
+    
+    [self.parentViewController viewWillAppear:YES];
     
     [UIView animateWithDuration:0.3 animations:^{
         sourceViewController.view.frame = CGRectMake(w, 0, w, h);

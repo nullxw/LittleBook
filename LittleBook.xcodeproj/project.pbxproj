@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6712E8BF1AB72FF800E2B428 /* IndexInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8BE1AB72FF800E2B428 /* IndexInfo.m */; };
-		6712E8C21AB72FF900E2B428 /* Appendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8C11AB72FF900E2B428 /* Appendix.m */; };
-		6712E8C51AB72FF900E2B428 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 6712E8C41AB72FF900E2B428 /* Document.m */; };
-		671C1F6F1AB9B620005F5586 /* AccountAppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* AccountAppendixManager.m */; };
+		671C1F6F1AB9B620005F5586 /* AccountAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* AccountAppendixFileManager.m */; };
 		671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F731AB9BE4B005F5586 /* LunarCalendar.m */; };
 		671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F781AB9BE4B005F5586 /* MagicalImportFunctions.m */; };
 		671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F7A1AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -96,11 +93,22 @@
 		6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D63A1AA6A9D4009E78DD /* UIView+ViewKit.m */; };
 		6777D6471AA6A9D4009E78DD /* UIViewController+ControllerKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D63C1AA6A9D4009E78DD /* UIViewController+ControllerKit.m */; };
 		677A31821AB723820030FD08 /* HPFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31811AB723820030FD08 /* HPFileSystem.m */; };
-		677A31851AB723C60030FD08 /* DocumentAppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31841AB723C60030FD08 /* DocumentAppendixManager.m */; };
+		677A31851AB723C60030FD08 /* DocumentAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31841AB723C60030FD08 /* DocumentAppendixFileManager.m */; };
 		677A31891AB725E10030FD08 /* ILSFilters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 677A31861AB725E10030FD08 /* ILSFilters.plist */; };
 		677A318A1AB725E10030FD08 /* ImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31881AB725E10030FD08 /* ImageFilterManager.m */; };
 		677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */; };
+		679B02C81ABD9DF100F8EE80 /* NSDate+CalExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 679B02C71ABD9DF100F8EE80 /* NSDate+CalExt.m */; };
 		67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */; };
+		67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */; };
+		67C016F01ABD505D0004EFD4 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EF1ABD505D0004EFD4 /* AccountManager.m */; };
+		67C016F31ABD50780004EFD4 /* AppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F21ABD50780004EFD4 /* AppendixManager.m */; };
+		67C016F91ABD51BB0004EFD4 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F81ABD51BB0004EFD4 /* UserManager.m */; };
+		67C016FC1ABD5DDF0004EFD4 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */; };
+		67C017161ABD627E0004EFD4 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0170D1ABD627E0004EFD4 /* Account.m */; };
+		67C017171ABD627E0004EFD4 /* Appendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0170F1ABD627E0004EFD4 /* Appendix.m */; };
+		67C017181ABD627E0004EFD4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017111ABD627E0004EFD4 /* Document.m */; };
+		67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017131ABD627E0004EFD4 /* IndexInfo.m */; };
+		67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017151ABD627E0004EFD4 /* LBUser.m */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F21AAB1A8E00F97940 /* UIColor+ColorKit.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
@@ -123,14 +131,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6712E8BD1AB72FF800E2B428 /* IndexInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexInfo.h; sourceTree = "<group>"; };
-		6712E8BE1AB72FF800E2B428 /* IndexInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexInfo.m; sourceTree = "<group>"; };
-		6712E8C01AB72FF900E2B428 /* Appendix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appendix.h; sourceTree = "<group>"; };
-		6712E8C11AB72FF900E2B428 /* Appendix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appendix.m; sourceTree = "<group>"; };
-		6712E8C31AB72FF900E2B428 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
-		6712E8C41AB72FF900E2B428 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
-		671C1F6D1AB9B620005F5586 /* AccountAppendixManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAppendixManager.h; sourceTree = "<group>"; };
-		671C1F6E1AB9B620005F5586 /* AccountAppendixManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAppendixManager.m; sourceTree = "<group>"; };
+		671C1F6D1AB9B620005F5586 /* AccountAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAppendixFileManager.h; sourceTree = "<group>"; };
+		671C1F6E1AB9B620005F5586 /* AccountAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAppendixFileManager.m; sourceTree = "<group>"; };
 		671C1F721AB9BE4B005F5586 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
 		671C1F731AB9BE4B005F5586 /* LunarCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendar.m; sourceTree = "<group>"; };
 		671C1F771AB9BE4B005F5586 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
@@ -305,14 +307,36 @@
 		6777D63C1AA6A9D4009E78DD /* UIViewController+ControllerKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ControllerKit.m"; sourceTree = "<group>"; };
 		677A31801AB723820030FD08 /* HPFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPFileSystem.h; sourceTree = "<group>"; };
 		677A31811AB723820030FD08 /* HPFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPFileSystem.m; sourceTree = "<group>"; };
-		677A31831AB723C60030FD08 /* DocumentAppendixManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentAppendixManager.h; sourceTree = "<group>"; };
-		677A31841AB723C60030FD08 /* DocumentAppendixManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentAppendixManager.m; sourceTree = "<group>"; };
+		677A31831AB723C60030FD08 /* DocumentAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentAppendixFileManager.h; sourceTree = "<group>"; };
+		677A31841AB723C60030FD08 /* DocumentAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentAppendixFileManager.m; sourceTree = "<group>"; };
 		677A31861AB725E10030FD08 /* ILSFilters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ILSFilters.plist; sourceTree = "<group>"; };
 		677A31871AB725E10030FD08 /* ImageFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterManager.h; sourceTree = "<group>"; };
 		677A31881AB725E10030FD08 /* ImageFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterManager.m; sourceTree = "<group>"; };
 		677A31E81AB728930030FD08 /* LittleBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleBook.xcdatamodel; sourceTree = "<group>"; };
+		679B02C61ABD9DF100F8EE80 /* NSDate+CalExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CalExt.h"; sourceTree = "<group>"; };
+		679B02C71ABD9DF100F8EE80 /* NSDate+CalExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CalExt.m"; sourceTree = "<group>"; };
 		67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingCell.h; sourceTree = "<group>"; };
 		67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingCell.m; sourceTree = "<group>"; };
+		67C016EB1ABD440C0004EFD4 /* LBAccountTimeLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountTimeLineLabel.h; sourceTree = "<group>"; };
+		67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountTimeLineLabel.m; sourceTree = "<group>"; };
+		67C016EE1ABD505D0004EFD4 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		67C016EF1ABD505D0004EFD4 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		67C016F11ABD50780004EFD4 /* AppendixManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppendixManager.h; sourceTree = "<group>"; };
+		67C016F21ABD50780004EFD4 /* AppendixManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppendixManager.m; sourceTree = "<group>"; };
+		67C016F71ABD51BB0004EFD4 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		67C016F81ABD51BB0004EFD4 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
+		67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
+		67C0170C1ABD627E0004EFD4 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		67C0170D1ABD627E0004EFD4 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		67C0170E1ABD627E0004EFD4 /* Appendix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appendix.h; sourceTree = "<group>"; };
+		67C0170F1ABD627E0004EFD4 /* Appendix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appendix.m; sourceTree = "<group>"; };
+		67C017101ABD627E0004EFD4 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		67C017111ABD627E0004EFD4 /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		67C017121ABD627E0004EFD4 /* IndexInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexInfo.h; sourceTree = "<group>"; };
+		67C017131ABD627E0004EFD4 /* IndexInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexInfo.m; sourceTree = "<group>"; };
+		67C017141ABD627E0004EFD4 /* LBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUser.h; sourceTree = "<group>"; };
+		67C017151ABD627E0004EFD4 /* LBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUser.m; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
 		67EF19EC1AAB0FBA00F97940 /* HPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLine.m; sourceTree = "<group>"; };
 		67EF19F11AAB1A8E00F97940 /* UIColor+ColorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorKit.h"; sourceTree = "<group>"; };
@@ -490,6 +514,8 @@
 				671C1FE11AB9C41E005F5586 /* LBFrameView.m */,
 				671C1FE31AB9C485005F5586 /* LBNavigationBar.h */,
 				671C1FE41AB9C485005F5586 /* LBNavigationBar.m */,
+				67C016EB1ABD440C0004EFD4 /* LBAccountTimeLineLabel.h */,
+				67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */,
 			);
 			path = LBCommonViews;
 			sourceTree = "<group>";
@@ -542,6 +568,12 @@
 				671C20121AB9CFF6005F5586 /* DocumentManager.m */,
 				671C20131AB9CFF6005F5586 /* IndexInfoManager.h */,
 				671C20141AB9CFF6005F5586 /* IndexInfoManager.m */,
+				67C016EE1ABD505D0004EFD4 /* AccountManager.h */,
+				67C016EF1ABD505D0004EFD4 /* AccountManager.m */,
+				67C016F11ABD50780004EFD4 /* AppendixManager.h */,
+				67C016F21ABD50780004EFD4 /* AppendixManager.m */,
+				67C016F71ABD51BB0004EFD4 /* UserManager.h */,
+				67C016F81ABD51BB0004EFD4 /* UserManager.m */,
 			);
 			path = ModalManagers;
 			sourceTree = "<group>";
@@ -549,6 +581,7 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				679B02C51ABD9DF100F8EE80 /* HPCalendarKit */,
 				677A317F1AB723820030FD08 /* HPFileSystem */,
 				6721C2341AB40F2400D1FF99 /* HPPresentView */,
 				67EF19EA1AAB0FBA00F97940 /* HPLineView */,
@@ -627,10 +660,10 @@
 				677A31871AB725E10030FD08 /* ImageFilterManager.h */,
 				677A31881AB725E10030FD08 /* ImageFilterManager.m */,
 				677A31861AB725E10030FD08 /* ILSFilters.plist */,
-				677A31831AB723C60030FD08 /* DocumentAppendixManager.h */,
-				677A31841AB723C60030FD08 /* DocumentAppendixManager.m */,
-				671C1F6D1AB9B620005F5586 /* AccountAppendixManager.h */,
-				671C1F6E1AB9B620005F5586 /* AccountAppendixManager.m */,
+				677A31831AB723C60030FD08 /* DocumentAppendixFileManager.h */,
+				677A31841AB723C60030FD08 /* DocumentAppendixFileManager.m */,
+				671C1F6D1AB9B620005F5586 /* AccountAppendixFileManager.h */,
+				671C1F6E1AB9B620005F5586 /* AccountAppendixFileManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -690,15 +723,28 @@
 		677A31E61AB7287D0030FD08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				67C0170C1ABD627E0004EFD4 /* Account.h */,
+				67C0170D1ABD627E0004EFD4 /* Account.m */,
+				67C0170E1ABD627E0004EFD4 /* Appendix.h */,
+				67C0170F1ABD627E0004EFD4 /* Appendix.m */,
+				67C017101ABD627E0004EFD4 /* Document.h */,
+				67C017111ABD627E0004EFD4 /* Document.m */,
+				67C017121ABD627E0004EFD4 /* IndexInfo.h */,
+				67C017131ABD627E0004EFD4 /* IndexInfo.m */,
+				67C017141ABD627E0004EFD4 /* LBUser.h */,
+				67C017151ABD627E0004EFD4 /* LBUser.m */,
 				677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */,
-				6712E8C31AB72FF900E2B428 /* Document.h */,
-				6712E8C41AB72FF900E2B428 /* Document.m */,
-				6712E8C01AB72FF900E2B428 /* Appendix.h */,
-				6712E8C11AB72FF900E2B428 /* Appendix.m */,
-				6712E8BD1AB72FF800E2B428 /* IndexInfo.h */,
-				6712E8BE1AB72FF800E2B428 /* IndexInfo.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		679B02C51ABD9DF100F8EE80 /* HPCalendarKit */ = {
+			isa = PBXGroup;
+			children = (
+				679B02C61ABD9DF100F8EE80 /* NSDate+CalExt.h */,
+				679B02C71ABD9DF100F8EE80 /* NSDate+CalExt.m */,
+			);
+			path = HPCalendarKit;
 			sourceTree = "<group>";
 		};
 		67EF19E31AAB02C200F97940 /* Views */ = {
@@ -729,6 +775,8 @@
 				674115721AB474AF00346CD8 /* LBImageEditView.xib */,
 				671C20171AB9D22F005F5586 /* AccountAppendixCell.h */,
 				671C20181AB9D22F005F5586 /* AccountAppendixCell.m */,
+				67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */,
+				67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -926,15 +974,17 @@
 			files = (
 				671C1FBA1AB9BE4B005F5586 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				6777D6421AA6A9D4009E78DD /* NSString+StringKit.m in Sources */,
+				67C017181ABD627E0004EFD4 /* Document.m in Sources */,
 				67634C7A1AADE625009FD0FA /* PanelStyleManager.m in Sources */,
 				6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */,
 				671C1FC81AB9BE4B005F5586 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
-				6712E8BF1AB72FF800E2B428 /* IndexInfo.m in Sources */,
 				671C1FC01AB9BE4B005F5586 /* NSManagedObject+MagicalRequests.m in Sources */,
 				671C1FCE1AB9BE4B005F5586 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				671C1FC21AB9BE4B005F5586 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */,
+				67C016F31ABD50780004EFD4 /* AppendixManager.m in Sources */,
 				671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */,
 				671C1FD91AB9BFFD005F5586 /* LBRoundCornerButton.m in Sources */,
 				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
 				671C1FDA1AB9BFFD005F5586 /* LBRoundCornerImageView.m in Sources */,
@@ -944,6 +994,7 @@
 				671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */,
 				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
+				67C017171ABD627E0004EFD4 /* Appendix.m in Sources */,
 				671C1FC51AB9BE4B005F5586 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				6777D6461AA6A9D4009E78DD /* UIView+ViewKit.m in Sources */,
 				671C20081AB9C6E5005F5586 /* PanelSettingViewController.m in Sources */,
@@ -953,15 +1004,17 @@
 				671C1FE21AB9C41E005F5586 /* LBFrameView.m in Sources */,
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				6721C2431AB43CCD00D1FF99 /* LBEditView.m in Sources */,
+				679B02C81ABD9DF100F8EE80 /* NSDate+CalExt.m in Sources */,
 				671C1FB71AB9BE4B005F5586 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				671C20191AB9D22F005F5586 /* AccountAppendixCell.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
 				6777D6401AA6A9D4009E78DD /* NSDictionary+DictionaryKit.m in Sources */,
 				671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */,
 				67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */,
-				6712E8C51AB72FF900E2B428 /* Document.m in Sources */,
 				6777D6431AA6A9D4009E78DD /* UIImage+ImageKit.m in Sources */,
 				671C1FBC1AB9BE4B005F5586 /* NSManagedObject+MagicalAggregation.m in Sources */,
+				67C017161ABD627E0004EFD4 /* Account.m in Sources */,
+				67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */,
 				671C20151AB9CFF6005F5586 /* DocumentManager.m in Sources */,
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
 				677A318A1AB725E10030FD08 /* ImageFilterManager.m in Sources */,
@@ -969,6 +1022,7 @@
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
+				67C016F01ABD505D0004EFD4 /* AccountManager.m in Sources */,
 				671C20011AB9C6E5005F5586 /* AccountViewController.m in Sources */,
 				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				671C1FC71AB9BE4B005F5586 /* NSPersistentStore+MagicalRecord.m in Sources */,
@@ -977,9 +1031,9 @@
 				671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */,
 				676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */,
 				676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */,
-				671C1F6F1AB9B620005F5586 /* AccountAppendixManager.m in Sources */,
-				6712E8C21AB72FF900E2B428 /* Appendix.m in Sources */,
+				671C1F6F1AB9B620005F5586 /* AccountAppendixFileManager.m in Sources */,
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
+				67C016F91ABD51BB0004EFD4 /* UserManager.m in Sources */,
 				671C20021AB9C6E5005F5586 /* DocumentEditViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				671C20041AB9C6E5005F5586 /* AboutViewController.m in Sources */,
@@ -1002,13 +1056,15 @@
 				6777D63D1AA6A9D4009E78DD /* NSArray+ArrayKit.m in Sources */,
 				6777D6411AA6A9D4009E78DD /* NSString+NSHash.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
-				677A31851AB723C60030FD08 /* DocumentAppendixManager.m in Sources */,
+				677A31851AB723C60030FD08 /* DocumentAppendixFileManager.m in Sources */,
 				671C20031AB9C6E5005F5586 /* OfficeViewController.m in Sources */,
 				671C1FB91AB9BE4B005F5586 /* NSObject+MagicalDataImport.m in Sources */,
 				675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */,
 				671C20091AB9C6E5005F5586 /* SettingViewController.m in Sources */,
 				671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */,
+				67C016FC1ABD5DDF0004EFD4 /* AccountCell.m in Sources */,
 				67EF19F31AAB1A8E00F97940 /* UIColor+ColorKit.m in Sources */,
+				67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */,
 				671C1FB81AB9BE4B005F5586 /* NSNumber+MagicalDataImport.m in Sources */,
 				671C20071AB9C6E5005F5586 /* NotificationSettingViewController.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,

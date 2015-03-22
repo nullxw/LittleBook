@@ -6,14 +6,14 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "DocumentAppendixManager.h"
+#import "DocumentAppendixFileManager.h"
 #import "Appendix.h"
 
-@implementation DocumentAppendixManager
+@implementation DocumentAppendixFileManager
 
-+ (DocumentAppendixManager *)defaultManager
++ (DocumentAppendixFileManager *)defaultManager
 {
-    CREATE_SINGLETON_INSTANCE([[DocumentAppendixManager alloc] init]);
+    CREATE_SINGLETON_INSTANCE([[DocumentAppendixFileManager alloc] init]);
 }
 
 - (NSString *)directory

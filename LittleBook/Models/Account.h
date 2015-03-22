@@ -1,5 +1,5 @@
 //
-//  IndexInfo.h
+//  Account.h
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/21.
@@ -10,11 +10,11 @@
 #import <CoreData/CoreData.h>
 
 
-@interface IndexInfo : NSManagedObject
+@interface Account : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * maxAppendixID;
-@property (nonatomic, retain) NSNumber * maxDocumentID;
 @property (nonatomic, retain) NSString * userID;
-@property (nonatomic, retain) NSNumber * maxAcoountID;
+@property (nonatomic, retain) NSDate * createTime;
+@property (nonatomic, retain) NSString * totalCost;
+@property (nonatomic, retain) NSNumber * accountID;
 
 @end

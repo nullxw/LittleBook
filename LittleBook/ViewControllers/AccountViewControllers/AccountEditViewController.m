@@ -9,9 +9,11 @@
 #import "AccountEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
 #import "AccountAppendixCell.h"
-#import "Appendix.h"
+#import "AccountManager.h"
 
-@interface AccountEditViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+static NSInteger kAccountAppendixMaxCount = 5;
+
+@interface AccountEditViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UITextFieldDelegate>
 {
     NSMutableArray *_appendixs;
     NSInteger _selectedIndex;
@@ -21,7 +23,9 @@
 @property (weak, nonatomic) IBOutlet UIView *textFieldContainer;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+//@property (weak, nonatomic) IBOutlet UITextField *descField;
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLineLabel;
 @end
 
 @implementation AccountEditViewController
@@ -33,6 +37,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleKeyboardEvent:) name:UIKeyboardDidShowNotification object:nil];
     
     _appendixs = [[NSMutableArray alloc] init];
+    
+    
+    UIToolbar* toolView = [[UIToolbar alloc] init];
+    [toolView sizeToFit];
+    
+    UIBarButtonItem* doneButton = [[UIBarButtonItem alloc] initWithTitle:@"保存/Save"
+                                                                   style:UIBarButtonItemStyleDone
+                                                                  target:self
+                                                                  action:@selector(saveButtonClicked:)];
+    
+    [toolView setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    _textField.inputAccessoryView = toolView;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -46,6 +63,22 @@
     [super viewWillDisappear:animated];
     [_textField resignFirstResponder];
 }
+- (BOOL)dataIsEmpty
+{
+    return (!_textField.text || _textField.text.length < 1) && _appendixs.count < 1;
+}
+- (BOOL)dataIsValid
+{
+    if (!_textField.text || _textField.text.length < 1) {
+        return FALSE;
+    }
+    
+    if (_appendixs.count < 1) {
+        return FALSE;
+    }
+    
+    return TRUE;
+}
 
 - (void)openCamera
 {
@@ -55,6 +88,12 @@
     picker.delegate = self;
     [self presentViewController:picker animated:TRUE completion:nil];
 }
+
+- (void)dismiss
+{
+    [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
+}
+
 #pragma mark - notification handler
 
 - (void)handleKeyboardEvent:(NSNotification *)notif
@@ -70,7 +109,13 @@
 
 - (IBAction)backButtonClicked:(UIButton *)sender
 {
-    [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
+    if ([self dataIsEmpty]) {
+        [self dismiss];
+        return;
+        
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您确定要放弃当前的编辑内容吗？" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    [alert show];
 }
 
 - (IBAction)addButtonClicked:(UIButton *)sender
@@ -79,17 +124,34 @@
     [self openCamera];
 }
 
+- (void)saveButtonClicked:(id)sender
+{
+    if (![self dataIsValid]) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"请输入金额或补充图片信息" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
+    
+    Account *account = [[AccountManager defaultManager] createAccountWithAppendixDatas:_appendixs];
+    account.totalCost = _textField.text;
+    
+      [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {
+          [self dismiss];
+      }];
+}
+
 #pragma mark - UICollectionViewDataSource and UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return MIN(_appendixs.count + 1, 5);
+    return MIN(_appendixs.count + 1, kAccountAppendixMaxCount);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = @"appendixCell";
-    if (_appendixs.count < 5 && indexPath.row >= _appendixs.count) {
+    if (_appendixs.count < kAccountAppendixMaxCount && indexPath.row >= _appendixs.count) {
         cellIdentifier = @"addCell";
     }
     
@@ -121,5 +183,20 @@
     [_collection reloadData];
     
     [picker dismissViewControllerAnimated:TRUE completion:nil];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self dismiss];
+    }
+}
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_textField becomeFirstResponder];
+    return TRUE;
 }
 @end

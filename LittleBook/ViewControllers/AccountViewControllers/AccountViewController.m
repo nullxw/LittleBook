@@ -7,8 +7,15 @@
 //
 
 #import "AccountViewController.h"
+#import "AccountManager.h"
+#import "AccountCell.h"
 
-@interface AccountViewController ()
+@interface AccountViewController () <UITableViewDataSource, UITableViewDelegate>
+{
+    NSArray *_dataSource;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -17,6 +24,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+ 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _dataSource = [[AccountManager defaultManager] findAll];
+    [_tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    _tableView.frame = CGRectMake(0, CGRectGetMinY(_tableView.frame), CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetMinY(_tableView.frame));
+}
+
+#pragma mark - UITableViewDataSource and UITableViewDelegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [_dataSource count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AccountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AccountCell"];
+    [cell setupCellWithAccount:_dataSource[indexPath.row]];
+    return cell;
+
 }
 
 @end

@@ -13,20 +13,22 @@ static NSUInteger defaultBatchSize = kMagicalRecordDefaultBatchSize;
 
 + (NSString *) MR_entityName;
 {
-    NSString *entityName;
+//    NSString *entityName;
+//
+//    if ([self respondsToSelector:@selector(entityName)])
+//    {
+//        entityName = [self performSelector:@selector(entityName)];
+//    }
+//
+//    if ([entityName length] == 0)
+//    {
+//        // Remove module prefix from Swift subclasses
+//        entityName = [NSStringFromClass(self) componentsSeparatedByString:@"."].lastObject;
+//    }
+//    
+    return [NSStringFromClass(self) componentsSeparatedByString:@"."].lastObject;
 
-    if ([self respondsToSelector:@selector(entityName)])
-    {
-        entityName = [self performSelector:@selector(entityName)];
-    }
-
-    if ([entityName length] == 0)
-    {
-        // Remove module prefix from Swift subclasses
-        entityName = [NSStringFromClass(self) componentsSeparatedByString:@"."].lastObject;
-    }
-
-    return entityName;
+//    return entityName;
 }
 
 + (void) MR_setDefaultBatchSize:(NSUInteger)newBatchSize

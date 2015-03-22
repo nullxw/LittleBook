@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "HPFileSystem.h"
 
-@interface DocumentAppendixManager : HPFileSystem
+@interface DocumentAppendixFileManager : HPFileSystem
 
-+ (DocumentAppendixManager *)defaultManager;
++ (DocumentAppendixFileManager *)defaultManager;
 
 @end

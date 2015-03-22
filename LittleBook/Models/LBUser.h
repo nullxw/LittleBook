@@ -1,5 +1,5 @@
 //
-//  IndexInfo.h
+//  LBUser.h
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/21.
@@ -10,11 +10,11 @@
 #import <CoreData/CoreData.h>
 
 
-@interface IndexInfo : NSManagedObject
+@interface LBUser : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * maxAppendixID;
-@property (nonatomic, retain) NSNumber * maxDocumentID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * password;
+@property (nonatomic, retain) NSNumber * active;
 @property (nonatomic, retain) NSString * userID;
-@property (nonatomic, retain) NSNumber * maxAcoountID;
 
 @end

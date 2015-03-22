@@ -1,20 +1,19 @@
 //
-//  Appendix.m
+//  Account.m
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/21.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "Appendix.h"
+#import "Account.h"
 
 
-@implementation Appendix
+@implementation Account
 
-@dynamic appendixID;
-@dynamic createTime;
-@dynamic frame;
-@dynamic parentID;
 @dynamic userID;
+@dynamic createTime;
+@dynamic totalCost;
+@dynamic accountID;
 
 @end

@@ -30,7 +30,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    CustomSettingHeaderView *headerView = [CustomSettingHeaderView loadNib];
+    CustomSettingHeaderView *headerView = [CustomSettingHeaderView loadNibForCurrentDevice];
     headerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), CGRectGetHeight(headerView.frame));
     
     NSString *title = nil;

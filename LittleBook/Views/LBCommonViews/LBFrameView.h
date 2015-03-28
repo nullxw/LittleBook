@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "LBRoundCornerView.h"
+#import "HPRoundCornerView.h"
 
 @interface LBFrameView : UIView
 

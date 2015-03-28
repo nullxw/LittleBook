@@ -13,8 +13,9 @@
 
 - (void)awakeFromNib
 {
-    self.clipsToBounds = TRUE;
-    self.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
+    [super awakeFromNib];
+    self.layer.borderColor = _borderColor.CGColor;
+    self.layer.borderWidth = _borderWidth >= 0 ? _borderWidth : LB_ONE_PX_SIZE;
 }
 
 - (void)setSectionNumber:(NSUInteger)sectionNumber
@@ -52,8 +53,14 @@
             subview.backgroundColor = separateLineColor;
         }
     }
-    
-
 }
 
+#ifdef IB_DESIGNABLE
+- (void)prepareForInterfaceBuilder
+{
+    [super prepareForInterfaceBuilder];
+    self.layer.borderColor = _borderColor.CGColor;
+    self.layer.borderWidth = _borderWidth;
+}
+#endif
 @end

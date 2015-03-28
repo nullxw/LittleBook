@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LBRoundCornerView.h"
+#import "HPRoundCornerView.h"
 
 static NSString *kEditViewImageRectInfo        = @"kEditViewImageRectInfo";
 static NSString *kEditViewImageCornerRadisInfo = @"kEditViewImageCornerRadisInfo";
@@ -22,7 +22,7 @@ static NSString *kEditViewImageCornerRadisInfo = @"kEditViewImageCornerRadisInfo
 
 @end
 
-@interface LBEditView : LBRoundCornerView
+@interface LBEditView : HPRoundCornerView
 
 @property (nonatomic, weak) IBOutlet id <LBEditViewProtocol> delegate;
 @property (nonatomic, weak) IBOutlet UIViewController *parentViewController;

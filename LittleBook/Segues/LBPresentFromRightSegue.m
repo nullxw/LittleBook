@@ -23,6 +23,9 @@
     [sourceViewController.navigationController addChildViewController:viewControllerToPresent];
     [sourceViewController.navigationController.view addSubview:viewControllerToPresent.view];
     
+    [sourceViewController viewWillDisappear:TRUE];
+    [viewControllerToPresent viewWillAppear:TRUE];
+    
     [UIView animateWithDuration:0.3 animations:^{
         sourceViewController.view.frame = CGRectMake(-w, 0, w, h);
         viewControllerToPresent.view.frame = CGRectMake(0, 0, w, h);

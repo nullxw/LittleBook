@@ -13,9 +13,17 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.layer.cornerRadius = LB_COMMON_CORNER_RADIUS;
     self.layer.borderWidth  = LB_ONE_PX_SIZE;
     self.layer.borderColor  = [UIColor colorWithR:220 g:220 b:220 a:1.0].CGColor;
 }
+
+#ifdef IB_DESIGNABLE
+- (void)prepareForInterfaceBuilder
+{
+    [super prepareForInterfaceBuilder];
+    self.layer.borderWidth  = _borderWidth;
+    self.layer.borderColor  = _borderColor.CGColor;
+}
+#endif
 
 @end

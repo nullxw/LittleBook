@@ -5,8 +5,7 @@
 //  Created by 胡鹏 on 15/3/8.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
-#import "UIColor+ColorKit.h"
-
+#import "UIColor+ColorExt.h"
 
 #define LB_ONE_PX_SIZE (1.0/[UIScreen mainScreen].scale)
 

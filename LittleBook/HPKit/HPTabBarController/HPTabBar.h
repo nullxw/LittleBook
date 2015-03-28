@@ -9,8 +9,9 @@
 static const float kHPTabBarMarginTop = 20.0;
 
 #import <UIKit/UIKit.h>
+#import "HPRoundCornerView.h"
 
-@interface HPTabBar : UIView
+@interface HPTabBar : HPRoundCornerView
 
 - (void)startHideAnimationWithDuration:(float)duration completion:(void (^)(void))completion;
 

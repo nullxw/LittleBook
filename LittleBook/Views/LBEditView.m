@@ -114,7 +114,7 @@ HPTouchImageViewProtocol
 - (IBAction)detailMeunButtonClicked:(id)sender
 {
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
-    LBImageEditView *imageEditView = [LBImageEditView loadNib];
+    LBImageEditView *imageEditView = [LBImageEditView loadNibForCurrentDevice];
     imageEditView.image = _imageView.image;
     imageEditView.frame = win.bounds;
     [win addSubview:imageEditView];

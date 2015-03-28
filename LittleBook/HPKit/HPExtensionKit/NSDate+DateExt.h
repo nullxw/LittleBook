@@ -10,12 +10,6 @@
 
 @interface NSDate (DateExt)
 
-// chat list 界面的 日期格式
-- (NSString *)formattedStringCompareWithNow;
-
-// chat 界面的日期格式
-- (NSString *)formattedStringForMessage;
-
 - (BOOL)inSameWeek:(NSDate *)date;
 
 - (NSInteger)getWeekIndex;

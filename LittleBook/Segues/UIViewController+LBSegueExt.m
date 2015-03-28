@@ -36,6 +36,7 @@
     }
     
     [self.parentViewController viewWillAppear:YES];
+    [self viewWillDisappear:YES];
     
     [UIView animateWithDuration:0.25 animations:^{
         self.view.frame = toRect;
@@ -62,6 +63,7 @@
     [sourceViewController removeFromParentViewController];
     
     [self.parentViewController viewWillAppear:YES];
+    [self viewDidDisappear:YES];
     
     [UIView animateWithDuration:0.3 animations:^{
         sourceViewController.view.frame = CGRectMake(w, 0, w, h);

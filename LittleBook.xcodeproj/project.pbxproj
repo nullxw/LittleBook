@@ -49,7 +49,6 @@
 		671C20071AB9C6E5005F5586 /* NotificationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF61AB9C6E5005F5586 /* NotificationSettingViewController.m */; };
 		671C20081AB9C6E5005F5586 /* PanelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF81AB9C6E5005F5586 /* PanelSettingViewController.m */; };
 		671C20091AB9C6E5005F5586 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFA1AB9C6E5005F5586 /* SettingViewController.m */; };
-		671C200A1AB9C6E5005F5586 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFC1AB9C6E5005F5586 /* CalendarViewController.m */; };
 		671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */; };
 		671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20001AB9C6E5005F5586 /* ViewController.m */; };
 		671C200F1AB9C70D005F5586 /* AccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C200E1AB9C70D005F5586 /* AccountEditViewController.m */; };
@@ -112,6 +111,14 @@
 		67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9B71AC6AF81002E317F /* HPRoundCornerButton.m */; };
 		67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9B91AC6AF81002E317F /* HPRoundCornerImageView.m */; };
 		67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9BB1AC6AF81002E317F /* HPRoundCornerView.m */; };
+		67AAC9C11AC6EB84002E317F /* NotificationEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9C01AC6EB84002E317F /* NotificationEditCell.m */; };
+		67AAC9CF1AC6F45B002E317F /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9CE1AC6F45B002E317F /* CalendarViewController.m */; };
+		67AAC9D21AC6F479002E317F /* NotificationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D11AC6F479002E317F /* NotificationEditViewController.m */; };
+		67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D41AC6F8FE002E317F /* HPRoundCornerTableView.m */; };
+		67AAC9D81AC700BB002E317F /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D71AC700BB002E317F /* Notification.m */; };
+		67AAC9DB1AC700DF002E317F /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DA1AC700DF002E317F /* NotificationManager.m */; };
+		67AAC9DE1AC70416002E317F /* LBDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DD1AC70416002E317F /* LBDatePickerCell.m */; };
+		67AAC9E11AC70A5D002E317F /* NotificaitonLabeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9E01AC70A5D002E317F /* NotificaitonLabeViewController.m */; };
 		67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */; };
 		67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */; };
 		67C016F01ABD505D0004EFD4 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EF1ABD505D0004EFD4 /* AccountManager.m */; };
@@ -232,8 +239,6 @@
 		671C1FF81AB9C6E5005F5586 /* PanelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelSettingViewController.m; sourceTree = "<group>"; };
 		671C1FF91AB9C6E5005F5586 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		671C1FFA1AB9C6E5005F5586 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		671C1FFB1AB9C6E5005F5586 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		671C1FFC1AB9C6E5005F5586 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		671C1FFD1AB9C6E5005F5586 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		671C1FFF1AB9C6E5005F5586 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -347,6 +352,22 @@
 		67AAC9B91AC6AF81002E317F /* HPRoundCornerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerImageView.m; sourceTree = "<group>"; };
 		67AAC9BA1AC6AF81002E317F /* HPRoundCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRoundCornerView.h; sourceTree = "<group>"; };
 		67AAC9BB1AC6AF81002E317F /* HPRoundCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerView.m; sourceTree = "<group>"; };
+		67AAC9BF1AC6EB84002E317F /* NotificationEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationEditCell.h; sourceTree = "<group>"; };
+		67AAC9C01AC6EB84002E317F /* NotificationEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationEditCell.m; sourceTree = "<group>"; };
+		67AAC9CD1AC6F45B002E317F /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		67AAC9CE1AC6F45B002E317F /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		67AAC9D01AC6F479002E317F /* NotificationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationEditViewController.h; sourceTree = "<group>"; };
+		67AAC9D11AC6F479002E317F /* NotificationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationEditViewController.m; sourceTree = "<group>"; };
+		67AAC9D31AC6F8FE002E317F /* HPRoundCornerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRoundCornerTableView.h; sourceTree = "<group>"; };
+		67AAC9D41AC6F8FE002E317F /* HPRoundCornerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerTableView.m; sourceTree = "<group>"; };
+		67AAC9D61AC700BB002E317F /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		67AAC9D71AC700BB002E317F /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		67AAC9D91AC700DF002E317F /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
+		67AAC9DA1AC700DF002E317F /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
+		67AAC9DC1AC70416002E317F /* LBDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDatePickerCell.h; sourceTree = "<group>"; };
+		67AAC9DD1AC70416002E317F /* LBDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDatePickerCell.m; sourceTree = "<group>"; };
+		67AAC9DF1AC70A5D002E317F /* NotificaitonLabeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificaitonLabeViewController.h; sourceTree = "<group>"; };
+		67AAC9E01AC70A5D002E317F /* NotificaitonLabeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificaitonLabeViewController.m; sourceTree = "<group>"; };
 		67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingCell.h; sourceTree = "<group>"; };
 		67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingCell.m; sourceTree = "<group>"; };
 		67C016EB1ABD440C0004EFD4 /* LBAccountTimeLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountTimeLineLabel.h; sourceTree = "<group>"; };
@@ -588,6 +609,8 @@
 		671C20101AB9CFF6005F5586 /* ModalManagers */ = {
 			isa = PBXGroup;
 			children = (
+				67AAC9D91AC700DF002E317F /* NotificationManager.h */,
+				67AAC9DA1AC700DF002E317F /* NotificationManager.m */,
 				671C20111AB9CFF6005F5586 /* DocumentManager.h */,
 				671C20121AB9CFF6005F5586 /* DocumentManager.m */,
 				671C20131AB9CFF6005F5586 /* IndexInfoManager.h */,
@@ -620,11 +643,10 @@
 		671E94421AA5EFCA00697DBD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				67AAC9CC1AC6F446002E317F /* CalendarViewControllers */,
 				671C1FE61AB9C6E5005F5586 /* AccountViewControllers */,
 				671C1FE91AB9C6E5005F5586 /* OfficeViewControllers */,
 				671C1FEE1AB9C6E5005F5586 /* SettingsViewControllers */,
-				671C1FFB1AB9C6E5005F5586 /* CalendarViewController.h */,
-				671C1FFC1AB9C6E5005F5586 /* CalendarViewController.m */,
 				671C1FFD1AB9C6E5005F5586 /* ReadViewController.h */,
 				671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */,
 				671C1FFF1AB9C6E5005F5586 /* ViewController.h */,
@@ -711,6 +733,8 @@
 		677A31E61AB7287D0030FD08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				67AAC9D61AC700BB002E317F /* Notification.h */,
+				67AAC9D71AC700BB002E317F /* Notification.m */,
 				67C0170C1ABD627E0004EFD4 /* Account.h */,
 				67C0170D1ABD627E0004EFD4 /* Account.m */,
 				67C0170E1ABD627E0004EFD4 /* Appendix.h */,
@@ -791,8 +815,23 @@
 				67AAC9B91AC6AF81002E317F /* HPRoundCornerImageView.m */,
 				67AAC9BA1AC6AF81002E317F /* HPRoundCornerView.h */,
 				67AAC9BB1AC6AF81002E317F /* HPRoundCornerView.m */,
+				67AAC9D31AC6F8FE002E317F /* HPRoundCornerTableView.h */,
+				67AAC9D41AC6F8FE002E317F /* HPRoundCornerTableView.m */,
 			);
 			path = HPRoundCornerViews;
+			sourceTree = "<group>";
+		};
+		67AAC9CC1AC6F446002E317F /* CalendarViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				67AAC9CD1AC6F45B002E317F /* CalendarViewController.h */,
+				67AAC9CE1AC6F45B002E317F /* CalendarViewController.m */,
+				67AAC9D01AC6F479002E317F /* NotificationEditViewController.h */,
+				67AAC9D11AC6F479002E317F /* NotificationEditViewController.m */,
+				67AAC9DF1AC70A5D002E317F /* NotificaitonLabeViewController.h */,
+				67AAC9E01AC70A5D002E317F /* NotificaitonLabeViewController.m */,
+			);
+			path = CalendarViewControllers;
 			sourceTree = "<group>";
 		};
 		67EF19E31AAB02C200F97940 /* Views */ = {
@@ -825,6 +864,10 @@
 				671C20181AB9D22F005F5586 /* AccountAppendixCell.m */,
 				67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */,
 				67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */,
+				67AAC9BF1AC6EB84002E317F /* NotificationEditCell.h */,
+				67AAC9C01AC6EB84002E317F /* NotificationEditCell.m */,
+				67AAC9DC1AC70416002E317F /* LBDatePickerCell.h */,
+				67AAC9DD1AC70416002E317F /* LBDatePickerCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1056,6 +1099,7 @@
 				671C1FC31AB9BE4B005F5586 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				674115711AB4746A00346CD8 /* LBImageEditView.m in Sources */,
 				671C1FE21AB9C41E005F5586 /* LBFrameView.m in Sources */,
+				67AAC9CF1AC6F45B002E317F /* CalendarViewController.m in Sources */,
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				6721C2431AB43CCD00D1FF99 /* LBEditView.m in Sources */,
 				671C1FB71AB9BE4B005F5586 /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -1070,9 +1114,13 @@
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
 				677A318A1AB725E10030FD08 /* ImageFilterManager.m in Sources */,
 				67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */,
+				67AAC9C11AC6EB84002E317F /* NotificationEditCell.m in Sources */,
 				671C1FCF1AB9BE4B005F5586 /* MagicalRecord.m in Sources */,
+				67AAC9D81AC700BB002E317F /* Notification.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
+				67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */,
+				67AAC9D21AC6F479002E317F /* NotificationEditViewController.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
 				67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */,
 				67C016F01ABD505D0004EFD4 /* AccountManager.m in Sources */,
@@ -1096,6 +1144,7 @@
 				671C20021AB9C6E5005F5586 /* DocumentEditViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				671C20041AB9C6E5005F5586 /* AboutViewController.m in Sources */,
+				67AAC9DE1AC70416002E317F /* LBDatePickerCell.m in Sources */,
 				6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */,
 				6721C24B1AB441AB00D1FF99 /* LBTextEditCell.m in Sources */,
 				67AAC9741AC6A445002E317F /* CalendarViewCell.m in Sources */,
@@ -1105,6 +1154,7 @@
 				67634C761AADE5DA009FD0FA /* PanelSettingCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
 				671C1FBD1AB9BE4B005F5586 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				67AAC9DB1AC700DF002E317F /* NotificationManager.m in Sources */,
 				671C20061AB9C6E5005F5586 /* LoginViewController.m in Sources */,
 				671C1FCC1AB9BE4B005F5586 /* MagicalRecord+Options.m in Sources */,
 				671C1FC91AB9BE4B005F5586 /* MagicalRecord+Actions.m in Sources */,
@@ -1131,9 +1181,9 @@
 				671C1FCD1AB9BE4B005F5586 /* MagicalRecord+Setup.m in Sources */,
 				67AAC9701AC6A445002E317F /* CalendarView.m in Sources */,
 				67AAC9291AC69225002E317F /* NSData+DataExt.m in Sources */,
-				671C200A1AB9C6E5005F5586 /* CalendarViewController.m in Sources */,
 				671C1FE51AB9C485005F5586 /* LBNavigationBar.m in Sources */,
 				674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */,
+				67AAC9E11AC70A5D002E317F /* NotificaitonLabeViewController.m in Sources */,
 				671C20051AB9C6E5005F5586 /* CustomSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

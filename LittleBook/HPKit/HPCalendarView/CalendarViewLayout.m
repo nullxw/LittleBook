@@ -17,8 +17,6 @@
     CGSize itemSize = [CalendarViewCell loadNibForCurrentDevice].frame.size;
     float offset = (CGRectGetWidth(self.collectionView.bounds) - 7 * itemSize.width)/2;
     
-    NSLog(@"%f", offset);
-    
     self.minimumLineSpacing = 0;
     self.minimumInteritemSpacing = 0;
     self.itemSize = itemSize;

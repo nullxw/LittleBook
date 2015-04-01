@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "LBAudioManager.h"
 
 @interface AppDelegate ()
-
+{
+    BOOL _activeFormBackGround;
+}
 @end
 
 @implementation AppDelegate
@@ -20,7 +23,7 @@
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil]];
     }
-    
+
     [MagicalRecord setupAutoMigratingCoreDataStack];
     return YES;
 }
@@ -37,12 +40,12 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    
+    _activeFormBackGround = TRUE;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-
+    _activeFormBackGround = FALSE;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -58,14 +61,17 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification*)notification
 {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:notification.alertBody
-                                                   delegate:nil
-                                          cancelButtonTitle:@"确定"
-                                          otherButtonTitles:notification.alertAction, nil];
-    
-    [alert show];
-    // play sound
+    if (!_activeFormBackGround) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:notification.alertBody
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:notification.alertAction, nil];
+        
+        [alert show];
+        
+        [[[LBAudioManager alloc] init] playSystemSound:[[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav"]];
+    }
 }
 
 @end

@@ -83,7 +83,7 @@
             localNotification.fireDate = notification.fireDate;
             localNotification.timeZone = [NSTimeZone defaultTimeZone];
             localNotification.alertBody= notification.label;
-            localNotification.soundName= UILocalNotificationDefaultSoundName;
+            localNotification.soundName= @"sound.wav";
 //            localNotification.alertAction = @"稍后提醒";
 //            localNotification.repeatInterval = kCFCalendarUnitMinute;
             localNotification.userInfo = @{@"notifID" : notification.notifID};

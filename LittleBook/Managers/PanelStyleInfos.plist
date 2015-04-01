@@ -58,13 +58,13 @@
 			<real>1</real>
 		</dict>
 		<key>description</key>
-		<string>黑板风格 / Blackboard</string>
+		<string>夜间模式 / NightMode</string>
 		<key>fontName</key>
 		<string></string>
 		<key>fontSize</key>
 		<integer>0</integer>
 		<key>styleName</key>
-		<string>blackboard</string>
+		<string>nightmode</string>
 	</dict>
 	<dict>
 		<key>fontColor</key>

@@ -66,6 +66,8 @@
 		674115711AB4746A00346CD8 /* LBImageEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674115701AB4746A00346CD8 /* LBImageEditView.m */; };
 		674115731AB474AF00346CD8 /* LBImageEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674115721AB474AF00346CD8 /* LBImageEditView.xib */; };
 		674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5EA21AB1E0CB00F3415F /* LBCalButton.m */; };
+		6757E6131ACC3E6D0071B662 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6757E6121ACC3E6D0071B662 /* sound.wav */; };
+		6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6757E6151ACC3EAF0071B662 /* LBAudioManager.m */; };
 		675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */; };
 		675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */; };
 		67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* LBPanelStyleManager.m */; };
@@ -275,6 +277,9 @@
 		674115721AB474AF00346CD8 /* LBImageEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBImageEditView.xib; sourceTree = "<group>"; };
 		674E5EA11AB1E0CB00F3415F /* LBCalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCalButton.h; sourceTree = "<group>"; };
 		674E5EA21AB1E0CB00F3415F /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
+		6757E6121ACC3E6D0071B662 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
+		6757E6141ACC3EAF0071B662 /* LBAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioManager.h; sourceTree = "<group>"; };
+		6757E6151ACC3EAF0071B662 /* LBAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioManager.m; sourceTree = "<group>"; };
 		675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchImageView.h; sourceTree = "<group>"; };
 		675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		675EAE8D1AA80A0200B13BD3 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
@@ -713,6 +718,8 @@
 				677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */,
 				671C1F6D1AB9B620005F5586 /* LBAccountAppendixFileManager.h */,
 				671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */,
+				6757E6141ACC3EAF0071B662 /* LBAudioManager.h */,
+				6757E6151ACC3EAF0071B662 /* LBAudioManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -963,6 +970,7 @@
 				67F7B6941AA2F3D00032A5FD /* Images.xcassets */,
 				67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */,
 				676EE3571AAC44B60076B715 /* LittleBook.pch */,
+				6757E6121ACC3E6D0071B662 /* sound.wav */,
 				67F7B6841AA2F3D00032A5FD /* Supporting Files */,
 			);
 			path = LittleBook;
@@ -1086,6 +1094,7 @@
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
 				67AAC96E1AC6A445002E317F /* CalendarHeaderView_375.xib in Resources */,
 				67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */,
+				6757E6131ACC3E6D0071B662 /* sound.wav in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
 				67AAC96D1AC6A445002E317F /* CalendarHeaderView_320.xib in Resources */,
@@ -1121,6 +1130,7 @@
 				671C1FCE1AB9BE4B005F5586 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				67AAC92F1AC69225002E317F /* UIImage+ImageExt.m in Sources */,
 				671C1FC21AB9BE4B005F5586 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */,
 				671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */,
 				67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */,
 				6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */,

@@ -18,6 +18,7 @@
 
 // month start from 1 to 12
 @property (nonatomic, assign) NSInteger month;
+@property (nonatomic, assign) NSInteger year;
 @property (nonatomic, assign) NSInteger preMonthLength;
 // include premonth's tail and nextmonth's head
 @property (nonatomic, assign, readonly) NSInteger fullLength;
@@ -27,6 +28,9 @@
 // monthIndex start from 1 to 12
 + (HPMonth *)monthAtIndex:(NSInteger)monthIndex;
 + (HPMonth *)monthAtIndex:(NSInteger)monthIndex ofYear:(NSInteger)year;
+
+- (NSDate *)dateOfDay:(NSInteger)day;
+
 @end
 
 @interface NSDate (CalExt)

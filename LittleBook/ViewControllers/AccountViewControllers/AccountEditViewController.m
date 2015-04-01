@@ -9,7 +9,7 @@
 #import "AccountEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
 #import "AccountAppendixCell.h"
-#import "AccountManager.h"
+#import "LBAccountManager.h"
 
 static NSInteger kAccountAppendixMaxCount = 5;
 
@@ -133,7 +133,7 @@ static NSInteger kAccountAppendixMaxCount = 5;
         return;
     }
     
-    Account *account = [[AccountManager defaultManager] createAccountWithAppendixDatas:_appendixs];
+    Account *account = [[LBAccountManager defaultManager] createAccountWithAppendixDatas:_appendixs];
     account.totalCost = _textField.text;
     
       [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL contextDidSave, NSError *error) {

@@ -26,7 +26,7 @@
         <attribute name="maxAcoountID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="maxAppendixID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="maxDocumentID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxNotificationID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="LBUser" representedClassName="LBUser" syncable="YES">
         <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -39,6 +39,8 @@
         <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dayID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notifID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="on" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="remindLater" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
@@ -47,8 +49,8 @@
         <element name="Account" positionX="-54" positionY="45" width="128" height="103"/>
         <element name="Appendix" positionX="-54" positionY="-9" width="128" height="120"/>
         <element name="Document" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="103"/>
+        <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="105"/>
         <element name="LBUser" positionX="-45" positionY="63" width="128" height="103"/>
-        <element name="Notification" positionX="-54" positionY="54" width="128" height="148"/>
+        <element name="Notification" positionX="-54" positionY="54" width="128" height="180"/>
     </elements>
 </model>

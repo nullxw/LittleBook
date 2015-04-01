@@ -18,5 +18,7 @@
 @dynamic remindLater;
 @dynamic on;
 @dynamic dayID;
+@dynamic label;
+@dynamic notifID;
 
 @end

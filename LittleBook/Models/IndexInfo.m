@@ -13,7 +13,8 @@
 
 @dynamic maxAppendixID;
 @dynamic maxDocumentID;
-@dynamic userID;
 @dynamic maxAcoountID;
+@dynamic maxNotificationID;
+@dynamic userID;
 
 @end

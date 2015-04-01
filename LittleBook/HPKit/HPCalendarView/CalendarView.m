@@ -7,16 +7,19 @@
 //
 
 #import "CalendarView.h"
-#import "CalendarViewCell.h"
 #import "CalendarHeaderView.h"
+#import "CalendarViewCell.h"
+#import "HPHolidayManager.h"
 #import "NSDate+CalExt.h"
 #import "UINib+NibExt.h"
+
 
 @interface CalendarView ()<UICollectionViewDataSource, UICollectionViewDelegate>
 {
     NSInteger _currentDay;
     NSInteger _currentMonth;
     NSMutableArray *_dataSource;
+    HPHolidayManager *_holidayManager;
 }
 
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
@@ -27,6 +30,7 @@
 
 - (void)awakeFromNib
 {
+    _holidayManager = [[HPHolidayManager alloc] init];
     _dataSource = @[].mutableCopy;
     
     for (int i = 0; i < 12; i++) {
@@ -76,6 +80,10 @@
     cell.isCurrentMonth = month.month == _currentMonth;
     cell.isCurrentDay   = (text.integerValue == _currentDay) && cell.isCurrentMonth;
     
+    if (text.integerValue > 0) {
+        cell.isHoliday  = [_holidayManager dateIsHoliday: [month dateOfDay:text.integerValue]];
+    }
+
     return cell;
 }
 

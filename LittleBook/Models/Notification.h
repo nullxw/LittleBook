@@ -19,5 +19,7 @@
 @property (nonatomic, retain) NSNumber * remindLater;
 @property (nonatomic, retain) NSNumber * on;
 @property (nonatomic, retain) NSString * dayID;
+@property (nonatomic, retain) NSString * label;
+@property (nonatomic, retain) NSNumber * notifID;
 
 @end

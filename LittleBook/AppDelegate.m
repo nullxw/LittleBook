@@ -16,6 +16,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil]];
+    }
+    
     [MagicalRecord setupAutoMigratingCoreDataStack];
     return YES;
 }
@@ -48,6 +53,19 @@
 - (void)saveContext
 {
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification*)notification
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:notification.alertBody
+                                                   delegate:nil
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:notification.alertAction, nil];
+    
+    [alert show];
+    // play sound
 }
 
 @end

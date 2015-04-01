@@ -7,7 +7,7 @@
         <!--Setting View Controller-->
         <scene sceneID="P89-ut-Z15">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NUe-F8-Brq" customClass="SettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LBSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NUe-F8-Brq" customClass="LBSettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ceL-pw-IfX" customClass="HPPresentView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,60 +34,8 @@
                                 <rect key="frame" x="0.0" y="150" width="320" height="418"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="HtZ-KA-i71" customClass="LBNavigationBar">
-                                        <rect key="frame" x="10" y="5" width="300" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon" id="Hmx-PO-vvD">
-                                                <rect key="frame" x="10" y="15" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xDq-8l-tvC">
-                                                <rect key="frame" x="79" y="10" width="150" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aG1-A9-vNX">
-                                                <rect key="frame" x="79" y="37" width="150" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="6"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lJX-Rq-I9x">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didClickTabBar:" destination="NUe-F8-Brq" eventType="touchUpInside" id="IGk-Bt-mE3"/>
-                                                    <segue destination="Lzf-Hr-B20" kind="custom" customClass="LBTabbarSegue" id="5Sa-5g-RKp"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="navigtaionBarIcon" destination="Hmx-PO-vvD" id="vuc-HC-TZa"/>
-                                            <outlet property="navigtaionBarSubtitle" destination="aG1-A9-vNX" id="qjm-9g-1pl"/>
-                                            <outlet property="navigtaionBarTitle" destination="xDq-8l-tvC" id="imM-tT-YA1"/>
-                                        </connections>
-                                    </view>
                                     <view tag="1" contentMode="scaleToFill" id="6wC-yU-dgt" customClass="LBNavigationBar">
-                                        <rect key="frame" x="10" y="70" width="300" height="60"/>
+                                        <rect key="frame" x="10" y="5" width="300" height="60"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="panel_icon" id="ZxF-hY-xcB">
@@ -139,7 +87,7 @@
                                         </connections>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" id="Zt4-4N-9IT" customClass="LBNavigationBar">
-                                        <rect key="frame" x="10" y="135" width="300" height="60"/>
+                                        <rect key="frame" x="10" y="70" width="300" height="60"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sd_icon" id="Aah-SC-aYs">
@@ -191,7 +139,7 @@
                                         </connections>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" id="Hiw-vu-bc7" customClass="LBNavigationBar">
-                                        <rect key="frame" x="10" y="200" width="300" height="60"/>
+                                        <rect key="frame" x="10" y="135" width="300" height="60"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notif_icon" id="yVm-5v-c2K">
@@ -243,7 +191,7 @@
                                         </connections>
                                     </view>
                                     <view tag="4" contentMode="scaleToFill" id="XBx-AZ-qiL" customClass="LBNavigationBar">
-                                        <rect key="frame" x="10" y="265" width="300" height="60"/>
+                                        <rect key="frame" x="10" y="200" width="300" height="60"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" id="5To-hC-S1D">
@@ -558,7 +506,7 @@
         <!--About View Controller-->
         <scene sceneID="C38-3V-aQy">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D9R-HI-eiN" customClass="AboutViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LBAboutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D9R-HI-eiN" customClass="LBAboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x2v-cK-jzn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -660,7 +608,7 @@
         <!--Calendar View Controller-->
         <scene sceneID="e7e-jw-rQC">
             <objects>
-                <viewController storyboardIdentifier="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Zp-SA-eGD" customClass="CalendarViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LBCalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Zp-SA-eGD" customClass="LBCalendarViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbq-st-SrR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -714,7 +662,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日记录提醒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iBm-Ls-Mx0">
                                                 <rect key="frame" x="83" y="17" width="129" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -747,21 +695,20 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MxB-OJ-pQf">
-                                                    <rect key="frame" x="120" y="10" width="40" height="40"/>
+                                                    <rect key="frame" x="115" y="10" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="add_icon">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="addNotificationButtonClicked:" destination="9Zp-SA-eGD" eventType="touchUpInside" id="nRu-ZC-wFC"/>
-                                                        <segue destination="TIB-jm-MVu" kind="custom" customClass="LBPresentFromBottomSegue" id="OQW-fz-WFd"/>
+                                                        <segue destination="TIB-jm-MVu" kind="custom" identifier="openNotifEditPage" customClass="LBPresentFromBottomSegue" id="OQW-fz-WFd"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Ze5-Hu-qEK" customClass="NotificationEditCell">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Ze5-Hu-qEK" customClass="LBNotificationCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ze5-Hu-qEK" id="H0q-vD-3F1">
@@ -770,9 +717,12 @@
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="W8F-Xt-vcJ">
                                                             <rect key="frame" x="191" y="19" width="51" height="31"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <connections>
+                                                                <action selector="switchValueChanged:" destination="Ze5-Hu-qEK" eventType="valueChanged" id="9Xl-mr-KPg"/>
+                                                            </connections>
                                                         </switch>
                                                         <view contentMode="scaleToFill" id="D0F-dA-cyA" customClass="HPLine">
-                                                            <rect key="frame" x="0.0" y="69" width="280" height="1"/>
+                                                            <rect key="frame" x="0.0" y="209" width="840" height="1"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
@@ -812,6 +762,7 @@
                     </view>
                     <connections>
                         <outlet property="notificationEditView" destination="Tzp-oL-oGm" id="Imz-xn-hhe"/>
+                        <outlet property="tableView" destination="nGr-ae-5KB" id="tns-oK-JkB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sMi-79-bfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -821,7 +772,7 @@
         <!--Notification Edit View Controller-->
         <scene sceneID="2iS-q1-kIj">
             <objects>
-                <viewController id="TIB-jm-MVu" customClass="NotificationEditViewController" sceneMemberID="viewController">
+                <viewController id="TIB-jm-MVu" customClass="LBNotificationEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UYX-Zy-OPQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -841,7 +792,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="dismiss:" destination="9Zp-SA-eGD" eventType="touchUpInside" id="Gj5-q5-f5h"/>
                                             <action selector="dismiss:" destination="TIB-jm-MVu" eventType="touchUpInside" id="KxI-x1-56d"/>
                                         </connections>
                                     </button>
@@ -897,26 +847,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gCl-Tr-EJb" id="WXS-dx-qeC">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="switchCell" rowHeight="60" id="Lkz-ij-Gyi">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lkz-ij-Gyi" id="xjk-MY-vpF">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="稍后提醒/Later remind" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4jf-LX-dc0">
-                                                    <rect key="frame" x="15" y="15" width="196" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="l10-DG-Yai">
-                                                    <rect key="frame" x="214" y="14" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </switch>
-                                            </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -1012,7 +942,7 @@
         <!--Notificaiton Labe View Controller-->
         <scene sceneID="Wxw-N8-Kmy">
             <objects>
-                <viewController id="pNc-v7-qwK" customClass="NotificaitonLabeViewController" sceneMemberID="viewController">
+                <viewController id="pNc-v7-qwK" customClass="LBNotificaitonLabeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uX5-W4-9C9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1032,8 +962,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="dismiss:" destination="TIB-jm-MVu" eventType="touchUpInside" id="g2J-gp-r33"/>
-                                            <action selector="dismiss:" destination="9Zp-SA-eGD" eventType="touchUpInside" id="hbe-RG-IDV"/>
                                             <action selector="dismissButtonClicked:" destination="pNc-v7-qwK" eventType="touchUpInside" id="oS9-uy-aiK"/>
                                         </connections>
                                     </button>
@@ -1056,19 +984,26 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="提醒" minimumFontSize="17" id="Cva-Vt-Qo8">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="30"/>
+                                        <rect key="frame" x="10" y="1" width="300" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="pNc-v7-qwK" id="xEd-xh-kia"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="gEm-qK-fnO"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="u2w-cb-Qkf" id="dwX-HC-Klv"/>
+                        <outlet property="inputField" destination="Cva-Vt-Qo8" id="rSD-zT-nQ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0Q-5B-My8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1173,7 +1108,7 @@
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" id="ZaE-Pn-gS2" customClass="HPLine">
-                                                                            <rect key="frame" x="-3" y="0.0" width="703" height="1"/>
+                                                                            <rect key="frame" x="-5" y="0.0" width="904.5" height="1"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </view>
@@ -1321,7 +1256,7 @@
         <!--Notification Setting View Controller-->
         <scene sceneID="GT7-is-nk5">
             <objects>
-                <viewController storyboardIdentifier="NotificationSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X46-Dt-93N" customClass="NotificationSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationLBSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X46-Dt-93N" customClass="LBNotificationSettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xMg-f7-OGU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1339,17 +1274,17 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <prototypes>
-                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationSettingCell" id="Vyx-nZ-oLf" customClass="NotificationSettingCell">
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LBNotificationDotView" id="Vyx-nZ-oLf" customClass="LBNotificationSettingCell">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vyx-nZ-oLf" id="hIj-MP-DzE">
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" id="2cx-T2-8Q5" customClass="NotificationContentView">
+                                                                <view contentMode="scaleToFill" id="2cx-T2-8Q5" customClass="LBNotificationContentView">
                                                                     <rect key="frame" x="30" y="5" width="169" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" id="IPh-xJ-WfQ" customClass="NotificationDotView">
+                                                                        <view contentMode="scaleToFill" id="IPh-xJ-WfQ" customClass="LBNotificationDotView">
                                                                             <rect key="frame" x="15" y="15" width="10" height="10"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.094117647058823528" green="0.11372549019607843" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
@@ -1460,7 +1395,7 @@
         <!--Custom Setting View Controller-->
         <scene sceneID="9lu-pa-fnV">
             <objects>
-                <viewController storyboardIdentifier="CustomSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O5H-Mw-V8q" customClass="CustomSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomLBSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O5H-Mw-V8q" customClass="LBCustomSettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lyd-Xs-CJ1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1481,19 +1416,19 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="jJM-c9-gQU">
-                                                            <rect key="frame" x="-1" y="-30" width="1300" height="260"/>
+                                                            <rect key="frame" x="-1" y="-30" width="1560" height="260"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.090196078430000007" green="0.10980392160000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" id="cJ1-S9-HgH">
-                                                            <rect key="frame" x="-1" y="15" width="1300" height="40"/>
+                                                            <rect key="frame" x="-1" y="15" width="1560" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" id="gtN-Y8-K35" customClass="NotificationContentView">
+                                                                <view contentMode="scaleToFill" id="gtN-Y8-K35" customClass="LBNotificationContentView">
                                                                     <rect key="frame" x="10" y="0.0" width="169" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" id="7PZ-aG-Ioo" customClass="NotificationDotView">
+                                                                        <view contentMode="scaleToFill" id="7PZ-aG-Ioo" customClass="LBNotificationDotView">
                                                                             <rect key="frame" x="15" y="15" width="10" height="10"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.094117647060000004" green="0.1137254902" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -1509,7 +1444,7 @@
                                                                     <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </view>
                                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="1xj-M9-7aV">
-                                                                    <rect key="frame" x="973" y="4" width="50" height="31"/>
+                                                                    <rect key="frame" x="1232" y="4" width="50" height="31"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                     <color key="onTintColor" red="0.2156862745" green="0.65098039220000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </switch>
@@ -1517,14 +1452,14 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" id="7XC-2W-5Ey">
-                                                            <rect key="frame" x="-1" y="60" width="1300" height="40"/>
+                                                            <rect key="frame" x="-1" y="60" width="1560" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" id="NpH-Rv-Wbh" customClass="NotificationContentView">
+                                                                <view contentMode="scaleToFill" id="NpH-Rv-Wbh" customClass="LBNotificationContentView">
                                                                     <rect key="frame" x="10" y="0.0" width="169" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" id="s4t-YF-td6" customClass="NotificationDotView">
+                                                                        <view contentMode="scaleToFill" id="s4t-YF-td6" customClass="LBNotificationDotView">
                                                                             <rect key="frame" x="15" y="15" width="10" height="10"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.094117647060000004" green="0.1137254902" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -1540,7 +1475,7 @@
                                                                     <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </view>
                                                                 <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="S1G-6t-oMo">
-                                                                    <rect key="frame" x="973" y="4" width="50" height="31"/>
+                                                                    <rect key="frame" x="1232" y="4" width="50" height="31"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                     <color key="onTintColor" red="0.2156862745" green="0.65098039220000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </switch>
@@ -1548,14 +1483,14 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" id="ZXx-p0-OI7">
-                                                            <rect key="frame" x="-1" y="105" width="1300" height="40"/>
+                                                            <rect key="frame" x="-1" y="105" width="1560" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" id="j4p-J8-SIc" customClass="NotificationContentView">
+                                                                <view contentMode="scaleToFill" id="j4p-J8-SIc" customClass="LBNotificationContentView">
                                                                     <rect key="frame" x="10" y="0.0" width="169" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" id="PJZ-yx-RYV" customClass="NotificationDotView">
+                                                                        <view contentMode="scaleToFill" id="PJZ-yx-RYV" customClass="LBNotificationDotView">
                                                                             <rect key="frame" x="15" y="15" width="10" height="10"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.094117647060000004" green="0.1137254902" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -1571,7 +1506,7 @@
                                                                     <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </view>
                                                                 <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="qFC-rn-ca6">
-                                                                    <rect key="frame" x="973" y="4" width="50" height="31"/>
+                                                                    <rect key="frame" x="1232" y="4" width="50" height="31"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                     <color key="onTintColor" red="0.2156862745" green="0.65098039220000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </switch>
@@ -1579,14 +1514,14 @@
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" id="eUs-Cg-LYI">
-                                                            <rect key="frame" x="-1" y="150" width="1300" height="40"/>
+                                                            <rect key="frame" x="-1" y="150" width="1560" height="40"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" id="nlg-AO-lzd" customClass="NotificationContentView">
+                                                                <view contentMode="scaleToFill" id="nlg-AO-lzd" customClass="LBNotificationContentView">
                                                                     <rect key="frame" x="10" y="0.0" width="169" height="40"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" id="jG1-Xv-O2P" customClass="NotificationDotView">
+                                                                        <view contentMode="scaleToFill" id="jG1-Xv-O2P" customClass="LBNotificationDotView">
                                                                             <rect key="frame" x="15" y="15" width="10" height="10"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                             <color key="backgroundColor" red="0.094117647060000004" green="0.1137254902" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -1602,7 +1537,7 @@
                                                                     <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </view>
                                                                 <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Kd2-t8-HM8">
-                                                                    <rect key="frame" x="973" y="4" width="50" height="31"/>
+                                                                    <rect key="frame" x="1232" y="4" width="50" height="31"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                     <color key="onTintColor" red="0.2156862745" green="0.65098039220000004" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </switch>
@@ -1619,7 +1554,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="hEy-jh-d2w">
-                                                            <rect key="frame" x="-2" y="-30" width="1299" height="260"/>
+                                                            <rect key="frame" x="-3" y="-30" width="1560" height="260"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初始字体色彩设置:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZXw-ae-eMB">
@@ -1745,7 +1680,7 @@
         <!--Panel Setting View Controller-->
         <scene sceneID="heP-fK-8I6">
             <objects>
-                <viewController storyboardIdentifier="PanelSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tnm-lC-un6" customClass="PanelSettingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PanelLBSettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tnm-lC-un6" customClass="LBPanelSettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cGL-bk-Hdx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1759,7 +1694,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="panelSettingCell" id="d4j-IB-CPl" customClass="PanelSettingCell">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LBPanelSettingCell" id="d4j-IB-CPl" customClass="LBPanelSettingCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4j-IB-CPl" id="Sqw-3e-Xf9">
@@ -1815,59 +1750,29 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view tag="4" contentMode="scaleToFill" id="sr5-jv-tFJ" customClass="LBNavigationBar">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pcE-4U-TLw">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_icon" id="Lxz-CY-9E5">
-                                                <rect key="frame" x="10" y="15" width="30" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nec-yY-7pf">
-                                                <rect key="frame" x="79" y="37" width="150" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="6"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O9q-pP-ZYf">
-                                                <rect key="frame" x="79" y="10" width="150" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4aN-Ec-BaE">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="dismiss" destination="Tnm-lC-un6" eventType="touchUpInside" id="KSM-WY-vAv"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <outlet property="navigtaionBarIcon" destination="Lxz-CY-9E5" id="KFP-Ud-aZV"/>
-                                            <outlet property="navigtaionBarSubtitle" destination="Nec-yY-7pf" id="59p-Hv-6um"/>
-                                            <outlet property="navigtaionBarTitle" destination="O9q-pP-ZYf" id="kgQ-7c-dTQ"/>
+                                            <action selector="dismiss" destination="Tnm-lC-un6" eventType="touchUpInside" id="9o5-Rd-NPA"/>
                                         </connections>
-                                    </view>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="navigtaionBarIcon" destination="2Nq-hK-FGz" id="dV5-ma-861"/>
                                     <outlet property="navigtaionBarSubtitle" destination="Go4-6B-MpJ" id="YTd-g8-qgn"/>
@@ -1878,7 +1783,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="navigationBar" destination="sr5-jv-tFJ" id="wGT-KP-660"/>
                         <outlet property="tableView" destination="ehD-3e-U8F" id="VVE-iy-CYi"/>
                     </connections>
                 </viewController>

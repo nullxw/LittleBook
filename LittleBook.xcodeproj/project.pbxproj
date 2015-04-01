@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		671C1F6F1AB9B620005F5586 /* AccountAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* AccountAppendixFileManager.m */; };
+		671C1F6F1AB9B620005F5586 /* LBAccountAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */; };
 		671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F731AB9BE4B005F5586 /* LunarCalendar.m */; };
 		671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F781AB9BE4B005F5586 /* MagicalImportFunctions.m */; };
 		671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F7A1AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -43,17 +43,17 @@
 		671C20011AB9C6E5005F5586 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE81AB9C6E5005F5586 /* AccountViewController.m */; };
 		671C20021AB9C6E5005F5586 /* DocumentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FEB1AB9C6E5005F5586 /* DocumentEditViewController.m */; };
 		671C20031AB9C6E5005F5586 /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FED1AB9C6E5005F5586 /* OfficeViewController.m */; };
-		671C20041AB9C6E5005F5586 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF01AB9C6E5005F5586 /* AboutViewController.m */; };
-		671C20051AB9C6E5005F5586 /* CustomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF21AB9C6E5005F5586 /* CustomSettingViewController.m */; };
+		671C20041AB9C6E5005F5586 /* LBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF01AB9C6E5005F5586 /* LBAboutViewController.m */; };
+		671C20051AB9C6E5005F5586 /* LBCustomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF21AB9C6E5005F5586 /* LBCustomSettingViewController.m */; };
 		671C20061AB9C6E5005F5586 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF41AB9C6E5005F5586 /* LoginViewController.m */; };
-		671C20071AB9C6E5005F5586 /* NotificationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF61AB9C6E5005F5586 /* NotificationSettingViewController.m */; };
-		671C20081AB9C6E5005F5586 /* PanelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF81AB9C6E5005F5586 /* PanelSettingViewController.m */; };
-		671C20091AB9C6E5005F5586 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFA1AB9C6E5005F5586 /* SettingViewController.m */; };
+		671C20071AB9C6E5005F5586 /* LBNotificationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF61AB9C6E5005F5586 /* LBNotificationSettingViewController.m */; };
+		671C20081AB9C6E5005F5586 /* LBPanelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF81AB9C6E5005F5586 /* LBPanelSettingViewController.m */; };
+		671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFA1AB9C6E5005F5586 /* LBSettingViewController.m */; };
 		671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */; };
 		671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20001AB9C6E5005F5586 /* ViewController.m */; };
 		671C200F1AB9C70D005F5586 /* AccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C200E1AB9C70D005F5586 /* AccountEditViewController.m */; };
-		671C20151AB9CFF6005F5586 /* DocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20121AB9CFF6005F5586 /* DocumentManager.m */; };
-		671C20161AB9CFF6005F5586 /* IndexInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20141AB9CFF6005F5586 /* IndexInfoManager.m */; };
+		671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20121AB9CFF6005F5586 /* LBDocumentManager.m */; };
+		671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */; };
 		671C20191AB9D22F005F5586 /* AccountAppendixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20181AB9D22F005F5586 /* AccountAppendixCell.m */; };
 		6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */; };
 		6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22C1AB406B900D1FF99 /* LBPresentFromRightSegue.m */; };
@@ -65,24 +65,20 @@
 		6721C24B1AB441AB00D1FF99 /* LBTextEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C24A1AB441AB00D1FF99 /* LBTextEditCell.m */; };
 		674115711AB4746A00346CD8 /* LBImageEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674115701AB4746A00346CD8 /* LBImageEditView.m */; };
 		674115731AB474AF00346CD8 /* LBImageEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674115721AB474AF00346CD8 /* LBImageEditView.xib */; };
-		674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */; };
-		674E5EA01AB1D36400F3415F /* CustomSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */; };
 		674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5EA21AB1E0CB00F3415F /* LBCalButton.m */; };
 		675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */; };
 		675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */; };
-		67634C761AADE5DA009FD0FA /* PanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C751AADE5DA009FD0FA /* PanelSettingCell.m */; };
-		67634C7A1AADE625009FD0FA /* PanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* PanelStyleManager.m */; };
+		67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* LBPanelStyleManager.m */; };
 		67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */; };
-		676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE3681AAC61020076B715 /* NotificationContentView.m */; };
-		676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676EE36B1AAC610F0076B715 /* NotificationDotView.m */; };
 		6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6171AA69EFE009E78DD /* HPTabBar.m */; };
 		6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61B1AA69EFE009E78DD /* HPTabBarChildController.m */; };
 		6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61D1AA69EFE009E78DD /* HPTarBarController.m */; };
 		677A31821AB723820030FD08 /* HPFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31811AB723820030FD08 /* HPFileSystem.m */; };
-		677A31851AB723C60030FD08 /* DocumentAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31841AB723C60030FD08 /* DocumentAppendixFileManager.m */; };
+		677A31851AB723C60030FD08 /* LBDocumentAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */; };
 		677A31891AB725E10030FD08 /* ILSFilters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 677A31861AB725E10030FD08 /* ILSFilters.plist */; };
-		677A318A1AB725E10030FD08 /* ImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31881AB725E10030FD08 /* ImageFilterManager.m */; };
+		677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31881AB725E10030FD08 /* LBImageFilterManager.m */; };
 		677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */; };
+		6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 679334991ACA4091001DE34A /* HPTaskManager.m */; };
 		67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */; };
 		67AAC9291AC69225002E317F /* NSData+DataExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9151AC69225002E317F /* NSData+DataExt.m */; };
 		67AAC92A1AC69225002E317F /* NSDate+DateExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9171AC69225002E317F /* NSDate+DateExt.m */; };
@@ -111,25 +107,32 @@
 		67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9B71AC6AF81002E317F /* HPRoundCornerButton.m */; };
 		67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9B91AC6AF81002E317F /* HPRoundCornerImageView.m */; };
 		67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9BB1AC6AF81002E317F /* HPRoundCornerView.m */; };
-		67AAC9C11AC6EB84002E317F /* NotificationEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9C01AC6EB84002E317F /* NotificationEditCell.m */; };
-		67AAC9CF1AC6F45B002E317F /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9CE1AC6F45B002E317F /* CalendarViewController.m */; };
-		67AAC9D21AC6F479002E317F /* NotificationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D11AC6F479002E317F /* NotificationEditViewController.m */; };
+		67AAC9CF1AC6F45B002E317F /* LBCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9CE1AC6F45B002E317F /* LBCalendarViewController.m */; };
+		67AAC9D21AC6F479002E317F /* LBNotificationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D11AC6F479002E317F /* LBNotificationEditViewController.m */; };
 		67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D41AC6F8FE002E317F /* HPRoundCornerTableView.m */; };
 		67AAC9D81AC700BB002E317F /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D71AC700BB002E317F /* Notification.m */; };
-		67AAC9DB1AC700DF002E317F /* NotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DA1AC700DF002E317F /* NotificationManager.m */; };
-		67AAC9DE1AC70416002E317F /* LBDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DD1AC70416002E317F /* LBDatePickerCell.m */; };
-		67AAC9E11AC70A5D002E317F /* NotificaitonLabeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9E01AC70A5D002E317F /* NotificaitonLabeViewController.m */; };
-		67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */; };
+		67AAC9DB1AC700DF002E317F /* LBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */; };
+		67AAC9E11AC70A5D002E317F /* LBNotificaitonLabeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */; };
 		67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */; };
-		67C016F01ABD505D0004EFD4 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EF1ABD505D0004EFD4 /* AccountManager.m */; };
-		67C016F31ABD50780004EFD4 /* AppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F21ABD50780004EFD4 /* AppendixManager.m */; };
-		67C016F91ABD51BB0004EFD4 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F81ABD51BB0004EFD4 /* UserManager.m */; };
+		67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */; };
+		67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F21ABD50780004EFD4 /* LBAppendixManager.m */; };
+		67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F81ABD51BB0004EFD4 /* LBUserManager.m */; };
 		67C016FC1ABD5DDF0004EFD4 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */; };
 		67C017161ABD627E0004EFD4 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0170D1ABD627E0004EFD4 /* Account.m */; };
 		67C017171ABD627E0004EFD4 /* Appendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0170F1ABD627E0004EFD4 /* Appendix.m */; };
 		67C017181ABD627E0004EFD4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017111ABD627E0004EFD4 /* Document.m */; };
 		67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017131ABD627E0004EFD4 /* IndexInfo.m */; };
 		67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017151ABD627E0004EFD4 /* LBUser.m */; };
+		67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9C971ACC1DE700FC0455 /* LBDatePickerCell.m */; };
+		67CD9C9B1ACC1DE700FC0455 /* LBNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9C991ACC1DE700FC0455 /* LBNotificationCell.m */; };
+		67CD9CB11ACC22E800FC0455 /* LBCustomSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CA71ACC22E800FC0455 /* LBCustomSettingHeaderView.m */; };
+		67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CA81ACC22E800FC0455 /* LBCustomSettingHeaderView.xib */; };
+		67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CAA1ACC22E800FC0455 /* LBNotificationContentView.m */; };
+		67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CAC1ACC22E800FC0455 /* LBNotificationDotView.m */; };
+		67CD9CB51ACC22E800FC0455 /* LBNotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CAE1ACC22E800FC0455 /* LBNotificationSettingCell.m */; };
+		67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */; };
+		67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */; };
+		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
 		67F7B6871AA2F3D00032A5FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6861AA2F3D00032A5FD /* main.m */; };
@@ -151,8 +154,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		671C1F6D1AB9B620005F5586 /* AccountAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAppendixFileManager.h; sourceTree = "<group>"; };
-		671C1F6E1AB9B620005F5586 /* AccountAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAppendixFileManager.m; sourceTree = "<group>"; };
+		671C1F6D1AB9B620005F5586 /* LBAccountAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountAppendixFileManager.h; sourceTree = "<group>"; };
+		671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountAppendixFileManager.m; sourceTree = "<group>"; };
 		671C1F721AB9BE4B005F5586 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
 		671C1F731AB9BE4B005F5586 /* LunarCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendar.m; sourceTree = "<group>"; };
 		671C1F771AB9BE4B005F5586 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
@@ -227,28 +230,28 @@
 		671C1FEB1AB9C6E5005F5586 /* DocumentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentEditViewController.m; sourceTree = "<group>"; };
 		671C1FEC1AB9C6E5005F5586 /* OfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficeViewController.h; sourceTree = "<group>"; };
 		671C1FED1AB9C6E5005F5586 /* OfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficeViewController.m; sourceTree = "<group>"; };
-		671C1FEF1AB9C6E5005F5586 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		671C1FF01AB9C6E5005F5586 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		671C1FF11AB9C6E5005F5586 /* CustomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingViewController.h; sourceTree = "<group>"; };
-		671C1FF21AB9C6E5005F5586 /* CustomSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingViewController.m; sourceTree = "<group>"; };
+		671C1FEF1AB9C6E5005F5586 /* LBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAboutViewController.h; sourceTree = "<group>"; };
+		671C1FF01AB9C6E5005F5586 /* LBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAboutViewController.m; sourceTree = "<group>"; };
+		671C1FF11AB9C6E5005F5586 /* LBCustomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCustomSettingViewController.h; sourceTree = "<group>"; };
+		671C1FF21AB9C6E5005F5586 /* LBCustomSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCustomSettingViewController.m; sourceTree = "<group>"; };
 		671C1FF31AB9C6E5005F5586 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		671C1FF41AB9C6E5005F5586 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		671C1FF51AB9C6E5005F5586 /* NotificationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingViewController.h; sourceTree = "<group>"; };
-		671C1FF61AB9C6E5005F5586 /* NotificationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingViewController.m; sourceTree = "<group>"; };
-		671C1FF71AB9C6E5005F5586 /* PanelSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelSettingViewController.h; sourceTree = "<group>"; };
-		671C1FF81AB9C6E5005F5586 /* PanelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelSettingViewController.m; sourceTree = "<group>"; };
-		671C1FF91AB9C6E5005F5586 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		671C1FFA1AB9C6E5005F5586 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		671C1FF51AB9C6E5005F5586 /* LBNotificationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationSettingViewController.h; sourceTree = "<group>"; };
+		671C1FF61AB9C6E5005F5586 /* LBNotificationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationSettingViewController.m; sourceTree = "<group>"; };
+		671C1FF71AB9C6E5005F5586 /* LBPanelSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPanelSettingViewController.h; sourceTree = "<group>"; };
+		671C1FF81AB9C6E5005F5586 /* LBPanelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPanelSettingViewController.m; sourceTree = "<group>"; };
+		671C1FF91AB9C6E5005F5586 /* LBSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSettingViewController.h; sourceTree = "<group>"; };
+		671C1FFA1AB9C6E5005F5586 /* LBSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSettingViewController.m; sourceTree = "<group>"; };
 		671C1FFD1AB9C6E5005F5586 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		671C1FFF1AB9C6E5005F5586 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		671C20001AB9C6E5005F5586 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		671C200D1AB9C70D005F5586 /* AccountEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountEditViewController.h; sourceTree = "<group>"; };
 		671C200E1AB9C70D005F5586 /* AccountEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountEditViewController.m; sourceTree = "<group>"; };
-		671C20111AB9CFF6005F5586 /* DocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentManager.h; sourceTree = "<group>"; };
-		671C20121AB9CFF6005F5586 /* DocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentManager.m; sourceTree = "<group>"; };
-		671C20131AB9CFF6005F5586 /* IndexInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexInfoManager.h; sourceTree = "<group>"; };
-		671C20141AB9CFF6005F5586 /* IndexInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexInfoManager.m; sourceTree = "<group>"; };
+		671C20111AB9CFF6005F5586 /* LBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentManager.h; sourceTree = "<group>"; };
+		671C20121AB9CFF6005F5586 /* LBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentManager.m; sourceTree = "<group>"; };
+		671C20131AB9CFF6005F5586 /* LBIndexInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBIndexInfoManager.h; sourceTree = "<group>"; };
+		671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBIndexInfoManager.m; sourceTree = "<group>"; };
 		671C20171AB9D22F005F5586 /* AccountAppendixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAppendixCell.h; sourceTree = "<group>"; };
 		671C20181AB9D22F005F5586 /* AccountAppendixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAppendixCell.m; sourceTree = "<group>"; };
 		6721C2281AB4003F00D1FF99 /* LBPresentFromBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromBottomSegue.h; sourceTree = "<group>"; };
@@ -270,26 +273,17 @@
 		6741156F1AB4746A00346CD8 /* LBImageEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImageEditView.h; sourceTree = "<group>"; };
 		674115701AB4746A00346CD8 /* LBImageEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBImageEditView.m; sourceTree = "<group>"; };
 		674115721AB474AF00346CD8 /* LBImageEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBImageEditView.xib; sourceTree = "<group>"; };
-		674E5E9C1AB1D35600F3415F /* CustomSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettingHeaderView.h; sourceTree = "<group>"; };
-		674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettingHeaderView.m; sourceTree = "<group>"; };
-		674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSettingHeaderView.xib; sourceTree = "<group>"; };
 		674E5EA11AB1E0CB00F3415F /* LBCalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCalButton.h; sourceTree = "<group>"; };
 		674E5EA21AB1E0CB00F3415F /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
 		675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchImageView.h; sourceTree = "<group>"; };
 		675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		675EAE8D1AA80A0200B13BD3 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		675EAE8E1AA80A0200B13BD3 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
-		67634C741AADE5DA009FD0FA /* PanelSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelSettingCell.h; sourceTree = "<group>"; };
-		67634C751AADE5DA009FD0FA /* PanelSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelSettingCell.m; sourceTree = "<group>"; };
-		67634C781AADE625009FD0FA /* PanelStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelStyleManager.h; sourceTree = "<group>"; };
-		67634C791AADE625009FD0FA /* PanelStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelStyleManager.m; sourceTree = "<group>"; };
+		67634C781AADE625009FD0FA /* LBPanelStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPanelStyleManager.h; sourceTree = "<group>"; };
+		67634C791AADE625009FD0FA /* LBPanelStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPanelStyleManager.m; sourceTree = "<group>"; };
 		67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PanelStyleInfos.plist; sourceTree = "<group>"; };
 		676EE3541AAC43930076B715 /* LBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBMacros.h; sourceTree = "<group>"; };
 		676EE3571AAC44B60076B715 /* LittleBook.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LittleBook.pch; sourceTree = "<group>"; };
-		676EE3671AAC61020076B715 /* NotificationContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationContentView.h; sourceTree = "<group>"; };
-		676EE3681AAC61020076B715 /* NotificationContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationContentView.m; sourceTree = "<group>"; };
-		676EE36A1AAC610F0076B715 /* NotificationDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationDotView.h; sourceTree = "<group>"; };
-		676EE36B1AAC610F0076B715 /* NotificationDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationDotView.m; sourceTree = "<group>"; };
 		6777D6161AA69EFE009E78DD /* HPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBar.h; sourceTree = "<group>"; };
 		6777D6171AA69EFE009E78DD /* HPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTabBar.m; sourceTree = "<group>"; };
 		6777D61A1AA69EFE009E78DD /* HPTabBarChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTabBarChildController.h; sourceTree = "<group>"; };
@@ -298,12 +292,14 @@
 		6777D61D1AA69EFE009E78DD /* HPTarBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTarBarController.m; sourceTree = "<group>"; };
 		677A31801AB723820030FD08 /* HPFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPFileSystem.h; sourceTree = "<group>"; };
 		677A31811AB723820030FD08 /* HPFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPFileSystem.m; sourceTree = "<group>"; };
-		677A31831AB723C60030FD08 /* DocumentAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentAppendixFileManager.h; sourceTree = "<group>"; };
-		677A31841AB723C60030FD08 /* DocumentAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentAppendixFileManager.m; sourceTree = "<group>"; };
+		677A31831AB723C60030FD08 /* LBDocumentAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentAppendixFileManager.h; sourceTree = "<group>"; };
+		677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentAppendixFileManager.m; sourceTree = "<group>"; };
 		677A31861AB725E10030FD08 /* ILSFilters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ILSFilters.plist; sourceTree = "<group>"; };
-		677A31871AB725E10030FD08 /* ImageFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilterManager.h; sourceTree = "<group>"; };
-		677A31881AB725E10030FD08 /* ImageFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilterManager.m; sourceTree = "<group>"; };
+		677A31871AB725E10030FD08 /* LBImageFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImageFilterManager.h; sourceTree = "<group>"; };
+		677A31881AB725E10030FD08 /* LBImageFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBImageFilterManager.m; sourceTree = "<group>"; };
 		677A31E81AB728930030FD08 /* LittleBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleBook.xcdatamodel; sourceTree = "<group>"; };
+		679334981ACA4091001DE34A /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
+		679334991ACA4091001DE34A /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
 		67AAC9111AC69225002E317F /* ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionKit.h; sourceTree = "<group>"; };
 		67AAC9121AC69225002E317F /* NSArray+ArrayExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ArrayExt.h"; sourceTree = "<group>"; };
 		67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ArrayExt.m"; sourceTree = "<group>"; };
@@ -352,32 +348,26 @@
 		67AAC9B91AC6AF81002E317F /* HPRoundCornerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerImageView.m; sourceTree = "<group>"; };
 		67AAC9BA1AC6AF81002E317F /* HPRoundCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRoundCornerView.h; sourceTree = "<group>"; };
 		67AAC9BB1AC6AF81002E317F /* HPRoundCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerView.m; sourceTree = "<group>"; };
-		67AAC9BF1AC6EB84002E317F /* NotificationEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationEditCell.h; sourceTree = "<group>"; };
-		67AAC9C01AC6EB84002E317F /* NotificationEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationEditCell.m; sourceTree = "<group>"; };
-		67AAC9CD1AC6F45B002E317F /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		67AAC9CE1AC6F45B002E317F /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		67AAC9D01AC6F479002E317F /* NotificationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationEditViewController.h; sourceTree = "<group>"; };
-		67AAC9D11AC6F479002E317F /* NotificationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationEditViewController.m; sourceTree = "<group>"; };
+		67AAC9CD1AC6F45B002E317F /* LBCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCalendarViewController.h; sourceTree = "<group>"; };
+		67AAC9CE1AC6F45B002E317F /* LBCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalendarViewController.m; sourceTree = "<group>"; };
+		67AAC9D01AC6F479002E317F /* LBNotificationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationEditViewController.h; sourceTree = "<group>"; };
+		67AAC9D11AC6F479002E317F /* LBNotificationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationEditViewController.m; sourceTree = "<group>"; };
 		67AAC9D31AC6F8FE002E317F /* HPRoundCornerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRoundCornerTableView.h; sourceTree = "<group>"; };
 		67AAC9D41AC6F8FE002E317F /* HPRoundCornerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerTableView.m; sourceTree = "<group>"; };
 		67AAC9D61AC700BB002E317F /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		67AAC9D71AC700BB002E317F /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
-		67AAC9D91AC700DF002E317F /* NotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManager.h; sourceTree = "<group>"; };
-		67AAC9DA1AC700DF002E317F /* NotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManager.m; sourceTree = "<group>"; };
-		67AAC9DC1AC70416002E317F /* LBDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDatePickerCell.h; sourceTree = "<group>"; };
-		67AAC9DD1AC70416002E317F /* LBDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDatePickerCell.m; sourceTree = "<group>"; };
-		67AAC9DF1AC70A5D002E317F /* NotificaitonLabeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificaitonLabeViewController.h; sourceTree = "<group>"; };
-		67AAC9E01AC70A5D002E317F /* NotificaitonLabeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificaitonLabeViewController.m; sourceTree = "<group>"; };
-		67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettingCell.h; sourceTree = "<group>"; };
-		67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettingCell.m; sourceTree = "<group>"; };
+		67AAC9D91AC700DF002E317F /* LBNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationManager.h; sourceTree = "<group>"; };
+		67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationManager.m; sourceTree = "<group>"; };
+		67AAC9DF1AC70A5D002E317F /* LBNotificaitonLabeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificaitonLabeViewController.h; sourceTree = "<group>"; };
+		67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificaitonLabeViewController.m; sourceTree = "<group>"; };
 		67C016EB1ABD440C0004EFD4 /* LBAccountTimeLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountTimeLineLabel.h; sourceTree = "<group>"; };
 		67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountTimeLineLabel.m; sourceTree = "<group>"; };
-		67C016EE1ABD505D0004EFD4 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
-		67C016EF1ABD505D0004EFD4 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
-		67C016F11ABD50780004EFD4 /* AppendixManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppendixManager.h; sourceTree = "<group>"; };
-		67C016F21ABD50780004EFD4 /* AppendixManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppendixManager.m; sourceTree = "<group>"; };
-		67C016F71ABD51BB0004EFD4 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
-		67C016F81ABD51BB0004EFD4 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		67C016EE1ABD505D0004EFD4 /* LBAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountManager.h; sourceTree = "<group>"; };
+		67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountManager.m; sourceTree = "<group>"; };
+		67C016F11ABD50780004EFD4 /* LBAppendixManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppendixManager.h; sourceTree = "<group>"; };
+		67C016F21ABD50780004EFD4 /* LBAppendixManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppendixManager.m; sourceTree = "<group>"; };
+		67C016F71ABD51BB0004EFD4 /* LBUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUserManager.h; sourceTree = "<group>"; };
+		67C016F81ABD51BB0004EFD4 /* LBUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUserManager.m; sourceTree = "<group>"; };
 		67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
 		67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
 		67C0170C1ABD627E0004EFD4 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
@@ -390,6 +380,24 @@
 		67C017131ABD627E0004EFD4 /* IndexInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexInfo.m; sourceTree = "<group>"; };
 		67C017141ABD627E0004EFD4 /* LBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUser.h; sourceTree = "<group>"; };
 		67C017151ABD627E0004EFD4 /* LBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUser.m; sourceTree = "<group>"; };
+		67CD9C961ACC1DE700FC0455 /* LBDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDatePickerCell.h; sourceTree = "<group>"; };
+		67CD9C971ACC1DE700FC0455 /* LBDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDatePickerCell.m; sourceTree = "<group>"; };
+		67CD9C981ACC1DE700FC0455 /* LBNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationCell.h; sourceTree = "<group>"; };
+		67CD9C991ACC1DE700FC0455 /* LBNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationCell.m; sourceTree = "<group>"; };
+		67CD9CA61ACC22E800FC0455 /* LBCustomSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCustomSettingHeaderView.h; sourceTree = "<group>"; };
+		67CD9CA71ACC22E800FC0455 /* LBCustomSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCustomSettingHeaderView.m; sourceTree = "<group>"; };
+		67CD9CA81ACC22E800FC0455 /* LBCustomSettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBCustomSettingHeaderView.xib; sourceTree = "<group>"; };
+		67CD9CA91ACC22E800FC0455 /* LBNotificationContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationContentView.h; sourceTree = "<group>"; };
+		67CD9CAA1ACC22E800FC0455 /* LBNotificationContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationContentView.m; sourceTree = "<group>"; };
+		67CD9CAB1ACC22E800FC0455 /* LBNotificationDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationDotView.h; sourceTree = "<group>"; };
+		67CD9CAC1ACC22E800FC0455 /* LBNotificationDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationDotView.m; sourceTree = "<group>"; };
+		67CD9CAD1ACC22E800FC0455 /* LBNotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationSettingCell.h; sourceTree = "<group>"; };
+		67CD9CAE1ACC22E800FC0455 /* LBNotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationSettingCell.m; sourceTree = "<group>"; };
+		67CD9CAF1ACC22E800FC0455 /* LBPanelSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPanelSettingCell.h; sourceTree = "<group>"; };
+		67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPanelSettingCell.m; sourceTree = "<group>"; };
+		67CD9CB71ACC30BF00FC0455 /* HPHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHolidayManager.h; sourceTree = "<group>"; };
+		67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHolidayManager.m; sourceTree = "<group>"; };
+		67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolidayInfos_2015.plist; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
 		67EF19EC1AAB0FBA00F97940 /* HPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLine.m; sourceTree = "<group>"; };
 		67EF19F81AAB43D400F97940 /* LBAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppContext.h; sourceTree = "<group>"; };
@@ -590,18 +598,18 @@
 		671C1FEE1AB9C6E5005F5586 /* SettingsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				671C1FEF1AB9C6E5005F5586 /* AboutViewController.h */,
-				671C1FF01AB9C6E5005F5586 /* AboutViewController.m */,
-				671C1FF11AB9C6E5005F5586 /* CustomSettingViewController.h */,
-				671C1FF21AB9C6E5005F5586 /* CustomSettingViewController.m */,
+				671C1FEF1AB9C6E5005F5586 /* LBAboutViewController.h */,
+				671C1FF01AB9C6E5005F5586 /* LBAboutViewController.m */,
+				671C1FF11AB9C6E5005F5586 /* LBCustomSettingViewController.h */,
+				671C1FF21AB9C6E5005F5586 /* LBCustomSettingViewController.m */,
 				671C1FF31AB9C6E5005F5586 /* LoginViewController.h */,
 				671C1FF41AB9C6E5005F5586 /* LoginViewController.m */,
-				671C1FF51AB9C6E5005F5586 /* NotificationSettingViewController.h */,
-				671C1FF61AB9C6E5005F5586 /* NotificationSettingViewController.m */,
-				671C1FF71AB9C6E5005F5586 /* PanelSettingViewController.h */,
-				671C1FF81AB9C6E5005F5586 /* PanelSettingViewController.m */,
-				671C1FF91AB9C6E5005F5586 /* SettingViewController.h */,
-				671C1FFA1AB9C6E5005F5586 /* SettingViewController.m */,
+				671C1FF51AB9C6E5005F5586 /* LBNotificationSettingViewController.h */,
+				671C1FF61AB9C6E5005F5586 /* LBNotificationSettingViewController.m */,
+				671C1FF71AB9C6E5005F5586 /* LBPanelSettingViewController.h */,
+				671C1FF81AB9C6E5005F5586 /* LBPanelSettingViewController.m */,
+				671C1FF91AB9C6E5005F5586 /* LBSettingViewController.h */,
+				671C1FFA1AB9C6E5005F5586 /* LBSettingViewController.m */,
 			);
 			path = SettingsViewControllers;
 			sourceTree = "<group>";
@@ -609,18 +617,18 @@
 		671C20101AB9CFF6005F5586 /* ModalManagers */ = {
 			isa = PBXGroup;
 			children = (
-				67AAC9D91AC700DF002E317F /* NotificationManager.h */,
-				67AAC9DA1AC700DF002E317F /* NotificationManager.m */,
-				671C20111AB9CFF6005F5586 /* DocumentManager.h */,
-				671C20121AB9CFF6005F5586 /* DocumentManager.m */,
-				671C20131AB9CFF6005F5586 /* IndexInfoManager.h */,
-				671C20141AB9CFF6005F5586 /* IndexInfoManager.m */,
-				67C016EE1ABD505D0004EFD4 /* AccountManager.h */,
-				67C016EF1ABD505D0004EFD4 /* AccountManager.m */,
-				67C016F11ABD50780004EFD4 /* AppendixManager.h */,
-				67C016F21ABD50780004EFD4 /* AppendixManager.m */,
-				67C016F71ABD51BB0004EFD4 /* UserManager.h */,
-				67C016F81ABD51BB0004EFD4 /* UserManager.m */,
+				67AAC9D91AC700DF002E317F /* LBNotificationManager.h */,
+				67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */,
+				671C20111AB9CFF6005F5586 /* LBDocumentManager.h */,
+				671C20121AB9CFF6005F5586 /* LBDocumentManager.m */,
+				671C20131AB9CFF6005F5586 /* LBIndexInfoManager.h */,
+				671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */,
+				67C016EE1ABD505D0004EFD4 /* LBAccountManager.h */,
+				67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */,
+				67C016F11ABD50780004EFD4 /* LBAppendixManager.h */,
+				67C016F21ABD50780004EFD4 /* LBAppendixManager.m */,
+				67C016F71ABD51BB0004EFD4 /* LBUserManager.h */,
+				67C016F81ABD51BB0004EFD4 /* LBUserManager.m */,
 			);
 			path = ModalManagers;
 			sourceTree = "<group>";
@@ -628,6 +636,7 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				679334971ACA4091001DE34A /* HPTaskManager */,
 				67AAC9B51AC6AF81002E317F /* HPRoundCornerViews */,
 				67AAC9101AC69225002E317F /* HPExtensionKit */,
 				67AAC9581AC6A445002E317F /* HPCalendarView */,
@@ -694,16 +703,16 @@
 			isa = PBXGroup;
 			children = (
 				671C20101AB9CFF6005F5586 /* ModalManagers */,
-				67634C781AADE625009FD0FA /* PanelStyleManager.h */,
-				67634C791AADE625009FD0FA /* PanelStyleManager.m */,
+				67634C781AADE625009FD0FA /* LBPanelStyleManager.h */,
+				67634C791AADE625009FD0FA /* LBPanelStyleManager.m */,
 				67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */,
-				677A31871AB725E10030FD08 /* ImageFilterManager.h */,
-				677A31881AB725E10030FD08 /* ImageFilterManager.m */,
+				677A31871AB725E10030FD08 /* LBImageFilterManager.h */,
+				677A31881AB725E10030FD08 /* LBImageFilterManager.m */,
 				677A31861AB725E10030FD08 /* ILSFilters.plist */,
-				677A31831AB723C60030FD08 /* DocumentAppendixFileManager.h */,
-				677A31841AB723C60030FD08 /* DocumentAppendixFileManager.m */,
-				671C1F6D1AB9B620005F5586 /* AccountAppendixFileManager.h */,
-				671C1F6E1AB9B620005F5586 /* AccountAppendixFileManager.m */,
+				677A31831AB723C60030FD08 /* LBDocumentAppendixFileManager.h */,
+				677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */,
+				671C1F6D1AB9B620005F5586 /* LBAccountAppendixFileManager.h */,
+				671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -750,6 +759,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		679334971ACA4091001DE34A /* HPTaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				679334981ACA4091001DE34A /* HPTaskManager.h */,
+				679334991ACA4091001DE34A /* HPTaskManager.m */,
+			);
+			path = HPTaskManager;
+			sourceTree = "<group>";
+		};
 		67AAC9101AC69225002E317F /* HPExtensionKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +801,9 @@
 		67AAC9581AC6A445002E317F /* HPCalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				67CD9CB71ACC30BF00FC0455 /* HPHolidayManager.h */,
+				67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */,
+				67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */,
 				67AAC97A1AC6A6D3002E317F /* NSDate+CalExt.h */,
 				67AAC97B1AC6A6D3002E317F /* NSDate+CalExt.m */,
 				67AAC9591AC6A445002E317F /* CalendarHeaderView.h */,
@@ -824,33 +845,53 @@
 		67AAC9CC1AC6F446002E317F /* CalendarViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				67AAC9CD1AC6F45B002E317F /* CalendarViewController.h */,
-				67AAC9CE1AC6F45B002E317F /* CalendarViewController.m */,
-				67AAC9D01AC6F479002E317F /* NotificationEditViewController.h */,
-				67AAC9D11AC6F479002E317F /* NotificationEditViewController.m */,
-				67AAC9DF1AC70A5D002E317F /* NotificaitonLabeViewController.h */,
-				67AAC9E01AC70A5D002E317F /* NotificaitonLabeViewController.m */,
+				67AAC9CD1AC6F45B002E317F /* LBCalendarViewController.h */,
+				67AAC9CE1AC6F45B002E317F /* LBCalendarViewController.m */,
+				67AAC9D01AC6F479002E317F /* LBNotificationEditViewController.h */,
+				67AAC9D11AC6F479002E317F /* LBNotificationEditViewController.m */,
+				67AAC9DF1AC70A5D002E317F /* LBNotificaitonLabeViewController.h */,
+				67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */,
 			);
 			path = CalendarViewControllers;
+			sourceTree = "<group>";
+		};
+		67CD9C951ACC1DE700FC0455 /* CalendarViews */ = {
+			isa = PBXGroup;
+			children = (
+				67CD9C961ACC1DE700FC0455 /* LBDatePickerCell.h */,
+				67CD9C971ACC1DE700FC0455 /* LBDatePickerCell.m */,
+				67CD9C981ACC1DE700FC0455 /* LBNotificationCell.h */,
+				67CD9C991ACC1DE700FC0455 /* LBNotificationCell.m */,
+			);
+			path = CalendarViews;
+			sourceTree = "<group>";
+		};
+		67CD9CA51ACC22E800FC0455 /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				67CD9CA61ACC22E800FC0455 /* LBCustomSettingHeaderView.h */,
+				67CD9CA71ACC22E800FC0455 /* LBCustomSettingHeaderView.m */,
+				67CD9CA81ACC22E800FC0455 /* LBCustomSettingHeaderView.xib */,
+				67CD9CA91ACC22E800FC0455 /* LBNotificationContentView.h */,
+				67CD9CAA1ACC22E800FC0455 /* LBNotificationContentView.m */,
+				67CD9CAB1ACC22E800FC0455 /* LBNotificationDotView.h */,
+				67CD9CAC1ACC22E800FC0455 /* LBNotificationDotView.m */,
+				67CD9CAD1ACC22E800FC0455 /* LBNotificationSettingCell.h */,
+				67CD9CAE1ACC22E800FC0455 /* LBNotificationSettingCell.m */,
+				67CD9CAF1ACC22E800FC0455 /* LBPanelSettingCell.h */,
+				67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */,
+			);
+			path = SettingViews;
 			sourceTree = "<group>";
 		};
 		67EF19E31AAB02C200F97940 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				67CD9CA51ACC22E800FC0455 /* SettingViews */,
+				67CD9C951ACC1DE700FC0455 /* CalendarViews */,
 				671C1FD01AB9BFFD005F5586 /* LBCommonViews */,
-				676EE3671AAC61020076B715 /* NotificationContentView.h */,
-				676EE3681AAC61020076B715 /* NotificationContentView.m */,
-				676EE36A1AAC610F0076B715 /* NotificationDotView.h */,
-				676EE36B1AAC610F0076B715 /* NotificationDotView.m */,
-				674E5E9C1AB1D35600F3415F /* CustomSettingHeaderView.h */,
-				674E5E9D1AB1D35600F3415F /* CustomSettingHeaderView.m */,
-				674E5E9F1AB1D36400F3415F /* CustomSettingHeaderView.xib */,
 				674E5EA11AB1E0CB00F3415F /* LBCalButton.h */,
 				674E5EA21AB1E0CB00F3415F /* LBCalButton.m */,
-				67634C741AADE5DA009FD0FA /* PanelSettingCell.h */,
-				67634C751AADE5DA009FD0FA /* PanelSettingCell.m */,
-				67BC8A461AB08BA1009E4153 /* NotificationSettingCell.h */,
-				67BC8A471AB08BA1009E4153 /* NotificationSettingCell.m */,
 				6721C2381AB4249600D1FF99 /* LBReadListCell.h */,
 				6721C2391AB4249600D1FF99 /* LBReadListCell.m */,
 				6721C2411AB43CCD00D1FF99 /* LBEditView.h */,
@@ -864,10 +905,6 @@
 				671C20181AB9D22F005F5586 /* AccountAppendixCell.m */,
 				67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */,
 				67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */,
-				67AAC9BF1AC6EB84002E317F /* NotificationEditCell.h */,
-				67AAC9C01AC6EB84002E317F /* NotificationEditCell.m */,
-				67AAC9DC1AC70416002E317F /* LBDatePickerCell.h */,
-				67AAC9DD1AC70416002E317F /* LBDatePickerCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1001,6 +1038,7 @@
 		67F7B6791AA2F3D00032A5FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LB;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = hupeng;
 				TargetAttributes = {
@@ -1047,10 +1085,11 @@
 				67AAC9771AC6A445002E317F /* CalendarViewCell_414.xib in Resources */,
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
 				67AAC96E1AC6A445002E317F /* CalendarHeaderView_375.xib in Resources */,
+				67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
 				67AAC96D1AC6A445002E317F /* CalendarHeaderView_320.xib in Resources */,
-				674E5EA01AB1D36400F3415F /* CustomSettingHeaderView.xib in Resources */,
+				67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */,
 				67AAC9731AC6A445002E317F /* CalendarView_414.xib in Resources */,
 				67AAC9761AC6A445002E317F /* CalendarViewCell_375.xib in Resources */,
 				67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */,
@@ -1074,18 +1113,21 @@
 				67AAC9781AC6A445002E317F /* CalendarViewLayout.m in Sources */,
 				671C1FBA1AB9BE4B005F5586 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				67C017181ABD627E0004EFD4 /* Document.m in Sources */,
-				67634C7A1AADE625009FD0FA /* PanelStyleManager.m in Sources */,
+				67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */,
 				6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */,
 				671C1FC81AB9BE4B005F5586 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				671C1FC01AB9BE4B005F5586 /* NSManagedObject+MagicalRequests.m in Sources */,
+				67CD9CB11ACC22E800FC0455 /* LBCustomSettingHeaderView.m in Sources */,
 				671C1FCE1AB9BE4B005F5586 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				67AAC92F1AC69225002E317F /* UIImage+ImageExt.m in Sources */,
 				671C1FC21AB9BE4B005F5586 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */,
-				67C016F31ABD50780004EFD4 /* AppendixManager.m in Sources */,
+				67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */,
+				6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */,
 				671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */,
 				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
+				67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */,
 				6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */,
 				6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */,
 				671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */,
@@ -1094,67 +1136,65 @@
 				67AAC96C1AC6A445002E317F /* CalendarHeaderView.m in Sources */,
 				67C017171ABD627E0004EFD4 /* Appendix.m in Sources */,
 				671C1FC51AB9BE4B005F5586 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
-				671C20081AB9C6E5005F5586 /* PanelSettingViewController.m in Sources */,
+				67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */,
+				671C20081AB9C6E5005F5586 /* LBPanelSettingViewController.m in Sources */,
 				671C1FC11AB9BE4B005F5586 /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
 				671C1FC31AB9BE4B005F5586 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				674115711AB4746A00346CD8 /* LBImageEditView.m in Sources */,
 				671C1FE21AB9C41E005F5586 /* LBFrameView.m in Sources */,
-				67AAC9CF1AC6F45B002E317F /* CalendarViewController.m in Sources */,
+				67AAC9CF1AC6F45B002E317F /* LBCalendarViewController.m in Sources */,
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				6721C2431AB43CCD00D1FF99 /* LBEditView.m in Sources */,
 				671C1FB71AB9BE4B005F5586 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				671C20191AB9D22F005F5586 /* AccountAppendixCell.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
 				671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */,
-				67BC8A481AB08BA1009E4153 /* NotificationSettingCell.m in Sources */,
 				671C1FBC1AB9BE4B005F5586 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				67C017161ABD627E0004EFD4 /* Account.m in Sources */,
 				67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */,
-				671C20151AB9CFF6005F5586 /* DocumentManager.m in Sources */,
+				671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */,
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
-				677A318A1AB725E10030FD08 /* ImageFilterManager.m in Sources */,
+				677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */,
 				67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */,
-				67AAC9C11AC6EB84002E317F /* NotificationEditCell.m in Sources */,
 				671C1FCF1AB9BE4B005F5586 /* MagicalRecord.m in Sources */,
+				67CD9CB51ACC22E800FC0455 /* LBNotificationSettingCell.m in Sources */,
 				67AAC9D81AC700BB002E317F /* Notification.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
 				67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */,
-				67AAC9D21AC6F479002E317F /* NotificationEditViewController.m in Sources */,
+				67AAC9D21AC6F479002E317F /* LBNotificationEditViewController.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
 				67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */,
-				67C016F01ABD505D0004EFD4 /* AccountManager.m in Sources */,
+				67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */,
 				67AAC9301AC69225002E317F /* UIScreen+ScreenExt.m in Sources */,
 				67AAC92E1AC69225002E317F /* UIColor+ColorExt.m in Sources */,
 				671C20011AB9C6E5005F5586 /* AccountViewController.m in Sources */,
 				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				671C1FC71AB9BE4B005F5586 /* NSPersistentStore+MagicalRecord.m in Sources */,
-				671C20161AB9CFF6005F5586 /* IndexInfoManager.m in Sources */,
+				671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */,
 				671C1FBE1AB9BE4B005F5586 /* NSManagedObject+MagicalFinders.m in Sources */,
 				671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */,
-				676EE36C1AAC610F0076B715 /* NotificationDotView.m in Sources */,
-				676EE3691AAC61020076B715 /* NotificationContentView.m in Sources */,
-				671C1F6F1AB9B620005F5586 /* AccountAppendixFileManager.m in Sources */,
+				671C1F6F1AB9B620005F5586 /* LBAccountAppendixFileManager.m in Sources */,
 				67AAC92D1AC69225002E317F /* NSString+StringExt.m in Sources */,
 				67AAC9321AC69225002E317F /* UIViewController+ControllerExt.m in Sources */,
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
 				67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */,
+				67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */,
 				67AAC9311AC69225002E317F /* UIView+ViewExt.m in Sources */,
-				67C016F91ABD51BB0004EFD4 /* UserManager.m in Sources */,
+				67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */,
+				67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */,
 				671C20021AB9C6E5005F5586 /* DocumentEditViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
-				671C20041AB9C6E5005F5586 /* AboutViewController.m in Sources */,
-				67AAC9DE1AC70416002E317F /* LBDatePickerCell.m in Sources */,
+				671C20041AB9C6E5005F5586 /* LBAboutViewController.m in Sources */,
 				6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */,
 				6721C24B1AB441AB00D1FF99 /* LBTextEditCell.m in Sources */,
 				67AAC9741AC6A445002E317F /* CalendarViewCell.m in Sources */,
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
 				671C200F1AB9C70D005F5586 /* AccountEditViewController.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
-				67634C761AADE5DA009FD0FA /* PanelSettingCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
 				671C1FBD1AB9BE4B005F5586 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				67AAC9DB1AC700DF002E317F /* NotificationManager.m in Sources */,
+				67AAC9DB1AC700DF002E317F /* LBNotificationManager.m in Sources */,
 				671C20061AB9C6E5005F5586 /* LoginViewController.m in Sources */,
 				671C1FCC1AB9BE4B005F5586 /* MagicalRecord+Options.m in Sources */,
 				671C1FC91AB9BE4B005F5586 /* MagicalRecord+Actions.m in Sources */,
@@ -1162,19 +1202,21 @@
 				671C1FC61AB9BE4B005F5586 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				67AAC92B1AC69225002E317F /* NSDictionary+DictionaryExt.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
-				677A31851AB723C60030FD08 /* DocumentAppendixFileManager.m in Sources */,
+				677A31851AB723C60030FD08 /* LBDocumentAppendixFileManager.m in Sources */,
+				67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */,
+				67CD9C9B1ACC1DE700FC0455 /* LBNotificationCell.m in Sources */,
 				67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */,
 				67AAC9391AC69261002E317F /* UINib+NibExt.m in Sources */,
 				671C20031AB9C6E5005F5586 /* OfficeViewController.m in Sources */,
 				671C1FB91AB9BE4B005F5586 /* NSObject+MagicalDataImport.m in Sources */,
 				675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */,
-				671C20091AB9C6E5005F5586 /* SettingViewController.m in Sources */,
+				671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */,
 				671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */,
 				67C016FC1ABD5DDF0004EFD4 /* AccountCell.m in Sources */,
 				67AAC97C1AC6A6D3002E317F /* NSDate+CalExt.m in Sources */,
 				67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */,
 				671C1FB81AB9BE4B005F5586 /* NSNumber+MagicalDataImport.m in Sources */,
-				671C20071AB9C6E5005F5586 /* NotificationSettingViewController.m in Sources */,
+				671C20071AB9C6E5005F5586 /* LBNotificationSettingViewController.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,
 				671C1FDC1AB9BFFD005F5586 /* LBSectionView.m in Sources */,
 				67AAC92A1AC69225002E317F /* NSDate+DateExt.m in Sources */,
@@ -1182,9 +1224,8 @@
 				67AAC9701AC6A445002E317F /* CalendarView.m in Sources */,
 				67AAC9291AC69225002E317F /* NSData+DataExt.m in Sources */,
 				671C1FE51AB9C485005F5586 /* LBNavigationBar.m in Sources */,
-				674E5E9E1AB1D35600F3415F /* CustomSettingHeaderView.m in Sources */,
-				67AAC9E11AC70A5D002E317F /* NotificaitonLabeViewController.m in Sources */,
-				671C20051AB9C6E5005F5586 /* CustomSettingViewController.m in Sources */,
+				67AAC9E11AC70A5D002E317F /* LBNotificaitonLabeViewController.m in Sources */,
+				671C20051AB9C6E5005F5586 /* LBCustomSettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1313,7 +1354,7 @@
 				INFOPLIST_FILE = LittleBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3aae7ab9-0be1-45be-b989-7686a88053bf";
+				PROVISIONING_PROFILE = "4912df6d-8dce-4f3e-9b74-3e9ea800c87b";
 			};
 			name = Debug;
 		};
@@ -1328,7 +1369,7 @@
 				INFOPLIST_FILE = LittleBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3aae7ab9-0be1-45be-b989-7686a88053bf";
+				PROVISIONING_PROFILE = "4912df6d-8dce-4f3e-9b74-3e9ea800c87b";
 			};
 			name = Release;
 		};

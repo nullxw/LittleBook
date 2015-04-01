@@ -7,7 +7,7 @@
 //
 
 #import "AccountViewController.h"
-#import "AccountManager.h"
+#import "LBAccountManager.h"
 #import "AccountCell.h"
 
 @interface AccountViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -31,7 +31,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _dataSource = [[AccountManager defaultManager] findAll];
+    _dataSource = [[LBAccountManager defaultManager] findAll];
     [_tableView reloadData];
 }
 

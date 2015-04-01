@@ -14,6 +14,9 @@
 
 - (NSInteger)getWeekIndex;
 
+// pattern like @"yyyy-MM-dd'T'HH:mm:ss"
 - (NSString *)formattedString:(NSString *)pattern;
+
+- (BOOL)betweenDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
 
 @end

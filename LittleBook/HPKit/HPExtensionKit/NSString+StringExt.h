@@ -18,4 +18,6 @@
 
 - (NSString*)SHA256;
 
+- (NSDate *)dateFromPattern:(NSString *)pattern;
+
 @end

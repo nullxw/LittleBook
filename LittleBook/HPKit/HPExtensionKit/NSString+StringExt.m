@@ -70,4 +70,11 @@
     }
     return hash;
 }
+
+- (NSDate *)dateFromPattern:(NSString *)pattern
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = pattern;
+    return [formatter dateFromString:self];
+}
 @end

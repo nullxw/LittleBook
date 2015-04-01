@@ -12,6 +12,8 @@
 
 @property (nonatomic, assign) BOOL isCurrentMonth;
 @property (nonatomic, assign) BOOL isCurrentDay;
+@property (nonatomic, assign) BOOL isHoliday;
+
 @property (nonatomic, weak) IBOutlet UILabel *label;
 
 @end

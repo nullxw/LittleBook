@@ -111,4 +111,9 @@
     formatter.dateFormat = pattern;
     return [formatter stringFromDate:self];
 }
+
+- (BOOL)betweenDate:(NSDate *)fromDate toDate:(NSDate *)toDate
+{
+    return [self timeIntervalSinceDate:fromDate] >= 0 && [toDate timeIntervalSinceDate:self] >= 0;
+}
 @end

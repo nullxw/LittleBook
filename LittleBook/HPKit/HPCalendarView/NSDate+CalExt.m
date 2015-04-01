@@ -76,12 +76,25 @@
     endWeekIndex = endWeekIndex > 7 ? endWeekIndex - 7 : endWeekIndex;
     
     HPMonth *month = [[HPMonth alloc] init];
-    month.length = monthLength;
+    month.year         = year;
+    month.month        = comps.month;
+    month.length       = monthLength;
     month.startWeekDay = startWeekIndex;
-    month.endWeekDay = endWeekIndex;
+    month.endWeekDay   = endWeekIndex;
     month.preMonthLength = [([[NSDate new] isLeapYear] ? leapMonthLength[preMonth - 1] : normalMonthLength [preMonth - 1]) integerValue];
-    month.month = comps.month;
+    
     return month;
+}
+
+- (NSDate *)dateOfDay:(NSInteger)day
+{
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps.year = self.year;
+    comps.month = self.month;
+    comps.day = day;
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDate *date = [cal dateFromComponents:comps];
+    return date;
 }
 @end
 

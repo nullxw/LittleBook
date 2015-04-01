@@ -8,9 +8,9 @@
 
 #import "AccountCell.h"
 #import "LBAccountTimeLineLabel.h"
-#import "AccountAppendixFileManager.h"
+#import "LBAccountAppendixFileManager.h"
 #import "AccountAppendixCell.h"
-#import "AppendixManager.h"
+#import "LBAppendixManager.h"
 #import "Account.h"
 
 @interface AccountCell ()<UICollectionViewDataSource, UICollectionViewDelegate>
@@ -42,7 +42,7 @@
 {
     _timeLineLabel.date = account.createTime;
     _costLabel.text = account.totalCost;
-    _dataSource = [[AppendixManager defaultManager] appendixOfAccount:account.accountID];
+    _dataSource = [[LBAppendixManager defaultManager] appendixOfAccount:account.accountID];
     [_collectionView reloadData];
 }
 
@@ -58,7 +58,7 @@
     AccountAppendixCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"appendixCell" forIndexPath:indexPath];
     
     Appendix *appendix = _dataSource[indexPath.row];
-    NSString *appendixPath = [[AccountAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
+    NSString *appendixPath = [[LBAccountAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
     cell.imageView.image = [UIImage imageWithContentsOfFile:appendixPath];
     return cell;
 }

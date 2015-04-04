@@ -10,6 +10,8 @@
 	<string>LittleBook</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>269A011D1A3AB7DB1CFFCA393BB5D34061E0910A</key>
+		<string>https://gitlab.ilegendsoft.com/iosdev/privatealbum.git</string>
 		<key>3FDF2C9AB5170FEDB96E6BD1D432AF5E1559BC1E</key>
 		<string>https://github.com/shuangyu/LittleBook.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>LittleBook.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>269A011D1A3AB7DB1CFFCA393BB5D34061E0910A</key>
+		<string>../../../workspace/privatealbum2</string>
 		<key>3FDF2C9AB5170FEDB96E6BD1D432AF5E1559BC1E</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>3FDF2C9AB5170FEDB96E6BD1D432AF5E1559BC1E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LittleBook</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>269A011D1A3AB7DB1CFFCA393BB5D34061E0910A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>privatealbum2</string>
 		</dict>
 	</array>
 </dict>

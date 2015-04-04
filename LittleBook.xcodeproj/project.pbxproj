@@ -81,6 +81,9 @@
 		677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31881AB725E10030FD08 /* LBImageFilterManager.m */; };
 		677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */; };
 		6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 679334991ACA4091001DE34A /* HPTaskManager.m */; };
+		6794AC581ACFC28300EC1DB2 /* HPLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC571ACFC28300EC1DB2 /* HPLockView.m */; };
+		6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */; };
+		6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */; };
 		67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */; };
 		67AAC9291AC69225002E317F /* NSData+DataExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9151AC69225002E317F /* NSData+DataExt.m */; };
 		67AAC92A1AC69225002E317F /* NSDate+DateExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9171AC69225002E317F /* NSDate+DateExt.m */; };
@@ -137,6 +140,7 @@
 		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
+		67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F5321D1ACD3FC500B10CD7 /* HPCycleView.m */; };
 		67F7B6871AA2F3D00032A5FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6861AA2F3D00032A5FD /* main.m */; };
 		67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6891AA2F3D00032A5FD /* AppDelegate.m */; };
 		67F7B6931AA2F3D00032A5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6911AA2F3D00032A5FD /* Main.storyboard */; };
@@ -305,6 +309,11 @@
 		677A31E81AB728930030FD08 /* LittleBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleBook.xcdatamodel; sourceTree = "<group>"; };
 		679334981ACA4091001DE34A /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
 		679334991ACA4091001DE34A /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
+		6794AC561ACFC28300EC1DB2 /* HPLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLockView.h; sourceTree = "<group>"; };
+		6794AC571ACFC28300EC1DB2 /* HPLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLockView.m; sourceTree = "<group>"; };
+		6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IndicatorImages.xcassets; sourceTree = "<group>"; };
+		6794AC5B1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+IndicatorExt.h"; sourceTree = "<group>"; };
+		6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+IndicatorExt.m"; sourceTree = "<group>"; };
 		67AAC9111AC69225002E317F /* ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionKit.h; sourceTree = "<group>"; };
 		67AAC9121AC69225002E317F /* NSArray+ArrayExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ArrayExt.h"; sourceTree = "<group>"; };
 		67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ArrayExt.m"; sourceTree = "<group>"; };
@@ -407,6 +416,8 @@
 		67EF19EC1AAB0FBA00F97940 /* HPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLine.m; sourceTree = "<group>"; };
 		67EF19F81AAB43D400F97940 /* LBAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppContext.h; sourceTree = "<group>"; };
 		67EF19F91AAB43D400F97940 /* LBAppContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppContext.m; sourceTree = "<group>"; };
+		67F5321C1ACD3FC500B10CD7 /* HPCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCycleView.h; sourceTree = "<group>"; };
+		67F5321D1ACD3FC500B10CD7 /* HPCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCycleView.m; sourceTree = "<group>"; };
 		67F7B6811AA2F3D00032A5FD /* LittleBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7B6851AA2F3D00032A5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F7B6861AA2F3D00032A5FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -641,6 +652,9 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */,
+				6794AC551ACFC28300EC1DB2 /* HPLockView */,
+				67F5321B1ACD3FC500B10CD7 /* HPCycleView */,
 				679334971ACA4091001DE34A /* HPTaskManager */,
 				67AAC9B51AC6AF81002E317F /* HPRoundCornerViews */,
 				67AAC9101AC69225002E317F /* HPExtensionKit */,
@@ -773,6 +787,25 @@
 				679334991ACA4091001DE34A /* HPTaskManager.m */,
 			);
 			path = HPTaskManager;
+			sourceTree = "<group>";
+		};
+		6794AC551ACFC28300EC1DB2 /* HPLockView */ = {
+			isa = PBXGroup;
+			children = (
+				6794AC561ACFC28300EC1DB2 /* HPLockView.h */,
+				6794AC571ACFC28300EC1DB2 /* HPLockView.m */,
+			);
+			path = HPLockView;
+			sourceTree = "<group>";
+		};
+		6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */ = {
+			isa = PBXGroup;
+			children = (
+				6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */,
+				6794AC5B1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.h */,
+				6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */,
+			);
+			path = HPScrollViewIndicatorExt;
 			sourceTree = "<group>";
 		};
 		67AAC9101AC69225002E317F /* HPExtensionKit */ = {
@@ -933,6 +966,15 @@
 				676EE3541AAC43930076B715 /* LBMacros.h */,
 			);
 			path = Context;
+			sourceTree = "<group>";
+		};
+		67F5321B1ACD3FC500B10CD7 /* HPCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				67F5321C1ACD3FC500B10CD7 /* HPCycleView.h */,
+				67F5321D1ACD3FC500B10CD7 /* HPCycleView.m */,
+			);
+			path = HPCycleView;
 			sourceTree = "<group>";
 		};
 		67F7B6781AA2F3D00032A5FD = {
@@ -1096,6 +1138,7 @@
 				67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */,
 				6757E6131ACC3E6D0071B662 /* sound.wav in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
+				6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
 				67AAC96D1AC6A445002E317F /* CalendarHeaderView_320.xib in Resources */,
 				67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */,
@@ -1190,6 +1233,7 @@
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
 				67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */,
 				67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */,
+				67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */,
 				67AAC9311AC69225002E317F /* UIView+ViewExt.m in Sources */,
 				67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */,
 				67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */,
@@ -1213,8 +1257,10 @@
 				67AAC92B1AC69225002E317F /* NSDictionary+DictionaryExt.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
 				677A31851AB723C60030FD08 /* LBDocumentAppendixFileManager.m in Sources */,
+				6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */,
 				67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */,
 				67CD9C9B1ACC1DE700FC0455 /* LBNotificationCell.m in Sources */,
+				6794AC581ACFC28300EC1DB2 /* HPLockView.m in Sources */,
 				67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */,
 				67AAC9391AC69261002E317F /* UINib+NibExt.m in Sources */,
 				671C20031AB9C6E5005F5586 /* OfficeViewController.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  AccountEditViewController.h
+//  LBTimeLineView.h.h
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/18.
@@ -10,8 +10,9 @@
 
 @class Account;
 
-@interface AccountEditViewController : UIViewController
+@interface LBAccountEditViewController : UIViewController
 
 @property (nonatomic, strong) Account *account;
+@property (nonatomic, assign) BOOL isEditing;
 
 @end

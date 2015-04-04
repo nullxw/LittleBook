@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSNumber * maxAppendixID;
 @property (nonatomic, retain) NSNumber * maxDocumentID;
-@property (nonatomic, retain) NSNumber * maxAcoountID;
+@property (nonatomic, retain) NSNumber * maxAccountDetailID;
 @property (nonatomic, retain) NSNumber * maxNotificationID;
 @property (nonatomic, retain) NSString * userID;
 

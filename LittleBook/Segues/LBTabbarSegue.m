@@ -28,6 +28,10 @@
     viewControllerToPresent.view.frame = CGRectMake(0, CGRectGetMinY(rect), w, CGRectGetHeight(rect));
     viewControllerToPresent.contentView.alpha = 0.0;
     
+    if (viewControllerToPresent.navigationBar) {
+        [viewControllerToPresent.navigationBar startShowAnimationWithDuration:LB_SPRING_ANIMATION_TIME completion:nil];
+    }
+    
     [sourceViewController addChildViewController:viewControllerToPresent];
     [sourceViewController.view addSubview:viewControllerToPresent.view];
     

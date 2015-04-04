@@ -12,12 +12,7 @@
 
 @implementation LBAppendixManager
 
-+ (LBAppendixManager *)defaultManager
-{
-    CREATE_SINGLETON_INSTANCE([[LBAppendixManager alloc] init]);
-}
-
-- (Appendix *)createAppendixWithMediaData:(NSData *)data
++ (Appendix *)createAppendixWithMediaData:(NSData *)data
 {
     Appendix *appendix = [Appendix createEntity];
     appendix.userID = [LBUserManager defaultManager].currentUser.userID;
@@ -27,14 +22,26 @@
     return appendix;
 }
 
-- (NSArray *)appendixOfAccount:(NSNumber *)accountID
++ (NSArray *)appendixsOfAccountDetail:(NSNumber *)accountID
 {
     return [Appendix findAllWithPredicate:[NSPredicate predicateWithFormat:@"parentID=%@ and userID=%@", accountID, [LBUserManager defaultManager].currentUser.userID]];
 }
 
-- (Appendix *)findByID:(NSNumber *)appendixID
++ (Appendix *)findByID:(NSNumber *)appendixID
 {
     return [Appendix findFirstWithPredicate:[NSPredicate predicateWithFormat:@"appendixID=%@ and userID=%@", appendixID, [LBUserManager defaultManager].currentUser.userID]];
 }
 
++ (NSArray *)findByIDs:(NSArray *)appendixIDs
+{
+    NSMutableArray *appendixs = @[].mutableCopy;
+    
+    for (NSNumber *appendixID in appendixIDs) {
+        Appendix *appendix = [LBAppendixManager findByID:appendixID];
+        if (appendix) {
+            [appendixs addObject:appendix];
+        }
+    }
+    return appendixIDs;
+}
 @end

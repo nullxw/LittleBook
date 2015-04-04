@@ -14,7 +14,7 @@
 
 - (NSNumber *)getAppendixID;
 - (NSNumber *)getDocumentID;
-- (NSNumber *)getAccountID;
+- (NSNumber *)getAccountDetailID;
 - (NSNumber *)getNotificationID;
 
 @end

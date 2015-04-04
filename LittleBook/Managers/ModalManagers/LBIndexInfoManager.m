@@ -14,7 +14,7 @@
     IndexInfo *_indexInfo;
     unsigned long _maxAppendixID;
     unsigned long _maxDocumentID;
-    unsigned long _maxAccountID;
+    unsigned long _maxAccountDetailID;
     unsigned long _maxNotificationID;
 }
 @end
@@ -35,12 +35,12 @@
             _indexInfo = [IndexInfo createEntity];
             _indexInfo.maxAppendixID     = @(0);
             _indexInfo.maxDocumentID     = @(0);
-            _indexInfo.maxAcoountID      = @(0);
+            _indexInfo.maxAccountDetailID= @(0);
             _indexInfo.maxNotificationID = @(0);
         }
         _maxAppendixID = _indexInfo.maxAppendixID.unsignedLongValue;
         _maxDocumentID = _indexInfo.maxDocumentID.unsignedLongValue;
-        _maxAccountID  = _indexInfo.maxAcoountID.unsignedLongValue;
+        _maxAccountDetailID = _indexInfo.maxAccountDetailID.unsignedLongValue;
         _maxNotificationID  = _indexInfo.maxNotificationID.unsignedIntegerValue;
     }
     return self;
@@ -56,9 +56,9 @@
     return (_indexInfo.maxDocumentID = @(++_maxDocumentID));
 }
 
-- (NSNumber *)getAccountID
+- (NSNumber *)getAccountDetailID
 {
-    return (_indexInfo.maxAcoountID = @(++_maxAccountID));
+    return (_indexInfo.maxAccountDetailID = @(++_maxAccountDetailID));
 }
 - (NSNumber *)getNotificationID
 {

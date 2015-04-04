@@ -26,6 +26,7 @@
 {
     return [[NSDate new] formattedString:@"yyyy-MM-dd"];
 }
+
 - (Notification *)prepareNotificationEntityWith:(Notification *)notif;
 {
     _newEntity = notif == nil;
@@ -114,7 +115,7 @@
     return [Notification findByAttribute:@"userID" withValue:[LBUserManager defaultManager].currentUser.userID andOrderBy:@"createTime" ascending:NO];
 }
 
-- (NSArray *)findAllofToday
+- (NSArray *)findAllOfToday
 {
     NSString *dayID = [self getTodayID];
     return [Notification findAllSortedBy:@"createDate" ascending:NO withPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and dayID=%@", [LBUserManager defaultManager].currentUser.userID, dayID]];

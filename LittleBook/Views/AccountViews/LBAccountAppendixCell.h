@@ -1,5 +1,5 @@
 //
-//  AccountAppendixCell.h
+//  LBAccountAppendixCell.h
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountAppendixCell : UICollectionViewCell
+@interface LBAccountAppendixCell : UICollectionViewCell
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
 

@@ -40,7 +40,7 @@
 		671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FDE1AB9C027005F5586 /* LBDateView.m */; };
 		671C1FE21AB9C41E005F5586 /* LBFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE11AB9C41E005F5586 /* LBFrameView.m */; };
 		671C1FE51AB9C485005F5586 /* LBNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE41AB9C485005F5586 /* LBNavigationBar.m */; };
-		671C20011AB9C6E5005F5586 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE81AB9C6E5005F5586 /* AccountViewController.m */; };
+		671C20011AB9C6E5005F5586 /* LBAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE81AB9C6E5005F5586 /* LBAccountViewController.m */; };
 		671C20021AB9C6E5005F5586 /* DocumentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FEB1AB9C6E5005F5586 /* DocumentEditViewController.m */; };
 		671C20031AB9C6E5005F5586 /* OfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FED1AB9C6E5005F5586 /* OfficeViewController.m */; };
 		671C20041AB9C6E5005F5586 /* LBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF01AB9C6E5005F5586 /* LBAboutViewController.m */; };
@@ -51,10 +51,9 @@
 		671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFA1AB9C6E5005F5586 /* LBSettingViewController.m */; };
 		671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */; };
 		671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20001AB9C6E5005F5586 /* ViewController.m */; };
-		671C200F1AB9C70D005F5586 /* AccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C200E1AB9C70D005F5586 /* AccountEditViewController.m */; };
+		671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C200E1AB9C70D005F5586 /* LBAccountEditViewController.m */; };
 		671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20121AB9CFF6005F5586 /* LBDocumentManager.m */; };
 		671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */; };
-		671C20191AB9D22F005F5586 /* AccountAppendixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20181AB9D22F005F5586 /* AccountAppendixCell.m */; };
 		6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */; };
 		6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22C1AB406B900D1FF99 /* LBPresentFromRightSegue.m */; };
 		6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22F1AB407A400D1FF99 /* LBTabbarSegue.m */; };
@@ -84,6 +83,15 @@
 		6794AC581ACFC28300EC1DB2 /* HPLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC571ACFC28300EC1DB2 /* HPLockView.m */; };
 		6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */; };
 		6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */; };
+		6794AC651ACFDF8200EC1DB2 /* LBAccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC631ACFDF8200EC1DB2 /* LBAccountListCell.m */; };
+		6794AC6B1ACFDFE700EC1DB2 /* LBAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC6A1ACFDFE700EC1DB2 /* LBAccountCell.m */; };
+		6794AC761ACFE82D00EC1DB2 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC731ACFE82D00EC1DB2 /* Account.m */; };
+		6794AC771ACFE82D00EC1DB2 /* AccountDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC751ACFE82D00EC1DB2 /* AccountDetail.m */; };
+		6794AC7A1ACFE84B00EC1DB2 /* LBAccountDetailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC791ACFE84B00EC1DB2 /* LBAccountDetailManager.m */; };
+		6794AC7D1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC7C1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m */; };
+		6794AC801AD0217900EC1DB2 /* LBImagePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC7F1AD0217900EC1DB2 /* LBImagePreviewView.m */; };
+		6794AC821AD0219400EC1DB2 /* LBImagePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC811AD0219400EC1DB2 /* LBImagePreviewView.xib */; };
+		6794AC861AD0263600EC1DB2 /* HPCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */; };
 		67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */; };
 		67AAC9291AC69225002E317F /* NSData+DataExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9151AC69225002E317F /* NSData+DataExt.m */; };
 		67AAC92A1AC69225002E317F /* NSDate+DateExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9171AC69225002E317F /* NSDate+DateExt.m */; };
@@ -118,12 +126,10 @@
 		67AAC9D81AC700BB002E317F /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D71AC700BB002E317F /* Notification.m */; };
 		67AAC9DB1AC700DF002E317F /* LBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */; };
 		67AAC9E11AC70A5D002E317F /* LBNotificaitonLabeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */; };
-		67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */; };
+		67C016ED1ABD440C0004EFD4 /* LBTimeLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EC1ABD440C0004EFD4 /* LBTimeLineView.m */; };
 		67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */; };
 		67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F21ABD50780004EFD4 /* LBAppendixManager.m */; };
 		67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F81ABD51BB0004EFD4 /* LBUserManager.m */; };
-		67C016FC1ABD5DDF0004EFD4 /* AccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */; };
-		67C017161ABD627E0004EFD4 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0170D1ABD627E0004EFD4 /* Account.m */; };
 		67C017171ABD627E0004EFD4 /* Appendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C0170F1ABD627E0004EFD4 /* Appendix.m */; };
 		67C017181ABD627E0004EFD4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017111ABD627E0004EFD4 /* Document.m */; };
 		67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017131ABD627E0004EFD4 /* IndexInfo.m */; };
@@ -230,8 +236,8 @@
 		671C1FE11AB9C41E005F5586 /* LBFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBFrameView.m; sourceTree = "<group>"; };
 		671C1FE31AB9C485005F5586 /* LBNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNavigationBar.h; sourceTree = "<group>"; };
 		671C1FE41AB9C485005F5586 /* LBNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNavigationBar.m; sourceTree = "<group>"; };
-		671C1FE71AB9C6E5005F5586 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
-		671C1FE81AB9C6E5005F5586 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		671C1FE71AB9C6E5005F5586 /* LBAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountViewController.h; sourceTree = "<group>"; };
+		671C1FE81AB9C6E5005F5586 /* LBAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountViewController.m; sourceTree = "<group>"; };
 		671C1FEA1AB9C6E5005F5586 /* DocumentEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentEditViewController.h; sourceTree = "<group>"; };
 		671C1FEB1AB9C6E5005F5586 /* DocumentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentEditViewController.m; sourceTree = "<group>"; };
 		671C1FEC1AB9C6E5005F5586 /* OfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficeViewController.h; sourceTree = "<group>"; };
@@ -252,14 +258,12 @@
 		671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		671C1FFF1AB9C6E5005F5586 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		671C20001AB9C6E5005F5586 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		671C200D1AB9C70D005F5586 /* AccountEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountEditViewController.h; sourceTree = "<group>"; };
-		671C200E1AB9C70D005F5586 /* AccountEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountEditViewController.m; sourceTree = "<group>"; };
+		671C200D1AB9C70D005F5586 /* LBAccountEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountEditViewController.h; sourceTree = "<group>"; };
+		671C200E1AB9C70D005F5586 /* LBAccountEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountEditViewController.m; sourceTree = "<group>"; };
 		671C20111AB9CFF6005F5586 /* LBDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentManager.h; sourceTree = "<group>"; };
 		671C20121AB9CFF6005F5586 /* LBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentManager.m; sourceTree = "<group>"; };
 		671C20131AB9CFF6005F5586 /* LBIndexInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBIndexInfoManager.h; sourceTree = "<group>"; };
 		671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBIndexInfoManager.m; sourceTree = "<group>"; };
-		671C20171AB9D22F005F5586 /* AccountAppendixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAppendixCell.h; sourceTree = "<group>"; };
-		671C20181AB9D22F005F5586 /* AccountAppendixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAppendixCell.m; sourceTree = "<group>"; };
 		6721C2281AB4003F00D1FF99 /* LBPresentFromBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromBottomSegue.h; sourceTree = "<group>"; };
 		6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPresentFromBottomSegue.m; sourceTree = "<group>"; };
 		6721C22B1AB406B900D1FF99 /* LBPresentFromRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromRightSegue.h; sourceTree = "<group>"; };
@@ -314,6 +318,24 @@
 		6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IndicatorImages.xcassets; sourceTree = "<group>"; };
 		6794AC5B1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+IndicatorExt.h"; sourceTree = "<group>"; };
 		6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+IndicatorExt.m"; sourceTree = "<group>"; };
+		6794AC621ACFDF8200EC1DB2 /* LBAccountListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountListCell.h; sourceTree = "<group>"; };
+		6794AC631ACFDF8200EC1DB2 /* LBAccountListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountListCell.m; sourceTree = "<group>"; };
+		6794AC691ACFDFE700EC1DB2 /* LBAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountCell.h; sourceTree = "<group>"; };
+		6794AC6A1ACFDFE700EC1DB2 /* LBAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountCell.m; sourceTree = "<group>"; };
+		6794AC721ACFE82D00EC1DB2 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		6794AC731ACFE82D00EC1DB2 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		6794AC741ACFE82D00EC1DB2 /* AccountDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetail.h; sourceTree = "<group>"; };
+		6794AC751ACFE82D00EC1DB2 /* AccountDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetail.m; sourceTree = "<group>"; };
+		6794AC781ACFE84B00EC1DB2 /* LBAccountDetailManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountDetailManager.h; sourceTree = "<group>"; };
+		6794AC791ACFE84B00EC1DB2 /* LBAccountDetailManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountDetailManager.m; sourceTree = "<group>"; };
+		6794AC7B1ACFECAD00EC1DB2 /* LBAccountAppendixCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountAppendixCell.h; sourceTree = "<group>"; };
+		6794AC7C1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountAppendixCell.m; sourceTree = "<group>"; };
+		6794AC7E1AD0217900EC1DB2 /* LBImagePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImagePreviewView.h; sourceTree = "<group>"; };
+		6794AC7F1AD0217900EC1DB2 /* LBImagePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBImagePreviewView.m; sourceTree = "<group>"; };
+		6794AC811AD0219400EC1DB2 /* LBImagePreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBImagePreviewView.xib; sourceTree = "<group>"; };
+		6794AC831AD0263600EC1DB2 /* HPCommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCommonMacro.h; sourceTree = "<group>"; };
+		6794AC841AD0263600EC1DB2 /* HPCommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCommonFunctions.h; sourceTree = "<group>"; };
+		6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCommonFunctions.m; sourceTree = "<group>"; };
 		67AAC9111AC69225002E317F /* ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionKit.h; sourceTree = "<group>"; };
 		67AAC9121AC69225002E317F /* NSArray+ArrayExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ArrayExt.h"; sourceTree = "<group>"; };
 		67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ArrayExt.m"; sourceTree = "<group>"; };
@@ -374,18 +396,14 @@
 		67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationManager.m; sourceTree = "<group>"; };
 		67AAC9DF1AC70A5D002E317F /* LBNotificaitonLabeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificaitonLabeViewController.h; sourceTree = "<group>"; };
 		67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificaitonLabeViewController.m; sourceTree = "<group>"; };
-		67C016EB1ABD440C0004EFD4 /* LBAccountTimeLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountTimeLineLabel.h; sourceTree = "<group>"; };
-		67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountTimeLineLabel.m; sourceTree = "<group>"; };
+		67C016EB1ABD440C0004EFD4 /* LBTimeLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTimeLineView.h; sourceTree = "<group>"; };
+		67C016EC1ABD440C0004EFD4 /* LBTimeLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTimeLineView.m; sourceTree = "<group>"; };
 		67C016EE1ABD505D0004EFD4 /* LBAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountManager.h; sourceTree = "<group>"; };
 		67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountManager.m; sourceTree = "<group>"; };
 		67C016F11ABD50780004EFD4 /* LBAppendixManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppendixManager.h; sourceTree = "<group>"; };
 		67C016F21ABD50780004EFD4 /* LBAppendixManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppendixManager.m; sourceTree = "<group>"; };
 		67C016F71ABD51BB0004EFD4 /* LBUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUserManager.h; sourceTree = "<group>"; };
 		67C016F81ABD51BB0004EFD4 /* LBUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUserManager.m; sourceTree = "<group>"; };
-		67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCell.h; sourceTree = "<group>"; };
-		67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCell.m; sourceTree = "<group>"; };
-		67C0170C1ABD627E0004EFD4 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		67C0170D1ABD627E0004EFD4 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		67C0170E1ABD627E0004EFD4 /* Appendix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appendix.h; sourceTree = "<group>"; };
 		67C0170F1ABD627E0004EFD4 /* Appendix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appendix.m; sourceTree = "<group>"; };
 		67C017101ABD627E0004EFD4 /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
@@ -583,8 +601,8 @@
 				671C1FE11AB9C41E005F5586 /* LBFrameView.m */,
 				671C1FE31AB9C485005F5586 /* LBNavigationBar.h */,
 				671C1FE41AB9C485005F5586 /* LBNavigationBar.m */,
-				67C016EB1ABD440C0004EFD4 /* LBAccountTimeLineLabel.h */,
-				67C016EC1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m */,
+				67C016EB1ABD440C0004EFD4 /* LBTimeLineView.h */,
+				67C016EC1ABD440C0004EFD4 /* LBTimeLineView.m */,
 			);
 			path = LBCommonViews;
 			sourceTree = "<group>";
@@ -592,10 +610,10 @@
 		671C1FE61AB9C6E5005F5586 /* AccountViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				671C1FE71AB9C6E5005F5586 /* AccountViewController.h */,
-				671C1FE81AB9C6E5005F5586 /* AccountViewController.m */,
-				671C200D1AB9C70D005F5586 /* AccountEditViewController.h */,
-				671C200E1AB9C70D005F5586 /* AccountEditViewController.m */,
+				671C1FE71AB9C6E5005F5586 /* LBAccountViewController.h */,
+				671C1FE81AB9C6E5005F5586 /* LBAccountViewController.m */,
+				671C200D1AB9C70D005F5586 /* LBAccountEditViewController.h */,
+				671C200E1AB9C70D005F5586 /* LBAccountEditViewController.m */,
 			);
 			path = AccountViewControllers;
 			sourceTree = "<group>";
@@ -633,14 +651,16 @@
 		671C20101AB9CFF6005F5586 /* ModalManagers */ = {
 			isa = PBXGroup;
 			children = (
+				6794AC781ACFE84B00EC1DB2 /* LBAccountDetailManager.h */,
+				6794AC791ACFE84B00EC1DB2 /* LBAccountDetailManager.m */,
+				67C016EE1ABD505D0004EFD4 /* LBAccountManager.h */,
+				67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */,
 				67AAC9D91AC700DF002E317F /* LBNotificationManager.h */,
 				67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */,
 				671C20111AB9CFF6005F5586 /* LBDocumentManager.h */,
 				671C20121AB9CFF6005F5586 /* LBDocumentManager.m */,
 				671C20131AB9CFF6005F5586 /* LBIndexInfoManager.h */,
 				671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */,
-				67C016EE1ABD505D0004EFD4 /* LBAccountManager.h */,
-				67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */,
 				67C016F11ABD50780004EFD4 /* LBAppendixManager.h */,
 				67C016F21ABD50780004EFD4 /* LBAppendixManager.m */,
 				67C016F71ABD51BB0004EFD4 /* LBUserManager.h */,
@@ -652,6 +672,9 @@
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
+				6794AC831AD0263600EC1DB2 /* HPCommonMacro.h */,
+				6794AC841AD0263600EC1DB2 /* HPCommonFunctions.h */,
+				6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */,
 				6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */,
 				6794AC551ACFC28300EC1DB2 /* HPLockView */,
 				67F5321B1ACD3FC500B10CD7 /* HPCycleView */,
@@ -765,8 +788,6 @@
 			children = (
 				67AAC9D61AC700BB002E317F /* Notification.h */,
 				67AAC9D71AC700BB002E317F /* Notification.m */,
-				67C0170C1ABD627E0004EFD4 /* Account.h */,
-				67C0170D1ABD627E0004EFD4 /* Account.m */,
 				67C0170E1ABD627E0004EFD4 /* Appendix.h */,
 				67C0170F1ABD627E0004EFD4 /* Appendix.m */,
 				67C017101ABD627E0004EFD4 /* Document.h */,
@@ -775,6 +796,10 @@
 				67C017131ABD627E0004EFD4 /* IndexInfo.m */,
 				67C017141ABD627E0004EFD4 /* LBUser.h */,
 				67C017151ABD627E0004EFD4 /* LBUser.m */,
+				6794AC721ACFE82D00EC1DB2 /* Account.h */,
+				6794AC731ACFE82D00EC1DB2 /* Account.m */,
+				6794AC741ACFE82D00EC1DB2 /* AccountDetail.h */,
+				6794AC751ACFE82D00EC1DB2 /* AccountDetail.m */,
 				677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */,
 			);
 			path = Models;
@@ -806,6 +831,22 @@
 				6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */,
 			);
 			path = HPScrollViewIndicatorExt;
+			sourceTree = "<group>";
+		};
+		6794AC5F1ACFDF8200EC1DB2 /* AccountViews */ = {
+			isa = PBXGroup;
+			children = (
+				6794AC621ACFDF8200EC1DB2 /* LBAccountListCell.h */,
+				6794AC631ACFDF8200EC1DB2 /* LBAccountListCell.m */,
+				6794AC691ACFDFE700EC1DB2 /* LBAccountCell.h */,
+				6794AC6A1ACFDFE700EC1DB2 /* LBAccountCell.m */,
+				6794AC7B1ACFECAD00EC1DB2 /* LBAccountAppendixCell.h */,
+				6794AC7C1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m */,
+				6794AC7E1AD0217900EC1DB2 /* LBImagePreviewView.h */,
+				6794AC7F1AD0217900EC1DB2 /* LBImagePreviewView.m */,
+				6794AC811AD0219400EC1DB2 /* LBImagePreviewView.xib */,
+			);
+			path = AccountViews;
 			sourceTree = "<group>";
 		};
 		67AAC9101AC69225002E317F /* HPExtensionKit */ = {
@@ -927,6 +968,7 @@
 		67EF19E31AAB02C200F97940 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6794AC5F1ACFDF8200EC1DB2 /* AccountViews */,
 				67CD9CA51ACC22E800FC0455 /* SettingViews */,
 				67CD9C951ACC1DE700FC0455 /* CalendarViews */,
 				671C1FD01AB9BFFD005F5586 /* LBCommonViews */,
@@ -941,10 +983,6 @@
 				6741156F1AB4746A00346CD8 /* LBImageEditView.h */,
 				674115701AB4746A00346CD8 /* LBImageEditView.m */,
 				674115721AB474AF00346CD8 /* LBImageEditView.xib */,
-				671C20171AB9D22F005F5586 /* AccountAppendixCell.h */,
-				671C20181AB9D22F005F5586 /* AccountAppendixCell.m */,
-				67C016FA1ABD5DDF0004EFD4 /* AccountCell.h */,
-				67C016FB1ABD5DDF0004EFD4 /* AccountCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1135,6 +1173,7 @@
 				67AAC9771AC6A445002E317F /* CalendarViewCell_414.xib in Resources */,
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
 				67AAC96E1AC6A445002E317F /* CalendarHeaderView_375.xib in Resources */,
+				6794AC821AD0219400EC1DB2 /* LBImagePreviewView.xib in Resources */,
 				67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */,
 				6757E6131ACC3E6D0071B662 /* sound.wav in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
@@ -1182,11 +1221,15 @@
 				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
 				67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */,
 				6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */,
+				6794AC7D1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m in Sources */,
 				6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */,
+				6794AC771ACFE82D00EC1DB2 /* AccountDetail.m in Sources */,
 				671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */,
 				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
+				6794AC861AD0263600EC1DB2 /* HPCommonFunctions.m in Sources */,
 				67AAC96C1AC6A445002E317F /* CalendarHeaderView.m in Sources */,
+				6794AC761ACFE82D00EC1DB2 /* Account.m in Sources */,
 				67C017171ABD627E0004EFD4 /* Appendix.m in Sources */,
 				671C1FC51AB9BE4B005F5586 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */,
@@ -1199,11 +1242,9 @@
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				6721C2431AB43CCD00D1FF99 /* LBEditView.m in Sources */,
 				671C1FB71AB9BE4B005F5586 /* NSEntityDescription+MagicalDataImport.m in Sources */,
-				671C20191AB9D22F005F5586 /* AccountAppendixCell.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
 				671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */,
 				671C1FBC1AB9BE4B005F5586 /* NSManagedObject+MagicalAggregation.m in Sources */,
-				67C017161ABD627E0004EFD4 /* Account.m in Sources */,
 				67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */,
 				671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */,
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
@@ -1216,12 +1257,14 @@
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
 				67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */,
 				67AAC9D21AC6F479002E317F /* LBNotificationEditViewController.m in Sources */,
+				6794AC651ACFDF8200EC1DB2 /* LBAccountListCell.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
+				6794AC801AD0217900EC1DB2 /* LBImagePreviewView.m in Sources */,
 				67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */,
 				67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */,
 				67AAC9301AC69225002E317F /* UIScreen+ScreenExt.m in Sources */,
 				67AAC92E1AC69225002E317F /* UIColor+ColorExt.m in Sources */,
-				671C20011AB9C6E5005F5586 /* AccountViewController.m in Sources */,
+				671C20011AB9C6E5005F5586 /* LBAccountViewController.m in Sources */,
 				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				671C1FC71AB9BE4B005F5586 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */,
@@ -1229,12 +1272,14 @@
 				671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */,
 				671C1F6F1AB9B620005F5586 /* LBAccountAppendixFileManager.m in Sources */,
 				67AAC92D1AC69225002E317F /* NSString+StringExt.m in Sources */,
+				6794AC7A1ACFE84B00EC1DB2 /* LBAccountDetailManager.m in Sources */,
 				67AAC9321AC69225002E317F /* UIViewController+ControllerExt.m in Sources */,
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
 				67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */,
 				67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */,
 				67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */,
 				67AAC9311AC69225002E317F /* UIView+ViewExt.m in Sources */,
+				6794AC6B1ACFDFE700EC1DB2 /* LBAccountCell.m in Sources */,
 				67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */,
 				67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */,
 				671C20021AB9C6E5005F5586 /* DocumentEditViewController.m in Sources */,
@@ -1244,7 +1289,7 @@
 				6721C24B1AB441AB00D1FF99 /* LBTextEditCell.m in Sources */,
 				67AAC9741AC6A445002E317F /* CalendarViewCell.m in Sources */,
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
-				671C200F1AB9C70D005F5586 /* AccountEditViewController.m in Sources */,
+				671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
 				671C1FBD1AB9BE4B005F5586 /* NSManagedObject+MagicalDataImport.m in Sources */,
@@ -1268,9 +1313,8 @@
 				675EAE8F1AA80A0200B13BD3 /* DemoViewController.m in Sources */,
 				671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */,
 				671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */,
-				67C016FC1ABD5DDF0004EFD4 /* AccountCell.m in Sources */,
 				67AAC97C1AC6A6D3002E317F /* NSDate+CalExt.m in Sources */,
-				67C016ED1ABD440C0004EFD4 /* LBAccountTimeLineLabel.m in Sources */,
+				67C016ED1ABD440C0004EFD4 /* LBTimeLineView.m in Sources */,
 				671C1FB81AB9BE4B005F5586 /* NSNumber+MagicalDataImport.m in Sources */,
 				671C20071AB9C6E5005F5586 /* LBNotificationSettingViewController.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,

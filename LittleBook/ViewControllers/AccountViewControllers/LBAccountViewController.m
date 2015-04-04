@@ -1,37 +1,39 @@
 //
-//  AccountViewController.m
+//  LBAccountViewController.m
 //  LittleBook
 //
 //  Created by hupeng on 15/3/4.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "AccountViewController.h"
+#import "LBAccountViewController.h"
+#import "LBAccountEditViewController.h"
+#import "LBAccountListCell.h"
 #import "LBAccountManager.h"
-#import "AccountCell.h"
 
-@interface AccountViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@interface LBAccountViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *_dataSource;
+    Account *_seletedAccount;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation AccountViewController
+@implementation LBAccountViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
- 
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _dataSource = [[LBAccountManager defaultManager] findAll];
+    _seletedAccount = nil;
+    _dataSource     = [LBAccountManager findAll];
     [_tableView reloadData];
 }
 
@@ -40,6 +42,14 @@
     [super viewDidAppear:animated];
     
     _tableView.frame = CGRectMake(0, CGRectGetMinY(_tableView.frame), CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds) - CGRectGetMinY(_tableView.frame));
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"openEditPage"]) {
+        LBAccountEditViewController *dvc = segue.destinationViewController;
+        dvc.account = _seletedAccount;
+    }
 }
 
 #pragma mark - UITableViewDataSource and UITableViewDelegate
@@ -51,10 +61,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AccountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AccountCell"];
-    [cell setupCellWithAccount:_dataSource[indexPath.row]];
+    LBAccountListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBAccountListCell"];
+    cell.account = _dataSource[indexPath.row];
     return cell;
-
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    _seletedAccount = _dataSource[indexPath.row];
+    [self performSegueWithIdentifier:@"openEditPage" sender:self];
+}
 @end

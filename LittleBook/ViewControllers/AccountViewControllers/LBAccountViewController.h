@@ -1,5 +1,5 @@
 //
-//  AccountViewController.h
+//  LBAccountViewController.h
 //  LittleBook
 //
 //  Created by hupeng on 15/3/4.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HPTabBarChildController.h"
 
-@interface AccountViewController : HPTabBarChildController
+@interface LBAccountViewController : HPTabBarChildController
 
 @end

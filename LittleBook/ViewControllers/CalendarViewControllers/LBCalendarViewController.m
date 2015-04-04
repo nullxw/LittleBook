@@ -59,7 +59,7 @@
         }];
     }
     
-    _dataSource = [[LBNotificationManager defaultManager] findAllofToday].mutableCopy;
+    _dataSource = [[LBNotificationManager defaultManager] findAllOfToday].mutableCopy;
     [_tableView reloadData];
 }
 

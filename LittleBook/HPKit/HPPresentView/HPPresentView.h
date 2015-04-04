@@ -13,7 +13,8 @@ typedef enum {
     HPPresentViewMovingDirectionUp    = 1<<1,
     HPPresentViewMovingDirectionDown  = 1<<2,
     HPPresentViewMovingDirectionLeft  = 1<<3,
-    HPPresentViewMovingDirectionRight = 1<<4
+    HPPresentViewMovingDirectionRight = 1<<4,
+    HPPresentViewMovingDirectionRAll  = 1<<4 | 1<<1 | 1<<2 | 1<<3
 }HPPresentViewMovingDirection;
 
 static const float kHPPresentViewMovingRatio = 0.25;

@@ -9,14 +9,6 @@
 
 #define LB_ONE_PX_SIZE (1.0/[UIScreen mainScreen].scale)
 
-#define CREATE_SINGLETON_INSTANCE(instance) \
-            static dispatch_once_t token = 0; \
-            static id _sharedObject = nil; \
-            dispatch_once(&token, ^{ \
-                _sharedObject = instance; \
-            }); \
-            return _sharedObject; \
-
 //common params
 #define LB_COMMON_CORNER_RADIUS  5.0
 

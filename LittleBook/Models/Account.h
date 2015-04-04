@@ -2,7 +2,7 @@
 //  Account.h
 //  LittleBook
 //
-//  Created by 胡鹏 on 15/3/21.
+//  Created by hupeng on 15/4/4.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
@@ -12,9 +12,16 @@
 
 @interface Account : NSManagedObject
 
-@property (nonatomic, retain) NSString * userID;
+@property (nonatomic, retain) NSString * accountID;
 @property (nonatomic, retain) NSDate * createTime;
-@property (nonatomic, retain) NSString * totalCost;
-@property (nonatomic, retain) NSNumber * accountID;
+@property (nonatomic, retain) NSNumber * totalCost;
+@property (nonatomic, retain) NSString * userID;
+@property (nonatomic, retain) NSString *appendixs;
+
++ (NSString *)generateAccountIDFromDate:(NSDate *)date;
+
+- (void)updateAccountAppendixs:(NSArray *)appendixIDs;
+
+- (NSArray *)appendixIDs;
 
 @end

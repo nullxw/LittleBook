@@ -1,5 +1,5 @@
 //
-//  AccountCell.h
+//  LBAccountListCell.h
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/21.
@@ -10,8 +10,8 @@
 
 @class Account;
 
-@interface AccountCell : UITableViewCell
+@interface LBAccountListCell : UITableViewCell
 
-- (void)setupCellWithAccount:(Account *)account;
+@property (nonatomic, weak) Account *account;
 
 @end

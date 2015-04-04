@@ -13,7 +13,7 @@
 - (void)awakeFromNib
 {
     self.clipsToBounds = TRUE;
-    self.layer.cornerRadius = _cornerRadius > 0 ? _cornerRadius : LB_COMMON_CORNER_RADIUS;
+    self.layer.cornerRadius = _cornerRadius > 0 ? _cornerRadius : HP_COMMON_CORNER_RADIUS;
 }
 
 #ifdef IB_DESIGNABLE

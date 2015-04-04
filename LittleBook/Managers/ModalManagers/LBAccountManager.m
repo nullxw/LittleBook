@@ -7,35 +7,35 @@
 //
 
 #import "LBAccountManager.h"
-#import "LBIndexInfoManager.h"
-#import "LBAppendixManager.h"
-
 
 @implementation LBAccountManager
 
-+ (LBAccountManager *)defaultManager
++ (Account *)findByDate:(NSDate *)date
 {
-    CREATE_SINGLETON_INSTANCE([[LBAccountManager alloc] init]);
-}
-
-- (Account *)createAccountWithAppendixDatas:(NSArray *)appendixDatas
-{
-    Account *account = [Account createEntity];
-    account.userID = [LBUserManager defaultManager].currentUser.userID;
-    account.createTime = [NSDate new];
-    account.accountID = [[LBIndexInfoManager defaultManager] getAccountID];
+    NSString *accountID = [Account generateAccountIDFromDate:date];
     
-    for (UIImage *image in appendixDatas) {
-        NSData *data = UIImageJPEGRepresentation(image, 1.0);
-        Appendix *appendix = [[LBAppendixManager defaultManager] createAppendixWithMediaData:data];
-        appendix.parentID = account.accountID;
-    }
-    return account;
+    return [Account findFirstWithPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and accountID=%@", [LBUserManager defaultManager].currentUser.userID, accountID]];
 }
 
-- (NSArray *)findAll
++ (Account *)findByID:(NSString *)accountID
+{
+    return [Account findFirstWithPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and accountID=%@", [LBUserManager defaultManager].currentUser.userID, accountID]];
+}
+
++ (NSArray *)findAll
 {
     return [Account findByAttribute:@"userID" withValue:[LBUserManager defaultManager].currentUser.userID andOrderBy:@"createTime" ascending:NO];
 }
 
++ (Account *)createFromDate:(NSDate *)date
+{
+    Account *account   = [Account createEntity];
+    account.accountID  = [Account generateAccountIDFromDate:date];
+    account.createTime = [NSDate new];
+    account.userID     = [LBUserManager defaultManager].currentUser.userID;
+    account.totalCost  = @(0);
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+    return account;
+}
 @end

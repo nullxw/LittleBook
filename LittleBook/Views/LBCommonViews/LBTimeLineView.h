@@ -1,5 +1,5 @@
 //
-//  LBAccountTimeLineLabel.h
+//  LBTimeLineView.h
 //  LittleBook
 //
 //  Created by 胡鹏 on 15/3/21.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LBAccountTimeLineLabel : UILabel
+@interface LBTimeLineView : UIView
 
 @property (nonatomic, strong) NSDate *date;
 

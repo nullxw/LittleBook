@@ -26,6 +26,6 @@
 @interface LBNotificationManager (RetrieveExt)
 
 - (NSArray *)findAll;
-- (NSArray *)findAllofToday;
+- (NSArray *)findAllOfToday;
 
 @end

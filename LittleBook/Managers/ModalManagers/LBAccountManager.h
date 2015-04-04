@@ -11,10 +11,13 @@
 
 @interface LBAccountManager : NSObject
 
-+ (LBAccountManager *)defaultManager;
+// Retrieve
 
-- (Account *)createAccountWithAppendixDatas:(NSArray *)appendixDatas;
++ (NSArray *)findAll;
+//+ (Account *)findByDate:(NSDate *)date;
++ (Account *)findByID:(NSString *)accountID;
+// Create
++ (Account *)createFromDate:(NSDate *)date;
 
-- (NSArray *)findAll;
 
 @end

@@ -11,12 +11,14 @@
 
 @interface LBAppendixManager : NSObject
 
-+ (LBAppendixManager *)defaultManager;
+// Create
++ (Appendix *)createAppendixWithMediaData:(NSData *)data;
 
-- (Appendix *)createAppendixWithMediaData:(NSData *)data;
+// Retrieve
++ (NSArray *)appendixsOfAccountDetail:(NSNumber *)accountID;
 
-- (NSArray *)appendixOfAccount:(NSNumber *)accountID;
++ (Appendix *)findByID:(NSNumber *)appendixID;
 
-- (Appendix *)findByID:(NSNumber *)appendixID;
++ (NSArray *)findByIDs:(NSArray *)appendixIDs;
 
 @end

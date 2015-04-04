@@ -13,9 +13,9 @@
 - (void)awakeFromNib
 {
     self.clipsToBounds = TRUE;
-    self.layer.cornerRadius = _cornerRadius > 0 ? _cornerRadius : LB_COMMON_CORNER_RADIUS;
+    self.layer.cornerRadius = _cornerRadius > 0 ? _cornerRadius : HP_COMMON_CORNER_RADIUS;
     self.layer.borderColor = _borderColor.CGColor;
-    self.layer.borderWidth = _borderWidth >= 0 ? _borderWidth : LB_ONE_PX_SIZE;
+    self.layer.borderWidth = _borderWidth >= 0 ? _borderWidth : HP_ONE_PX_SIZE;
 }
 
 #ifdef IB_DESIGNABLE

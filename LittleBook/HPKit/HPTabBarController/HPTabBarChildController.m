@@ -25,9 +25,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.navigationBar) {
-        [self.navigationBar startShowAnimationWithDuration:LB_SPRING_ANIMATION_TIME completion:nil];
-    }
 }
 
  - (void)viewWillDisappear:(BOOL)animated

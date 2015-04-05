@@ -27,8 +27,8 @@ static NSString *kLBAccountAppendixSeperator = @"-";
 - (void)updateAccountAppendixs:(NSArray *)appendixIDs
 {
     NSMutableArray *sAppendixIDs = @[].mutableCopy;
-
-    if ([self.appendixs isEmpty]) {
+    
+    if (!self.appendixs) {
 
         for (int i = (int)MIN(appendixIDs.count, kLBAccountMaxAppendixs) - 1; i >= 0 ; i--) {
             
@@ -43,14 +43,25 @@ static NSString *kLBAccountAppendixSeperator = @"-";
        
     }
     
-    self.appendixs = [sAppendixIDs componentsJoinedByString:kLBAccountAppendixSeperator];
+    if (sAppendixIDs.count < 2) {
+        self.appendixs = sAppendixIDs[0];
+    } else {
+        self.appendixs = [sAppendixIDs componentsJoinedByString:kLBAccountAppendixSeperator];
+    }
+    
+    NSLog(@"%@", self.appendixs);
 }
 
 - (NSArray *)appendixIDs
 {
-    if ([self.appendixs isEmpty]) {
+    if (!self.appendixs) {
         return nil;
     }
+    
+    if ([self.appendixs rangeOfString:kLBAccountAppendixSeperator].length == 0) {
+        return @[self.appendixs];
+    }
+    
     NSMutableArray *sAppendixIDs = @[].mutableCopy;
     
     for (NSString *sAppendixID in [self.appendixs componentsSeparatedByString:kLBAccountAppendixSeperator]) {

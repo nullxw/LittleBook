@@ -17,4 +17,6 @@
 
 - (NSString *)pathForAppendix:(NSNumber *)appendxID;
 
+- (NSString *)pathForAppendixThumbnail:(NSNumber *)appendxID;
+
 @end

@@ -169,7 +169,7 @@
             UIButton *button = _appendixButtons[i];
             button.hidden = FALSE;
             
-            NSString *appendixFilePath = [[LBAccountAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
+            NSString *appendixFilePath = [[LBAccountAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
             [button setImage:[UIImage imageWithContentsOfFile:appendixFilePath] forState:UIControlStateNormal];
         }
         

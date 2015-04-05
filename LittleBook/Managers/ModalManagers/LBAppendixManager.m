@@ -42,6 +42,6 @@
             [appendixs addObject:appendix];
         }
     }
-    return appendixIDs;
+    return appendixs;
 }
 @end

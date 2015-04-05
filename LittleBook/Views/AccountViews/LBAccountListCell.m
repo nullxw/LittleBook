@@ -13,14 +13,14 @@
 #import "LBAppendixManager.h"
 #import "Account.h"
 
-@interface LBAccountListCell ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface LBAccountListCell ()
 {
     NSArray *_dataSource;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *realContentView;
 @property (weak, nonatomic) IBOutlet LBTimeLineView *timeLineLabel;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *appendixViews;
 @property (weak, nonatomic) IBOutlet UILabel *costLabel;
 
 @end
@@ -36,7 +36,13 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
+    
+    for (UIImageView *appendixView in _appendixViews) {
+        appendixView.image = nil;
+        appendixView.hidden = TRUE;
+    }
 }
+
 
 - (void)setAccount:(Account *)account
 {
@@ -45,23 +51,14 @@
     _timeLineLabel.date = account.createTime;
     _costLabel.text = account.totalCost.stringValue;
     _dataSource = [LBAppendixManager findByIDs:[account appendixIDs]];
-    [_collectionView reloadData];
-}
-
-#pragma mark - UICollectionViewDataSource and UICollectionViewDelegate
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return _dataSource.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    LBAccountAppendixCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"appendixCell" forIndexPath:indexPath];
     
-    Appendix *appendix = _dataSource[indexPath.row];
-    NSString *appendixPath = [[LBAccountAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
-    cell.imageView.image = [UIImage imageWithContentsOfFile:appendixPath];
-    return cell;
+    for (int i = 0 ; i < _dataSource.count; i++) {
+        Appendix *appendix = _dataSource[i];
+        NSString *appendixFilePath = [[LBAccountAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
+        UIImageView *appendixView = _appendixViews[i];
+        appendixView.hidden = FALSE;
+        appendixView.image = [UIImage imageWithContentsOfFile:appendixFilePath];
+    }
 }
+
 @end

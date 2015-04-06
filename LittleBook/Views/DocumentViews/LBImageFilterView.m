@@ -38,7 +38,15 @@
 - (void)setImage:(UIImage *)image
 {
     _image = image;
-    _imageView.image = image;
+    
+    CGPoint center = _imageView.center;
+    UIImage *scaledImage = [image scaleToSize:_imageView.frame.size];
+    
+    _imageView.image = scaledImage;
+    _imageView.frame = CGRectMake(0, 0, scaledImage.size.width, scaledImage.size.height);
+    _imageView.center = center;
+    
+    //    _imageView.image = [image scaleToSize:<#(CGSize)#>];
 }
 
 #pragma mark - button events

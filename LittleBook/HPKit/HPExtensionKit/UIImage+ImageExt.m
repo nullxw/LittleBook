@@ -24,12 +24,12 @@
 }
 
 
-- (UIImage *)scaleToSize:(CGSize)size
+- (UIImage *)clipToSize:(CGSize)size
 {
-    return [self scaleToSize:size position:ILSImageExtensionImageClipPositionTopLeft];
+    return [self clipToSize:size position:ILSImageExtensionImageClipPositionTopLeft];
 }
 
-- (UIImage *)scaleToSize:(CGSize)size position:(ILSImageExtensionImageClipPosition)position
+- (UIImage *)clipToSize:(CGSize)size position:(ILSImageExtensionImageClipPosition)position
 {
     if (!self) {
         return nil;
@@ -71,6 +71,44 @@
     UIGraphicsEndImageContext();
     
     return output;
+}
+
+- (UIImage *)scaleToSize:(CGSize)size
+{
+    if (!self) {
+        return nil;
+    }
+    
+    float w = self.size.width;
+    float h = self.size.height;
+    
+    BOOL flag = w / size.width > h / size.height;
+    
+    float dw , dh;
+    
+    //
+    if (flag) {
+        
+        dw = size.width;
+        
+        dh = h / w * dw;
+        
+    } else {
+        dh = size.height;
+        
+        dw = w / h * dh;
+    }
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(dw, dh), NO, [UIScreen mainScreen].scale);
+    
+    [self drawInRect:CGRectMake(0, 0, dw, dh)];
+    
+    UIImage *output = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return output;
+    
 }
 
 - (UIImage *)compositeWithImage:(UIImage *)image

@@ -18,7 +18,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view alpha="0.59999999999999998" contentMode="scaleToFill" id="wLo-6R-Lrn">
+                                <view alpha="0.80000000000000004" contentMode="scaleToFill" id="wLo-6R-Lrn">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

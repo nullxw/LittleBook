@@ -31,6 +31,13 @@ typedef enum {
 @end
 
 @implementation HPTouchImageView
+- (instancetype)initWithImage:(UIImage *)image
+{
+    if (self = [super initWithImage:image]) {
+        [self initView];
+    }
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -40,6 +47,13 @@ typedef enum {
     return self;
 }
 
+- (instancetype)init
+{
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
 - (void)awakeFromNib
 {
     [self initView];
@@ -56,9 +70,9 @@ typedef enum {
 
 - (void)registerGestures
 {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [self addGestureRecognizer:tap];
-    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+//    [self addGestureRecognizer:tap];
+//    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self addGestureRecognizer:pan];
     
@@ -73,13 +87,13 @@ typedef enum {
 
 #pragma mark - gesture handlers
 
-- (void)handleTap:(UITapGestureRecognizer *)gesture
-{
-    //...
-    if (_delegate && [_delegate respondsToSelector:@selector(didClickTouchImageView:)]) {
-        [_delegate didClickTouchImageView:self];
-    }
-}
+//- (void)handleTap:(UITapGestureRecognizer *)gesture
+//{
+//    //...
+//    if (_delegate && [_delegate respondsToSelector:@selector(didClickTouchImageView:)]) {
+//        [_delegate didClickTouchImageView:self];
+//    }
+//}
 
 - (void)handlePan:(UIPanGestureRecognizer *)gesture
 {
@@ -115,22 +129,22 @@ typedef enum {
     [self updateTransform];
 }
 
-- (void)handleRotate:(UIRotationGestureRecognizer *)gesture
-{
-    float rotation = gesture.rotation;
-    _currentRotation = _startRotation + rotation;
-    
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        _startState = _startState | HPTouchImageViewStateRotate;
-    }
-    
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        _endState = _endState | HPTouchImageViewStateRotate;
-        _startRotation = _currentRotation;
-    }
-    
-    [self updateTransform];
-}
+//- (void)handleRotate:(UIRotationGestureRecognizer *)gesture
+//{
+//    float rotation = gesture.rotation;
+//    _currentRotation = _startRotation + rotation;
+//    
+//    if (gesture.state == UIGestureRecognizerStateBegan) {
+//        _startState = _startState | HPTouchImageViewStateRotate;
+//    }
+//    
+//    if (gesture.state == UIGestureRecognizerStateEnded) {
+//        _endState = _endState | HPTouchImageViewStateRotate;
+//        _startRotation = _currentRotation;
+//    }
+//    
+//    [self updateTransform];
+//}
 
 
 - (void)updateTransform

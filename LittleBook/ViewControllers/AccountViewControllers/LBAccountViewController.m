@@ -11,7 +11,6 @@
 #import "LBAccountListCell.h"
 #import "LBAccountManager.h"
 
-
 @interface LBAccountViewController () <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *_dataSource;

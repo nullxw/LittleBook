@@ -12,6 +12,9 @@
 
 - (UIImage *)viewShot;
 
+// coreplot 的特例
+- (UIImage *)viewShotForCPView;
+
 + (instancetype)loadNibForCurrentDevice;
 
 @end

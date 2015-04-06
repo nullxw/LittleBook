@@ -19,8 +19,11 @@ typedef enum {
 
 - (UIImage *)clipToRect:(CGRect)rect;
 
+- (UIImage *)clipToSize:(CGSize)size;
+- (UIImage *)clipToSize:(CGSize)size position:(ILSImageExtensionImageClipPosition)position;
+
 - (UIImage *)scaleToSize:(CGSize)size;
-- (UIImage *)scaleToSize:(CGSize)size position:(ILSImageExtensionImageClipPosition)position;
+
 - (UIImage *)compositeWithImage:(UIImage *)image;
 
 // 不通用的方法！！！

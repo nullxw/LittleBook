@@ -7,10 +7,15 @@
 //
 
 #import "LBImageEditView.h"
-#import "LBSectionView.h"
 #import "LBImageFilterView.h"
+#import "LBSectionView.h"
+#import "LBDragContainer.h"
 
-@interface LBImageEditView ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface LBImageEditView ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, LBDragContainerResourceDelegate>
+{
+    UIImage *_originalImage;
+    LBDragContainer *_canvas;
+}
 
 @property (nonatomic, weak) IBOutlet LBSectionView *imageEditMenuView;
 
@@ -28,6 +33,9 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openAlbumPage)];
     [_imageView addGestureRecognizer:tap];
     
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(openCanvas:)];
+    [_imageView addGestureRecognizer:longPress];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImageView:) name:LB_DID_APPLY_IMAGE_FILTER_NOTIF object:nil];
 }
 
@@ -35,7 +43,7 @@
 {
     _image = image;
     _imageView.contentMode = UIViewContentModeScaleToFill;
-    _imageView.image = [image scaleToSize:_imageView.frame.size];
+    _imageView.image = [image clipToSize:_imageView.frame.size];
 }
 
 - (void)updateImageView:(NSNotification *)notif
@@ -52,23 +60,48 @@
     [self.parentViewController presentViewController:picker animated:TRUE completion:^{
         
     }];
+}
 
+- (void)openCanvas:(UILongPressGestureRecognizer *)gesture
+{
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        
+        _imageView.hidden = TRUE;
+        
+        _canvas = [LBDragContainer shareContainer];
+        _canvas.resourceDelegate = self;
+        [_canvas show];
+        
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+    
+        [_canvas updateItemAtPoint:[gesture locationInView:keyWindow]];
 
+    } else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+        
+        [_canvas hide];
+        _canvas = nil;
+    }
 }
 
 #pragma mark - menu button events
 
 - (IBAction)deleteButtonClicked:(id)sender
 {
+    _originalImage = nil;
     _imageView.contentMode = UIViewContentModeCenter;
     _imageView.image = [UIImage imageNamed:@"add_icon"];
 }
 
 - (IBAction)detailMeunButtonClicked:(id)sender
 {
+    if (!_originalImage) {
+        return;
+    }
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
     LBImageFilterView *imageEditView = [LBImageFilterView loadNibForCurrentDevice];
-    imageEditView.image = _imageView.image;
+    imageEditView.image = _originalImage;
     imageEditView.frame = win.bounds;
     [win addSubview:imageEditView];
 }
@@ -87,11 +120,35 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+    _originalImage = info[@"UIImagePickerControllerOriginalImage"];
 
-    self.image = image;
+    self.image = _originalImage;
 
     [picker dismissViewControllerAnimated:TRUE completion:nil];
 }
 
+
+#pragma mark - LBDragContainerResourceDelegate
+
+- (UIView *)setupItemOfContainer:(LBDragContainer *)container
+{
+    UIWindow *win = [UIApplication sharedApplication].keyWindow;
+    
+    CGRect rect   = [win convertRect:_imageView.frame fromView:self];
+    CGPoint point = [win convertPoint:_imageView.center fromView:self];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
+    imageView.image = _originalImage;
+    imageView.center = point;
+    return imageView;
+}
+
+- (void)containerWillDismiss:(LBDragContainer *)container withDraggedItemBack:(BOOL)flag
+{
+    _imageView.hidden = FALSE;
+    
+    if (!flag) {
+        [self deleteButtonClicked:nil];
+    }
+}
 @end

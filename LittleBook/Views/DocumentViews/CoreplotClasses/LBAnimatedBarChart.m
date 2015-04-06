@@ -284,7 +284,7 @@
     NSNumber *tipPoint = _dataSource[idx];
     
     CPTMutableTextStyle *textStyle = [[CPTMutableTextStyle alloc] init];
-    textStyle.color = [CPTColor whiteColor];
+    textStyle.color = [CPTColor lightGrayColor];
     
     CPTTextLayer *titleLayer = [[CPTTextLayer alloc] initWithText:tipPoint.stringValue style:textStyle];
 

@@ -8,9 +8,11 @@
 
 #import "LBChartView.h"
 #import "LBChartEditView.h"
-
-@interface LBChartView () <LBChartEditViewDelegate>
-
+#import "LBDragContainer.h"
+@interface LBChartView () <LBChartEditViewDelegate, LBDragContainerResourceDelegate>
+{
+    LBDragContainer *_canvas;
+}
 @end
 @implementation LBChartView
 
@@ -20,6 +22,11 @@
  
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openChartEditView)];
     [self addGestureRecognizer:tap];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(openCanvas:)];
+    [self addGestureRecognizer:longPress];
+    
+    
 }
 
 - (void)openChartEditView
@@ -34,6 +41,29 @@
     [win addSubview:chartEditView];
 }
 
+- (void)openCanvas:(UILongPressGestureRecognizer *)gesture
+{
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        
+        self.hidden = TRUE;
+        
+        _canvas = [LBDragContainer shareContainer];
+        _canvas.resourceDelegate = self;
+        [_canvas show];
+        
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+        
+        [_canvas updateItemAtPoint:[gesture locationInView:keyWindow]];
+        
+    } else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+        
+        [_canvas hide];
+        _canvas = nil;
+    }
+}
+
 #pragma mark - LBChartEditViewDelegate
 
 - (void)didUpdateChartInfo:(NSDictionary *)chartInfo
@@ -43,4 +73,22 @@
     self.theme      = chartInfo[@"theme"];
 }
 
+#pragma mark - LBDragContainerResourceDelegate
+
+- (UIView *)setupItemOfContainer:(LBDragContainer *)container
+{
+    UIWindow *win = [UIApplication sharedApplication].keyWindow;
+    CGRect rect   = [win convertRect:self.frame fromView:self.superview];
+    CGPoint point = [win convertPoint:self.center fromView:self.superview];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
+    imageView.image  = [self viewShotForCPView];
+    imageView.center = point;
+    return imageView;
+}
+
+- (void)containerWillDismiss:(LBDragContainer *)container withDraggedItemBack:(BOOL)flag
+{
+    self.hidden = FALSE;
+}
 @end

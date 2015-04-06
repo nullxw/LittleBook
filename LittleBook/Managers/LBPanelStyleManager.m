@@ -7,6 +7,7 @@
 //
 
 #import "LBPanelStyleManager.h"
+#import "LBAppContext.h"
 
 @implementation PanelStyle
 
@@ -53,6 +54,19 @@
         self.panelStyles = panelStyles;
     }
     return self;
+}
+
+- (PanelStyle *)currentStyle
+{
+    NSString *selectedStyleName = [LBAppContext context].settings[kLBPanelSetting];
+
+    for (int i = 0; i < _panelStyles.count; i++) {
+        PanelStyle *panelStyle = _panelStyles[i];
+        if ([panelStyle.styleName isEqualToString:selectedStyleName]) {
+            return panelStyle;
+        }
+    }
+    return nil;
 }
 
 @end

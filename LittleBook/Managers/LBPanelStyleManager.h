@@ -23,4 +23,6 @@
 
 @property (nonatomic, strong) NSArray *panelStyles;
 
+- (PanelStyle *)currentStyle;
+
 @end

@@ -12,14 +12,39 @@
 
 - (UIImage *)viewShot
 {
-    float scale = [UIScreen mainScreen].scale;
-    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, scale);
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
     [self.layer renderInContext:context];
+    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }
+
+- (UIImage *)viewShotForCPView
+{
+
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    [self.layer renderInContext:context];
+    
+    if (self.layer.sublayers) {
+        
+        CGContextTranslateCTM(context, 0, self.bounds.size.height);
+        CGContextScaleCTM(context, 1.0, -1.0);
+        
+        for (CALayer * layer in self.layer.sublayers) {
+            [layer renderInContext:context];
+        }
+    }
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 + (instancetype)loadNibForCurrentDevice
 {

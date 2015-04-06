@@ -38,7 +38,13 @@
 
 - (IBAction)doneButtonClicked:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:LB_DID_SET_CHART_NOTIF object:@{@"barCount" : @(_chartView.barCount),@"theme" : _chartView.theme, @"dataSource" : _chartView.dataSource}];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:LB_DID_SET_CHART_NOTIF object:@{@"barCount" : @(_chartView.barCount),@"theme" : _chartView.theme, @"dataSource" : _chartView.dataSource}];
+//    
+    if (_delegate && [_delegate respondsToSelector:@selector(didUpdateChartInfo:)]) {
+        [_delegate didUpdateChartInfo:@{@"barCount" : @(_chartView.barCount),
+                                        @"theme" : _chartView.theme,
+                                        @"dataSource" : _chartView.dataSource}];
+    }
     [self removeFromSuperview];
 }
 

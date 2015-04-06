@@ -9,6 +9,9 @@
 #import "LBChartView.h"
 #import "LBChartEditView.h"
 
+@interface LBChartView () <LBChartEditViewDelegate>
+
+@end
 @implementation LBChartView
 
 - (void)awakeFromNib
@@ -17,12 +20,6 @@
  
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openChartEditView)];
     [self addGestureRecognizer:tap];
-
-}
-
-- (void)didMoveToSuperview
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBarChart:) name:LB_DID_SET_CHART_NOTIF object:nil];
 }
 
 - (void)openChartEditView
@@ -33,12 +30,14 @@
                                 @"theme"    : self.theme,
                                 @"dataSource" : self.dataSource};
     chartEditView.frame = win.bounds;
+    chartEditView.delegate = self;
     [win addSubview:chartEditView];
 }
 
-- (void)updateBarChart:(NSNotification *)notif
+#pragma mark - LBChartEditViewDelegate
+
+- (void)didUpdateChartInfo:(NSDictionary *)chartInfo
 {
-    NSDictionary *chartInfo = notif.object;
     self.barCount   = [chartInfo[@"barCount"] intValue];
     self.dataSource = chartInfo[@"dataSource"];
     self.theme      = chartInfo[@"theme"];

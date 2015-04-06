@@ -10,9 +10,10 @@
             <rect key="frame" x="0.0" y="0.0" width="195" height="195"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MAa-Fm-Kc7" customClass="HPRoundCornerImageView">
+                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon" id="MAa-Fm-Kc7" customClass="HPRoundCornerImageView">
                     <rect key="frame" x="2" y="2" width="191" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="T30-5S-2k8" customClass="LBSectionView">
                     <rect key="frame" x="0.0" y="155" width="195" height="40"/>
@@ -64,6 +65,7 @@
         </view>
     </objects>
     <resources>
+        <image name="add_icon" width="57" height="57"/>
         <image name="back_icon" width="50" height="38"/>
         <image name="done_icon" width="31" height="31"/>
         <image name="pic_edit_menu_icon" width="31" height="31"/>

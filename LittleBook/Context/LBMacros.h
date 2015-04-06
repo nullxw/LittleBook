@@ -25,4 +25,3 @@
 
 // this notif used between LBImageEditView(receiver) and LBImageFilterView(sender)
 #define LB_DID_APPLY_IMAGE_FILTER_NOTIF @"LB_DID_APPLY_IMAGE_FILTER_NOTIF"
-#define LB_DID_SET_CHART_NOTIF          @"LB_DID_SET_CHART_NOTIF"

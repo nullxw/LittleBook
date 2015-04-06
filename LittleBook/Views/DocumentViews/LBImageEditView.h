@@ -10,5 +10,7 @@
 
 @interface LBImageEditView : HPRoundCornerView
 
+@property (nonatomic, weak) IBOutlet UIViewController *parentViewController;
 @property (strong, nonatomic) UIImage *image;
+
 @end

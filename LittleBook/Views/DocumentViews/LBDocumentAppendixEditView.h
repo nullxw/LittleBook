@@ -24,7 +24,6 @@
 
 @interface LBDocumentAppendixEditView : HPRoundCornerView
 
-//@property (nonatomic, weak) IBOutlet id <LBDocumentAppendixEditViewProtocol> delegate;
 @property (nonatomic, weak) IBOutlet UIViewController *parentViewController;
 
 @end

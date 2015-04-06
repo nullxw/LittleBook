@@ -10,5 +10,4 @@
 
 @interface LBChartView : LBAnimatedBarChart
 
-
 @end

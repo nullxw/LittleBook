@@ -10,7 +10,7 @@
 #import "LBSectionView.h"
 #import "LBImageFilterView.h"
 
-@interface LBImageEditView ()
+@interface LBImageEditView ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet LBSectionView *imageEditMenuView;
 
@@ -25,12 +25,16 @@
     _imageEditMenuView.separateLineColor = [UIColor whiteColor];
     _imageEditMenuView.sectionNumber = 3;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openAlbumPage)];
+    [_imageView addGestureRecognizer:tap];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImageView:) name:LB_DID_APPLY_IMAGE_FILTER_NOTIF object:nil];
 }
 
 - (void)setImage:(UIImage *)image
 {
     _image = image;
+    _imageView.contentMode = UIViewContentModeScaleToFill;
     _imageView.image = [image scaleToSize:_imageView.frame.size];
 }
 
@@ -40,11 +44,24 @@
     _imageView.image = _image;
 }
 
+- (void)openAlbumPage
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self.parentViewController presentViewController:picker animated:TRUE completion:^{
+        
+    }];
+
+
+}
+
 #pragma mark - menu button events
 
 - (IBAction)deleteButtonClicked:(id)sender
 {
-    [self removeFromSuperview];
+    _imageView.contentMode = UIViewContentModeCenter;
+    _imageView.image = [UIImage imageNamed:@"add_icon"];
 }
 
 - (IBAction)detailMeunButtonClicked:(id)sender
@@ -64,6 +81,17 @@
 //              withImageInfo:@{kEditViewImageRectInfo : NSStringFromCGRect(_imageView.bounds),
 //                              kEditViewImageCornerRadisInfo : @(LB_COMMON_CORNER_RADIUS)}];
 //    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+
+    self.image = image;
+
+    [picker dismissViewControllerAnimated:TRUE completion:nil];
 }
 
 @end

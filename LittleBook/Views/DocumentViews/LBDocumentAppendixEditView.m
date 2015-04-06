@@ -42,15 +42,26 @@ UINavigationControllerDelegate
     NSDictionary *picInfo = @{kTextEditCellTitle : @"图片",
                               kTextEditCellIcon  : [UIImage imageNamed:@"pic_icon"],
                               kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
+
+                                  if (selfPoint.imageEditView) {
+                                      return;
+                                  }
+                                  if (selfPoint.chartView) {
+                                      [selfPoint.chartView removeFromSuperview];
+                                      selfPoint.chartView = nil;
+                                  }
                                   
+                                  if (!selfPoint.imageEditView) {
+                                      selfPoint.imageEditView = [LBImageEditView loadNibForCurrentDevice];
+                                  }
                                   
+                                  CGRect imageEditViewFrame = _mediaContentView.frame;
+                                  imageEditViewFrame.origin.y = CGRectGetMinY(imageEditViewFrame) + kLBMediaContentOffsetY;
+                                  imageEditViewFrame.size.height = CGRectGetHeight(imageEditViewFrame) - kLBMediaContentOffsetY;
+                                  selfPoint.imageEditView.frame = imageEditViewFrame;
+                                  selfPoint.imageEditView.parentViewController = selfPoint.parentViewController;
+                                  [selfPoint.mediaContentView addSubview:selfPoint.imageEditView];
                                   
-                                  UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-                                  picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                                  picker.delegate = selfPoint;
-                                  [selfPoint.parentViewController presentViewController:picker animated:TRUE completion:^{
-                                      
-                                  }];
                               }};
     
     [_dataSource addObject:picInfo];
@@ -59,6 +70,9 @@ UINavigationControllerDelegate
                                 kTextEditCellIcon  : [UIImage imageNamed:@"chart_icon"],
                                 kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
                                   
+                                    if (selfPoint.chartView) {
+                                        return;
+                                    }
                                     if (selfPoint.imageEditView) {
                                         [selfPoint.imageEditView removeFromSuperview];
                                         selfPoint.imageEditView = nil;
@@ -131,29 +145,6 @@ UINavigationControllerDelegate
     actionBlock(weakPoint);
 }
 
-#pragma mark - UIImagePickerControllerDelegate
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
-    
-    if (_chartView) {
-        [_chartView removeFromSuperview];
-        _chartView = nil;
-    }
-    
-    if (!_imageEditView) {
-        _imageEditView = [LBImageEditView loadNibForCurrentDevice];
-    }
-    
-    CGRect imageEditViewFrame = _mediaContentView.frame;
-    imageEditViewFrame.origin.y = CGRectGetMinY(imageEditViewFrame) + kLBMediaContentOffsetY;
-    imageEditViewFrame.size.height = CGRectGetHeight(imageEditViewFrame) - kLBMediaContentOffsetY;
-    _imageEditView.frame = imageEditViewFrame;
-    _imageEditView.image = image;
-    [_mediaContentView addSubview:_imageEditView];
-    
-    [picker dismissViewControllerAnimated:TRUE completion:nil];
-}
 
 @end

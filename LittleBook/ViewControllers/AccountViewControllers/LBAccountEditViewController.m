@@ -31,9 +31,13 @@
 {
     [super viewDidLoad];
     
+    NSDate *date = [NSDate new];
     if (_account) {
+        date = _account.createTime;
         _accountDetails = [LBAccountDetailManager findAllOfAccount:_account.accountID].mutableCopy;
     }
+    
+    _timeLineLabel.date = date;
     
     _isEditing = FALSE;
 }

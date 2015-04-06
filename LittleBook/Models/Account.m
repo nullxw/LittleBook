@@ -48,8 +48,6 @@ static NSString *kLBAccountAppendixSeperator = @"-";
     } else {
         self.appendixs = [sAppendixIDs componentsJoinedByString:kLBAccountAppendixSeperator];
     }
-    
-    NSLog(@"%@", self.appendixs);
 }
 
 - (NSArray *)appendixIDs

@@ -29,7 +29,9 @@
 {
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
     LBChartEditView *chartEditView = [LBChartEditView loadNibForCurrentDevice];
-    chartEditView.theme = self.theme;
+    chartEditView.chartInfo = @{@"barCount" : @(self.barCount),
+                                @"theme"    : self.theme,
+                                @"dataSource" : self.dataSource};
     chartEditView.frame = win.bounds;
     [win addSubview:chartEditView];
 }

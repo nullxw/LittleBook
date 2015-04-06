@@ -29,7 +29,9 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
-    _chartView.theme = _theme;
+    _chartView.barCount   = [_chartInfo[@"barCount"] intValue];
+    _chartView.dataSource = _chartInfo[@"dataSource"];
+    _chartView.theme      = _chartInfo[@"theme"];
 }
 
 #pragma mark - button events
@@ -56,6 +58,12 @@
 
 #pragma mark - UITextFieldDelegate
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    textField.text = nil;
+    return TRUE;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if ([string isEqual:@"\n"]) {
@@ -64,6 +72,8 @@
         
         if (barCount > 0 ) {
             _chartView.barCount = barCount;
+        } else {
+            textField.text = @"点击输入组数";
         }
         [textField resignFirstResponder];
         
@@ -74,9 +84,7 @@
         if (string.intValue <= 0 || string.intValue > 5) {
             return FALSE;
         }
-        
     }
-    
     return TRUE;
 }
 

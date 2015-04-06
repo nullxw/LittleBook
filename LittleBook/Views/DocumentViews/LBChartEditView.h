@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class CPTTheme;
 
 @interface LBChartEditView : UIView
 
-@property (nonatomic, strong) CPTTheme *theme;
+@property (nonatomic, strong) NSDictionary *chartInfo;
 
 @end

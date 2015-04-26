@@ -13,11 +13,20 @@
 @protocol HPTouchImageViewProtocol <NSObject>
 
 @optional
-- (void)didClickTouchImageView:(HPTouchImageView *)touchImageView;
+// tap
+- (void)didTapTouchImageView:(HPTouchImageView *)touchImageView;
 
-- (void)DidTransformTouchImageView:(HPTouchImageView *)touchImageView;
+// move
+- (void)willBeginMoveTouchImageView:(HPTouchImageView *)touchImageView;
+- (void)didMoveTouchImageView:(HPTouchImageView *)touchImageView;
 
-- (void)DidEndTransformTouchImageView:(HPTouchImageView *)touchImageView;
+// scale
+- (void)willScaleTouchImageView:(HPTouchImageView *)touchImageView;
+- (void)didScaleTouchImageView:(HPTouchImageView *)touchImageView;
+
+// end operation
+
+- (void)didEnd
 
 @end
 

@@ -10,6 +10,6 @@
 
 @interface LBFilterCell : UICollectionViewCell
 
-@property(nonatomic ,weak) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

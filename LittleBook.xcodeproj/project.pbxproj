@@ -63,7 +63,6 @@
 		674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5EA21AB1E0CB00F3415F /* LBCalButton.m */; };
 		6757E6131ACC3E6D0071B662 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6757E6121ACC3E6D0071B662 /* sound.wav */; };
 		6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6757E6151ACC3EAF0071B662 /* LBAudioManager.m */; };
-		675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */; };
 		67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* LBPanelStyleManager.m */; };
 		67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */; };
 		6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D6171AA69EFE009E78DD /* HPTabBar.m */; };
@@ -74,6 +73,12 @@
 		677A31891AB725E10030FD08 /* ILSFilters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 677A31861AB725E10030FD08 /* ILSFilters.plist */; };
 		677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31881AB725E10030FD08 /* LBImageFilterManager.m */; };
 		677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */; };
+		677E65881AECE36400931C24 /* UITextView+TextViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E65871AECE36400931C24 /* UITextView+TextViewExt.m */; };
+		677E658B1AECEC5C00931C24 /* LBAuidoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E658A1AECEC5C00931C24 /* LBAuidoView.m */; };
+		677E658E1AECEC8000931C24 /* HPDragContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E658D1AECEC8000931C24 /* HPDragContainer.m */; };
+		677E65911AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E65901AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m */; };
+		677E659C1AED232100931C24 /* HPDragContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E65991AED232100931C24 /* HPDragContainer.m */; };
+		677E659D1AED232100931C24 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E659B1AED232100931C24 /* HPTouchImageView.m */; };
 		6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 679334991ACA4091001DE34A /* HPTaskManager.m */; };
 		6794AC581ACFC28300EC1DB2 /* HPLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC571ACFC28300EC1DB2 /* HPLockView.m */; };
 		6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */; };
@@ -129,7 +134,6 @@
 		67C017181ABD627E0004EFD4 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017111ABD627E0004EFD4 /* Document.m */; };
 		67C017191ABD627E0004EFD4 /* IndexInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017131ABD627E0004EFD4 /* IndexInfo.m */; };
 		67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C017151ABD627E0004EFD4 /* LBUser.m */; };
-		67CAF1AC1AD259B400C880F0 /* LBDragContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAF1AB1AD259B400C880F0 /* LBDragContainer.m */; };
 		67CCC8761AD1223C00BDF574 /* LBDocumentAppendixEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CCC8701AD1223C00BDF574 /* LBDocumentAppendixEditView.m */; };
 		67CCC8771AD1223C00BDF574 /* LBImageFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CCC8721AD1223C00BDF574 /* LBImageFilterView.m */; };
 		67CCC8781AD1223C00BDF574 /* LBImageFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67CCC8731AD1223C00BDF574 /* LBImageFilterView.xib */; };
@@ -295,8 +299,6 @@
 		6757E6121ACC3E6D0071B662 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		6757E6141ACC3EAF0071B662 /* LBAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioManager.h; sourceTree = "<group>"; };
 		6757E6151ACC3EAF0071B662 /* LBAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioManager.m; sourceTree = "<group>"; };
-		675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchImageView.h; sourceTree = "<group>"; };
-		675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		67634C781AADE625009FD0FA /* LBPanelStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPanelStyleManager.h; sourceTree = "<group>"; };
 		67634C791AADE625009FD0FA /* LBPanelStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPanelStyleManager.m; sourceTree = "<group>"; };
 		67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PanelStyleInfos.plist; sourceTree = "<group>"; };
@@ -316,6 +318,18 @@
 		677A31871AB725E10030FD08 /* LBImageFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImageFilterManager.h; sourceTree = "<group>"; };
 		677A31881AB725E10030FD08 /* LBImageFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBImageFilterManager.m; sourceTree = "<group>"; };
 		677A31E81AB728930030FD08 /* LittleBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LittleBook.xcdatamodel; sourceTree = "<group>"; };
+		677E65861AECE36400931C24 /* UITextView+TextViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+TextViewExt.h"; sourceTree = "<group>"; };
+		677E65871AECE36400931C24 /* UITextView+TextViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+TextViewExt.m"; sourceTree = "<group>"; };
+		677E65891AECEC5C00931C24 /* LBAuidoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAuidoView.h; sourceTree = "<group>"; };
+		677E658A1AECEC5C00931C24 /* LBAuidoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAuidoView.m; sourceTree = "<group>"; };
+		677E658C1AECEC8000931C24 /* HPDragContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDragContainer.h; sourceTree = "<group>"; };
+		677E658D1AECEC8000931C24 /* HPDragContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDragContainer.m; sourceTree = "<group>"; };
+		677E658F1AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutManager+LayoutManagerExt.h"; sourceTree = "<group>"; };
+		677E65901AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutManager+LayoutManagerExt.m"; sourceTree = "<group>"; };
+		677E65981AED232100931C24 /* HPDragContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDragContainer.h; sourceTree = "<group>"; };
+		677E65991AED232100931C24 /* HPDragContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDragContainer.m; sourceTree = "<group>"; };
+		677E659A1AED232100931C24 /* HPTouchImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchImageView.h; sourceTree = "<group>"; };
+		677E659B1AED232100931C24 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		679334981ACA4091001DE34A /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
 		679334991ACA4091001DE34A /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
 		6794AC561ACFC28300EC1DB2 /* HPLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLockView.h; sourceTree = "<group>"; };
@@ -417,8 +431,6 @@
 		67C017131ABD627E0004EFD4 /* IndexInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexInfo.m; sourceTree = "<group>"; };
 		67C017141ABD627E0004EFD4 /* LBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUser.h; sourceTree = "<group>"; };
 		67C017151ABD627E0004EFD4 /* LBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUser.m; sourceTree = "<group>"; };
-		67CAF1AA1AD259B400C880F0 /* LBDragContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDragContainer.h; sourceTree = "<group>"; };
-		67CAF1AB1AD259B400C880F0 /* LBDragContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDragContainer.m; sourceTree = "<group>"; };
 		67CCC86F1AD1223C00BDF574 /* LBDocumentAppendixEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentAppendixEditView.h; sourceTree = "<group>"; };
 		67CCC8701AD1223C00BDF574 /* LBDocumentAppendixEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentAppendixEditView.m; sourceTree = "<group>"; };
 		67CCC8711AD1223C00BDF574 /* LBImageFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImageFilterView.h; sourceTree = "<group>"; };
@@ -792,6 +804,7 @@
 				6794AC831AD0263600EC1DB2 /* HPCommonMacro.h */,
 				6794AC841AD0263600EC1DB2 /* HPCommonFunctions.h */,
 				6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */,
+				677E65971AED232100931C24 /* HPDragKit */,
 				6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */,
 				6794AC551ACFC28300EC1DB2 /* HPLockView */,
 				67F5321B1ACD3FC500B10CD7 /* HPCycleView */,
@@ -802,7 +815,6 @@
 				677A317F1AB723820030FD08 /* HPFileSystem */,
 				6721C2341AB40F2400D1FF99 /* HPPresentView */,
 				67EF19EA1AAB0FBA00F97940 /* HPLineView */,
-				675EAE891AA809DD00B13BD3 /* HPTextView */,
 				6777D6151AA69EFE009E78DD /* HPTabBarController */,
 			);
 			path = HPKit;
@@ -845,15 +857,6 @@
 				6721C2361AB40F2400D1FF99 /* HPPresentView.m */,
 			);
 			path = HPPresentView;
-			sourceTree = "<group>";
-		};
-		675EAE891AA809DD00B13BD3 /* HPTextView */ = {
-			isa = PBXGroup;
-			children = (
-				675EAE8A1AA809FB00B13BD3 /* HPTouchImageView.h */,
-				675EAE8B1AA809FB00B13BD3 /* HPTouchImageView.m */,
-			);
-			path = HPTextView;
 			sourceTree = "<group>";
 		};
 		67634C771AADE609009FD0FA /* Managers */ = {
@@ -918,6 +921,17 @@
 				677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		677E65971AED232100931C24 /* HPDragKit */ = {
+			isa = PBXGroup;
+			children = (
+				677E65981AED232100931C24 /* HPDragContainer.h */,
+				677E65991AED232100931C24 /* HPDragContainer.m */,
+				677E659A1AED232100931C24 /* HPTouchImageView.h */,
+				677E659B1AED232100931C24 /* HPTouchImageView.m */,
+			);
+			path = HPDragKit;
 			sourceTree = "<group>";
 		};
 		679334971ACA4091001DE34A /* HPTaskManager */ = {
@@ -990,6 +1004,10 @@
 				67AAC9231AC69225002E317F /* UIScreen+ScreenExt.m */,
 				67AAC9261AC69225002E317F /* UIViewController+ControllerExt.h */,
 				67AAC9271AC69225002E317F /* UIViewController+ControllerExt.m */,
+				677E65861AECE36400931C24 /* UITextView+TextViewExt.h */,
+				677E65871AECE36400931C24 /* UITextView+TextViewExt.m */,
+				677E658F1AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.h */,
+				677E65901AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m */,
 			);
 			path = HPExtensionKit;
 			sourceTree = "<group>";
@@ -1074,8 +1092,8 @@
 				67CCC8F81AD1821700BDF574 /* LBChartView.h */,
 				67CCC8F91AD1821700BDF574 /* LBChartView.m */,
 				67CCC8FB1AD1843700BDF574 /* LBChartView.xib */,
-				67CAF1AA1AD259B400C880F0 /* LBDragContainer.h */,
-				67CAF1AB1AD259B400C880F0 /* LBDragContainer.m */,
+				677E65891AECEC5C00931C24 /* LBAuidoView.h */,
+				677E658A1AECEC5C00931C24 /* LBAuidoView.m */,
 			);
 			path = DocumentViews;
 			sourceTree = "<group>";
@@ -1238,6 +1256,8 @@
 		67EF19F71AAB43B800F97940 /* Context */ = {
 			isa = PBXGroup;
 			children = (
+				677E658C1AECEC8000931C24 /* HPDragContainer.h */,
+				677E658D1AECEC8000931C24 /* HPDragContainer.m */,
 				67EF19F81AAB43D400F97940 /* LBAppContext.h */,
 				67EF19F91AAB43D400F97940 /* LBAppContext.m */,
 				676EE3541AAC43930076B715 /* LBMacros.h */,
@@ -1452,6 +1472,7 @@
 				67C017181ABD627E0004EFD4 /* Document.m in Sources */,
 				67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */,
 				6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */,
+				677E659D1AED232100931C24 /* HPTouchImageView.m in Sources */,
 				671C1FC81AB9BE4B005F5586 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				671C1FC01AB9BE4B005F5586 /* NSManagedObject+MagicalRequests.m in Sources */,
 				67CD9CB11ACC22E800FC0455 /* LBCustomSettingHeaderView.m in Sources */,
@@ -1464,6 +1485,7 @@
 				6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */,
 				671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */,
+				677E658E1AECEC8000931C24 /* HPDragContainer.m in Sources */,
 				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
 				67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */,
 				6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */,
@@ -1471,7 +1493,7 @@
 				6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */,
 				6794AC771ACFE82D00EC1DB2 /* AccountDetail.m in Sources */,
 				671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */,
-				675EAE8C1AA809FB00B13BD3 /* HPTouchImageView.m in Sources */,
+				677E65911AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m in Sources */,
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
 				67CCC87D1AD1237100BDF574 /* LBFilterCell.m in Sources */,
 				6794AC861AD0263600EC1DB2 /* HPCommonFunctions.m in Sources */,
@@ -1490,6 +1512,7 @@
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				67CCC8FA1AD1821700BDF574 /* LBChartView.m in Sources */,
 				671C1FB71AB9BE4B005F5586 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				677E65881AECE36400931C24 /* UITextView+TextViewExt.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
 				671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */,
 				671C1FBC1AB9BE4B005F5586 /* NSManagedObject+MagicalAggregation.m in Sources */,
@@ -1501,6 +1524,7 @@
 				671C1FCF1AB9BE4B005F5586 /* MagicalRecord.m in Sources */,
 				67CD9CB51ACC22E800FC0455 /* LBNotificationSettingCell.m in Sources */,
 				67AAC9D81AC700BB002E317F /* Notification.m in Sources */,
+				677E658B1AECEC5C00931C24 /* LBAuidoView.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
 				67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */,
@@ -1514,7 +1538,6 @@
 				67AAC9301AC69225002E317F /* UIScreen+ScreenExt.m in Sources */,
 				67AAC92E1AC69225002E317F /* UIColor+ColorExt.m in Sources */,
 				671C20011AB9C6E5005F5586 /* LBAccountViewController.m in Sources */,
-				67CAF1AC1AD259B400C880F0 /* LBDragContainer.m in Sources */,
 				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				671C1FC71AB9BE4B005F5586 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */,
@@ -1552,6 +1575,7 @@
 				67CCC8791AD1223C00BDF574 /* LBEditMenuCell.m in Sources */,
 				67AAC92B1AC69225002E317F /* NSDictionary+DictionaryExt.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
+				677E659C1AED232100931C24 /* HPDragContainer.m in Sources */,
 				67CCC8ED1AD14A4000BDF574 /* LBPresentTheme.m in Sources */,
 				677A31851AB723C60030FD08 /* LBDocumentAppendixFileManager.m in Sources */,
 				6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */,
@@ -1711,7 +1735,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4912df6d-8dce-4f3e-9b74-3e9ea800c87b";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1731,7 +1755,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4912df6d-8dce-4f3e-9b74-3e9ea800c87b";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

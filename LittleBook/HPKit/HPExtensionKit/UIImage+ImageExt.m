@@ -126,6 +126,27 @@
     return output;
 }
 
+- (CGSize)sizeForContainer:(CGSize)containerSize
+{
+    float w = self.size.width;
+    float h = self.size.height;
+    
+    
+    BOOL flag = w / containerSize.width > h / containerSize.height;
+    
+    float toW , toH;
+    
+    if (flag) {
+        toW = containerSize.width;
+        toH = h / w * toW;
+    } else {
+        toH = containerSize.height;
+        toW = w / h * toH;
+    }
+
+    return CGSizeMake(toW, toH);
+}
+
 - (UIImage *)rotateImage:(float)angle mirrored:(BOOL)mirrored
 {
     CGSize oSize = CGSizeMake(self.size.height, self.size.width);;

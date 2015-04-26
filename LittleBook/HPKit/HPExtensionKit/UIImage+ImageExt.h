@@ -26,6 +26,9 @@ typedef enum {
 
 - (UIImage *)compositeWithImage:(UIImage *)image;
 
+// 
+- (CGSize)sizeForContainer:(CGSize)containerSize;
+
 // 不通用的方法！！！
 - (UIImage *)rotateImage:(float)angle mirrored:(BOOL)mirrored;
 

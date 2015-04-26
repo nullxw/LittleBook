@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ycD-wv-euQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ycD-wv-euQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Setting View Controller-->
@@ -709,9 +709,10 @@
                                         </view>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Ze5-Hu-qEK" customClass="LBNotificationCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="280" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ze5-Hu-qEK" id="H0q-vD-3F1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="W8F-Xt-vcJ">
@@ -817,9 +818,10 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="dataPickerCell" rowHeight="220" id="XBF-Mk-ETL" customClass="LBDatePickerCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="280" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XBF-Mk-ETL" id="3ep-Lo-B3H">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="219"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="hBC-pr-17r">
@@ -842,9 +844,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="60" id="gCl-Tr-EJb">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                        <rect key="frame" x="0.0" y="242" width="280" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gCl-Tr-EJb" id="WXS-dx-qeC">
+                                            <rect key="frame" x="0.0" y="0.0" width="247" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
@@ -1042,9 +1045,10 @@
                                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <prototypes>
                                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="LBEditMenuCell" id="IFv-NL-sE5" customClass="LBEditMenuCell">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                                                                <rect key="frame" x="0.0" y="22" width="100" height="50"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IFv-NL-sE5" id="FUu-bL-xUc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_icon" id="cb6-Ez-Sg7">
@@ -1161,16 +1165,6 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.96470588239999999" green="0.96078431369999995" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="g6f-nq-JMJ">
-                                        <rect key="frame" x="10" y="50" width="280" height="243"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="3cv-YX-Yfb" id="s8Q-Ri-LTc"/>
-                                        </connections>
-                                    </textView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题 / Title" minimumFontSize="17" id="5li-Z5-Oqo">
                                         <rect key="frame" x="10" y="8" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1180,6 +1174,90 @@
                                             <outlet property="delegate" destination="3cv-YX-Yfb" id="KW7-Id-NUa"/>
                                         </connections>
                                     </textField>
+                                    <view contentMode="scaleToFill" id="sT5-WJ-Iv4">
+                                        <rect key="frame" x="0.0" y="263" width="300" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="roa-5J-die">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <state key="normal" image="audioIcon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="audioButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="X40-z3-Kbs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gvY-fm-Lni">
+                                                <rect key="frame" x="42" y="0.0" width="40" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <state key="normal" image="seperatorLine">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="seperatorButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="01E-Jc-Tl6"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" id="SYZ-Ex-tzb">
+                                                <rect key="frame" x="155" y="0.0" width="145" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYX-Tf-QWY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
+                                                        <state key="normal" image="leftArrow">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="leftArrowButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="Ned-or-Idl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QZ4-Ha-3vR">
+                                                        <rect key="frame" x="95" y="0.0" width="50" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
+                                                        <state key="normal" image="rightArrow">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="rightArrowClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="QTO-tz-fR4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CvR-7p-0Cs">
+                                                        <rect key="frame" x="51" y="0.0" width="43" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                                                        <state key="normal" image="topArrow">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="topArrowClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="6cB-4p-67x"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jVF-HN-lcs">
+                                                <rect key="frame" x="84" y="0.0" width="70" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <state key="normal" image="camera">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cameraButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="ATl-9a-au9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="g6f-nq-JMJ">
+                                        <rect key="frame" x="10" y="49" width="280" height="213"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3cv-YX-Yfb" id="s8Q-Ri-LTc"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1221,9 +1299,10 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LBNotificationDotView" id="Vyx-nZ-oLf" customClass="LBNotificationSettingCell">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                                        <rect key="frame" x="0.0" y="22" width="300" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vyx-nZ-oLf" id="hIj-MP-DzE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" id="2cx-T2-8Q5" customClass="LBNotificationContentView">
@@ -1356,9 +1435,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="insertSettingCell" id="mW2-IF-yxV">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="260" height="200"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mW2-IF-yxV" id="QoU-xN-sCF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="jJM-c9-gQU">
@@ -1494,9 +1574,10 @@
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fontSettingCell" id="KqQ-df-Lf4">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                                <rect key="frame" x="0.0" y="222" width="260" height="200"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KqQ-df-Lf4" id="qWJ-1V-ehc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="hEy-jh-d2w">
@@ -1641,9 +1722,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LBPanelSettingCell" id="d4j-IB-CPl" customClass="LBPanelSettingCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="300" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d4j-IB-CPl" id="Sqw-3e-Xf9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tZh-oh-QsZ">
@@ -2018,9 +2100,10 @@
                                         </searchBar>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LBReadListCell" id="xje-0V-dBM" customClass="LBReadListCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="66" width="320" height="90"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xje-0V-dBM" id="Ehr-61-9Cl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2142,9 +2225,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LBReadListCell" id="BOL-jd-a1R" customClass="LBReadListCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="320" height="90"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOL-jd-a1R" id="fmr-Zb-QTG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
@@ -2308,9 +2392,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LBAccountListCell" id="Tca-Y2-iUj" customClass="LBAccountListCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="320" height="140"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tca-Y2-iUj" id="twP-k6-cJx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" id="PdU-by-V8t" customClass="LBFrameView">
@@ -2532,9 +2617,10 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="140" id="hkp-Fn-XBn" customClass="LBAccountCell">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                                        <rect key="frame" x="0.0" y="22" width="280" height="140"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkp-Fn-XBn" id="adt-cc-QYZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="139"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小计：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rMq-re-atL">
@@ -2689,13 +2775,16 @@
         <image name="about_icon" width="38" height="38"/>
         <image name="add_icon" width="57" height="57"/>
         <image name="app_logo_60" width="60" height="60"/>
-        <image name="back_icon" width="50" height="38"/>
+        <image name="audioIcon" width="40" height="30"/>
+        <image name="back_icon" width="75" height="56"/>
         <image name="cal_icon" width="39" height="39"/>
         <image name="cal_icon_blue" width="39" height="39"/>
+        <image name="camera" width="70" height="30"/>
         <image name="check_icon_selected" width="15" height="15"/>
         <image name="cloud_icon" width="39" height="39"/>
         <image name="detail_right" width="31" height="31"/>
         <image name="finance_icon" width="39" height="39"/>
+        <image name="leftArrow" width="50" height="30"/>
         <image name="login_icon" width="38" height="38"/>
         <image name="notif_icon" width="38" height="38"/>
         <image name="office_icon" width="39" height="39"/>
@@ -2703,11 +2792,14 @@
         <image name="password_icon" width="34" height="31"/>
         <image name="pic_icon" width="31" height="31"/>
         <image name="read_icon" width="39" height="39"/>
+        <image name="rightArrow" width="50" height="30"/>
         <image name="sd_icon" width="38" height="38"/>
+        <image name="seperatorLine" width="40" height="30"/>
         <image name="setting_icon" width="39" height="39"/>
         <image name="social_icon_qq" width="41" height="43"/>
         <image name="social_icon_weibo" width="41" height="43"/>
         <image name="social_icon_weixin" width="41" height="43"/>
+        <image name="topArrow" width="50" height="30"/>
         <image name="topLogo_1" width="399" height="383"/>
         <image name="username_icon" width="34" height="31"/>
     </resources>

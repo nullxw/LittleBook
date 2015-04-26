@@ -1,25 +1,25 @@
 //
-//  LBDragContainer.m
+//  HPDragContainer.m
 //  LittleBook
 //
 //  Created by hupeng on 15/4/6.
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import "LBDragContainer.h"
+#import "HPDragContainer.h"
 
-@interface LBDragContainer ()
+@interface HPDragContainer ()
 {
     BOOL _presented;
 }
 
 @end
 
-@implementation LBDragContainer
+@implementation HPDragContainer
 
-+ (LBDragContainer *)shareContainer
++ (HPDragContainer *)shareContainer
 {
-    CREATE_SINGLETON_INSTANCE([[LBDragContainer alloc] init]);
+    CREATE_SINGLETON_INSTANCE([[HPDragContainer alloc] init]);
 }
 
 - (void)updateItemAtPoint:(CGPoint)point
@@ -42,6 +42,7 @@
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     
     _draggedItem = [_resourceDelegate setupItemOfContainer:self];
+    
     [keyWindow addSubview:_draggedItem];
 }
 

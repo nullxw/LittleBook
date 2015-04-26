@@ -10,8 +10,8 @@
 
 @implementation LBFilterCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+- (void)awakeFromNib
+{
 
+}
 @end

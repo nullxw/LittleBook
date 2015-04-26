@@ -9,12 +9,12 @@
 #import "LBImageEditView.h"
 #import "LBImageFilterView.h"
 #import "LBSectionView.h"
-#import "LBDragContainer.h"
+#import "HPDragContainer.h"
 
-@interface LBImageEditView ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, LBDragContainerResourceDelegate>
+@interface LBImageEditView ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, HPDragContainerResourceDelegate>
 {
     UIImage *_originalImage;
-    LBDragContainer *_canvas;
+    HPDragContainer *_canvas;
 }
 
 @property (nonatomic, weak) IBOutlet LBSectionView *imageEditMenuView;
@@ -41,15 +41,15 @@
 
 - (void)setImage:(UIImage *)image
 {
-    _image = image;
+    _originalImage = image;
     _imageView.contentMode = UIViewContentModeScaleToFill;
     _imageView.image = [image clipToSize:_imageView.frame.size];
 }
 
 - (void)updateImageView:(NSNotification *)notif
 {
-    _image = notif.object;
-    _imageView.image = _image;
+    _originalImage = notif.object;
+    _imageView.image = _originalImage;
 }
 
 - (void)openAlbumPage
@@ -70,7 +70,7 @@
         
         _imageView.hidden = TRUE;
         
-        _canvas = [LBDragContainer shareContainer];
+        _canvas = [HPDragContainer shareContainer];
         _canvas.resourceDelegate = self;
         [_canvas show];
         
@@ -128,22 +128,23 @@
 }
 
 
-#pragma mark - LBDragContainerResourceDelegate
+#pragma mark - HPDragContainerResourceDelegate
 
-- (UIView *)setupItemOfContainer:(LBDragContainer *)container
+- (UIView *)setupItemOfContainer:(HPDragContainer *)container
 {
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
-    
-    CGRect rect   = [win convertRect:_imageView.frame fromView:self];
     CGPoint point = [win convertPoint:_imageView.center fromView:self];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
+    CGSize size = [_originalImage sizeForContainer:_imageView.frame.size];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
     imageView.image = _originalImage;
     imageView.center = point;
     return imageView;
 }
 
-- (void)containerWillDismiss:(LBDragContainer *)container withDraggedItemBack:(BOOL)flag
+- (void)containerWillDismiss:(HPDragContainer *)container withDraggedItemBack:(BOOL)flag
 {
     _imageView.hidden = FALSE;
     

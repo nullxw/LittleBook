@@ -45,8 +45,6 @@
     _imageView.image = scaledImage;
     _imageView.frame = CGRectMake(0, 0, scaledImage.size.width, scaledImage.size.height);
     _imageView.center = center;
-    
-    //    _imageView.image = [image scaleToSize:<#(CGSize)#>];
 }
 
 #pragma mark - button events
@@ -66,22 +64,34 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return _filters.count;
+    return _filters.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LBFilterCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-//    cell.label.text = _filters[indexPath.row][@"displayname"];
+    
+    NSString *imageName = nil;
+    
+    if (indexPath.row == _filters.count) {
+        imageName = @"filter_icon_5";
+    } else {
+        imageName = _filters[indexPath.row][@"image"];
+    }
+    
+    cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[LBImageFilterManager defaultManager] applyFilter:indexPath.row withInputImage:_image completionHandler:^(UIImage *outputImage) {
-        _imageView.image = outputImage;
-    }];
-    
+    if (indexPath.row == _filters.count) {
+        _imageView.image = _image;
+    } else {
+        [[LBImageFilterManager defaultManager] applyFilter:indexPath.row withInputImage:_image completionHandler:^(UIImage *outputImage) {
+            _imageView.image = outputImage;
+        }];
+    }
 }
 
 @end

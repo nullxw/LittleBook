@@ -70,36 +70,31 @@ typedef enum {
 
 - (void)registerGestures
 {
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-//    [self addGestureRecognizer:tap];
-//    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self addGestureRecognizer:tap];
+    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self addGestureRecognizer:pan];
     
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
     pinchGesture.delegate = self;
     [self addGestureRecognizer:pinchGesture];
-    
-//    UIRotationGestureRecognizer *rotateGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotate:)];
-//    rotateGesture.delegate = self;
-//    [self addGestureRecognizer:rotateGesture];
 }
 
 #pragma mark - gesture handlers
 
-//- (void)handleTap:(UITapGestureRecognizer *)gesture
-//{
-//    //...
-//    if (_delegate && [_delegate respondsToSelector:@selector(didClickTouchImageView:)]) {
-//        [_delegate didClickTouchImageView:self];
-//    }
-//}
+- (void)handleTap:(UITapGestureRecognizer *)gesture
+{
+    //...
+    if (_delegate && [_delegate respondsToSelector:@selector(didClickTouchImageView:)]) {
+        [_delegate didClickTouchImageView:self];
+    }
+}
 
 - (void)handlePan:(UIPanGestureRecognizer *)gesture
 {
     CGPoint translate = [gesture translationInView:self];
-    _currentTranslate = CGPointMake(_startTranslate.x + translate.x, _startTranslate.y + translate.y);
-
+   
     if (gesture.state == UIGestureRecognizerStateBegan) {
         _startState = _startState | HPTouchImageViewStatePan;
     }

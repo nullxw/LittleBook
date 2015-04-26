@@ -14,15 +14,9 @@
 
 static float kLBMediaContentOffsetY = 25;
 
-@interface LBDocumentAppendixEditView ()
-<
-UITableViewDelegate ,
-UITableViewDataSource,
-UIImagePickerControllerDelegate,
-UINavigationControllerDelegate
->
+@interface LBDocumentAppendixEditView ()<UITableViewDelegate ,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
-    NSMutableArray     *_dataSource;
+    NSMutableArray *_dataSource;
 
 }
 
@@ -145,4 +139,18 @@ UINavigationControllerDelegate
     actionBlock(weakPoint);
 }
 
+#pragma mark - private methods
+
+- (void)addImageToEdit:(UIImage *)imageToEdit
+{
+    NSDictionary *cellInfo = _dataSource[0];
+    
+    void (^actionBlock)(LBDocumentAppendixEditView *selfPoint) = cellInfo[kTextEditCellAction];
+    
+    __block typeof(self) weakPoint = self;
+    
+    actionBlock(weakPoint);
+    
+    _imageEditView.image = imageToEdit;
+}
 @end

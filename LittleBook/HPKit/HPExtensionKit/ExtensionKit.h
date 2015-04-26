@@ -7,6 +7,7 @@
 //
 #import "UIViewController+ControllerExt.h"
 #import "NSDictionary+DictionaryExt.h"
+#import "UITextView+TextViewExt.h"
 #import "NSString+StringExt.h"
 #import "UIScreen+ScreenExt.h"
 #import "UIImage+ImageExt.h"

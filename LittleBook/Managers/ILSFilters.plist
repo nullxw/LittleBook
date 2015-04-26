@@ -5,6 +5,8 @@
 	<dict>
 		<key>displayname</key>
 		<string>LOMO</string>
+		<key>image</key>
+		<string>filter_icon_4</string>
 		<key>filters</key>
 		<array>
 			<dict>
@@ -30,6 +32,8 @@
 	<dict>
 		<key>displayname</key>
 		<string>Fairy</string>
+		<key>image</key>
+		<string>filter_icon_0</string>
 		<key>filters</key>
 		<array>
 			<dict>
@@ -63,6 +67,8 @@
 	<dict>
 		<key>displayname</key>
 		<string>Time&amp;Tide</string>
+		<key>image</key>
+		<string>filter_icon_1</string>
 		<key>filters</key>
 		<array>
 			<dict>
@@ -82,6 +88,8 @@
 	<dict>
 		<key>displayname</key>
 		<string>MONO</string>
+		<key>image</key>
+		<string>filter_icon_3</string>
 		<key>filters</key>
 		<array>
 			<dict>
@@ -93,6 +101,8 @@
 	<dict>
 		<key>displayname</key>
 		<string>Vintage</string>
+		<key>image</key>
+		<string>filter_icon_2</string>
 		<key>filters</key>
 		<array>
 			<dict>
@@ -139,81 +149,6 @@
 				<real>0.4037037</real>
 				<key>inputShadowAmount</key>
 				<real>0.3481481</real>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>displayname</key>
-		<string>Hymnody</string>
-		<key>filters</key>
-		<array>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIPhotoEffectFade</string>
-			</dict>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIHighlightShadowAdjust</string>
-				<key>inputHighlightAmount</key>
-				<real>0.7333333</real>
-				<key>inputRadius</key>
-				<real>0.2592593</real>
-				<key>inputShadowAmount</key>
-				<real>0.4148148</real>
-			</dict>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIVignette</string>
-				<key>inputIntensity</key>
-				<real>0.4740741</real>
-				<key>inputRadius</key>
-				<real>0.4296296</real>
-			</dict>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIColorMonochrome</string>
-				<key>inputColor</key>
-				<dict>
-					<key>r</key>
-					<real>0.964706</real>
-					<key>g</key>
-					<real>0.796078</real>
-					<key>b</key>
-					<real>0.337255</real>
-					<key>a</key>
-					<integer>1</integer>
-				</dict>
-				<key>inputIntensity</key>
-				<real>0.0962963</real>
-			</dict>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIColorControls</string>
-				<key>inputContrast</key>
-				<real>1.081481</real>
-				<key>inputSaturation</key>
-				<real>0.8666667</real>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>displayname</key>
-		<string>Landscape</string>
-		<key>filters</key>
-		<array>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIColorControls</string>
-				<key>inputContrast</key>
-				<real>1.066667</real>
-				<key>inputSaturation</key>
-				<real>1.362963</real>
-			</dict>
-			<dict>
-				<key>CIAttributeFilterName</key>
-				<string>CIExposureAdjust</string>
-				<key>inputEV</key>
-				<real>0.06666667</real>
 			</dict>
 		</array>
 	</dict>

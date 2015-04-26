@@ -8,10 +8,10 @@
 
 #import "LBChartView.h"
 #import "LBChartEditView.h"
-#import "LBDragContainer.h"
-@interface LBChartView () <LBChartEditViewDelegate, LBDragContainerResourceDelegate>
+#import "HPDragContainer.h"
+@interface LBChartView () <LBChartEditViewDelegate, HPDragContainerResourceDelegate>
 {
-    LBDragContainer *_canvas;
+    HPDragContainer *_canvas;
 }
 @end
 @implementation LBChartView
@@ -49,7 +49,7 @@
         
         self.hidden = TRUE;
         
-        _canvas = [LBDragContainer shareContainer];
+        _canvas = [HPDragContainer shareContainer];
         _canvas.resourceDelegate = self;
         [_canvas show];
         
@@ -73,9 +73,9 @@
     self.theme      = chartInfo[@"theme"];
 }
 
-#pragma mark - LBDragContainerResourceDelegate
+#pragma mark - HPDragContainerResourceDelegate
 
-- (UIView *)setupItemOfContainer:(LBDragContainer *)container
+- (UIView *)setupItemOfContainer:(HPDragContainer *)container
 {
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
     CGRect rect   = [win convertRect:self.frame fromView:self.superview];
@@ -87,7 +87,7 @@
     return imageView;
 }
 
-- (void)containerWillDismiss:(LBDragContainer *)container withDraggedItemBack:(BOOL)flag
+- (void)containerWillDismiss:(HPDragContainer *)container withDraggedItemBack:(BOOL)flag
 {
     self.hidden = FALSE;
 }

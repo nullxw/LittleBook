@@ -13,7 +13,7 @@
 #define LB_COMMON_CORNER_RADIUS  5.0
 
 #define LB_SPRING_ANIMATION_TIME  0.6
-#define LB_LINEAR_ANIMATION_TIME  0.3
+#define LB_LINEAR_ANIMATION_TIME  0.25
 
 // common color
 #define LB_LIGHT_GRAY_LINE_COLOR [UIColor colorWithR:246 g:245 b:243 a:1.0]

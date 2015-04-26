@@ -62,7 +62,7 @@
     NSString *preStr = [text substringToIndex:point];
     NSString *sufStr = [text substringFromIndex:point];
 
-    NSString *testStr = [NSString stringWithFormat:@"%@\n%@\n%@", preStr, seperatorLine, sufStr];
+    NSString *testStr = [NSString stringWithFormat:@"%@\n%@%@", preStr, seperatorLine, sufStr];
     
     NSInteger lineIndex = [self lineIndexOfCurrentCursour];
 
@@ -70,7 +70,7 @@
     
     NSRange rang = [self rangeOfLineAtIndex:lineIndex + 1];
     
-    NSString *finalStr = [NSString stringWithFormat:@"%@\n%@\n%@", preStr, [seperatorLine substringToIndex:rang.length], sufStr];
+    NSString *finalStr = [NSString stringWithFormat:@"%@\n%@%@", preStr, [seperatorLine substringToIndex:rang.length], sufStr];
     self.text = finalStr;
 }
 

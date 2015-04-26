@@ -16,17 +16,10 @@
 // tap
 - (void)didTapTouchImageView:(HPTouchImageView *)touchImageView;
 
-// move
-- (void)willBeginMoveTouchImageView:(HPTouchImageView *)touchImageView;
-- (void)didMoveTouchImageView:(HPTouchImageView *)touchImageView;
-
-// scale
-- (void)willScaleTouchImageView:(HPTouchImageView *)touchImageView;
-- (void)didScaleTouchImageView:(HPTouchImageView *)touchImageView;
-
 // end operation
-
-- (void)didEnd
+- (void)willOperateTouchImageView:(HPTouchImageView *)touchImageView;
+- (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView;
+- (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView;
 
 @end
 

@@ -90,9 +90,15 @@
     
     if (_editButton.tag == 0) {
         
-        [_titleField resignFirstResponder];
-        [_contentField resignFirstResponder];
-        
+        if (_titleField.isFirstResponder || _contentField.isFirstResponder) {
+            // close key board if need
+            [_titleField resignFirstResponder];
+            [_contentField resignFirstResponder];
+        } else {
+            // else close it
+            [self keyboardWillHide:nil];
+        }
+    
         // open edit panel
         [UIView animateWithDuration:LB_SPRING_ANIMATION_TIME delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
             
@@ -269,14 +275,14 @@
     if (!_isMediaEditViewVisible) {
         UIImageView *draggedItem = (UIImageView *)container.draggedItem;
         
-        HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithImage:draggedItem.image];
+        HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:[_contentField convertRect:draggedItem.frame fromView:win]];
+        appendixView.image = draggedItem.image;
         appendixView.delegate = self;
-        appendixView.frame    = [_contentField convertRect:draggedItem.frame fromView:win];
         appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + [[LBIndexInfoManager defaultManager] getAppendixID].intValue;
         
         [_appendixs addObject:appendixView];
         [_appendixPaths addObject:[UIBezierPath bezierPath]];
-        [self DidTransformTouchImageView:appendixView];
+        [self didOperateTouchImageView:appendixView];
         [_contentField addSubview:appendixView];
     }
     
@@ -285,8 +291,20 @@
 
 #pragma mark - HPTouchImageViewProtocol
 
-- (void)DidTransformTouchImageView:(HPTouchImageView *)touchImageView
+- (void)didTapTouchImageView:(HPTouchImageView *)touchImageView
 {
+    [_contentField resignFirstResponder];
+    [_titleField resignFirstResponder];
+}
+
+- (void)willOperateTouchImageView:(HPTouchImageView *)touchImageView
+{
+    //...
+}
+
+- (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
+{
+    NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));
     CGRect frame = touchImageView.frame;
     float offset = _contentField.font.pointSize * 0.5;
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
@@ -294,11 +312,14 @@
     [_appendixPaths replaceObjectAtIndex:selectedIndex withObject:path];
     _contentField.textContainer.exclusionPaths = _appendixPaths;
     
+    NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));
+
+    
 }
 
-- (void)DidEndTransformTouchImageView:(HPTouchImageView *)touchImageView
+- (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
-   
+//    [_contentField becomeFirstResponder];
 }
 
 #pragma mark -  UIImagePickerControllerDelegate

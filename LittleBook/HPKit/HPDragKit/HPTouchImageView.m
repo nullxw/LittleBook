@@ -16,21 +16,14 @@ typedef enum {
 
 @interface HPTouchImageView ()<UIGestureRecognizerDelegate>
 {
-    CGPoint _startTranslate;
-    CGFloat _startScale;
-    CGFloat _startRotation;
-    
-    CGPoint _currentTranslate;
-    CGFloat _currentScale;
-    CGFloat _currentRotation;
-    
-    HPTouchImageViewState _startState;
-    HPTouchImageViewState _endState;
+    CGPoint _startCenter;
+    CGRect  _startRect;
 }
 
 @end
 
 @implementation HPTouchImageView
+
 - (instancetype)initWithImage:(UIImage *)image
 {
     if (self = [super initWithImage:image]) {
@@ -61,10 +54,10 @@ typedef enum {
 
 - (void)initView
 {
-    _startTranslate = CGPointZero;
-    _startScale     = 1.0;
-    _startRotation  = 0.0;
     self.userInteractionEnabled = TRUE;
+    _startCenter = self.center;
+    _startRect   = self.frame;
+    
     [self registerGestures];
 }
 
@@ -85,85 +78,68 @@ typedef enum {
 
 - (void)handleTap:(UITapGestureRecognizer *)gesture
 {
-    //...
-    if (_delegate && [_delegate respondsToSelector:@selector(didClickTouchImageView:)]) {
-        [_delegate didClickTouchImageView:self];
+
+    if (_delegate && [_delegate respondsToSelector:@selector(didTapTouchImageView:)]) {
+        [_delegate didTapTouchImageView:self];
     }
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)gesture
 {
-    CGPoint translate = [gesture translationInView:self];
-   
+    CGPoint toPoint = [gesture translationInView:self];
+    
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        _startState = _startState | HPTouchImageViewStatePan;
+        if (_delegate && [_delegate respondsToSelector:@selector(willOperateTouchImageView:)]) {
+            [_delegate willOperateTouchImageView:self];
+        }
     }
+    
+    self.center = CGPointMake(_startCenter.x + toPoint.x, _startCenter.y + toPoint.y);;
     
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        _endState = _endState | HPTouchImageViewStatePan;
-        _startTranslate = _currentTranslate;
+        
+        _startCenter = self.center;
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(didEndOperateTouchImageView:)]) {
+            [_delegate didEndOperateTouchImageView:self];
+        }
+        return;
     }
     
-    [self updateTransform];
+    if (_delegate && [_delegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
+        [_delegate didOperateTouchImageView:self];
+    }
 }
 
 - (void)handlePinch:(UIPinchGestureRecognizer *)gesture
 {
     float scale = gesture.scale;
-    _currentScale = _startScale * scale;
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        _startState = _startState | HPTouchImageViewStatePinch;
+        if (_delegate && [_delegate respondsToSelector:@selector(willOperateTouchImageView:)]) {
+            [_delegate willOperateTouchImageView:self];
+        }
     }
+    
+    CGRect toFrame = CGRectZero;
+    
+    toFrame.size = CGSizeMake(_startRect.size.width * scale, _startRect.size.height * scale);
+    
+    self.frame  = toFrame;
+    self.center = _startCenter;
     
     if (gesture.state == UIGestureRecognizerStateEnded) {
-        _endState = _endState | HPTouchImageViewStatePinch;
-        _startScale = _currentScale;
-    }
-    
-    [self updateTransform];
-}
-
-//- (void)handleRotate:(UIRotationGestureRecognizer *)gesture
-//{
-//    float rotation = gesture.rotation;
-//    _currentRotation = _startRotation + rotation;
-//    
-//    if (gesture.state == UIGestureRecognizerStateBegan) {
-//        _startState = _startState | HPTouchImageViewStateRotate;
-//    }
-//    
-//    if (gesture.state == UIGestureRecognizerStateEnded) {
-//        _endState = _endState | HPTouchImageViewStateRotate;
-//        _startRotation = _currentRotation;
-//    }
-//    
-//    [self updateTransform];
-//}
-
-
-- (void)updateTransform
-{
-    if (_currentScale == 0) {
-        _currentScale = 1.0;
-    }
-    CGAffineTransform scaleTransform     = CGAffineTransformMakeScale(_currentScale, _currentScale);
-    CGAffineTransform rotateTransform    = CGAffineTransformMakeRotation(_currentRotation);
-    CGAffineTransform translateTransform = CGAffineTransformMakeTranslation(_currentTranslate.x, _currentTranslate.y);
-    self.transform = CGAffineTransformConcat(translateTransform, CGAffineTransformConcat(scaleTransform, rotateTransform));
-    
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(DidTransformTouchImageView:)]) {
-        [_delegate DidTransformTouchImageView:self];
-    }
-    
-    if (_startState == _endState) {
-        if (_delegate && [_delegate respondsToSelector:@selector(DidEndTransformTouchImageView:)]) {
-            [_delegate DidEndTransformTouchImageView:self];
-            
-            _startState = 0;
-            _endState   = 0;
+        
+        _startRect = self.frame;
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(didEndOperateTouchImageView:)]) {
+            [_delegate didEndOperateTouchImageView:self];
         }
+        return;
+    }
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
+        [_delegate didOperateTouchImageView:self];
     }
 }
 

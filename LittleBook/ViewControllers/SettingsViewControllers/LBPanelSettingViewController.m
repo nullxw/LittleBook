@@ -31,7 +31,7 @@
     NSIndexPath *selectedPath = [NSIndexPath indexPathForRow:0 inSection:0];
     for (int i = 0; i < panelStyles.count; i++) {
         PanelStyle *panelStyle = panelStyles[i];
-        if ([panelStyle.styleName isEqualToString:[LBAppContext context].settings[kLBPanelSetting]]) {
+        if ([panelStyle.styleName isEqualToString:[LBAppContext context].settings[kLBPanelStyleSetting]]) {
             selectedPath = [NSIndexPath indexPathForRow:i inSection:0];
         }
     }
@@ -58,7 +58,7 @@
     NSMutableDictionary *settings = [LBAppContext context].settings;
     
     PanelStyle *panelStyle = [LBPanelStyleManager defaultManager].panelStyles[indexPath.row];
-    settings[kLBPanelSetting] = panelStyle.styleName;
+    settings[kLBPanelStyleSetting] = panelStyle.styleName;
     [[LBAppContext context] updateSettings];
 }
 

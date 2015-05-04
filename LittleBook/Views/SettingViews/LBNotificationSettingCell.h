@@ -6,12 +6,11 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HPAutoResizeCell.h"
 
-@interface LBNotificationSettingCell : UITableViewCell
+@interface LBNotificationSettingCell : HPAutoResizeCell
 
 @property (nonatomic, weak) IBOutlet UILabel *descLabel;
 @property (nonatomic, weak) IBOutlet UISwitch *switchView;
-@property (nonatomic, weak) IBOutlet UIView *descContainer;
 
 @end

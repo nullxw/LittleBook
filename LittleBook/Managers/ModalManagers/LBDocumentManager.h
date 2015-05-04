@@ -7,9 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Document.h"
 
 @interface LBDocumentManager : NSObject
 
-+ (LBDocumentManager *)defaultManager;
+// Create
++ (Document *)document;
+
+// Retrieve
++ (Document *)findByID:(NSNumber *)docID inContext:(NSManagedObjectContext*)context;
++ (Document *)findByID:(NSNumber *)docID;
+
++ (NSArray *)findAll;
 
 @end

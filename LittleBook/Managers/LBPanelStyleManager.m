@@ -58,7 +58,7 @@
 
 - (PanelStyle *)currentStyle
 {
-    NSString *selectedStyleName = [LBAppContext context].settings[kLBPanelSetting];
+    NSString *selectedStyleName = [LBAppContext context].settings[kLBPanelStyleSetting];
 
     for (int i = 0; i < _panelStyles.count; i++) {
         PanelStyle *panelStyle = _panelStyles[i];

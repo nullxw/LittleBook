@@ -91,6 +91,8 @@ static float kLBMediaContentOffsetY = 25;
                                kTextEditCellIcon  : [UIImage imageNamed:@"save_icon"],
                                kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
                                    
+                                   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"导出为" delegate:_parentViewController cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"PDF格式" ,@"图片", @"纯文本", nil];
+                                   [actionSheet showInView:_parentViewController.view];
                                    
                                    
                                 }};
@@ -100,9 +102,7 @@ static float kLBMediaContentOffsetY = 25;
     NSDictionary *shareInfo = @{kTextEditCellTitle : @"分享",
                                 kTextEditCellIcon  : [UIImage imageNamed:@"share_icon"],
                                 kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
-                                   
-                                   
-                                   
+                   
                                }};
     
     [_dataSource addObject:shareInfo];
@@ -153,4 +153,5 @@ static float kLBMediaContentOffsetY = 25;
     
     _imageEditView.image = imageToEdit;
 }
+
 @end

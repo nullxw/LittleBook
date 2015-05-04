@@ -10,7 +10,7 @@
 
 @interface UIView (ViewExt)
 
-- (UIImage *)viewShot;
+- (UIImage *)toImage;
 
 // coreplot 的特例
 - (UIImage *)viewShotForCPView;

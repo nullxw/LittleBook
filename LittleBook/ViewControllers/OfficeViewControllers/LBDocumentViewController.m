@@ -7,9 +7,14 @@
 //
 
 #import "LBDocumentViewController.h"
-#import "LBReadListCell.h"
+#import "LBDocumentManager.h"
+#import "LBDocumentListCell.h"
 
 @interface LBDocumentViewController () <UITableViewDataSource ,UITableViewDelegate>
+{
+    NSArray *_dataSource;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -22,6 +27,14 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _dataSource = [LBDocumentManager findAll];
+}
+
+#pragma mark - button events
+
 - (IBAction)editButtonClicked:(id)sender
 {
     [self performSegueWithIdentifier:@"openEditPage" sender:self];
@@ -31,13 +44,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return _dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LBReadListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBReadListCell"];
-    
+    LBDocumentListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBDocumentListCell"];
+//    cell.document = _dataSource[indexPath.row];
+    cell.tableView = tableView;
     return cell;
 }
 @end

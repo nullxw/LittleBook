@@ -54,7 +54,28 @@
 
 + (NSArray *)findAllOfAccount:(NSString *)parentID
 {
-    return [AccountDetail findAllSortedBy:@"createTime" ascending:NO withPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and parentID=%@", [LBUserManager defaultManager].currentUser.userID, parentID]];
+    return [LBAccountDetailManager findAllOfAccount:parentID inContext:nil];
 }
 
++ (NSArray *)findAllOfAccount:(NSString *)parentID inContext:(NSManagedObjectContext *)context
+{
+    NSString *userID = [LBUserManager defaultManager].currentUser.userID;
+    if (!context) {
+        return [AccountDetail findAllSortedBy:@"createTime" ascending:NO withPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and parentID=%@",userID , parentID]];
+    } else {
+        return [AccountDetail findAllSortedBy:@"createTime" ascending:NO withPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and parentID=%@",userID , parentID] inContext:context];
+    
+    }
+}
+
+
++ (void)deleteAccountDetail:(AccountDetail *)accountDetail inContext:(NSManagedObjectContext *)context
+{
+    NSArray *appendixs = [LBAppendixManager appendixs:accountDetail.accountID inContext:context];
+    for (Appendix *appendix in appendixs) {
+        [appendix deleteEntityInContext:context];
+    }
+    [accountDetail deleteEntityInContext:context];
+
+}
 @end

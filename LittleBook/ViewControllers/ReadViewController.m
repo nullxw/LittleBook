@@ -7,7 +7,7 @@
 //
 
 #import "ReadViewController.h"
-#import "LBReadListCell.h"
+#import "LBDocumentListCell.h"
 
 @interface ReadViewController () <UITableViewDataSource ,UITableViewDelegate>
 
@@ -31,7 +31,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LBReadListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBReadListCell"];
+    LBDocumentListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBDocumentListCell"];
     
     return cell;
 }

@@ -15,9 +15,11 @@
 + (Appendix *)createAppendixWithMediaData:(NSData *)data;
 
 // Retrieve
-+ (NSArray *)appendixsOfAccountDetail:(NSNumber *)accountID;
++ (NSArray *)appendixs:(NSNumber *)parentID;
++ (NSArray *)appendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context;
 
 + (Appendix *)findByID:(NSNumber *)appendixID;
++ (Appendix *)findByID:(NSNumber *)appendixID inContext:(NSManagedObjectContext *)context;
 
 + (NSArray *)findByIDs:(NSArray *)appendixIDs;
 

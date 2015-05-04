@@ -60,7 +60,7 @@
     
     CGRect topRect = CGRectMake(0, 0, w, rect.origin.y);
     CGRect bottomRect = CGRectMake(0, rect.origin.y + rect.size.height, w, h - CGRectGetMaxY(rect));
-    UIImage *screenShot = [sourceViewController.view viewShot];
+    UIImage *screenShot = [sourceViewController.view toImage];
     
     sourceViewController.topFakeView = [[UIImageView alloc] initWithFrame:topRect];
     sourceViewController.topFakeView.image = [screenShot clipToRect:topRect];

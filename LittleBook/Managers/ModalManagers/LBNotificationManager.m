@@ -26,6 +26,10 @@
 {
     return [[NSDate new] formattedString:@"yyyy-MM-dd"];
 }
+- (Notification *)preparedEntity
+{
+    return _preparedEntity;
+}
 
 - (Notification *)prepareNotificationEntityWith:(Notification *)notif;
 {
@@ -42,7 +46,9 @@
         _preparedEntity.on         = [LBAppContext context].settings[kLBNotificationSettingCalendar];
         _preparedEntity.label      = @"提醒";
         _preparedEntity.notifID    = [[LBIndexInfoManager defaultManager] getNotificationID];
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     }
+    
     return _preparedEntity;
 }
 
@@ -122,4 +128,16 @@
 
 }
 
+- (void)deleteNotification:(Notification *)notification
+{
+    UILocalNotification *localNotif = [self findLocalNotificationBy:notification.notifID];
+    
+    if (localNotif) {
+        [[UIApplication sharedApplication] cancelLocalNotification:localNotif];
+    }
+    
+    [notification deleteEntity];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+}
 @end

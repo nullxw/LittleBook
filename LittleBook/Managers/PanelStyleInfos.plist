@@ -10,7 +10,7 @@
 			<key>g</key>
 			<integer>0</integer>
 			<key>b</key>
-			<integer>0</integer>
+			<integer>255</integer>
 			<key>a</key>
 			<integer>1</integer>
 		</dict>
@@ -70,13 +70,13 @@
 		<key>fontColor</key>
 		<dict>
 			<key>r</key>
-			<integer>0</integer>
+			<integer>51</integer>
 			<key>g</key>
-			<integer>0</integer>
+			<integer>51</integer>
 			<key>b</key>
-			<integer>0</integer>
+			<integer>51</integer>
 			<key>a</key>
-			<real>1</real>
+			<integer>1</integer>
 		</dict>
 		<key>panelColor</key>
 		<dict>

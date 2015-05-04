@@ -7,31 +7,23 @@
 //
 
 #import "LBAccountListCell.h"
-#import "LBTimeLineView.h"
-#import "LBAccountAppendixFileManager.h"
+#import "LBAppendixFileManager.h"
 #import "LBAccountAppendixCell.h"
 #import "LBAppendixManager.h"
+#import "LBTimeLineView.h"
 #import "Account.h"
 
 @interface LBAccountListCell ()
 {
     NSArray *_dataSource;
 }
-
-@property (weak, nonatomic) IBOutlet UIView *realContentView;
 @property (weak, nonatomic) IBOutlet LBTimeLineView *timeLineLabel;
 @property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *appendixViews;
 @property (weak, nonatomic) IBOutlet UILabel *costLabel;
-
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @end
 
 @implementation LBAccountListCell
-
-- (void)didMoveToSuperview
-{
-    float offsetX = 20;
-    _realContentView.frame = CGRectMake(offsetX, CGRectGetMinY(_realContentView.frame), CGRectGetWidth(self.bounds) - 2 * offsetX, CGRectGetHeight(_realContentView.frame));
-}
 
 - (void)prepareForReuse
 {
@@ -41,8 +33,16 @@
         appendixView.image = nil;
         appendixView.hidden = TRUE;
     }
+    _deleteButton.hidden = TRUE;
 }
 
+- (void)awakeFromNib
+{
+    _deleteButton.hidden = TRUE;
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress)];
+    [self addGestureRecognizer:longPress];
+}
 
 - (void)setAccount:(Account *)account
 {
@@ -54,10 +54,24 @@
     
     for (int i = 0 ; i < _dataSource.count; i++) {
         Appendix *appendix = _dataSource[i];
-        NSString *appendixFilePath = [[LBAccountAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
+        NSString *appendixFilePath = [[LBAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
         UIImageView *appendixView = _appendixViews[i];
         appendixView.hidden = FALSE;
         appendixView.image = [UIImage imageWithContentsOfFile:appendixFilePath];
+    }
+}
+
+#pragma mark - event handlers
+
+- (void)longPress
+{
+    _deleteButton.hidden = FALSE;
+}
+
+- (IBAction)deleteButtonClicked:(UIButton *)sender
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(obj:respondsToAction:)]) {
+        [_delegate obj:self respondsToAction:sender];
     }
 }
 

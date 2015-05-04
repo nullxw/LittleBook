@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HPAutoResizeCell.h"
 
 @class Notification;
 
-@interface LBNotificationCell : UITableViewCell
+@interface LBNotificationCell : HPAutoResizeCell
 
 - (void)setupWithNotification:(Notification *)notification;
 

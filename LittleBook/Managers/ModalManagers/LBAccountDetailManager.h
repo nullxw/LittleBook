@@ -19,5 +19,8 @@
 
 // Retrieve
 + (NSArray *)findAllOfAccount:(NSString *)parentID;
++ (NSArray *)findAllOfAccount:(NSString *)parentID inContext:(NSManagedObjectContext *)context;
 
+// Delete
++ (void)deleteAccountDetail:(AccountDetail *)accountDetail inContext:(NSManagedObjectContext *)context;
 @end

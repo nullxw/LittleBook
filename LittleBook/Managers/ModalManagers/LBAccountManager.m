@@ -7,6 +7,7 @@
 //
 
 #import "LBAccountManager.h"
+#import "LBAccountDetailManager.h"
 
 @implementation LBAccountManager
 
@@ -17,9 +18,19 @@
     return [Account findFirstWithPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and accountID=%@", [LBUserManager defaultManager].currentUser.userID, accountID]];
 }
 
++ (Account *)findByID:(NSString *)accountID inContext:(NSManagedObjectContext *)context
+{
+    NSString *userID = [LBUserManager defaultManager].currentUser.userID;
+    if (!context) {
+        return [Account findFirstWithPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and accountID=%@", userID, accountID]];
+    } else {
+        return [Account findFirstWithPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and accountID=%@", userID, accountID] inContext:context];
+    }
+}
+
 + (Account *)findByID:(NSString *)accountID
 {
-    return [Account findFirstWithPredicate:[NSPredicate predicateWithFormat:@"userID=%@ and accountID=%@", [LBUserManager defaultManager].currentUser.userID, accountID]];
+    return [LBAccountManager findByID:accountID inContext:nil];
 }
 
 + (NSArray *)findAll
@@ -37,5 +48,21 @@
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     
     return account;
+}
+
++ (void)deleteAccount:(Account *)account
+{
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+       
+        Account *localAccount = [LBAccountManager findByID:account.accountID inContext:localContext];
+        
+        NSArray *localAccountDetails = [LBAccountDetailManager findAllOfAccount:localAccount.accountID inContext:localContext];
+        
+        for (AccountDetail *accountDetail in localAccountDetails) {
+            [LBAccountDetailManager deleteAccountDetail:accountDetail inContext:localContext];
+        }
+        
+        [localAccount deleteEntityInContext:localContext];
+    }];
 }
 @end

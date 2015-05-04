@@ -15,15 +15,21 @@
 #import "LBDocumentAppendixEditView.h"
 #import "LBPanelStyleManager.h"
 #import "LBIndexInfoManager.h"
+#import "LBDocumentContext.h"
 #import "HPTouchImageView.h"
 #import "HPDragContainer.h"
 #import "LBSectionView.h"
+#import "LBExportTemp.h"
+#import "LBAppContext.h"
+#import "Appendix.h"
+#import "Document.h"
 
-@interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 {
     BOOL _isMediaEditViewVisible;
     
     NSMutableArray *_appendixs;
+    NSMutableArray *_appendixViews;
     NSMutableArray *_appendixPaths;
 }
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
@@ -43,9 +49,16 @@
 {
     [super viewDidLoad];
     
+    if (!_doc) {
+        _doc = [[LBDocumentContext defaultContext] prepareDocument];
+    } else {
+        [LBDocumentContext defaultContext].document = _doc;
+    }
+    
     // 1. init params
     [HPDragContainer shareContainer].responseDelegate = self;
     _appendixs = @[].mutableCopy;
+    _appendixViews = @[].mutableCopy;
     _appendixPaths = @[].mutableCopy;
     
     _isMediaEditViewVisible = FALSE;
@@ -70,11 +83,27 @@
 
 - (void)updateInterfaceWithSettings
 {
+    NSDictionary *settings = [LBAppContext context].settings;
+    
+    int fontSize = [settings[kLBFontSizeSetting] intValue];
+    NSString *fontName = settings[kLBFontNameSetting];
     PanelStyle *currentStyle = [[LBPanelStyleManager defaultManager] currentStyle];
     
     _contentView.backgroundColor = currentStyle.panelColor;
     _contentField.textColor = currentStyle.fontColor;
     _titleField.textColor   = currentStyle.fontColor;
+    
+    _contentField.font = [UIFont fontWithName:fontName size:fontSize];
+    _titleField.font = [UIFont fontWithName:fontName size:fontSize + 2];
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    _doc.documentSize = NSStringFromCGSize(_contentView.frame.size);
 }
 
 #pragma mark - button events
@@ -123,13 +152,13 @@
         } completion:^(BOOL finished) {
             _editButton.enabled = TRUE;
         }];
-    
     }
     _editButton.tag = !_editButton.tag;
 }
 
 - (IBAction)backButtonClicked:(UIButton *)sender
 {
+    [[LBDocumentContext defaultContext] cleanContext];
     [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
 }
 
@@ -154,10 +183,10 @@
     
     }];
 }
-- (IBAction)seperatorButtonClicked:(id)sender
-{
-    [_contentField insertSeperatorLineAtPoint:[_contentField cursourLocation]];
-}
+//- (IBAction)seperatorButtonClicked:(id)sender
+//{
+//    [_contentField insertSeperatorLineAtPoint:[_contentField cursourLocation]];
+//}
 
 - (IBAction)leftArrowButtonClicked:(id)sender
 {
@@ -226,6 +255,8 @@
         [_contentField becomeFirstResponder];
     }
     
+    _doc.title = textField.text;
+    
     return TRUE;
 }
 
@@ -238,7 +269,8 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    [textView scrollRangeToVisible:range];
+    
+    _doc.content = textView.text;
     return TRUE;
 }
 #pragma mark - HPDragContainerResponseDelegate
@@ -275,12 +307,17 @@
     if (!_isMediaEditViewVisible) {
         UIImageView *draggedItem = (UIImageView *)container.draggedItem;
         
+        Appendix *appendix = [[LBDocumentContext defaultContext] addAppendix:draggedItem.image type:LBAppendixTypeImage];
+        appendix.frame = NSStringFromCGRect(draggedItem.frame);
+        
+        [_appendixs addObject:appendix];
+        
         HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:[_contentField convertRect:draggedItem.frame fromView:win]];
         appendixView.image = draggedItem.image;
         appendixView.delegate = self;
-        appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + [[LBIndexInfoManager defaultManager] getAppendixID].intValue;
+        appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
         
-        [_appendixs addObject:appendixView];
+        [_appendixViews addObject:appendixView];
         [_appendixPaths addObject:[UIBezierPath bezierPath]];
         [self didOperateTouchImageView:appendixView];
         [_contentField addSubview:appendixView];
@@ -308,13 +345,16 @@
     CGRect frame = touchImageView.frame;
     float offset = _contentField.font.pointSize * 0.5;
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
-    NSInteger selectedIndex = [_appendixs indexOfObject:touchImageView];
+    
+    NSInteger selectedIndex = [_appendixViews indexOfObject:touchImageView];
+    
+    Appendix *appendix = [_appendixs objectAtIndex:selectedIndex];
+    appendix.frame = NSStringFromCGRect(frame);
+    
     [_appendixPaths replaceObjectAtIndex:selectedIndex withObject:path];
     _contentField.textContainer.exclusionPaths = _appendixPaths;
     
     NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));
-
-    
 }
 
 - (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView
@@ -341,5 +381,40 @@
         }
         [_editContainerView addImageToEdit:image];
     }];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            [self exportAsPDF];
+            break;
+        case 1:
+            [self exportAsImage];
+            break;
+        case 2:
+            [self exportAsText];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)exportAsPDF
+{
+    LBExportTemp *temp = [LBExportTemp tempForPDF:self.doc];
+    
+}
+
+- (void)exportAsImage
+{
+
+    
+}
+- (void)exportAsText
+{
+
 }
 @end

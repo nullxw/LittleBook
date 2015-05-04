@@ -10,7 +10,7 @@
 
 @implementation UIView (ViewExt)
 
-- (UIImage *)viewShot
+- (UIImage *)toImage
 {
     UIGraphicsBeginImageContextWithOptions(self.frame.size, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();

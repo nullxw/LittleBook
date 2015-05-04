@@ -11,9 +11,9 @@
 #import "LBAccountListCell.h"
 #import "LBAccountManager.h"
 
-@interface LBAccountViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface LBAccountViewController () <UITableViewDataSource, UITableViewDelegate, HPCallBackProtocol>
 {
-    NSArray *_dataSource;
+    NSMutableArray *_dataSource;
     Account *_seletedAccount;
 }
 
@@ -32,7 +32,7 @@
 {
     [super viewWillAppear:animated];
     _seletedAccount = nil;
-    _dataSource     = [LBAccountManager findAll];
+    _dataSource     = [LBAccountManager findAll].mutableCopy;
     [_tableView reloadData];
 }
 
@@ -61,6 +61,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LBAccountListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBAccountListCell"];
+    cell.delegate = self;
     cell.account = _dataSource[indexPath.row];
     return cell;
 }
@@ -69,5 +70,21 @@
 {
     _seletedAccount = _dataSource[indexPath.row];
     [self performSegueWithIdentifier:@"openEditPage" sender:self];
+}
+
+#pragma mark - HPCallBackProtocol
+
+- (void)obj:(id)obj respondsToAction:(id)actionInfo
+{
+    LBAccountListCell *cell = obj;
+    Account *account = cell.account;
+    
+    [_dataSource removeObject:account];
+    
+    NSIndexPath *indexPath = [_tableView indexPathForCell:cell];
+    [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+    [LBAccountManager deleteAccount:account];
+    
 }
 @end

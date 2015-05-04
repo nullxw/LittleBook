@@ -13,10 +13,10 @@
 @interface Document : NSManagedObject
 
 @property (nonatomic, retain) NSString * content;
-@property (nonatomic, retain) NSDate * createTime;
+@property (nonatomic, retain) NSDate   * createTime;
 @property (nonatomic, retain) NSNumber * documentID;
 @property (nonatomic, retain) NSString * documentSize;
-@property (nonatomic, retain) NSDate * modifiedTime;
+@property (nonatomic, retain) NSDate   * modifiedTime;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * userID;
 

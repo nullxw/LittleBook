@@ -9,6 +9,15 @@
 static NSString *kLBUserDefaultSuiteName = @"kLBUserDefaultSuiteName";
 static NSString *kLBAppSettingKey        = @"kLBAppSettingKey";
 
+const NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
+const NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
+const NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
+const NSString *kLBPanelStyleSetting = @"kLBPanelSetting";
+const NSString *kLBFontSizeSetting = @"kLBFontSizeSetting";
+const NSString *kLBFontNameSetting = @"kLBFontNameSetting";
+const NSString *kLBResizeSetting   = @"kLBResizeSetting";
+const NSString *kLBDragSetting     = @"kLBDragSetting";
+
 
 #import "LBAppContext.h"
 
@@ -44,7 +53,14 @@ static NSString *kLBAppSettingKey        = @"kLBAppSettingKey";
             self.settings = @{kLBNotificationSettingLowStorage : @(TRUE),
                               kLBNotificationSettingChargeUp   : @(TRUE),
                               kLBNotificationSettingCalendar   : @(TRUE),
-                              kLBPanelSetting                  : @"paperColor"}.mutableCopy;
+                              kLBPanelStyleSetting             : @"panelColor",
+                              kLBFontNameSetting               : @"Helvetica-Neue",
+                              kLBFontSizeSetting               : @(16),
+                              kLBResizeSetting                 :@(TRUE),
+                              kLBDragSetting                   :@(TRUE)
+                              }.mutableCopy;
+            
+            
             [_userDefaults setObject:self.settings forKey:kLBAppSettingKey];
         }
     }

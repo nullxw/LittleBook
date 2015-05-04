@@ -76,13 +76,12 @@
 {
     if (indexPath.row == 0) {
         LBDatePickerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dataPickerCell"];
-        cell.datePicker.date = [LBNotificationManager defaultManager].preparedEntity.fireDate;
+        cell.datePicker.date = [NSDate new];
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell"];
         cell.textLabel.text = @"标签/Label";
         return cell;
-    
     }
 }
 

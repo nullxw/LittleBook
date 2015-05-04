@@ -25,17 +25,6 @@
 
 @implementation LBNotificationCell
 
-- (void)didMoveToSuperview
-{
-    float h = CGRectGetHeight(self.bounds);
-    float w = CGRectGetWidth(self.bounds);
-    _switchControl.center = CGPointMake(w - 50, _switchControl.center.y);
-    _timeLabel.center = CGPointMake(100, _timeLabel.center.y);
-    _seperatorLine.frame = CGRectMake(0, h - 1 , w, LB_ONE_PX_SIZE);
-    [self bringSubviewToFront:_seperatorLine];
-}
-
-
 - (void)setupWithNotification:(Notification *)notification
 {
     _notification = notification;

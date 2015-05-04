@@ -115,4 +115,28 @@
     [[LBNotificationManager defaultManager] prepareNotificationEntityWith:_dataSource[indexPath.row]];
     [self performSegueWithIdentifier:@"openNotifEditPage" sender:self];
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return TRUE;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Notification *notif = _dataSource[indexPath.row];
+        
+        [_dataSource removeObjectAtIndex:indexPath.row];
+        
+        [[LBNotificationManager defaultManager] deleteNotification:notif];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
 @end

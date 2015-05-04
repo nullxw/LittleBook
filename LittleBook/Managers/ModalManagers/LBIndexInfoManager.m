@@ -48,20 +48,31 @@
 
 - (NSNumber *)getAppendixID
 {
-    return (_indexInfo.maxAppendixID = @(++_maxAppendixID));
+    _indexInfo.maxAppendixID = @(++_maxAppendixID);
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    return _indexInfo.maxAppendixID;
 }
 
 - (NSNumber *)getDocumentID
 {
-    return (_indexInfo.maxDocumentID = @(++_maxDocumentID));
+    _indexInfo.maxDocumentID = @(++_maxDocumentID);
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+    return _indexInfo.maxDocumentID;
 }
 
 - (NSNumber *)getAccountDetailID
 {
-    return (_indexInfo.maxAccountDetailID = @(++_maxAccountDetailID));
+    _indexInfo.maxAccountDetailID = @(++_maxAccountDetailID);
+    
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    return _indexInfo.maxAccountDetailID;
 }
 - (NSNumber *)getNotificationID
 {
-    return (_indexInfo.maxNotificationID = @(++_maxNotificationID));
+    _indexInfo.maxNotificationID = @(++_maxNotificationID);
+    
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    return _indexInfo.maxNotificationID;
 }
 @end

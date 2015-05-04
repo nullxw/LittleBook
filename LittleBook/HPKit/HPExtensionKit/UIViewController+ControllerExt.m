@@ -13,30 +13,24 @@
 - (UIViewController *)topestController
 {
     UIViewController *topViewController = self;
+    
     while (1) {
-        if ([topViewController isKindOfClass:[UINavigationController class]]) {
-            topViewController = [(UINavigationController *)topViewController topViewController];
-        }
         
         if ([topViewController isKindOfClass:[UITabBarController class]]) {
             topViewController = ((UITabBarController *)topViewController).selectedViewController;
+            continue;
         }
         
-        UIViewController *tempViewController;
-        if (topViewController.navigationController) {
-            tempViewController = [topViewController.navigationController topViewController];
-            if ([tempViewController isEqual:topViewController]) {
-                topViewController = tempViewController;
-                break;
-            }
-            topViewController = tempViewController;
-            
+        if ([topViewController isKindOfClass:[UINavigationController class]]) {
+            topViewController = [(UINavigationController *)topViewController topViewController];
+            continue;
+        }
+        
+        if (!topViewController.presentedViewController) {
+            break;
         } else {
-            tempViewController = topViewController.presentedViewController;
-            if (!tempViewController) {
-                break;
-            }
-            topViewController = tempViewController;
+            topViewController = topViewController.presentedViewController;
+            continue;
         }
     }
     return topViewController;

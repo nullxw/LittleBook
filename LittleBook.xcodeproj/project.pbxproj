@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		671C1F6F1AB9B620005F5586 /* LBAccountAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */; };
+		671C1F6F1AB9B620005F5586 /* LBAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */; };
 		671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F731AB9BE4B005F5586 /* LunarCalendar.m */; };
 		671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F781AB9BE4B005F5586 /* MagicalImportFunctions.m */; };
 		671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F7A1AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -54,13 +54,30 @@
 		671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C200E1AB9C70D005F5586 /* LBAccountEditViewController.m */; };
 		671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20121AB9CFF6005F5586 /* LBDocumentManager.m */; };
 		671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */; };
+		671D530B1AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671D53041AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m */; };
+		671D530C1AF5006B00AF4BE9 /* HPLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671D53061AF5006B00AF4BE9 /* HPLockView.m */; };
+		671D530D1AF5006B00AF4BE9 /* HPPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671D53081AF5006B00AF4BE9 /* HPPasscodeView.m */; };
+		671D530E1AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671D530A1AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.m */; };
+		671D53111AF5029300AF4BE9 /* LBDocumentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 671D53101AF5029300AF4BE9 /* LBDocumentListCell.m */; };
 		6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */; };
 		6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22C1AB406B900D1FF99 /* LBPresentFromRightSegue.m */; };
 		6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C22F1AB407A400D1FF99 /* LBTabbarSegue.m */; };
 		6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2321AB40D2900D1FF99 /* UIViewController+LBSegueExt.m */; };
 		6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2361AB40F2400D1FF99 /* HPPresentView.m */; };
-		6721C23A1AB4249600D1FF99 /* LBReadListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2391AB4249600D1FF99 /* LBReadListCell.m */; };
-		674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674E5EA21AB1E0CB00F3415F /* LBCalButton.m */; };
+		672B04661AF47F32004BB1D8 /* LBExportTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04651AF47F32004BB1D8 /* LBExportTemp.m */; };
+		672B046A1AF47F7A004BB1D8 /* LBExportTemp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 672B04691AF47F7A004BB1D8 /* LBExportTemp.xib */; };
+		672B046D1AF48180004BB1D8 /* LBDocumentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B046C1AF48180004BB1D8 /* LBDocumentContext.m */; };
+		672B04701AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */; };
+		672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04731AF4FEE3004BB1D8 /* HPAutoResizeCell.m */; };
+		672B047F1AF4FEE3004BB1D8 /* HPHightLightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */; };
+		672B04801AF4FEE3004BB1D8 /* HPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */; };
+		67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417EF91AF6766E00D69B7E /* HPEditCell.m */; };
+		67417F331AF6831700D69B7E /* HPRoundCornerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F321AF6831700D69B7E /* HPRoundCornerLabel.m */; };
+		67417F361AF6861300D69B7E /* LBNotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F351AF6861300D69B7E /* LBNotificationSettingCell.m */; };
+		67417F3A1AF79FE600D69B7E /* HPCustomFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F391AF79FE600D69B7E /* HPCustomFontManager.m */; };
+		67417F3D1AF7A6F500D69B7E /* LBCustomSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F3C1AF7A6F500D69B7E /* LBCustomSettingCell.m */; };
+		67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F3F1AF7C0A100D69B7E /* LBCalButton.m */; };
+		67417F431AF7C0AC00D69B7E /* LBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F421AF7C0AC00D69B7E /* LBSearchBar.m */; };
 		6757E6131ACC3E6D0071B662 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6757E6121ACC3E6D0071B662 /* sound.wav */; };
 		6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6757E6151ACC3EAF0071B662 /* LBAudioManager.m */; };
 		67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* LBPanelStyleManager.m */; };
@@ -69,7 +86,6 @@
 		6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61B1AA69EFE009E78DD /* HPTabBarChildController.m */; };
 		6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6777D61D1AA69EFE009E78DD /* HPTarBarController.m */; };
 		677A31821AB723820030FD08 /* HPFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31811AB723820030FD08 /* HPFileSystem.m */; };
-		677A31851AB723C60030FD08 /* LBDocumentAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */; };
 		677A31891AB725E10030FD08 /* ILSFilters.plist in Resources */ = {isa = PBXBuildFile; fileRef = 677A31861AB725E10030FD08 /* ILSFilters.plist */; };
 		677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 677A31881AB725E10030FD08 /* LBImageFilterManager.m */; };
 		677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 677A31E71AB728930030FD08 /* LittleBook.xcdatamodeld */; };
@@ -80,7 +96,6 @@
 		677E659D1AED232100931C24 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E659B1AED232100931C24 /* HPTouchImageView.m */; };
 		677E65A11AED3D4900931C24 /* HPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E65A01AED3D4900931C24 /* HPTextView.m */; };
 		6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 679334991ACA4091001DE34A /* HPTaskManager.m */; };
-		6794AC581ACFC28300EC1DB2 /* HPLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC571ACFC28300EC1DB2 /* HPLockView.m */; };
 		6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */; };
 		6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */; };
 		6794AC651ACFDF8200EC1DB2 /* LBAccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC631ACFDF8200EC1DB2 /* LBAccountListCell.m */; };
@@ -158,7 +173,6 @@
 		67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CA81ACC22E800FC0455 /* LBCustomSettingHeaderView.xib */; };
 		67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CAA1ACC22E800FC0455 /* LBNotificationContentView.m */; };
 		67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CAC1ACC22E800FC0455 /* LBNotificationDotView.m */; };
-		67CD9CB51ACC22E800FC0455 /* LBNotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CAE1ACC22E800FC0455 /* LBNotificationSettingCell.m */; };
 		67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */; };
 		67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */; };
 		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
@@ -184,8 +198,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		671C1F6D1AB9B620005F5586 /* LBAccountAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountAppendixFileManager.h; sourceTree = "<group>"; };
-		671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountAppendixFileManager.m; sourceTree = "<group>"; };
+		671C1F6D1AB9B620005F5586 /* LBAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppendixFileManager.h; sourceTree = "<group>"; };
+		671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppendixFileManager.m; sourceTree = "<group>"; };
 		671C1F721AB9BE4B005F5586 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
 		671C1F731AB9BE4B005F5586 /* LunarCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendar.m; sourceTree = "<group>"; };
 		671C1F771AB9BE4B005F5586 /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
@@ -282,6 +296,16 @@
 		671C20121AB9CFF6005F5586 /* LBDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentManager.m; sourceTree = "<group>"; };
 		671C20131AB9CFF6005F5586 /* LBIndexInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBIndexInfoManager.h; sourceTree = "<group>"; };
 		671C20141AB9CFF6005F5586 /* LBIndexInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBIndexInfoManager.m; sourceTree = "<group>"; };
+		671D53031AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPFixedLengthPasscodeView.h; sourceTree = "<group>"; };
+		671D53041AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPFixedLengthPasscodeView.m; sourceTree = "<group>"; };
+		671D53051AF5006B00AF4BE9 /* HPLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLockView.h; sourceTree = "<group>"; };
+		671D53061AF5006B00AF4BE9 /* HPLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLockView.m; sourceTree = "<group>"; };
+		671D53071AF5006B00AF4BE9 /* HPPasscodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPasscodeView.h; sourceTree = "<group>"; };
+		671D53081AF5006B00AF4BE9 /* HPPasscodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPasscodeView.m; sourceTree = "<group>"; };
+		671D53091AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPSecurityInputPasscodeView.h; sourceTree = "<group>"; };
+		671D530A1AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPSecurityInputPasscodeView.m; sourceTree = "<group>"; };
+		671D530F1AF5029300AF4BE9 /* LBDocumentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentListCell.h; sourceTree = "<group>"; };
+		671D53101AF5029300AF4BE9 /* LBDocumentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentListCell.m; sourceTree = "<group>"; };
 		6721C2281AB4003F00D1FF99 /* LBPresentFromBottomSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromBottomSegue.h; sourceTree = "<group>"; };
 		6721C2291AB4003F00D1FF99 /* LBPresentFromBottomSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPresentFromBottomSegue.m; sourceTree = "<group>"; };
 		6721C22B1AB406B900D1FF99 /* LBPresentFromRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPresentFromRightSegue.h; sourceTree = "<group>"; };
@@ -292,10 +316,34 @@
 		6721C2321AB40D2900D1FF99 /* UIViewController+LBSegueExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LBSegueExt.m"; sourceTree = "<group>"; };
 		6721C2351AB40F2400D1FF99 /* HPPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPresentView.h; sourceTree = "<group>"; };
 		6721C2361AB40F2400D1FF99 /* HPPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPresentView.m; sourceTree = "<group>"; };
-		6721C2381AB4249600D1FF99 /* LBReadListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBReadListCell.h; sourceTree = "<group>"; };
-		6721C2391AB4249600D1FF99 /* LBReadListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBReadListCell.m; sourceTree = "<group>"; };
-		674E5EA11AB1E0CB00F3415F /* LBCalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCalButton.h; sourceTree = "<group>"; };
-		674E5EA21AB1E0CB00F3415F /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
+		672B04641AF47F32004BB1D8 /* LBExportTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBExportTemp.h; sourceTree = "<group>"; };
+		672B04651AF47F32004BB1D8 /* LBExportTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBExportTemp.m; sourceTree = "<group>"; };
+		672B04691AF47F7A004BB1D8 /* LBExportTemp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBExportTemp.xib; sourceTree = "<group>"; };
+		672B046B1AF48180004BB1D8 /* LBDocumentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentContext.h; sourceTree = "<group>"; };
+		672B046C1AF48180004BB1D8 /* LBDocumentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentContext.m; sourceTree = "<group>"; };
+		672B046E1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDownFrequenceMachine.h; sourceTree = "<group>"; };
+		672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDownFrequenceMachine.m; sourceTree = "<group>"; };
+		672B04721AF4FEE3004BB1D8 /* HPAutoResizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAutoResizeCell.h; sourceTree = "<group>"; };
+		672B04731AF4FEE3004BB1D8 /* HPAutoResizeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPAutoResizeCell.m; sourceTree = "<group>"; };
+		672B04781AF4FEE3004BB1D8 /* HPHightLightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHightLightCell.h; sourceTree = "<group>"; };
+		672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHightLightCell.m; sourceTree = "<group>"; };
+		672B047A1AF4FEE3004BB1D8 /* HPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchView.h; sourceTree = "<group>"; };
+		672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchView.m; sourceTree = "<group>"; };
+		67417EF81AF6766E00D69B7E /* HPEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPEditCell.h; sourceTree = "<group>"; };
+		67417EF91AF6766E00D69B7E /* HPEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPEditCell.m; sourceTree = "<group>"; };
+		67417EFB1AF6767A00D69B7E /* HPCallBackProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCallBackProtocol.h; sourceTree = "<group>"; };
+		67417F311AF6831700D69B7E /* HPRoundCornerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRoundCornerLabel.h; sourceTree = "<group>"; };
+		67417F321AF6831700D69B7E /* HPRoundCornerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerLabel.m; sourceTree = "<group>"; };
+		67417F341AF6861300D69B7E /* LBNotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationSettingCell.h; sourceTree = "<group>"; };
+		67417F351AF6861300D69B7E /* LBNotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationSettingCell.m; sourceTree = "<group>"; };
+		67417F381AF79FE600D69B7E /* HPCustomFontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCustomFontManager.h; sourceTree = "<group>"; };
+		67417F391AF79FE600D69B7E /* HPCustomFontManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCustomFontManager.m; sourceTree = "<group>"; };
+		67417F3B1AF7A6F500D69B7E /* LBCustomSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCustomSettingCell.h; sourceTree = "<group>"; };
+		67417F3C1AF7A6F500D69B7E /* LBCustomSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCustomSettingCell.m; sourceTree = "<group>"; };
+		67417F3E1AF7C0A100D69B7E /* LBCalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCalButton.h; sourceTree = "<group>"; };
+		67417F3F1AF7C0A100D69B7E /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
+		67417F411AF7C0AC00D69B7E /* LBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSearchBar.h; sourceTree = "<group>"; };
+		67417F421AF7C0AC00D69B7E /* LBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSearchBar.m; sourceTree = "<group>"; };
 		6757E6121ACC3E6D0071B662 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		6757E6141ACC3EAF0071B662 /* LBAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioManager.h; sourceTree = "<group>"; };
 		6757E6151ACC3EAF0071B662 /* LBAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioManager.m; sourceTree = "<group>"; };
@@ -312,8 +360,6 @@
 		6777D61D1AA69EFE009E78DD /* HPTarBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTarBarController.m; sourceTree = "<group>"; };
 		677A31801AB723820030FD08 /* HPFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPFileSystem.h; sourceTree = "<group>"; };
 		677A31811AB723820030FD08 /* HPFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPFileSystem.m; sourceTree = "<group>"; };
-		677A31831AB723C60030FD08 /* LBDocumentAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentAppendixFileManager.h; sourceTree = "<group>"; };
-		677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentAppendixFileManager.m; sourceTree = "<group>"; };
 		677A31861AB725E10030FD08 /* ILSFilters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ILSFilters.plist; sourceTree = "<group>"; };
 		677A31871AB725E10030FD08 /* LBImageFilterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBImageFilterManager.h; sourceTree = "<group>"; };
 		677A31881AB725E10030FD08 /* LBImageFilterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBImageFilterManager.m; sourceTree = "<group>"; };
@@ -332,8 +378,6 @@
 		677E65A01AED3D4900931C24 /* HPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextView.m; sourceTree = "<group>"; };
 		679334981ACA4091001DE34A /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
 		679334991ACA4091001DE34A /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
-		6794AC561ACFC28300EC1DB2 /* HPLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLockView.h; sourceTree = "<group>"; };
-		6794AC571ACFC28300EC1DB2 /* HPLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLockView.m; sourceTree = "<group>"; };
 		6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IndicatorImages.xcassets; sourceTree = "<group>"; };
 		6794AC5B1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+IndicatorExt.h"; sourceTree = "<group>"; };
 		6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+IndicatorExt.m"; sourceTree = "<group>"; };
@@ -549,8 +593,6 @@
 		67CD9CAA1ACC22E800FC0455 /* LBNotificationContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationContentView.m; sourceTree = "<group>"; };
 		67CD9CAB1ACC22E800FC0455 /* LBNotificationDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationDotView.h; sourceTree = "<group>"; };
 		67CD9CAC1ACC22E800FC0455 /* LBNotificationDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationDotView.m; sourceTree = "<group>"; };
-		67CD9CAD1ACC22E800FC0455 /* LBNotificationSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificationSettingCell.h; sourceTree = "<group>"; };
-		67CD9CAE1ACC22E800FC0455 /* LBNotificationSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationSettingCell.m; sourceTree = "<group>"; };
 		67CD9CAF1ACC22E800FC0455 /* LBPanelSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPanelSettingCell.h; sourceTree = "<group>"; };
 		67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPanelSettingCell.m; sourceTree = "<group>"; };
 		67CD9CB71ACC30BF00FC0455 /* HPHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHolidayManager.h; sourceTree = "<group>"; };
@@ -732,6 +774,10 @@
 				671C1FE41AB9C485005F5586 /* LBNavigationBar.m */,
 				67C016EB1ABD440C0004EFD4 /* LBTimeLineView.h */,
 				67C016EC1ABD440C0004EFD4 /* LBTimeLineView.m */,
+				67417F3E1AF7C0A100D69B7E /* LBCalButton.h */,
+				67417F3F1AF7C0A100D69B7E /* LBCalButton.m */,
+				67417F411AF7C0AC00D69B7E /* LBSearchBar.h */,
+				67417F421AF7C0AC00D69B7E /* LBSearchBar.m */,
 			);
 			path = LBCommonViews;
 			sourceTree = "<group>";
@@ -798,16 +844,35 @@
 			path = ModalManagers;
 			sourceTree = "<group>";
 		};
+		671D53021AF5006B00AF4BE9 /* HPLockView */ = {
+			isa = PBXGroup;
+			children = (
+				671D53031AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.h */,
+				671D53041AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m */,
+				671D53051AF5006B00AF4BE9 /* HPLockView.h */,
+				671D53061AF5006B00AF4BE9 /* HPLockView.m */,
+				671D53071AF5006B00AF4BE9 /* HPPasscodeView.h */,
+				671D53081AF5006B00AF4BE9 /* HPPasscodeView.m */,
+				671D53091AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.h */,
+				671D530A1AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.m */,
+			);
+			path = HPLockView;
+			sourceTree = "<group>";
+		};
 		671E942D1AA5E12000697DBD /* HPKit */ = {
 			isa = PBXGroup;
 			children = (
 				6794AC831AD0263600EC1DB2 /* HPCommonMacro.h */,
 				6794AC841AD0263600EC1DB2 /* HPCommonFunctions.h */,
 				6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */,
+				672B046E1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.h */,
+				672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */,
+				67417F371AF79FC300D69B7E /* HPManagers */,
+				671D53021AF5006B00AF4BE9 /* HPLockView */,
+				672B04711AF4FEE3004BB1D8 /* HPEditTableView */,
 				677E659E1AED3D0200931C24 /* HPTextView */,
 				677E65971AED232100931C24 /* HPDragKit */,
 				6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */,
-				6794AC551ACFC28300EC1DB2 /* HPLockView */,
 				67F5321B1ACD3FC500B10CD7 /* HPCycleView */,
 				679334971ACA4091001DE34A /* HPTaskManager */,
 				67AAC9B51AC6AF81002E317F /* HPRoundCornerViews */,
@@ -860,6 +925,31 @@
 			path = HPPresentView;
 			sourceTree = "<group>";
 		};
+		672B04711AF4FEE3004BB1D8 /* HPEditTableView */ = {
+			isa = PBXGroup;
+			children = (
+				67417EFB1AF6767A00D69B7E /* HPCallBackProtocol.h */,
+				672B04721AF4FEE3004BB1D8 /* HPAutoResizeCell.h */,
+				672B04731AF4FEE3004BB1D8 /* HPAutoResizeCell.m */,
+				672B04781AF4FEE3004BB1D8 /* HPHightLightCell.h */,
+				672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */,
+				672B047A1AF4FEE3004BB1D8 /* HPTouchView.h */,
+				672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */,
+				67417EF81AF6766E00D69B7E /* HPEditCell.h */,
+				67417EF91AF6766E00D69B7E /* HPEditCell.m */,
+			);
+			path = HPEditTableView;
+			sourceTree = "<group>";
+		};
+		67417F371AF79FC300D69B7E /* HPManagers */ = {
+			isa = PBXGroup;
+			children = (
+				67417F381AF79FE600D69B7E /* HPCustomFontManager.h */,
+				67417F391AF79FE600D69B7E /* HPCustomFontManager.m */,
+			);
+			path = HPManagers;
+			sourceTree = "<group>";
+		};
 		67634C771AADE609009FD0FA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -870,12 +960,12 @@
 				677A31871AB725E10030FD08 /* LBImageFilterManager.h */,
 				677A31881AB725E10030FD08 /* LBImageFilterManager.m */,
 				677A31861AB725E10030FD08 /* ILSFilters.plist */,
-				677A31831AB723C60030FD08 /* LBDocumentAppendixFileManager.h */,
-				677A31841AB723C60030FD08 /* LBDocumentAppendixFileManager.m */,
-				671C1F6D1AB9B620005F5586 /* LBAccountAppendixFileManager.h */,
-				671C1F6E1AB9B620005F5586 /* LBAccountAppendixFileManager.m */,
+				671C1F6D1AB9B620005F5586 /* LBAppendixFileManager.h */,
+				671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */,
 				6757E6141ACC3EAF0071B662 /* LBAudioManager.h */,
 				6757E6151ACC3EAF0071B662 /* LBAudioManager.m */,
+				672B046B1AF48180004BB1D8 /* LBDocumentContext.h */,
+				672B046C1AF48180004BB1D8 /* LBDocumentContext.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -951,15 +1041,6 @@
 				679334991ACA4091001DE34A /* HPTaskManager.m */,
 			);
 			path = HPTaskManager;
-			sourceTree = "<group>";
-		};
-		6794AC551ACFC28300EC1DB2 /* HPLockView */ = {
-			isa = PBXGroup;
-			children = (
-				6794AC561ACFC28300EC1DB2 /* HPLockView.h */,
-				6794AC571ACFC28300EC1DB2 /* HPLockView.m */,
-			);
-			path = HPLockView;
 			sourceTree = "<group>";
 		};
 		6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */ = {
@@ -1062,6 +1143,8 @@
 				67AAC9BB1AC6AF81002E317F /* HPRoundCornerView.m */,
 				67AAC9D31AC6F8FE002E317F /* HPRoundCornerTableView.h */,
 				67AAC9D41AC6F8FE002E317F /* HPRoundCornerTableView.m */,
+				67417F311AF6831700D69B7E /* HPRoundCornerLabel.h */,
+				67417F321AF6831700D69B7E /* HPRoundCornerLabel.m */,
 			);
 			path = HPRoundCornerViews;
 			sourceTree = "<group>";
@@ -1104,6 +1187,11 @@
 				67CCC8FB1AD1843700BDF574 /* LBChartView.xib */,
 				677E65891AECEC5C00931C24 /* LBAuidoView.h */,
 				677E658A1AECEC5C00931C24 /* LBAuidoView.m */,
+				672B04641AF47F32004BB1D8 /* LBExportTemp.h */,
+				672B04651AF47F32004BB1D8 /* LBExportTemp.m */,
+				672B04691AF47F7A004BB1D8 /* LBExportTemp.xib */,
+				671D530F1AF5029300AF4BE9 /* LBDocumentListCell.h */,
+				671D53101AF5029300AF4BE9 /* LBDocumentListCell.m */,
 			);
 			path = DocumentViews;
 			sourceTree = "<group>";
@@ -1226,14 +1314,16 @@
 				67CD9CA61ACC22E800FC0455 /* LBCustomSettingHeaderView.h */,
 				67CD9CA71ACC22E800FC0455 /* LBCustomSettingHeaderView.m */,
 				67CD9CA81ACC22E800FC0455 /* LBCustomSettingHeaderView.xib */,
+				67CD9CAF1ACC22E800FC0455 /* LBPanelSettingCell.h */,
+				67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */,
+				67417F341AF6861300D69B7E /* LBNotificationSettingCell.h */,
+				67417F351AF6861300D69B7E /* LBNotificationSettingCell.m */,
 				67CD9CA91ACC22E800FC0455 /* LBNotificationContentView.h */,
 				67CD9CAA1ACC22E800FC0455 /* LBNotificationContentView.m */,
 				67CD9CAB1ACC22E800FC0455 /* LBNotificationDotView.h */,
 				67CD9CAC1ACC22E800FC0455 /* LBNotificationDotView.m */,
-				67CD9CAD1ACC22E800FC0455 /* LBNotificationSettingCell.h */,
-				67CD9CAE1ACC22E800FC0455 /* LBNotificationSettingCell.m */,
-				67CD9CAF1ACC22E800FC0455 /* LBPanelSettingCell.h */,
-				67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */,
+				67417F3B1AF7A6F500D69B7E /* LBCustomSettingCell.h */,
+				67417F3C1AF7A6F500D69B7E /* LBCustomSettingCell.m */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -1246,10 +1336,6 @@
 				67CD9CA51ACC22E800FC0455 /* SettingViews */,
 				67CD9C951ACC1DE700FC0455 /* CalendarViews */,
 				671C1FD01AB9BFFD005F5586 /* LBCommonViews */,
-				674E5EA11AB1E0CB00F3415F /* LBCalButton.h */,
-				674E5EA21AB1E0CB00F3415F /* LBCalButton.m */,
-				6721C2381AB4249600D1FF99 /* LBReadListCell.h */,
-				6721C2391AB4249600D1FF99 /* LBReadListCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1456,6 +1542,7 @@
 				67CCC87E1AD1237100BDF574 /* LBFilterCell.xib in Resources */,
 				67AAC9761AC6A445002E317F /* CalendarViewCell_375.xib in Resources */,
 				67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */,
+				672B046A1AF47F7A004BB1D8 /* LBExportTemp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1482,11 +1569,13 @@
 				6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */,
 				677E659D1AED232100931C24 /* HPTouchImageView.m in Sources */,
 				671C1FC81AB9BE4B005F5586 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				671D530C1AF5006B00AF4BE9 /* HPLockView.m in Sources */,
 				671C1FC01AB9BE4B005F5586 /* NSManagedObject+MagicalRequests.m in Sources */,
 				67CD9CB11ACC22E800FC0455 /* LBCustomSettingHeaderView.m in Sources */,
 				671C1FCE1AB9BE4B005F5586 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				67AAC92F1AC69225002E317F /* UIImage+ImageExt.m in Sources */,
 				671C1FC21AB9BE4B005F5586 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				672B04701AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m in Sources */,
 				6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */,
 				671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */,
 				67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */,
@@ -1494,6 +1583,7 @@
 				671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */,
 				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
+				67417F331AF6831700D69B7E /* HPRoundCornerLabel.m in Sources */,
 				67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */,
 				6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */,
 				6794AC7D1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m in Sources */,
@@ -1509,6 +1599,7 @@
 				6794AC761ACFE82D00EC1DB2 /* Account.m in Sources */,
 				67C017171ABD627E0004EFD4 /* Appendix.m in Sources */,
 				671C1FC51AB9BE4B005F5586 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				67417F431AF7C0AC00D69B7E /* LBSearchBar.m in Sources */,
 				67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */,
 				671C20081AB9C6E5005F5586 /* LBPanelSettingViewController.m in Sources */,
 				671C1FC11AB9BE4B005F5586 /* NSManagedObjectContext+MagicalChainSave.m in Sources */,
@@ -1519,6 +1610,7 @@
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				67CCC8FA1AD1821700BDF574 /* LBChartView.m in Sources */,
 				671C1FB71AB9BE4B005F5586 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				67417F3A1AF79FE600D69B7E /* HPCustomFontManager.m in Sources */,
 				677E65881AECE36400931C24 /* UITextView+TextViewExt.m in Sources */,
 				6777D61E1AA69EFE009E78DD /* HPTabBar.m in Sources */,
 				671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */,
@@ -1529,8 +1621,8 @@
 				677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */,
 				67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */,
 				671C1FCF1AB9BE4B005F5586 /* MagicalRecord.m in Sources */,
-				67CD9CB51ACC22E800FC0455 /* LBNotificationSettingCell.m in Sources */,
 				67AAC9D81AC700BB002E317F /* Notification.m in Sources */,
+				67417F361AF6861300D69B7E /* LBNotificationSettingCell.m in Sources */,
 				677E658B1AECEC5C00931C24 /* LBAuidoView.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
@@ -1538,23 +1630,25 @@
 				67AAC9D21AC6F479002E317F /* LBNotificationEditViewController.m in Sources */,
 				6794AC651ACFDF8200EC1DB2 /* LBAccountListCell.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
+				67417F3D1AF7A6F500D69B7E /* LBCustomSettingCell.m in Sources */,
 				6794AC801AD0217900EC1DB2 /* LBImagePreviewView.m in Sources */,
 				67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */,
+				671D530E1AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.m in Sources */,
 				67CCC8761AD1223C00BDF574 /* LBDocumentAppendixEditView.m in Sources */,
 				67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */,
 				67AAC9301AC69225002E317F /* UIScreen+ScreenExt.m in Sources */,
 				67AAC92E1AC69225002E317F /* UIColor+ColorExt.m in Sources */,
 				671C20011AB9C6E5005F5586 /* LBAccountViewController.m in Sources */,
-				674E5EA31AB1E0CB00F3415F /* LBCalButton.m in Sources */,
 				671C1FC71AB9BE4B005F5586 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */,
 				671C1FBE1AB9BE4B005F5586 /* NSManagedObject+MagicalFinders.m in Sources */,
 				671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */,
 				67CCC8F71AD17D8C00BDF574 /* LBSimpleTheme.m in Sources */,
-				671C1F6F1AB9B620005F5586 /* LBAccountAppendixFileManager.m in Sources */,
+				671C1F6F1AB9B620005F5586 /* LBAppendixFileManager.m in Sources */,
 				67AAC92D1AC69225002E317F /* NSString+StringExt.m in Sources */,
 				6794AC7A1ACFE84B00EC1DB2 /* LBAccountDetailManager.m in Sources */,
 				67AAC9321AC69225002E317F /* UIViewController+ControllerExt.m in Sources */,
+				672B04801AF4FEE3004BB1D8 /* HPTouchView.m in Sources */,
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
 				67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */,
 				67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */,
@@ -1572,31 +1666,37 @@
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
 				671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
+				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
+				671D53111AF5029300AF4BE9 /* LBDocumentListCell.m in Sources */,
 				671C1FBD1AB9BE4B005F5586 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				67AAC9DB1AC700DF002E317F /* LBNotificationManager.m in Sources */,
 				671C20061AB9C6E5005F5586 /* LoginViewController.m in Sources */,
 				671C1FCC1AB9BE4B005F5586 /* MagicalRecord+Options.m in Sources */,
 				671C1FC91AB9BE4B005F5586 /* MagicalRecord+Actions.m in Sources */,
-				6721C23A1AB4249600D1FF99 /* LBReadListCell.m in Sources */,
 				671C1FC61AB9BE4B005F5586 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				671D530D1AF5006B00AF4BE9 /* HPPasscodeView.m in Sources */,
 				67CCC8791AD1223C00BDF574 /* LBEditMenuCell.m in Sources */,
+				67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */,
 				67AAC92B1AC69225002E317F /* NSDictionary+DictionaryExt.m in Sources */,
+				672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
 				677E659C1AED232100931C24 /* HPDragContainer.m in Sources */,
 				67CCC8ED1AD14A4000BDF574 /* LBPresentTheme.m in Sources */,
-				677A31851AB723C60030FD08 /* LBDocumentAppendixFileManager.m in Sources */,
 				6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */,
 				67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */,
 				67CD9C9B1ACC1DE700FC0455 /* LBNotificationCell.m in Sources */,
-				6794AC581ACFC28300EC1DB2 /* HPLockView.m in Sources */,
+				672B04661AF47F32004BB1D8 /* LBExportTemp.m in Sources */,
 				67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */,
 				67AAC9391AC69261002E317F /* UINib+NibExt.m in Sources */,
 				671C20031AB9C6E5005F5586 /* LBDocumentViewController.m in Sources */,
+				672B046D1AF48180004BB1D8 /* LBDocumentContext.m in Sources */,
 				671C1FB91AB9BE4B005F5586 /* NSObject+MagicalDataImport.m in Sources */,
+				671D530B1AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m in Sources */,
 				671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */,
 				671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */,
 				67AAC97C1AC6A6D3002E317F /* NSDate+CalExt.m in Sources */,
+				672B047F1AF4FEE3004BB1D8 /* HPHightLightCell.m in Sources */,
 				67C016ED1ABD440C0004EFD4 /* LBTimeLineView.m in Sources */,
 				671C1FB81AB9BE4B005F5586 /* NSNumber+MagicalDataImport.m in Sources */,
 				671C20071AB9C6E5005F5586 /* LBNotificationSettingViewController.m in Sources */,

@@ -9,29 +9,58 @@
 
 @interface HPLockView()
 {
-    UIColor *_circleFillColor;
     float _pointRadius;
     float _lineWidth;
-    /**
-     *	_maskImageView used to show moving lines
-     * self only show the static image
-     */
-    UIImageView *_maskImageView;
-    
     NSMutableArray *_responseAreas;
     CGPoint _lastSelectedPoint;
-
-    int _passcodeTryTime;
-    NSString *_previousPasscode;
     
-    BOOL _isErrorStatus;
+    /**
+     *	_maskImageView used to show moving lines
+     *  _canvasView only show the static image
+     */
+    UIImageView *_maskImageView;
+    UIImageView *_canvasView;
 }
 
-@property (nonatomic, retain) NSMutableArray *selectedIndexs;
+@property (nonatomic, strong) NSMutableArray *selectedIndexs;
 
 @end
 
 @implementation HPLockView
+
+- (NSString *)currentPasscode
+{
+    return [self.passcodeStorePolicy passcodeFromOutput:_selectedIndexs];
+}
+
+- (void)prepareForErrorStatus
+{
+    [super prepareForErrorStatus];
+    
+    self.userInteractionEnabled = FALSE;
+    
+    // 1.clear subviews
+    for (UIView *subView in [self subviews]) {
+        if ([subView isEqual:_canvasView]) {
+            continue;
+        }
+        
+        [subView removeFromSuperview];
+    }
+    
+    int maxIndex =(int)(_selectedIndexs.count - 1);
+    
+    for (int i = maxIndex; i >= 0; i--) {
+        NSInteger index = [_selectedIndexs[i] integerValue];
+        [_selectedIndexs removeLastObject];
+        [self didSelectPointAtIndex:index];
+    }
+}
+
+- (void)didEndInputing
+{
+    _maskImageView.image = nil;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -50,8 +79,8 @@
         return;
     }
     
-    if (_delegate && [_delegate respondsToSelector:@selector(lockViewDidBeginInput:)]) {
-        [_delegate lockViewDidBeginInput:self];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(passcodeViewDidBeginInput:)]) {
+        [self.delegate passcodeViewDidBeginInput:self];
     }
     
     [self selectPointAtIndex:index];
@@ -84,178 +113,12 @@
     if (CGPointEqualToPoint(_lastSelectedPoint,CGPointZero)) {
         return;
     }
-    [self updateLockViewStatus];
+    [self updatePasscodeViewStatus];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self touchesEnded:touches withEvent:event];
-}
-
-#pragma mark - update status
-
-- (void)setUpErrorStatus
-{
-    self.userInteractionEnabled = FALSE;
-    
-    _isErrorStatus = TRUE;
-    
-    // 1.clear subviews
-    for (UIView *subView in [self subviews]) {
-        [subView removeFromSuperview];
-    }
-    
-    int maxIndex =(int)(_selectedIndexs.count - 1);
-
-    for (int i = maxIndex; i >= 0; i--) {
-        NSInteger index = [_selectedIndexs[i] integerValue];
-        [_selectedIndexs removeLastObject];
-        [self didSelectPointAtIndex:index];
-    }
-
-}
-- (void)performStatusWithError:(HPLockViewStatusType)performType
-{
-    [self setUpErrorStatus];
-    [self performSelector:@selector(performStatusType:) withObject:@(performType) afterDelay:1];
-}
-
-- (void)performStatusType:(NSNumber *)type
-{
-    HPLockViewStatusType lockViewType = (HPLockViewStatusType)type.integerValue;
-    if (_delegate && [_delegate respondsToSelector:@selector(lockView:willChangeStatusFrom:to:)]) {
-        [_delegate lockView:self willChangeStatusFrom:_currentStateType to:lockViewType];
-    }
-    
-    self.currentStateType = lockViewType;
-}
-
-- (void)updateLockViewStatus
-{
-    if (_currentStateType == HPLockViewStatusTypeEnablePasscode || _currentStateType == HPLockViewStatusTypeReEnablePasscode) {
-        
-        _previousPasscode = [_passcodeStorePolicy currentPasscodeFromIndies:_selectedIndexs];
-        
-        if (_delegate && [_delegate respondsToSelector:@selector(lockView:willChangeStatusFrom:to:)]) {
-            [_delegate lockView:self willChangeStatusFrom:_currentStateType to:HPLockViewStatusTypeConfirmPasscode];
-        }
-        self.currentStateType = HPLockViewStatusTypeConfirmPasscode;
-        return;
-    }
-    
-    if (_currentStateType == HPLockViewStatusTypeConfirmPasscode) {
-        
-        NSString *confirmPasscodeString = [_passcodeStorePolicy currentPasscodeFromIndies:_selectedIndexs];
-        if ([confirmPasscodeString isEqualToString:_previousPasscode]) {
-            
-            [_passcodeStorePolicy savePasscode:confirmPasscodeString];
-            
-            if (_delegate && [_delegate respondsToSelector:@selector(lockViewDidEnablePasscode:)]) {
-                [_delegate lockViewDidEnablePasscode:self];
-            }
-            
-        } else {
-            
-            if (_delegate && [_delegate respondsToSelector:@selector(lockView:willChangeStatusFrom:to:)]) {
-                [_delegate lockView:self willChangeStatusFrom:_currentStateType to:HPLockViewStatusTypeReEnablePasscode];
-            }
-            [self performStatusWithError:HPLockViewStatusTypeReEnablePasscode];
-            NSLog(@"set passcode failed");
-        }
-        return;
-    }
-    
-    if (_currentStateType == HPLockViewStatusTypeChangePasscode) {
-        NSString *passcode = [_passcodeStorePolicy passcode];
-        NSString *confirmPasscodeString = [_passcodeStorePolicy currentPasscodeFromIndies:_selectedIndexs];
-        
-        if ([confirmPasscodeString isEqualToString:passcode]) {
-            NSLog(@"change passcode successed : %@" ,confirmPasscodeString);
-            
-            if (_delegate && [_delegate respondsToSelector:@selector(lockView:willChangeStatusFrom:to:)]) {
-                [_delegate lockView:self willChangeStatusFrom:_currentStateType to:HPLockViewStatusTypeEnablePasscode];
-            }
-            
-            self.currentStateType = HPLockViewStatusTypeEnablePasscode;
-        } else {
-            NSLog(@"change passcode failed");
-            if (_delegate && [_delegate respondsToSelector:@selector(lockView:inputWrongPasscodeWithTryTime:)]) {
-                [_delegate lockView:self inputWrongPasscodeWithTryTime:++_passcodeTryTime];
-            }
-            
-            [self performStatusWithError:HPLockViewStatusTypeChangePasscode];
-        }
-        return;
-    }
-    
-    if (_currentStateType == HPLockViewStatusTypeDisablePasscode) {
-        
-        NSString *passcode = [_passcodeStorePolicy passcode];
-        NSString *confirmPasscodeString = [_passcodeStorePolicy currentPasscodeFromIndies:_selectedIndexs];
-        if ([confirmPasscodeString isEqualToString:passcode]) {
-            NSLog(@"delete passcode successed : %@" ,confirmPasscodeString);
-            [_passcodeStorePolicy deletePasscode];
-            if (_delegate && [_delegate respondsToSelector:@selector(lockViewDidDeletePasscode:)]) {
-                [_delegate lockViewDidDeletePasscode:self];
-            }
-            return;
-        } else {
-            NSLog(@"disable passcode failed");
-            if (_delegate && [_delegate respondsToSelector:@selector(lockView:inputWrongPasscodeWithTryTime:)]) {
-                [_delegate lockView:self inputWrongPasscodeWithTryTime:++_passcodeTryTime];
-            }
-            [self performStatusWithError:HPLockViewStatusTypeDisablePasscode];
-
-        }
-        return;
-    }
-    
-    if (_currentStateType == HPLockViewStatusTypeCheckPasscode) {
-        
-        NSString *passcode = [_passcodeStorePolicy passcode];
-        NSString *confirmPasscodeString = [_passcodeStorePolicy currentPasscodeFromIndies:_selectedIndexs];
-        
-        BOOL passcodeIsValid = FALSE;
-    
-        if (_delegate && [_delegate respondsToSelector:@selector(checkInputPasscode:)]) {
-            passcodeIsValid = [_delegate checkInputPasscode:confirmPasscodeString];
-        } else {
-            passcodeIsValid = [confirmPasscodeString isEqualToString:passcode];
-        }
-        
-        if (passcodeIsValid) {
-            NSLog(@"check passcode successed : %@" ,confirmPasscodeString);
-            if (_delegate && [_delegate respondsToSelector:@selector(lockViewDidCheckPasscode:)]) {
-                [_delegate lockViewDidCheckPasscode:self];
-            }
-            return;
-        } else {
-            NSLog(@"check passcode failed");
-            if (_delegate && [_delegate respondsToSelector:@selector(lockView:inputWrongPasscodeWithTryTime:)]) {
-                [_delegate lockView:self inputWrongPasscodeWithTryTime:++_passcodeTryTime];
-            }
-            [self performStatusWithError:HPLockViewStatusTypeCheckPasscode];
-        }
-        return;
-    }
-}
-
-#pragma mark - init methods
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-    
-        [self initLockView];
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    [self initLockView];
 }
 
 
@@ -264,28 +127,36 @@
 /**
  *	rest lock view - clear interface and reset parameters
  */
-- (void)initLockView
+- (void)initPasscodeView
 {
-    self.userInteractionEnabled = true;
+    [super initPasscodeView];
+
     // 1.clear subviews
     for (UIView *subView in [self subviews]) {
         [subView removeFromSuperview];
     }
     
-    _isErrorStatus = FALSE;
+    // 2.clear imageView and maskImageView
+    if (!_canvasView) {
+        _canvasView = [[UIImageView alloc] initWithFrame:self.bounds];
+        _canvasView.backgroundColor = [UIColor clearColor];
+    }
+    _canvasView.image = nil;
+    _canvasView.frame = self.bounds;
+    [self addSubview:_canvasView];
     
-    // 2.clear imageView and maskImageView 
-    self.image = nil;
     
-    if (_maskImageView == nil) {
+    if (!_maskImageView) {
         
         _maskImageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _maskImageView.backgroundColor = [UIColor clearColor];
-        
     }
     _maskImageView.image = nil;
-    
+    _maskImageView.frame = self.bounds;
     [self addSubview:_maskImageView];
+    
+    _canvasView.clipsToBounds = FALSE;
+    _maskImageView.clipsToBounds = FALSE;
     
     // 3.init parameters
     
@@ -302,7 +173,7 @@
     
     _lastSelectedPoint = CGPointZero;
 
-    _circleFillColor = [UIColor colorWithRed:149.0/255.0 green:213.0/255.0 blue:240.0/255.0 alpha:1.0];
+    UIColor *fillColor = [UIColor colorWithRed:149.0/255.0 green:213.0/255.0 blue:240.0/255.0 alpha:1.0];
     _lineWidth   = 6.0;
     _pointRadius = 22.0;
     int pointNumber = 9;
@@ -311,7 +182,7 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    [self.image drawInRect:self.bounds];
+    [_canvasView.image drawInRect:self.bounds];
     
     [self drawBackgroundLinesInContext:context];
     
@@ -322,7 +193,7 @@
         // 4.1 draw one point
         [self drawPoint:@{@"radius"    : @(_pointRadius),
                           @"center"    : NSStringFromCGPoint(center),
-                          @"fillColor" : _circleFillColor}
+                          @"fillColor" : fillColor}
               inContext:context];
         
         // 4.2 record circle's response area,
@@ -331,7 +202,7 @@
         CGRect responseRect = CGRectInset(rect, 0, 0);
         [_responseAreas addObject:NSStringFromCGRect(responseRect)];
     }
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
+    _canvasView.image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
 }
@@ -341,14 +212,17 @@
     float w = self.frame.size.width;
     float h = self.frame.size.height;
     
-    float offsetY = 0;
-    float xDistance = (w-6*_pointRadius)/4.0;
-    float yDistance = (h-offsetY-6*_pointRadius)/4.0;
+    float size = MIN(w, h);
+    
+    float oX = (w - size)/2.0;
+    float oY = (h - size)/2.0;
+    
+    float distance = (size - 6 * _pointRadius)/4.0;
  
     int line = index/3+1;
     int column = index%3+1;
     
-    return CGPointMake(xDistance*column+ (2*column-1)*_pointRadius, offsetY+yDistance*line+(2*line-1)*_pointRadius);
+    return CGPointMake(distance*column+ (2*column-1)*_pointRadius + oX, oY+distance*line+(2*line-1)*_pointRadius);
 }
 
 - (void)drawPoint:(NSDictionary *)pointInfo inContext:(CGContextRef)context
@@ -414,10 +288,15 @@
 - (BOOL)selectPointAtIndex:(NSInteger)index
 {
     // 1.if current point has been selected ,return
+    
+    if (_selectedIndexs.count == 0) {
+        [self didSelectPointAtIndex:index];
+        return TRUE;
+    }
+    
     if ([_selectedIndexs containsObject:@(index)]) {
         return FALSE;
     }
-    
     
     if (![self canConnectPointAtIndex:[[_selectedIndexs lastObject] intValue] andPointAtIndex:index]) {
         return FALSE;
@@ -497,13 +376,13 @@
     
         CGPoint startPoint =  CGPointMake(CGRectGetMidX(rect2), CGRectGetMidY(rect2));
         
-        [self.image drawInRect:self.bounds];
+        [_canvasView.image drawInRect:self.bounds];
 
         NSDictionary *lineInfo = @{@"lineWidth" : @(_lineWidth),
-                                   @"lineColor" : _isErrorStatus ? errorColor : selectedColor};
+                                   @"lineColor" : self.isErrorStatus ? errorColor : selectedColor};
         [self connect:startPoint toPoint:_lastSelectedPoint inContext:context withLineInfo:lineInfo];
         
-        self.image = UIGraphicsGetImageFromCurrentImageContext();
+        _canvasView.image = UIGraphicsGetImageFromCurrentImageContext();
         
         CGContextSaveGState(context);
         UIGraphicsEndImageContext();
@@ -515,12 +394,12 @@
     selecteView.backgroundColor = [UIColor whiteColor];
     selecteView.layer.cornerRadius = CGRectGetWidth(selecteView.frame) * 0.5;
     selecteView.layer.borderWidth = borderWidth;
-    selecteView.layer.borderColor = _isErrorStatus ? errorColor.CGColor : selectedColor.CGColor;
+    selecteView.layer.borderColor = self.isErrorStatus ? errorColor.CGColor : selectedColor.CGColor;
     [self addSubview:selecteView];
     
     UIView *viewToAnimation = [[UIView alloc] initWithFrame:rect];
     viewToAnimation.layer.cornerRadius = CGRectGetWidth(viewToAnimation.frame) * 0.5;
-    viewToAnimation.backgroundColor = _isErrorStatus ? errorColor : selectedColor;
+    viewToAnimation.backgroundColor = self.isErrorStatus ? errorColor : selectedColor;
     [self addSubview:viewToAnimation];
     
     [UIView animateWithDuration:0.2 animations:^{
@@ -531,7 +410,7 @@
     }];
     
     // 不加此判断照成死循环
-    if (!_isErrorStatus) {
+    if (!self.isErrorStatus) {
         [_selectedIndexs addObject:[NSNumber numberWithInteger:index]];
     }
     
@@ -556,20 +435,33 @@
     UIGraphicsEndImageContext();
 }
 
-#pragma mark - public interface
+#pragma mark - static methods
 
-- (void)setCurrentStateType:(HPLockViewStatusType)currentStateType
+- (void)setSelectedIndexs:(NSMutableArray *)selectedIndexs
 {
-    NSLog(@"#####current status type of lock view is %d", currentStateType);
+    for (UIView *subView in [self subviews]) {
+        if ([subView isEqual:_canvasView]) {
+            continue;
+        }
+        
+        [subView removeFromSuperview];
+    }
     
-    _currentStateType = currentStateType;
-    [self initLockView];
+    int maxIndex =(int)(selectedIndexs.count - 1);
+    
+    for (int i = maxIndex; i >= 0; i--) {
+        NSInteger index = [selectedIndexs[i] integerValue];
+        [selectedIndexs removeLastObject];
+        [self didSelectPointAtIndex:index];
+    }
 }
 
-#ifdef IB_DESIGNABLE
-- (void)prepareForInterfaceBuilder
++ (UIImage *)imageFromSelectedIndies:(NSArray *)indies
 {
-    [self initLockView];
+    HPLockView *lockView = [[HPLockView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    
+    [lockView setSelectedIndexs:indies.mutableCopy];
+    
+    return lockView.toImage;
 }
-#endif
 @end

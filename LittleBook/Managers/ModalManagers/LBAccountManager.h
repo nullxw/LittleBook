@@ -12,12 +12,15 @@
 @interface LBAccountManager : NSObject
 
 // Retrieve
-
 + (NSArray *)findAll;
-//+ (Account *)findByDate:(NSDate *)date;
++ (Account *)findByID:(NSString *)accountID inContext:(NSManagedObjectContext *)context;
 + (Account *)findByID:(NSString *)accountID;
+
 // Create
 + (Account *)createFromDate:(NSDate *)date;
 
+// Delete
+
++ (void)deleteAccount:(Account *)account;
 
 @end

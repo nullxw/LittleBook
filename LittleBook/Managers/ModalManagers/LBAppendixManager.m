@@ -8,7 +8,7 @@
 
 #import "LBAppendixManager.h"
 #import "LBIndexInfoManager.h"
-#import "LBAccountAppendixFileManager.h"
+#import "LBAppendixFileManager.h"
 
 @implementation LBAppendixManager
 
@@ -18,18 +18,42 @@
     appendix.userID = [LBUserManager defaultManager].currentUser.userID;
     appendix.appendixID = [[LBIndexInfoManager defaultManager] getAppendixID];
     
-    [[LBAccountAppendixFileManager defaultManager] saveAppendix:data forAppendixID:appendix.appendixID];
+    [[LBAppendixFileManager defaultManager] saveAppendix:data forAppendixID:appendix.appendixID];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     return appendix;
 }
 
-+ (NSArray *)appendixsOfAccountDetail:(NSNumber *)accountID
++ (NSArray *)appendixs:(NSNumber *)parentID
 {
-    return [Appendix findAllWithPredicate:[NSPredicate predicateWithFormat:@"parentID=%@ and userID=%@", accountID, [LBUserManager defaultManager].currentUser.userID]];
+    return [LBAppendixManager appendixs:parentID inContext:nil];
+}
+
++ (NSArray *)appendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context
+{
+    NSString *userID = [LBUserManager defaultManager].currentUser.userID;
+    
+    if (!context) {
+        return [Appendix findAllWithPredicate:[NSPredicate predicateWithFormat:@"parentID=%@ and userID=%@", parentID, userID]];
+    } else {
+        return [Appendix findAllWithPredicate:[NSPredicate predicateWithFormat:@"parentID=%@ and userID=%@", parentID, userID] inContext:context];
+    }
 }
 
 + (Appendix *)findByID:(NSNumber *)appendixID
 {
-    return [Appendix findFirstWithPredicate:[NSPredicate predicateWithFormat:@"appendixID=%@ and userID=%@", appendixID, [LBUserManager defaultManager].currentUser.userID]];
+    return [LBAppendixManager findByID:appendixID inContext:nil];
+}
+
+
++ (Appendix *)findByID:(NSNumber *)appendixID inContext:(NSManagedObjectContext *)context
+{
+    NSString *userID = [LBUserManager defaultManager].currentUser.userID;
+    if (!context) {
+        return  [Appendix findFirstWithPredicate:[NSPredicate predicateWithFormat:@"appendixID=%@ and userID=%@", appendixID, userID]];
+    } else {
+        return  [Appendix findFirstWithPredicate:[NSPredicate predicateWithFormat:@"appendixID=%@ and userID=%@", appendixID, userID] inContext:context];
+    }
+
 }
 
 + (NSArray *)findByIDs:(NSArray *)appendixIDs

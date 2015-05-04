@@ -6,12 +6,14 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import "HPAutoResizeCell.h"
+#import "HPCallBackProtocol.h"
 @class Account;
 
-@interface LBAccountListCell : UITableViewCell
+@interface LBAccountListCell : HPAutoResizeCell
 
 @property (nonatomic, weak) Account *account;
+
+@property (nonatomic, assign) id <HPCallBackProtocol>delegate;
 
 @end

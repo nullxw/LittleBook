@@ -25,7 +25,11 @@
 
 @interface LBNotificationManager (RetrieveExt)
 
+// Retrieve
 - (NSArray *)findAll;
 - (NSArray *)findAllOfToday;
+
+// Delete
+- (void)deleteNotification:(Notification *)notification;
 
 @end

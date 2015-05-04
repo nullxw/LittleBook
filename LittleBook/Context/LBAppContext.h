@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
-static NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
-static NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
-static NSString *kLBPanelSetting                  = @"kLBPanelSetting";
+extern const NSString *kLBNotificationSettingLowStorage;
+extern const NSString *kLBNotificationSettingChargeUp;
+extern const NSString *kLBNotificationSettingCalendar;
+extern const NSString *kLBPanelStyleSetting;
+extern const NSString *kLBFontSizeSetting;
+extern const NSString *kLBFontNameSetting;
+extern const NSString *kLBResizeSetting;
+extern const NSString *kLBDragSetting;
+
 
 @interface LBAppContext : NSObject
 

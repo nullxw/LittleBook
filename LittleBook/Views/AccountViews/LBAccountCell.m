@@ -7,7 +7,7 @@
 //
 
 #import "LBAccountCell.h"
-#import "LBAccountAppendixFileManager.h"
+#import "LBAppendixFileManager.h"
 #import "LBAccountEditViewController.h"
 #import "LBAccountDetailManager.h"
 #import "LBImagePreviewView.h"
@@ -96,7 +96,7 @@
     NSInteger selectedIndex = [_appendixButtons indexOfObject:_clickedButton];
     Appendix *appendix = _appendixs[selectedIndex];
 
-    NSString *appendixFilePath = [[LBAccountAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
+    NSString *appendixFilePath = [[LBAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
     
     previewView.image = [UIImage imageWithContentsOfFile:appendixFilePath];
     
@@ -162,14 +162,14 @@
     _accountDetail = accountDetail;
     
     if (accountDetail) {
-        _appendixs = [LBAppendixManager appendixsOfAccountDetail:accountDetail.accountID].mutableCopy;
+        _appendixs = [LBAppendixManager appendixs:accountDetail.accountID].mutableCopy;
         
         for (int i = 0 ; i< _appendixs.count; i++) {
             Appendix *appendix = _appendixs[i];
             UIButton *button = _appendixButtons[i];
             button.hidden = FALSE;
             
-            NSString *appendixFilePath = [[LBAccountAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
+            NSString *appendixFilePath = [[LBAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
             [button setImage:[UIImage imageWithContentsOfFile:appendixFilePath] forState:UIControlStateNormal];
         }
         

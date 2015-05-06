@@ -68,4 +68,15 @@
     }
     return appendixs;
 }
+
++ (void)deleteAppendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context
+{
+    NSArray *appendixs = [LBAppendixManager appendixs:parentID inContext:context];
+    
+    for (Appendix *appendix in appendixs) {
+        
+        [[LBAppendixFileManager defaultManager] removeFilesForAppendix:appendix.appendixID];
+        [appendix deleteEntityInContext:context];
+    }
+}
 @end

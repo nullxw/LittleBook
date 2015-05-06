@@ -13,10 +13,15 @@
 
 + (LBAppendixFileManager *)defaultManager;
 
+// Create
 - (void)saveAppendix:(NSData *)appendixData forAppendixID:(NSNumber *)appendxID;
 
+// Retrieve
 - (NSString *)pathForAppendix:(NSNumber *)appendxID;
 
 - (NSString *)pathForAppendixThumbnail:(NSNumber *)appendxID;
+
+// Delete
+- (void)removeFilesForAppendix:(NSNumber *)appendxID;
 
 @end

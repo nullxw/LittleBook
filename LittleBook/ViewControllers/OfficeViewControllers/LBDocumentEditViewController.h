@@ -12,6 +12,6 @@
 
 @interface LBDocumentEditViewController : UIViewController
 
-@property (nonatomic, weak) Document *doc;
+@property (nonatomic, strong) Document *doc;
 
 @end

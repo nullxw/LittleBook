@@ -20,4 +20,8 @@
 
 + (NSArray *)findAll;
 
+// Delete
+
++ (void)deleteDocument:(Document *)document;
+
 @end

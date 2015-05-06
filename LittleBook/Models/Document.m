@@ -18,5 +18,6 @@
 @dynamic modifiedTime;
 @dynamic title;
 @dynamic userID;
+@dynamic favourite;
 
 @end

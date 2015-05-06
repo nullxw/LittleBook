@@ -85,7 +85,6 @@
     [_scrollView scrollRectToVisible:_editCellContentView.frame animated:YES];
     self.isEditing = FALSE;
     self.currentStatus = HPEditCellStatusNormal;
-    _tableView.scrollEnabled = TRUE;
     [self cellDidEndEditing];
 }
 
@@ -100,7 +99,12 @@
         [self cancelEditing];
         return;
     }
-    [_tableView selectRowAtIndexPath:[_tableView indexPathForCell:self] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    NSIndexPath *indexPath = [_tableView indexPathForCell:self];
+    [_tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    
+    if (_tableView.delegate && [_tableView.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+        [_tableView.delegate tableView:_tableView didSelectRowAtIndexPath:indexPath];
+    }
 }
 
 - (void)tapButtons:(UITapGestureRecognizer *)tapGesture
@@ -166,8 +170,6 @@
         }
     }
     _isAnimating = TRUE;
-
-    _tableView.scrollEnabled = FALSE;
     
     [self cellWillBeginTranslate];
 }
@@ -231,17 +233,14 @@
         self.currentStatus = HPEditCellStatusNormal;
         self.isEditing = FALSE;
         [self cellDidEndEditing];
-        _tableView.scrollEnabled = TRUE;
     } else if (scrollView.contentOffset.x == 0) {
         self.currentStatus = HPEditCellStatusLeftEditing;
         self.isEditing = TRUE;
         [self cellDidBeginEditing];
-        _tableView.scrollEnabled = FALSE;
     } else {
         self.currentStatus = HPEditCellStatusRightEditing;
         self.isEditing = TRUE;
         [self cellDidBeginEditing];
-        _tableView.scrollEnabled = FALSE;
     }
 }
 @end

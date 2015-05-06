@@ -8,6 +8,7 @@
 
 #import "LBDocumentManager.h"
 #import "LBIndexInfoManager.h"
+#import "LBAppendixManager.h"
 
 @implementation LBDocumentManager
 
@@ -40,4 +41,17 @@
 {
     return [Document findByAttribute:@"userID" withValue:[LBUserManager defaultManager].currentUser.userID andOrderBy:@"createTime" ascending:NO];
 }
+
++ (void)deleteDocument:(Document *)document
+{
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+       
+        Document *locDoc = [LBDocumentManager findByID:document.documentID inContext:localContext];
+        
+        [LBAppendixManager deleteAppendixs:locDoc.documentID inContext:localContext];
+        [locDoc deleteEntityInContext:localContext];
+    }];
+
+}
+
 @end

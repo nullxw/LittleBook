@@ -66,7 +66,6 @@
 		6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6721C2361AB40F2400D1FF99 /* HPPresentView.m */; };
 		672B04661AF47F32004BB1D8 /* LBExportTemp.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04651AF47F32004BB1D8 /* LBExportTemp.m */; };
 		672B046A1AF47F7A004BB1D8 /* LBExportTemp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 672B04691AF47F7A004BB1D8 /* LBExportTemp.xib */; };
-		672B046D1AF48180004BB1D8 /* LBDocumentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B046C1AF48180004BB1D8 /* LBDocumentContext.m */; };
 		672B04701AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */; };
 		672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04731AF4FEE3004BB1D8 /* HPAutoResizeCell.m */; };
 		672B047F1AF4FEE3004BB1D8 /* HPHightLightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */; };
@@ -176,6 +175,7 @@
 		67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */; };
 		67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */; };
 		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
+		67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E112461AFA5F9A0029045C /* LBDocumentContext.m */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
 		67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F5321D1ACD3FC500B10CD7 /* HPCycleView.m */; };
@@ -319,8 +319,6 @@
 		672B04641AF47F32004BB1D8 /* LBExportTemp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBExportTemp.h; sourceTree = "<group>"; };
 		672B04651AF47F32004BB1D8 /* LBExportTemp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBExportTemp.m; sourceTree = "<group>"; };
 		672B04691AF47F7A004BB1D8 /* LBExportTemp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBExportTemp.xib; sourceTree = "<group>"; };
-		672B046B1AF48180004BB1D8 /* LBDocumentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentContext.h; sourceTree = "<group>"; };
-		672B046C1AF48180004BB1D8 /* LBDocumentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentContext.m; sourceTree = "<group>"; };
 		672B046E1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPDownFrequenceMachine.h; sourceTree = "<group>"; };
 		672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPDownFrequenceMachine.m; sourceTree = "<group>"; };
 		672B04721AF4FEE3004BB1D8 /* HPAutoResizeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPAutoResizeCell.h; sourceTree = "<group>"; };
@@ -598,6 +596,8 @@
 		67CD9CB71ACC30BF00FC0455 /* HPHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHolidayManager.h; sourceTree = "<group>"; };
 		67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHolidayManager.m; sourceTree = "<group>"; };
 		67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolidayInfos_2015.plist; sourceTree = "<group>"; };
+		67E112451AFA5F9A0029045C /* LBDocumentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentContext.h; sourceTree = "<group>"; };
+		67E112461AFA5F9A0029045C /* LBDocumentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentContext.m; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
 		67EF19EC1AAB0FBA00F97940 /* HPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLine.m; sourceTree = "<group>"; };
 		67EF19F81AAB43D400F97940 /* LBAppContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppContext.h; sourceTree = "<group>"; };
@@ -964,8 +964,6 @@
 				671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */,
 				6757E6141ACC3EAF0071B662 /* LBAudioManager.h */,
 				6757E6151ACC3EAF0071B662 /* LBAudioManager.m */,
-				672B046B1AF48180004BB1D8 /* LBDocumentContext.h */,
-				672B046C1AF48180004BB1D8 /* LBDocumentContext.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1354,6 +1352,8 @@
 			children = (
 				67EF19F81AAB43D400F97940 /* LBAppContext.h */,
 				67EF19F91AAB43D400F97940 /* LBAppContext.m */,
+				67E112451AFA5F9A0029045C /* LBDocumentContext.h */,
+				67E112461AFA5F9A0029045C /* LBDocumentContext.m */,
 				676EE3541AAC43930076B715 /* LBMacros.h */,
 			);
 			path = Context;
@@ -1666,6 +1666,7 @@
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
 				671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
+				67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */,
 				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
 				671D53111AF5029300AF4BE9 /* LBDocumentListCell.m in Sources */,
@@ -1690,7 +1691,6 @@
 				67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */,
 				67AAC9391AC69261002E317F /* UINib+NibExt.m in Sources */,
 				671C20031AB9C6E5005F5586 /* LBDocumentViewController.m in Sources */,
-				672B046D1AF48180004BB1D8 /* LBDocumentContext.m in Sources */,
 				671C1FB91AB9BE4B005F5586 /* NSObject+MagicalDataImport.m in Sources */,
 				671D530B1AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m in Sources */,
 				671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */,

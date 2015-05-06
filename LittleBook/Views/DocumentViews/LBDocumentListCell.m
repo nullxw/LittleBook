@@ -23,15 +23,29 @@
 
 @implementation LBDocumentListCell
 
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    _createTimeLabel.textColor = [UIColor colorWithR:47 g:138 b:193 a:1.0];
+    _titleLabel.textColor = [UIColor colorWithR:47 g:138 b:193 a:1.0];
+}
+
 - (void)setDocument:(Document *)document
 {
     _document = document;
     
     _createTimeLabel.text = [_document.createTime formattedString:@"yyyy | MM | dd"];
-    _titleLabel.text = document.title;
-    _contentLabel.text = document.content;
+    _titleLabel.text      = document.title;
+    _contentLabel.text    = document.content;
     
-    Appendix *appendix = [LBAppendixManager appendixs:document.documentID].lastObject;
+    if (document.favourite.boolValue) {
+        _createTimeLabel.textColor = [UIColor colorWithR:237 g:115 b:118 a:1.0];
+        _titleLabel.textColor = [UIColor colorWithR:237 g:115 b:118 a:1.0];
+    }
+    
+    
+    
+    Appendix *appendix = [LBAppendixManager appendixs:document.documentID].firstObject;
     
     if (appendix) {
         NSString *filePath = [[LBAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];

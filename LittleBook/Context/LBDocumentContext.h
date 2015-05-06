@@ -17,13 +17,11 @@ typedef enum {
 
 @interface LBDocumentContext : NSObject
 
-@property (nonatomic, strong) Document *document;
-
 + (instancetype)defaultContext;
 
-- (Document *)prepareDocument;
+- (Document *)prepareContext:(Document *)document;
 
-- (void)cleanContext;
+- (void)saveContext;
 
 - (Appendix *)addAppendix:(id)appendix type:(LBAppendixType)type;
 

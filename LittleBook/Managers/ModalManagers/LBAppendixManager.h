@@ -23,4 +23,7 @@
 
 + (NSArray *)findByIDs:(NSArray *)appendixIDs;
 
+// Delete
++ (void)deleteAppendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context;
+
 @end

@@ -13,8 +13,10 @@
 #import "LBDocumentEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
 #import "LBDocumentAppendixEditView.h"
+#import "LBAppendixFileManager.h"
 #import "LBPanelStyleManager.h"
 #import "LBIndexInfoManager.h"
+#import "LBAppendixManager.h"
 #import "LBDocumentContext.h"
 #import "HPTouchImageView.h"
 #import "HPDragContainer.h"
@@ -49,32 +51,25 @@
 {
     [super viewDidLoad];
     
-    if (!_doc) {
-        _doc = [[LBDocumentContext defaultContext] prepareDocument];
-    } else {
-        [LBDocumentContext defaultContext].document = _doc;
-    }
-    
+    _doc = [[LBDocumentContext defaultContext] prepareContext:_doc];
     // 1. init params
     [HPDragContainer shareContainer].responseDelegate = self;
-    _appendixs = @[].mutableCopy;
-    _appendixViews = @[].mutableCopy;
-    _appendixPaths = @[].mutableCopy;
-    
+
     _isMediaEditViewVisible = FALSE;
     
     // 2. update UI
     _sectionView.sectionNumber = 3;
     _sectionView.separateLineColor = LB_LIGHT_GRAY_LINE_COLOR;
-    
+
     float editViewHeight = CGRectGetHeight(_editContainerView.bounds);
     _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
     
     float offsetY = editViewHeight - 25;
     _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), CGRectGetMinY(_contentView.frame) - offsetY, CGRectGetWidth(_contentView.frame), CGRectGetHeight(_contentView.frame) + offsetY);
-    [_titleField becomeFirstResponder];
     
     [self updateInterfaceWithSettings];
+    
+    [self updateInterfaceWithDocument];
     
     // 3. register notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -86,17 +81,58 @@
     NSDictionary *settings = [LBAppContext context].settings;
     
     int fontSize = [settings[kLBFontSizeSetting] intValue];
-    NSString *fontName = settings[kLBFontNameSetting];
     PanelStyle *currentStyle = [[LBPanelStyleManager defaultManager] currentStyle];
     
     _contentView.backgroundColor = currentStyle.panelColor;
     _contentField.textColor = currentStyle.fontColor;
     _titleField.textColor   = currentStyle.fontColor;
     
-    _contentField.font = [UIFont fontWithName:fontName size:fontSize];
-    _titleField.font = [UIFont fontWithName:fontName size:fontSize + 2];
+    _contentField.font = [UIFont fontWithName:_contentField.font.fontName size:fontSize];
+    _titleField.font = [UIFont fontWithName:_titleField.font.fontName size:fontSize + 2];
+}
+
+- (void)updateInterfaceWithDocument
+{
+    _titleField.text = _doc.title;
+    _contentField.text = _doc.content;
     
+    NSArray *appendixs = [LBAppendixManager appendixs:_doc.documentID];
     
+    _appendixs = [[NSMutableArray alloc] initWithCapacity:0];
+    _appendixViews = [[NSMutableArray alloc] initWithCapacity:0];
+    _appendixPaths = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    if (appendixs) {
+        [_appendixs addObjectsFromArray:appendixs];
+    }
+    for (Appendix *appendix in appendixs) {
+        [self creatAppendixViewWithAppendix:appendix];
+    }
+    
+    _contentField.textContainer.exclusionPaths = _appendixPaths;
+}
+
+- (void)creatAppendixViewWithAppendix:(Appendix *)appendix
+{
+    NSString *appendixPath = [[LBAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
+    
+    CGRect frame = CGRectFromString(appendix.frame);
+    
+    HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:frame];
+    appendixView.image    = [UIImage imageWithContentsOfFile:appendixPath];
+    appendixView.delegate = self;
+    appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
+    
+    [_appendixViews addObject:appendixView];
+    [_appendixPaths addObject:[self exclusionPathForFrame:frame]];
+
+    [_contentField addSubview:appendixView];
+}
+
+- (UIBezierPath *)exclusionPathForFrame:(CGRect)frame
+{
+    float offset = _contentField.font.pointSize * 0.5;
+    return [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -158,7 +194,7 @@
 
 - (IBAction)backButtonClicked:(UIButton *)sender
 {
-    [[LBDocumentContext defaultContext] cleanContext];
+    [[LBDocumentContext defaultContext] saveContext];
     [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
 }
 
@@ -251,12 +287,16 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if ([string isEqualToString:@"\n"]) {
+    NSString *title = textField.text;
+    
+    if ([string isEqualToString:@""] && title.length > 0) {
+        title = [title substringToIndex:title.length - 1];
+    } else if ([string isEqualToString:@"\n"]){
         [_contentField becomeFirstResponder];
+    } else {
+        title = [title stringByReplacingCharactersInRange:range withString:string];
     }
-    
-    _doc.title = textField.text;
-    
+    _doc.title = title;
     return TRUE;
 }
 
@@ -269,8 +309,17 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    NSString *content = textView.text;
     
-    _doc.content = textView.text;
+    if ([text isEqualToString:@""] && content.length > 0) {
+        content = [content substringToIndex:content.length - 1];
+    } else if ([text isEqualToString:@"\n"]){
+        [_contentField becomeFirstResponder];
+    } else {
+        content = [content stringByReplacingCharactersInRange:range withString:text];
+    }
+    
+    _doc.content = content;
     return TRUE;
 }
 #pragma mark - HPDragContainerResponseDelegate
@@ -279,16 +328,18 @@
 {
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
     CGRect contentFieldFrame = [win convertRect:_contentField.frame fromView:_contentView];
+    
+    // 1.  图片进入文本区域
     if (CGRectContainsRect(contentFieldFrame, container.draggedItem.frame)) {
+        
+        // 1.1 隐藏编辑区
         if (_isMediaEditViewVisible) {
             [self editButtonClicked:nil];
         }
         
         CGRect frameInField = [_contentField convertRect:container.draggedItem.frame fromView:win];
-        
         float offset = _contentField.font.pointSize * 0.5;
         UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(frameInField.origin.x - offset, frameInField.origin.y - offset, frameInField.size.width + 2 * offset, frameInField.size.height)];
-      
         NSMutableArray *tempPaths = _appendixPaths.mutableCopy;
         [tempPaths addObject:path];
         
@@ -304,23 +355,32 @@
 {
     UIWindow *win = [UIApplication sharedApplication].keyWindow;
     
+    // 编辑菜单隐藏了说明 图片已经进入文本区域了
     if (!_isMediaEditViewVisible) {
+        
+        // creat Appendix
+        
         UIImageView *draggedItem = (UIImageView *)container.draggedItem;
+
+        CGRect appendixViewFrame = [_contentField convertRect:draggedItem.frame fromView:win];
         
         Appendix *appendix = [[LBDocumentContext defaultContext] addAppendix:draggedItem.image type:LBAppendixTypeImage];
-        appendix.frame = NSStringFromCGRect(draggedItem.frame);
+//        appendix.frame = NSStringFromCGRect(draggedItem.frame);
+        appendix.frame = NSStringFromCGRect(appendixViewFrame);
         
         [_appendixs addObject:appendix];
+    
+        [self creatAppendixViewWithAppendix:appendix];
         
-        HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:[_contentField convertRect:draggedItem.frame fromView:win]];
-        appendixView.image = draggedItem.image;
-        appendixView.delegate = self;
-        appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
-        
-        [_appendixViews addObject:appendixView];
-        [_appendixPaths addObject:[UIBezierPath bezierPath]];
-        [self didOperateTouchImageView:appendixView];
-        [_contentField addSubview:appendixView];
+//        HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:[_contentField convertRect:draggedItem.frame fromView:win]];
+//        appendixView.image = draggedItem.image;
+//        appendixView.delegate = self;
+//        appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
+//        
+//        [_appendixViews addObject:appendixView];
+//        [_appendixPaths addObject:[UIBezierPath bezierPath]];
+//        [self didOperateTouchImageView:appendixView];
+//        [_contentField addSubview:appendixView];
     }
     
     return !_isMediaEditViewVisible;
@@ -342,16 +402,20 @@
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
     NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));
+    
     CGRect frame = touchImageView.frame;
-    float offset = _contentField.font.pointSize * 0.5;
-    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
     
     NSInteger selectedIndex = [_appendixViews indexOfObject:touchImageView];
     
+    // update appendix
     Appendix *appendix = [_appendixs objectAtIndex:selectedIndex];
     appendix.frame = NSStringFromCGRect(frame);
     
+    // update path infos
+    UIBezierPath *path = [self exclusionPathForFrame:frame];
     [_appendixPaths replaceObjectAtIndex:selectedIndex withObject:path];
+    
+    // update content field
     _contentField.textContainer.exclusionPaths = _appendixPaths;
     
     NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Account" representedClassName="Account" syncable="YES">
         <attribute name="accountID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="appendixs" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,6 +27,7 @@
         <attribute name="createTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="documentID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="documentSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="modifiedTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
@@ -56,11 +57,11 @@
     </entity>
     <elements>
         <element name="Account" positionX="-54" positionY="45" width="128" height="118"/>
+        <element name="AccountDetail" positionX="-54" positionY="90" width="128" height="133"/>
         <element name="Appendix" positionX="-54" positionY="-9" width="128" height="120"/>
-        <element name="Document" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Document" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="105"/>
         <element name="LBUser" positionX="-45" positionY="63" width="128" height="103"/>
         <element name="Notification" positionX="-54" positionY="54" width="128" height="180"/>
-        <element name="AccountDetail" positionX="-54" positionY="90" width="128" height="133"/>
     </elements>
 </model>

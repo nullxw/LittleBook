@@ -77,6 +77,15 @@
 		67417F3D1AF7A6F500D69B7E /* LBCustomSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F3C1AF7A6F500D69B7E /* LBCustomSettingCell.m */; };
 		67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F3F1AF7C0A100D69B7E /* LBCalButton.m */; };
 		67417F431AF7C0AC00D69B7E /* LBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F421AF7C0AC00D69B7E /* LBSearchBar.m */; };
+		674A7EC61AFB93690049A97C /* HPPPBuildInTimeSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */; };
+		674A7ECC1AFB94040049A97C /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EC91AFB94040049A97C /* SSKeychain.m */; };
+		674A7ECD1AFB94040049A97C /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */; };
+		674A7ED11AFB94C70049A97C /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ED01AFB94C70049A97C /* HPTaskManager.m */; };
+		674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 674A7ED21AFB95590049A97C /* HPKitAsset.xcassets */; };
+		674A7EDD1AFB95B60049A97C /* HPLocalizedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ED61AFB95B60049A97C /* HPLocalizedButton.m */; };
+		674A7EDE1AFB95B60049A97C /* HPLocalizedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ED81AFB95B60049A97C /* HPLocalizedLabel.m */; };
+		674A7EDF1AFB95B60049A97C /* HPLocalizedSegControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EDA1AFB95B60049A97C /* HPLocalizedSegControl.m */; };
+		674A7EE01AFB95B60049A97C /* HPLocalizedTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EDC1AFB95B60049A97C /* HPLocalizedTabBar.m */; };
 		6757E6131ACC3E6D0071B662 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6757E6121ACC3E6D0071B662 /* sound.wav */; };
 		6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6757E6151ACC3EAF0071B662 /* LBAudioManager.m */; };
 		67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67634C791AADE625009FD0FA /* LBPanelStyleManager.m */; };
@@ -94,7 +103,6 @@
 		677E659C1AED232100931C24 /* HPDragContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E65991AED232100931C24 /* HPDragContainer.m */; };
 		677E659D1AED232100931C24 /* HPTouchImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E659B1AED232100931C24 /* HPTouchImageView.m */; };
 		677E65A11AED3D4900931C24 /* HPTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 677E65A01AED3D4900931C24 /* HPTextView.m */; };
-		6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 679334991ACA4091001DE34A /* HPTaskManager.m */; };
 		6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */; };
 		6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */; };
 		6794AC651ACFDF8200EC1DB2 /* LBAccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC631ACFDF8200EC1DB2 /* LBAccountListCell.m */; };
@@ -106,10 +114,8 @@
 		6794AC801AD0217900EC1DB2 /* LBImagePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC7F1AD0217900EC1DB2 /* LBImagePreviewView.m */; };
 		6794AC821AD0219400EC1DB2 /* LBImagePreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6794AC811AD0219400EC1DB2 /* LBImagePreviewView.xib */; };
 		6794AC861AD0263600EC1DB2 /* HPCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */; };
-		67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */; };
 		67AAC9291AC69225002E317F /* NSData+DataExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9151AC69225002E317F /* NSData+DataExt.m */; };
 		67AAC92A1AC69225002E317F /* NSDate+DateExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9171AC69225002E317F /* NSDate+DateExt.m */; };
-		67AAC92B1AC69225002E317F /* NSDictionary+DictionaryExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9191AC69225002E317F /* NSDictionary+DictionaryExt.m */; };
 		67AAC92D1AC69225002E317F /* NSString+StringExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC91D1AC69225002E317F /* NSString+StringExt.m */; };
 		67AAC92E1AC69225002E317F /* UIColor+ColorExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC91F1AC69225002E317F /* UIColor+ColorExt.m */; };
 		67AAC92F1AC69225002E317F /* UIImage+ImageExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9211AC69225002E317F /* UIImage+ImageExt.m */; };
@@ -342,6 +348,23 @@
 		67417F3F1AF7C0A100D69B7E /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
 		67417F411AF7C0AC00D69B7E /* LBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSearchBar.h; sourceTree = "<group>"; };
 		67417F421AF7C0AC00D69B7E /* LBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSearchBar.m; sourceTree = "<group>"; };
+		674A7EC41AFB93690049A97C /* HPPPBuildInTimeSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPPBuildInTimeSystem.h; sourceTree = "<group>"; };
+		674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPPBuildInTimeSystem.m; sourceTree = "<group>"; };
+		674A7EC81AFB94040049A97C /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		674A7EC91AFB94040049A97C /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		674A7ECA1AFB94040049A97C /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		674A7ECF1AFB94C70049A97C /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
+		674A7ED01AFB94C70049A97C /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
+		674A7ED21AFB95590049A97C /* HPKitAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HPKitAsset.xcassets; sourceTree = "<group>"; };
+		674A7ED51AFB95B60049A97C /* HPLocalizedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLocalizedButton.h; sourceTree = "<group>"; };
+		674A7ED61AFB95B60049A97C /* HPLocalizedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLocalizedButton.m; sourceTree = "<group>"; };
+		674A7ED71AFB95B60049A97C /* HPLocalizedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLocalizedLabel.h; sourceTree = "<group>"; };
+		674A7ED81AFB95B60049A97C /* HPLocalizedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLocalizedLabel.m; sourceTree = "<group>"; };
+		674A7ED91AFB95B60049A97C /* HPLocalizedSegControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLocalizedSegControl.h; sourceTree = "<group>"; };
+		674A7EDA1AFB95B60049A97C /* HPLocalizedSegControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLocalizedSegControl.m; sourceTree = "<group>"; };
+		674A7EDB1AFB95B60049A97C /* HPLocalizedTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLocalizedTabBar.h; sourceTree = "<group>"; };
+		674A7EDC1AFB95B60049A97C /* HPLocalizedTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLocalizedTabBar.m; sourceTree = "<group>"; };
 		6757E6121ACC3E6D0071B662 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		6757E6141ACC3EAF0071B662 /* LBAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAudioManager.h; sourceTree = "<group>"; };
 		6757E6151ACC3EAF0071B662 /* LBAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAudioManager.m; sourceTree = "<group>"; };
@@ -374,8 +397,6 @@
 		677E659B1AED232100931C24 /* HPTouchImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchImageView.m; sourceTree = "<group>"; };
 		677E659F1AED3D4900931C24 /* HPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextView.h; sourceTree = "<group>"; };
 		677E65A01AED3D4900931C24 /* HPTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextView.m; sourceTree = "<group>"; };
-		679334981ACA4091001DE34A /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
-		679334991ACA4091001DE34A /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
 		6794AC5A1ACFC35E00EC1DB2 /* IndicatorImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = IndicatorImages.xcassets; sourceTree = "<group>"; };
 		6794AC5B1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+IndicatorExt.h"; sourceTree = "<group>"; };
 		6794AC5C1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+IndicatorExt.m"; sourceTree = "<group>"; };
@@ -398,14 +419,10 @@
 		6794AC841AD0263600EC1DB2 /* HPCommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCommonFunctions.h; sourceTree = "<group>"; };
 		6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPCommonFunctions.m; sourceTree = "<group>"; };
 		67AAC9111AC69225002E317F /* ExtensionKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionKit.h; sourceTree = "<group>"; };
-		67AAC9121AC69225002E317F /* NSArray+ArrayExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ArrayExt.h"; sourceTree = "<group>"; };
-		67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ArrayExt.m"; sourceTree = "<group>"; };
 		67AAC9141AC69225002E317F /* NSData+DataExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DataExt.h"; sourceTree = "<group>"; };
 		67AAC9151AC69225002E317F /* NSData+DataExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+DataExt.m"; sourceTree = "<group>"; };
 		67AAC9161AC69225002E317F /* NSDate+DateExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateExt.h"; sourceTree = "<group>"; };
 		67AAC9171AC69225002E317F /* NSDate+DateExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateExt.m"; sourceTree = "<group>"; };
-		67AAC9181AC69225002E317F /* NSDictionary+DictionaryExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DictionaryExt.h"; sourceTree = "<group>"; };
-		67AAC9191AC69225002E317F /* NSDictionary+DictionaryExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DictionaryExt.m"; sourceTree = "<group>"; };
 		67AAC91C1AC69225002E317F /* NSString+StringExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringExt.h"; sourceTree = "<group>"; };
 		67AAC91D1AC69225002E317F /* NSString+StringExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringExt.m"; sourceTree = "<group>"; };
 		67AAC91E1AC69225002E317F /* UIColor+ColorExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorExt.h"; sourceTree = "<group>"; };
@@ -867,6 +884,11 @@
 				6794AC851AD0263600EC1DB2 /* HPCommonFunctions.m */,
 				672B046E1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.h */,
 				672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */,
+				674A7EC41AFB93690049A97C /* HPPPBuildInTimeSystem.h */,
+				674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */,
+				674A7ED41AFB95B60049A97C /* HPLocalizedView */,
+				674A7ECE1AFB94C70049A97C /* HPTaskManager */,
+				674A7EC71AFB94040049A97C /* SSKeyChain */,
 				67417F371AF79FC300D69B7E /* HPManagers */,
 				671D53021AF5006B00AF4BE9 /* HPLockView */,
 				672B04711AF4FEE3004BB1D8 /* HPEditTableView */,
@@ -874,7 +896,6 @@
 				677E65971AED232100931C24 /* HPDragKit */,
 				6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */,
 				67F5321B1ACD3FC500B10CD7 /* HPCycleView */,
-				679334971ACA4091001DE34A /* HPTaskManager */,
 				67AAC9B51AC6AF81002E317F /* HPRoundCornerViews */,
 				67AAC9101AC69225002E317F /* HPExtensionKit */,
 				67AAC9581AC6A445002E317F /* HPCalendarView */,
@@ -937,6 +958,7 @@
 				672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */,
 				67417EF81AF6766E00D69B7E /* HPEditCell.h */,
 				67417EF91AF6766E00D69B7E /* HPEditCell.m */,
+				674A7ED21AFB95590049A97C /* HPKitAsset.xcassets */,
 			);
 			path = HPEditTableView;
 			sourceTree = "<group>";
@@ -948,6 +970,41 @@
 				67417F391AF79FE600D69B7E /* HPCustomFontManager.m */,
 			);
 			path = HPManagers;
+			sourceTree = "<group>";
+		};
+		674A7EC71AFB94040049A97C /* SSKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				674A7EC81AFB94040049A97C /* SSKeychain.h */,
+				674A7EC91AFB94040049A97C /* SSKeychain.m */,
+				674A7ECA1AFB94040049A97C /* SSKeychainQuery.h */,
+				674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */,
+			);
+			path = SSKeyChain;
+			sourceTree = "<group>";
+		};
+		674A7ECE1AFB94C70049A97C /* HPTaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				674A7ECF1AFB94C70049A97C /* HPTaskManager.h */,
+				674A7ED01AFB94C70049A97C /* HPTaskManager.m */,
+			);
+			path = HPTaskManager;
+			sourceTree = "<group>";
+		};
+		674A7ED41AFB95B60049A97C /* HPLocalizedView */ = {
+			isa = PBXGroup;
+			children = (
+				674A7ED51AFB95B60049A97C /* HPLocalizedButton.h */,
+				674A7ED61AFB95B60049A97C /* HPLocalizedButton.m */,
+				674A7ED71AFB95B60049A97C /* HPLocalizedLabel.h */,
+				674A7ED81AFB95B60049A97C /* HPLocalizedLabel.m */,
+				674A7ED91AFB95B60049A97C /* HPLocalizedSegControl.h */,
+				674A7EDA1AFB95B60049A97C /* HPLocalizedSegControl.m */,
+				674A7EDB1AFB95B60049A97C /* HPLocalizedTabBar.h */,
+				674A7EDC1AFB95B60049A97C /* HPLocalizedTabBar.m */,
+			);
+			path = HPLocalizedView;
 			sourceTree = "<group>";
 		};
 		67634C771AADE609009FD0FA /* Managers */ = {
@@ -1032,15 +1089,6 @@
 			path = HPTextView;
 			sourceTree = "<group>";
 		};
-		679334971ACA4091001DE34A /* HPTaskManager */ = {
-			isa = PBXGroup;
-			children = (
-				679334981ACA4091001DE34A /* HPTaskManager.h */,
-				679334991ACA4091001DE34A /* HPTaskManager.m */,
-			);
-			path = HPTaskManager;
-			sourceTree = "<group>";
-		};
 		6794AC591ACFC35E00EC1DB2 /* HPScrollViewIndicatorExt */ = {
 			isa = PBXGroup;
 			children = (
@@ -1075,14 +1123,10 @@
 				67AAC9251AC69225002E317F /* UIView+ViewExt.m */,
 				67AAC9371AC69261002E317F /* UINib+NibExt.h */,
 				67AAC9381AC69261002E317F /* UINib+NibExt.m */,
-				67AAC9121AC69225002E317F /* NSArray+ArrayExt.h */,
-				67AAC9131AC69225002E317F /* NSArray+ArrayExt.m */,
 				67AAC9141AC69225002E317F /* NSData+DataExt.h */,
 				67AAC9151AC69225002E317F /* NSData+DataExt.m */,
 				67AAC9161AC69225002E317F /* NSDate+DateExt.h */,
 				67AAC9171AC69225002E317F /* NSDate+DateExt.m */,
-				67AAC9181AC69225002E317F /* NSDictionary+DictionaryExt.h */,
-				67AAC9191AC69225002E317F /* NSDictionary+DictionaryExt.m */,
 				67AAC91C1AC69225002E317F /* NSString+StringExt.h */,
 				67AAC91D1AC69225002E317F /* NSString+StringExt.m */,
 				67AAC91E1AC69225002E317F /* UIColor+ColorExt.h */,
@@ -1531,6 +1575,7 @@
 				6757E6131ACC3E6D0071B662 /* sound.wav in Resources */,
 				67CCC8851AD140CE00BDF574 /* LBImageEditView.xib in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
+				674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */,
 				6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */,
 				67CCC8FC1AD1843700BDF574 /* LBChartView.xib in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
@@ -1563,6 +1608,7 @@
 				67CCC8831AD140B900BDF574 /* LBImageEditView.m in Sources */,
 				67CCC8771AD1223C00BDF574 /* LBImageFilterView.m in Sources */,
 				67AAC9781AC6A445002E317F /* CalendarViewLayout.m in Sources */,
+				674A7EDF1AFB95B60049A97C /* HPLocalizedSegControl.m in Sources */,
 				671C1FBA1AB9BE4B005F5586 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				67C017181ABD627E0004EFD4 /* Document.m in Sources */,
 				67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */,
@@ -1579,7 +1625,6 @@
 				6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */,
 				671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */,
 				67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */,
-				6793349A1ACA4091001DE34A /* HPTaskManager.m in Sources */,
 				671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */,
 				6721C2371AB40F2400D1FF99 /* HPPresentView.m in Sources */,
@@ -1588,6 +1633,7 @@
 				6721C2301AB407A400D1FF99 /* LBTabbarSegue.m in Sources */,
 				6794AC7D1ACFECAD00EC1DB2 /* LBAccountAppendixCell.m in Sources */,
 				6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */,
+				674A7ECD1AFB94040049A97C /* SSKeychainQuery.m in Sources */,
 				6794AC771ACFE82D00EC1DB2 /* AccountDetail.m in Sources */,
 				671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */,
 				677E65911AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m in Sources */,
@@ -1619,7 +1665,6 @@
 				671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */,
 				67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */,
 				677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */,
-				67AAC9281AC69225002E317F /* NSArray+ArrayExt.m in Sources */,
 				671C1FCF1AB9BE4B005F5586 /* MagicalRecord.m in Sources */,
 				67AAC9D81AC700BB002E317F /* Notification.m in Sources */,
 				67417F361AF6861300D69B7E /* LBNotificationSettingCell.m in Sources */,
@@ -1628,6 +1673,7 @@
 				671C1FBB1AB9BE4B005F5586 /* NSString+MagicalDataImport.m in Sources */,
 				67AAC9D51AC6F8FE002E317F /* HPRoundCornerTableView.m in Sources */,
 				67AAC9D21AC6F479002E317F /* LBNotificationEditViewController.m in Sources */,
+				674A7EE01AFB95B60049A97C /* HPLocalizedTabBar.m in Sources */,
 				6794AC651ACFDF8200EC1DB2 /* LBAccountListCell.m in Sources */,
 				6777D6211AA69EFE009E78DD /* HPTarBarController.m in Sources */,
 				67417F3D1AF7A6F500D69B7E /* LBCustomSettingCell.m in Sources */,
@@ -1650,6 +1696,7 @@
 				67AAC9321AC69225002E317F /* UIViewController+ControllerExt.m in Sources */,
 				672B04801AF4FEE3004BB1D8 /* HPTouchView.m in Sources */,
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
+				674A7EDD1AFB95B60049A97C /* HPLocalizedButton.m in Sources */,
 				67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */,
 				67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */,
 				67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */,
@@ -1657,6 +1704,7 @@
 				6794AC6B1ACFDFE700EC1DB2 /* LBAccountCell.m in Sources */,
 				67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */,
 				677E65A11AED3D4900931C24 /* HPTextView.m in Sources */,
+				674A7ECC1AFB94040049A97C /* SSKeychain.m in Sources */,
 				67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */,
 				671C20021AB9C6E5005F5586 /* LBDocumentEditViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
@@ -1666,6 +1714,7 @@
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
 				671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
+				674A7ED11AFB94C70049A97C /* HPTaskManager.m in Sources */,
 				67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */,
 				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
@@ -1679,7 +1728,6 @@
 				671D530D1AF5006B00AF4BE9 /* HPPasscodeView.m in Sources */,
 				67CCC8791AD1223C00BDF574 /* LBEditMenuCell.m in Sources */,
 				67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */,
-				67AAC92B1AC69225002E317F /* NSDictionary+DictionaryExt.m in Sources */,
 				672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
 				677E659C1AED232100931C24 /* HPDragContainer.m in Sources */,
@@ -1696,11 +1744,13 @@
 				671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */,
 				671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */,
 				67AAC97C1AC6A6D3002E317F /* NSDate+CalExt.m in Sources */,
+				674A7EDE1AFB95B60049A97C /* HPLocalizedLabel.m in Sources */,
 				672B047F1AF4FEE3004BB1D8 /* HPHightLightCell.m in Sources */,
 				67C016ED1ABD440C0004EFD4 /* LBTimeLineView.m in Sources */,
 				671C1FB81AB9BE4B005F5586 /* NSNumber+MagicalDataImport.m in Sources */,
 				671C20071AB9C6E5005F5586 /* LBNotificationSettingViewController.m in Sources */,
 				67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */,
+				674A7EC61AFB93690049A97C /* HPPPBuildInTimeSystem.m in Sources */,
 				671C1FDC1AB9BFFD005F5586 /* LBSectionView.m in Sources */,
 				67AAC92A1AC69225002E317F /* NSDate+DateExt.m in Sources */,
 				671C1FCD1AB9BE4B005F5586 /* MagicalRecord+Setup.m in Sources */,

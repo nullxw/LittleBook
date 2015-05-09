@@ -7,6 +7,8 @@
 //
 
 #import "HPTaskManager.h"
+#import "NSDate+DateExt.h"
+#import "SSKeychain.h"
 
 #define ILS_TASK_MANAGER_DAILY_KEY(uesrname, task_key)      ([NSString stringWithFormat:@"ILS_TASK_MANAGER_DAILY_KEY_%@_%@", (uesrname).uppercaseString, (task_key).uppercaseString])
 
@@ -16,13 +18,61 @@ static NSString *kHPTaskManagerUserDefaultSuiteName = @"kHPTaskManagerUserDefaul
 
 static NSString *kHPTaskManagerPeriodicTaskFDataKey = @"kHPTaskManagerPeriodicTaskFDataKey";
 static NSString *kHPTaskManagerPeriodicTaskTDataKey = @"kHPTaskManagerPeriodicTaskTDataKey";
-
 static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
+
+
+@interface NSString (toDictionary)
+
+- (NSDictionary *)toDictionary;
+@end
+
+@interface NSDictionary (toString)
+
+- (NSString *)toString;
+
+@end
+
+@implementation NSString (toDictionary)
+
+- (NSDictionary *)toDictionary
+{
+    NSArray *pairs = [self componentsSeparatedByString:@","];
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithCapacity:pairs.count];
+    
+    for (NSString *pair in pairs) {
+        NSArray *keyValue = [pair componentsSeparatedByString:@":"];
+        [dic setObject:keyValue[1] forKey:keyValue[0]];
+    }
+    return dic;
+}
+
+@end
+
+@implementation NSDictionary (toString)
+
+- (NSString *)toString
+{
+    NSArray *keys = self.allKeys;
+    
+    NSString *str = @"";
+    
+    for (NSString *key in keys) {
+        str = [NSString stringWithFormat:@"%@%@:%@,", str, key , self[key]];
+    }
+    // clip last ,
+    str = [str substringToIndex:str.length - 1];
+    
+    return str;
+}
+
+@end
 
 @interface HPTaskManager ()
 {
     NSDateFormatter *_formatter;
     dispatch_queue_t _taskQueue;
+    NSUserDefaults  *_userDefaults;
 }
 @end
 
@@ -51,7 +101,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         [_formatter setDateFormat:@"yyyy-MM-dd"];
         [_formatter setCalendar:cal];
     
-        self.userDefaults = [[NSUserDefaults alloc] initWithSuiteName:kHPTaskManagerUserDefaultSuiteName];
+        _userDefaults = [[NSUserDefaults alloc] initWithSuiteName:kHPTaskManagerUserDefaultSuiteName];
         
         _taskQueue = dispatch_queue_create("HPTaskManager+ThreadSafe", DISPATCH_QUEUE_CONCURRENT);
     }
@@ -60,23 +110,32 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
 
 /********************************* 数据存储方式 - 可根据需求实现不同的存储策略 *********************************/
 
-- (id)objectForKey:(NSString *)key
+- (NSString *)objectForKey:(NSString *)key
 {
     if (!key) {
         return nil;
     }
-    return [self.userDefaults objectForKey:key];;
+    
+    if (_storePolicy == HPTaskStorePolicyKeyChain) {
+        return [SSKeychain passwordForService:key account:kHPTaskManagerDefaultUser];
+    } else {
+        return [_userDefaults objectForKey:key];
+    }
 }
 
-- (void)setObject:(id)object forKey:(NSString *)key
+- (void)setObject:(NSString *)object forKey:(NSString *)key
 {
     if (!key || !object) {
         return;
     }
-    [self.userDefaults setObject:object forKey:key];
     
-    
-    [self.userDefaults synchronize];
+    if (_storePolicy == HPTaskStorePolicyKeyChain) {
+        [SSKeychain setPassword:object forService:key account:kHPTaskManagerDefaultUser];
+    } else {
+        [_userDefaults setObject:object forKey:key];
+        
+        [_userDefaults synchronize];
+    }
 }
 
 - (void)removeObjectForKey:(NSString *)key
@@ -84,7 +143,14 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     if (!key) {
         return;
     }
-    [self.userDefaults removeObjectForKey:key];
+    
+    if (_storePolicy == HPTaskStorePolicyKeyChain) {
+        [SSKeychain deletePasswordForService:key account:kHPTaskManagerDefaultUser];
+    } else {
+        [_userDefaults removeObjectForKey:key];
+        [_userDefaults synchronize];
+    }
+    
 }
 
 /****************************************** 普通任务 － key不失效 ******************************************/
@@ -100,7 +166,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     if ([self objectForKey:userKey]) {
         return FALSE;
     }
-    [self setObject:[NSNumber numberWithInteger:maxTimes] forKey:userKey];
+    [self setObject:@(maxTimes).stringValue forKey:userKey];
     
     return TRUE;
 }
@@ -109,7 +175,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
 {
     NSString *key = taskType == HPTaskTypeDailyTask ? [self getDailyKey:taskKey forUser:userName] : [self getUserKey:taskKey forUser:userName];
     
-    NSNumber *taskTimes = [self objectForKey:key];
+    NSString *taskTimes = [self objectForKey:key];
     
     if (!taskTimes) {
         return FALSE;
@@ -119,7 +185,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     
     --iTaskTimes;
     
-    [self setObject:[NSNumber numberWithInteger:iTaskTimes] forKey:key];
+    [self setObject:@(iTaskTimes).stringValue forKey:key];
     
     return iTaskTimes >= 0;
 }
@@ -132,7 +198,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     
     NSString *key = taskType == HPTaskTypeDailyTask ? [self getDailyKey:taskKey forUser:userName] : [self getUserKey:taskKey forUser:userName];
     
-    NSNumber *taskTimes = [self objectForKey:key];
+    NSString *taskTimes = [self objectForKey:key];
     
     if (!taskTimes) {
         return FALSE;
@@ -163,7 +229,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     }
     
     // set current info
-    [self setObject:[NSNumber numberWithInteger:maxTimes] forKey:dailyKey];
+    [self setObject:@(maxTimes).stringValue forKey:dailyKey];
     
     // save current key to delete key infos next time
     [self setObject:dailyKey forKey:ILS_TASK_MANAGER_DAILY_KEY(userName, taskKey)];
@@ -207,7 +273,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     }
     
     // set current info
-    [self setObject:[NSNumber numberWithInteger:maxTimes] forKey:weeklyKey];
+    [self setObject:@(maxTimes).stringValue forKey:weeklyKey];
     
     // save current key to delete key infos next time
     [self setObject:weeklyKey forKey:ILS_TASK_MANAGER_WEEKLY_KEY(userName, taskKey)];
@@ -226,7 +292,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         return FALSE;
     }
     
-    NSNumber *taskTimes = [self objectForKey:weeklyKey];
+    NSString *taskTimes = [self objectForKey:weeklyKey];
     
     if (!taskTimes) {
         return FALSE;
@@ -236,7 +302,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     
     --iTaskTimes;
     
-    [self setObject:[NSNumber numberWithInteger:iTaskTimes] forKey:weeklyKey];
+    [self setObject:@(iTaskTimes).stringValue forKey:weeklyKey];
     
     return iTaskTimes >= 0;
 }
@@ -254,7 +320,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         return FALSE;
     }
     
-    NSNumber *taskTimes = [self objectForKey:weeklyKey];
+    NSString *taskTimes = [self objectForKey:weeklyKey];
     
     if (!taskTimes) {
         return FALSE;
@@ -277,9 +343,10 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     if ([self objectForKey:periodicKey]) {
         return FALSE;
     }
+    
     [self setObject:@{kHPTaskManagerPeriodicTaskFDataKey:fDate,
                       kHPTaskManagerPeriodicTaskTDataKey:tDate
-                    } forKey:periodicKey];
+                    }.toString forKey:periodicKey];
     return TRUE;
 }
 
@@ -310,7 +377,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
     }
     NSString *periodicKey = [self getPeriodicUserKey:taskKey forUser:userName];
     
-    NSDictionary *infos = [self objectForKey:periodicKey];
+    NSDictionary *infos = [self objectForKey:periodicKey].toDictionary;
     if (!infos) {
         return FALSE;
     }
@@ -440,7 +507,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
             return;
         }
         
-        [self setObject:[NSNumber numberWithInteger:maxTimes] forKey:userKey];
+        [self setObject:@(maxTimes).stringValue forKey:userKey];
         
         if (completionBlock) {
             completionBlock(nil);
@@ -480,7 +547,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         }
         
         // set current info
-        [self setObject:[NSNumber numberWithInteger:maxTimes] forKey:dailyKey];
+        [self setObject:@(maxTimes).stringValue forKey:dailyKey];
         
         // save current key to delete key infos next time
         [self setObject:dailyKey forKey:ILS_TASK_MANAGER_DAILY_KEY(userName, taskKey)];
@@ -507,7 +574,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         
         NSString *key = taskType == HPTaskTypeDailyTask ? [self getDailyKey:taskKey forUser:userName] : [self getUserKey:taskKey forUser:userName];
         
-        NSNumber *taskTimes = [self objectForKey:key];
+        NSString *taskTimes = [self objectForKey:key];
         
         if (!taskTimes) {
             if (completionBlock) {
@@ -523,7 +590,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         
         --iTaskTimes;
         
-        [self setObject:[NSNumber numberWithInteger:iTaskTimes] forKey:key];
+        [self setObject:@(iTaskTimes).stringValue forKey:key];
         
         if (iTaskTimes >=0) {
             if (completionBlock) {
@@ -549,7 +616,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         if (taskKey) {
             NSString *key = taskType == HPTaskTypeDailyTask ? [self getDailyKey:taskKey forUser:userName] : [self getUserKey:taskKey forUser:userName];
             
-            NSNumber *taskTimes = [self objectForKey:key];
+            NSString *taskTimes = [self objectForKey:key];
             
             if (taskTimes) {
                 taskHasCompleted = [taskTimes integerValue] <= 0;
@@ -605,7 +672,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         }
         
         // set current info
-        [self setObject:[NSNumber numberWithInteger:maxTimes] forKey:weeklyKey];
+        [self setObject:@(maxTimes).stringValue forKey:weeklyKey];
         
         // save current key to delete key infos next time
         [self setObject:weeklyKey forKey:ILS_TASK_MANAGER_WEEKLY_KEY(userName, taskKey)];
@@ -641,7 +708,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
             return;
         }
         
-        NSNumber *taskTimes = [self objectForKey:weeklyKey];
+        NSString *taskTimes = [self objectForKey:weeklyKey];
         
         if (!taskTimes) {
             if (completionBlock) {
@@ -657,7 +724,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         
         --iTaskTimes;
         
-        [self setObject:[NSNumber numberWithInteger:iTaskTimes] forKey:weeklyKey];
+        [self setObject:@(iTaskTimes).stringValue forKey:weeklyKey];
         
         if (iTaskTimes >=0) {
             if (completionBlock) {
@@ -684,7 +751,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
             NSString *weeklyKey = [self getWeeklyKey:taskKey forUser:userName onSpecifiedWeekdays:weekdays];
             
             if (weeklyKey) {
-                NSNumber *taskTimes = [self objectForKey:weeklyKey];
+                NSString *taskTimes = [self objectForKey:weeklyKey];
                 
                 if (taskTimes) {
                     taskHasCompleted = [taskTimes integerValue] <= 0;
@@ -724,7 +791,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
 
         [self setObject:@{kHPTaskManagerPeriodicTaskFDataKey:fDate,
                           kHPTaskManagerPeriodicTaskTDataKey:tDate
-                          } forKey:periodicKey];
+                          }.toString forKey:periodicKey];
         if (completionBlock) {
             completionBlock(nil);
         }
@@ -784,7 +851,7 @@ static NSString *kHPTaskManagerDefaultUser = @"kHPTaskManagerDefaultUser";
         if (taskKey) {
             NSString *periodicKey = [self getPeriodicUserKey:taskKey forUser:userName];
             
-            NSDictionary *infos = [self objectForKey:periodicKey];
+            NSDictionary *infos = [self objectForKey:periodicKey].toDictionary;
             
             if (infos) {
                 NSDate *now = [NSDate date];

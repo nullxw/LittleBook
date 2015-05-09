@@ -1,5 +1,5 @@
 //
-//  HPAutoResizeCell.h
+//  HPLocalizedButton.h
 //  ILSPrivatePhoto
 //
 //  Created by hupeng on 15/4/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPAutoResizeCell : UITableViewCell
-
-@property (nonatomic, weak) IBOutlet UIView *autoResizeContentView;
+@interface HPLocalizedButton : UIButton
 
 @end

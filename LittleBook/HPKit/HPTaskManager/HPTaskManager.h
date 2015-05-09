@@ -43,17 +43,17 @@ typedef enum {
     kHPTaskManagerErrorInvalidParamsCode
 } kHPTaskManagerErrorCode;
 
+typedef enum {
+    HPTaskStorePolicyUserDefault, // default value
+    HPTaskStorePolicyKeyChain
+} HPTaskStorePolicy;
+
 @interface HPTaskManager : NSObject
 
 + (HPTaskManager *)defaultManager;
 
-@property (nonatomic, strong) NSUserDefaults *userDefaults;
+@property (nonatomic, assign) HPTaskStorePolicy storePolicy;
 
-- (id)objectForKey:(NSString *)key;
-
-- (void)setObject:(id)object forKey:(NSString *)key;
-
-- (void)removeObjectForKey:(NSString *)key;
 
 /****************************************** 普通任务 － key不失效 ******************************************/
 

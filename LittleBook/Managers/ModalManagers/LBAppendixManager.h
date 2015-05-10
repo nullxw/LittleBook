@@ -13,6 +13,7 @@
 
 // Create
 + (Appendix *)createAppendixWithMediaData:(NSData *)data;
++ (Appendix *)createAudioAppendixWithFilePath:(NSString *)filePath andDuration:(int)duration;
 
 // Retrieve
 + (NSArray *)appendixs:(NSNumber *)parentID;

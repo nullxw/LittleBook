@@ -10,6 +10,7 @@
 #import "LBImageFilterView.h"
 #import "LBSectionView.h"
 #import "HPDragContainer.h"
+#import "LBAppContext.h"
 
 @interface LBImageEditView ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, HPDragContainerResourceDelegate>
 {
@@ -49,7 +50,8 @@
 - (void)updateImageView:(NSNotification *)notif
 {
     _originalImage = notif.object;
-    _imageView.image = _originalImage;
+    _imageView.contentMode = UIViewContentModeScaleToFill;
+    _imageView.image = [_originalImage clipToSize:_imageView.frame.size];
 }
 
 - (void)openAlbumPage
@@ -64,6 +66,11 @@
 
 - (void)openCanvas:(UILongPressGestureRecognizer *)gesture
 {
+    BOOL dragEnable = [[LBAppContext context].settings[kLBDragSetting] boolValue];
+    
+    if (!dragEnable) {
+        return;
+    }
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
@@ -108,12 +115,14 @@
 
 - (IBAction)insertButtonClicked:(id)sender
 {
-//    if (_delegate && [_delegate respondsToSelector:@selector(editView:insertImage:withImageInfo:)]) {
-//        [_delegate editView:self
-//                insertImage:_imageView.image
-//              withImageInfo:@{kEditViewImageRectInfo : NSStringFromCGRect(_imageView.bounds),
-//                              kEditViewImageCornerRadisInfo : @(LB_COMMON_CORNER_RADIUS)}];
-//    }
+    CGSize imageSize = [_originalImage sizeForContainer:_imageView.frame.size];
+    
+    NSDictionary *imageInfo = @{@"image" : _originalImage,
+                                @"size"  : NSStringFromCGSize(imageSize)};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:LB_INSERT_IMAGE_NOTIF object:imageInfo];
+    
+    [self deleteButtonClicked:nil];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

@@ -6,11 +6,6 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-typedef enum {
-    LBAppendixTypeImage,
-    LBAppendixTypeAudio
-} LBAppendixType;
-
 #import <Foundation/Foundation.h>
 
 @class Document, Appendix;

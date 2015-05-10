@@ -15,6 +15,11 @@
 #define LB_SPRING_ANIMATION_TIME  0.6
 #define LB_LINEAR_ANIMATION_TIME  0.25
 
+typedef enum {
+    LBAppendixTypeImage,
+    LBAppendixTypeAudio
+} LBAppendixType;
+
 // common color
 #define LB_LIGHT_GRAY_LINE_COLOR [UIColor colorWithR:246 g:245 b:243 a:1.0]
 #define LB_BLUE_LINE_COLOR       [UIColor colorWithR:56 g:162 b:219 a:1.0]
@@ -25,3 +30,4 @@
 
 // this notif used between LBImageEditView(receiver) and LBImageFilterView(sender)
 #define LB_DID_APPLY_IMAGE_FILTER_NOTIF @"LB_DID_APPLY_IMAGE_FILTER_NOTIF"
+#define LB_INSERT_IMAGE_NOTIF           @"LB_INSERT_IMAGE_NOTIF"

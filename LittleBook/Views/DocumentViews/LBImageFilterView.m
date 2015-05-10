@@ -39,11 +39,12 @@
 {
     _image = image;
     
-    CGPoint center = _imageView.center;
-    UIImage *scaledImage = [image scaleToSize:_imageView.frame.size];
+    CGSize imageSize = [image sizeForContainer:_imageView.frame.size];
     
-    _imageView.image = scaledImage;
-    _imageView.frame = CGRectMake(0, 0, scaledImage.size.width, scaledImage.size.height);
+    CGPoint center = _imageView.center;
+    
+    _imageView.image = image;
+    _imageView.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
     _imageView.center = center;
 }
 

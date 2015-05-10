@@ -74,6 +74,26 @@
     self.text = finalStr;
 }
 
+- (void)insertFakeEnterAtPosition:(NSInteger)position
+{
+    NSString *text = self.text;
+    
+    NSString *preStr = [text substringToIndex:position];
+    NSString *sufStr = [text substringFromIndex:position];
+    
+    NSInteger lineIndex = [self lineIndexOfCurrentCursour];
+    NSRange range = [self rangeOfLineAtIndex:lineIndex];
+
+    NSString *emptyStr = @"";
+    for (int i = 0; i < range.length - position; i++) {
+        emptyStr = [emptyStr stringByAppendingString:@" "];
+    }
+    
+    NSString *finalStr = [NSString stringWithFormat:@"%@%@%@", preStr, emptyStr, sufStr];
+    self.text = finalStr;
+
+}
+
 - (NSInteger)cursourLocation
 {
     return self.selectedRange.location;
@@ -108,5 +128,14 @@
     offset = MIN(offset, previousLineRange.length);
     
     self.selectedRange = NSMakeRange(previousLineRange.location + offset, 0);
+}
+
+-(float)maxContentSizeY
+{
+    float oY = 0;
+    if(self.text && self.text.length > 0) {
+        oY = self.contentSize.height;
+    }
+    return oY;
 }
 @end

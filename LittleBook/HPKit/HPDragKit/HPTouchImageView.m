@@ -63,83 +63,108 @@ typedef enum {
 
 - (void)registerGestures
 {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [self addGestureRecognizer:tap];
-    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [self addGestureRecognizer:pan];
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self addGestureRecognizer:tap];
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
     pinchGesture.delegate = self;
     [self addGestureRecognizer:pinchGesture];
+
 }
 
 #pragma mark - gesture handlers
 
 - (void)handleTap:(UITapGestureRecognizer *)gesture
 {
-
-    if (_delegate && [_delegate respondsToSelector:@selector(didTapTouchImageView:)]) {
-        [_delegate didTapTouchImageView:self];
+    if (self.disableTap) {
+        return;
+    }
+    if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(didTapTouchImageView:)]) {
+        [_touchDelegate didTapTouchImageView:self];
     }
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)gesture
 {
+    if (self.disablePan) {
+        return;
+    }
     CGPoint toPoint = [gesture translationInView:self];
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        if (_delegate && [_delegate respondsToSelector:@selector(willOperateTouchImageView:)]) {
-            [_delegate willOperateTouchImageView:self];
+        if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(willOperateTouchImageView:)]) {
+            [_touchDelegate willOperateTouchImageView:self];
         }
     }
     
-    self.center = CGPointMake(_startCenter.x + toPoint.x, _startCenter.y + toPoint.y);;
+    CGPoint nextCenter= CGPointMake(_startCenter.x + toPoint.x, _startCenter.y + toPoint.y);
+    
+    float w = CGRectGetWidth(self.bounds);
+    float h = CGRectGetHeight(self.bounds);
+    
+    CGRect nextFrame = CGRectMake(nextCenter.x - w * 0.5, nextCenter.y - h * 0.5, w, h);
+
+    if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(verifiedFrame:)]) {
+        nextFrame = [_touchDelegate verifiedFrame:nextFrame];
+    }
+    
+    
+    self.frame = nextFrame;
     
     if (gesture.state == UIGestureRecognizerStateEnded) {
         
-        _startCenter = self.center;
+        _startCenter = CGPointMake(CGRectGetMidX(nextFrame), CGRectGetMidY(nextFrame));
         
-        if (_delegate && [_delegate respondsToSelector:@selector(didEndOperateTouchImageView:)]) {
-            [_delegate didEndOperateTouchImageView:self];
+        if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(didEndOperateTouchImageView:)]) {
+            [_touchDelegate didEndOperateTouchImageView:self];
         }
         return;
     }
     
-    if (_delegate && [_delegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
-        [_delegate didOperateTouchImageView:self];
+    if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
+        [_touchDelegate didOperateTouchImageView:self];
     }
 }
 
 - (void)handlePinch:(UIPinchGestureRecognizer *)gesture
 {
+    if (self.disablePinch) {
+        return;
+    }
     float scale = gesture.scale;
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        if (_delegate && [_delegate respondsToSelector:@selector(willOperateTouchImageView:)]) {
-            [_delegate willOperateTouchImageView:self];
+        if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(willOperateTouchImageView:)]) {
+            [_touchDelegate willOperateTouchImageView:self];
         }
     }
     
-    CGRect toFrame = CGRectZero;
     
-    toFrame.size = CGSizeMake(_startRect.size.width * scale, _startRect.size.height * scale);
+    float w = _startRect.size.width * scale;
+    float h = _startRect.size.height * scale;
+   
     
-    self.frame  = toFrame;
-    self.center = _startCenter;
+    CGRect nextFrame = CGRectMake(_startCenter.x - w * 0.5, _startCenter.y - h * 0.5, w, h);
+    
+    if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(verifiedFrame:)]) {
+        nextFrame = [_touchDelegate verifiedFrame:nextFrame];
+    }
+    
+    self.frame = nextFrame;
     
     if (gesture.state == UIGestureRecognizerStateEnded) {
         
-        _startRect = self.frame;
+        _startRect = nextFrame;
         
-        if (_delegate && [_delegate respondsToSelector:@selector(didEndOperateTouchImageView:)]) {
-            [_delegate didEndOperateTouchImageView:self];
+        if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(didEndOperateTouchImageView:)]) {
+            [_touchDelegate didEndOperateTouchImageView:self];
         }
         return;
     }
     
-    if (_delegate && [_delegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
-        [_delegate didOperateTouchImageView:self];
+    if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
+        [_touchDelegate didOperateTouchImageView:self];
     }
 }
 

@@ -16,8 +16,12 @@
 - (NSRange)rangeOfLineAtIndex:(NSInteger)lineIndex;
 - (void)insertSeperatorLineAtPoint:(NSInteger)point;
 
+- (void)insertFakeEnterAtPosition:(NSInteger)position;
+
 - (NSInteger)cursourLocation;
 - (void)moveCursor:(NSInteger)distance;
 - (void)moveCursorToPreviousLine;
+
+-(float)maxContentSizeY;
 
 @end

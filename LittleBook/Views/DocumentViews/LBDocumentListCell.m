@@ -43,12 +43,22 @@
         _titleLabel.textColor = [UIColor colorWithR:237 g:115 b:118 a:1.0];
     }
     
+    NSArray *appendixs = [LBAppendixManager appendixs:document.documentID];
     
+    Appendix *thumbnailAppendix = nil;
     
-    Appendix *appendix = [LBAppendixManager appendixs:document.documentID].firstObject;
+    for (int i = (int)appendixs.count - 1; i >= 0; i--) {
+        Appendix *appendix = appendixs[i];
+        
+        if (appendix.type.intValue == LBAppendixTypeAudio) {
+            continue;
+        }
+        thumbnailAppendix = appendix;
+        break;
+    }
     
-    if (appendix) {
-        NSString *filePath = [[LBAppendixFileManager defaultManager] pathForAppendixThumbnail:appendix.appendixID];
+    if (thumbnailAppendix) {
+        NSString *filePath = [[LBAppendixFileManager defaultManager] pathForAppendixThumbnail:thumbnailAppendix.appendixID];
         _appendixView.image = [UIImage imageWithContentsOfFile:filePath];
     }
 }

@@ -146,6 +146,18 @@
 		67AAC9D81AC700BB002E317F /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9D71AC700BB002E317F /* Notification.m */; };
 		67AAC9DB1AC700DF002E317F /* LBNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */; };
 		67AAC9E11AC70A5D002E317F /* LBNotificaitonLabeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */; };
+		67B2EA121AFFA4B600CD80E0 /* black_bg_ip5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA061AFFA4B600CD80E0 /* black_bg_ip5@2x.png */; };
+		67B2EA131AFFA4B600CD80E0 /* FSVoiceBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B2EA081AFFA4B600CD80E0 /* FSVoiceBubble.m */; };
+		67B2EA141AFFA4B600CD80E0 /* LCVoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B2EA0A1AFFA4B600CD80E0 /* LCVoice.m */; };
+		67B2EA151AFFA4B600CD80E0 /* LCVoiceHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B2EA0C1AFFA4B600CD80E0 /* LCVoiceHud.m */; };
+		67B2EA161AFFA4B600CD80E0 /* mic_normal_358x358@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA0D1AFFA4B600CD80E0 /* mic_normal_358x358@2x.png */; };
+		67B2EA171AFFA4B600CD80E0 /* mic_talk_358x358@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA0E1AFFA4B600CD80E0 /* mic_talk_358x358@2x.png */; };
+		67B2EA181AFFA4B600CD80E0 /* UIImage+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B2EA101AFFA4B600CD80E0 /* UIImage+FSExtension.m */; };
+		67B2EA191AFFA4B600CD80E0 /* wave70x117@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA111AFFA4B600CD80E0 /* wave70x117@2x.png */; };
+		67B2EA201AFFA83100CD80E0 /* fs_chat_bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA1C1AFFA83100CD80E0 /* fs_chat_bubble@2x.png */; };
+		67B2EA211AFFA83100CD80E0 /* fs_icon_wave_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA1D1AFFA83100CD80E0 /* fs_icon_wave_0@2x.png */; };
+		67B2EA221AFFA83100CD80E0 /* fs_icon_wave_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA1E1AFFA83100CD80E0 /* fs_icon_wave_1@2x.png */; };
+		67B2EA231AFFA83100CD80E0 /* fs_icon_wave_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B2EA1F1AFFA83100CD80E0 /* fs_icon_wave_2@2x.png */; };
 		67C016ED1ABD440C0004EFD4 /* LBTimeLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EC1ABD440C0004EFD4 /* LBTimeLineView.m */; };
 		67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016EF1ABD505D0004EFD4 /* LBAccountManager.m */; };
 		67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C016F21ABD50780004EFD4 /* LBAppendixManager.m */; };
@@ -474,6 +486,22 @@
 		67AAC9DA1AC700DF002E317F /* LBNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificationManager.m; sourceTree = "<group>"; };
 		67AAC9DF1AC70A5D002E317F /* LBNotificaitonLabeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNotificaitonLabeViewController.h; sourceTree = "<group>"; };
 		67AAC9E01AC70A5D002E317F /* LBNotificaitonLabeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNotificaitonLabeViewController.m; sourceTree = "<group>"; };
+		67B2EA061AFFA4B600CD80E0 /* black_bg_ip5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black_bg_ip5@2x.png"; sourceTree = "<group>"; };
+		67B2EA071AFFA4B600CD80E0 /* FSVoiceBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVoiceBubble.h; sourceTree = "<group>"; };
+		67B2EA081AFFA4B600CD80E0 /* FSVoiceBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVoiceBubble.m; sourceTree = "<group>"; };
+		67B2EA091AFFA4B600CD80E0 /* LCVoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVoice.h; sourceTree = "<group>"; };
+		67B2EA0A1AFFA4B600CD80E0 /* LCVoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVoice.m; sourceTree = "<group>"; };
+		67B2EA0B1AFFA4B600CD80E0 /* LCVoiceHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVoiceHud.h; sourceTree = "<group>"; };
+		67B2EA0C1AFFA4B600CD80E0 /* LCVoiceHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVoiceHud.m; sourceTree = "<group>"; };
+		67B2EA0D1AFFA4B600CD80E0 /* mic_normal_358x358@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_normal_358x358@2x.png"; sourceTree = "<group>"; };
+		67B2EA0E1AFFA4B600CD80E0 /* mic_talk_358x358@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_talk_358x358@2x.png"; sourceTree = "<group>"; };
+		67B2EA0F1AFFA4B600CD80E0 /* UIImage+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FSExtension.h"; sourceTree = "<group>"; };
+		67B2EA101AFFA4B600CD80E0 /* UIImage+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FSExtension.m"; sourceTree = "<group>"; };
+		67B2EA111AFFA4B600CD80E0 /* wave70x117@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wave70x117@2x.png"; sourceTree = "<group>"; };
+		67B2EA1C1AFFA83100CD80E0 /* fs_chat_bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fs_chat_bubble@2x.png"; sourceTree = "<group>"; };
+		67B2EA1D1AFFA83100CD80E0 /* fs_icon_wave_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fs_icon_wave_0@2x.png"; sourceTree = "<group>"; };
+		67B2EA1E1AFFA83100CD80E0 /* fs_icon_wave_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fs_icon_wave_1@2x.png"; sourceTree = "<group>"; };
+		67B2EA1F1AFFA83100CD80E0 /* fs_icon_wave_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fs_icon_wave_2@2x.png"; sourceTree = "<group>"; };
 		67C016EB1ABD440C0004EFD4 /* LBTimeLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTimeLineView.h; sourceTree = "<group>"; };
 		67C016EC1ABD440C0004EFD4 /* LBTimeLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTimeLineView.m; sourceTree = "<group>"; };
 		67C016EE1ABD505D0004EFD4 /* LBAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountManager.h; sourceTree = "<group>"; };
@@ -656,6 +684,7 @@
 		671C1F701AB9BE4B005F5586 /* OpenResources */ = {
 			isa = PBXGroup;
 			children = (
+				67B2EA051AFFA4B600CD80E0 /* AudioClasses */,
 				67CCC8931AD1468500BDF574 /* CorePlotHeaders */,
 				67CCC8861AD145BE00BDF574 /* libCorePlot-CocoaTouch.a */,
 				671C1F711AB9BE4B005F5586 /* LunarCalendar */,
@@ -1204,6 +1233,29 @@
 			path = CalendarViewControllers;
 			sourceTree = "<group>";
 		};
+		67B2EA051AFFA4B600CD80E0 /* AudioClasses */ = {
+			isa = PBXGroup;
+			children = (
+				67B2EA1C1AFFA83100CD80E0 /* fs_chat_bubble@2x.png */,
+				67B2EA1D1AFFA83100CD80E0 /* fs_icon_wave_0@2x.png */,
+				67B2EA1E1AFFA83100CD80E0 /* fs_icon_wave_1@2x.png */,
+				67B2EA1F1AFFA83100CD80E0 /* fs_icon_wave_2@2x.png */,
+				67B2EA061AFFA4B600CD80E0 /* black_bg_ip5@2x.png */,
+				67B2EA071AFFA4B600CD80E0 /* FSVoiceBubble.h */,
+				67B2EA081AFFA4B600CD80E0 /* FSVoiceBubble.m */,
+				67B2EA091AFFA4B600CD80E0 /* LCVoice.h */,
+				67B2EA0A1AFFA4B600CD80E0 /* LCVoice.m */,
+				67B2EA0B1AFFA4B600CD80E0 /* LCVoiceHud.h */,
+				67B2EA0C1AFFA4B600CD80E0 /* LCVoiceHud.m */,
+				67B2EA0D1AFFA4B600CD80E0 /* mic_normal_358x358@2x.png */,
+				67B2EA0E1AFFA4B600CD80E0 /* mic_talk_358x358@2x.png */,
+				67B2EA0F1AFFA4B600CD80E0 /* UIImage+FSExtension.h */,
+				67B2EA101AFFA4B600CD80E0 /* UIImage+FSExtension.m */,
+				67B2EA111AFFA4B600CD80E0 /* wave70x117@2x.png */,
+			);
+			path = AudioClasses;
+			sourceTree = "<group>";
+		};
 		67CCC86E1AD1223C00BDF574 /* DocumentViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1567,18 +1619,26 @@
 				67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */,
 				67AAC96F1AC6A445002E317F /* CalendarHeaderView_414.xib in Resources */,
 				67CCC8F41AD1750D00BDF574 /* LBChartEditView.xib in Resources */,
+				67B2EA191AFFA4B600CD80E0 /* wave70x117@2x.png in Resources */,
 				67AAC9771AC6A445002E317F /* CalendarViewCell_414.xib in Resources */,
+				67B2EA171AFFA4B600CD80E0 /* mic_talk_358x358@2x.png in Resources */,
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
 				67AAC96E1AC6A445002E317F /* CalendarHeaderView_375.xib in Resources */,
 				6794AC821AD0219400EC1DB2 /* LBImagePreviewView.xib in Resources */,
+				67B2EA201AFFA83100CD80E0 /* fs_chat_bubble@2x.png in Resources */,
 				67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */,
 				6757E6131ACC3E6D0071B662 /* sound.wav in Resources */,
 				67CCC8851AD140CE00BDF574 /* LBImageEditView.xib in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
 				674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */,
+				67B2EA161AFFA4B600CD80E0 /* mic_normal_358x358@2x.png in Resources */,
 				6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */,
+				67B2EA221AFFA83100CD80E0 /* fs_icon_wave_1@2x.png in Resources */,
 				67CCC8FC1AD1843700BDF574 /* LBChartView.xib in Resources */,
+				67B2EA211AFFA83100CD80E0 /* fs_icon_wave_0@2x.png in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
+				67B2EA121AFFA4B600CD80E0 /* black_bg_ip5@2x.png in Resources */,
+				67B2EA231AFFA83100CD80E0 /* fs_icon_wave_2@2x.png in Resources */,
 				67CCC8EC1AD14A4000BDF574 /* LBAnimatedBarChart.xib in Resources */,
 				67AAC96D1AC6A445002E317F /* CalendarHeaderView_320.xib in Resources */,
 				67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */,
@@ -1635,6 +1695,7 @@
 				6721C22D1AB406B900D1FF99 /* LBPresentFromRightSegue.m in Sources */,
 				674A7ECD1AFB94040049A97C /* SSKeychainQuery.m in Sources */,
 				6794AC771ACFE82D00EC1DB2 /* AccountDetail.m in Sources */,
+				67B2EA181AFFA4B600CD80E0 /* UIImage+FSExtension.m in Sources */,
 				671C1FDF1AB9C027005F5586 /* LBDateView.m in Sources */,
 				677E65911AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m in Sources */,
 				67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */,
@@ -1685,6 +1746,7 @@
 				67AAC9301AC69225002E317F /* UIScreen+ScreenExt.m in Sources */,
 				67AAC92E1AC69225002E317F /* UIColor+ColorExt.m in Sources */,
 				671C20011AB9C6E5005F5586 /* LBAccountViewController.m in Sources */,
+				67B2EA141AFFA4B600CD80E0 /* LCVoice.m in Sources */,
 				671C1FC71AB9BE4B005F5586 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */,
 				671C1FBE1AB9BE4B005F5586 /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -1714,6 +1776,8 @@
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
 				671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
+				67B2EA131AFFA4B600CD80E0 /* FSVoiceBubble.m in Sources */,
+				67B2EA151AFFA4B600CD80E0 /* LCVoiceHud.m in Sources */,
 				674A7ED11AFB94C70049A97C /* HPTaskManager.m in Sources */,
 				67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */,
 				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,

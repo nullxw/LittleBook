@@ -16,5 +16,7 @@
 @dynamic frame;
 @dynamic parentID;
 @dynamic userID;
+@dynamic type;
+@dynamic duration;
 
 @end

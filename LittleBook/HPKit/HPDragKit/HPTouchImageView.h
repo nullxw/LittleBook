@@ -16,16 +16,22 @@
 // tap
 - (void)didTapTouchImageView:(HPTouchImageView *)touchImageView;
 
-// end operation
+// resize
 - (void)willOperateTouchImageView:(HPTouchImageView *)touchImageView;
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView;
 - (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView;
+
+- (CGRect)verifiedFrame:(CGRect)frame;
 
 @end
 
 @interface HPTouchImageView : UIImageView;
 
-@property (nonatomic, assign) IBOutlet id <HPTouchImageViewProtocol> delegate;
+@property (nonatomic, assign) BOOL disableTap;
+@property (nonatomic, assign) BOOL disablePinch;
+@property (nonatomic, assign) BOOL disablePan;
+
+@property (nonatomic, assign) IBOutlet id <HPTouchImageViewProtocol> touchDelegate;
 
 @property (nonatomic, assign, readonly) CGRect rectBounds;
 

@@ -13,6 +13,7 @@
 #import "LBDocumentEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
 #import "LBDocumentAppendixEditView.h"
+#import "UITextView+TextViewExt.h"
 #import "LBAppendixFileManager.h"
 #import "LBPanelStyleManager.h"
 #import "LBIndexInfoManager.h"
@@ -21,10 +22,13 @@
 #import "HPTouchImageView.h"
 #import "HPDragContainer.h"
 #import "LBSectionView.h"
+#import "FSVoiceBubble.h"
 #import "LBExportTemp.h"
 #import "LBAppContext.h"
 #import "Appendix.h"
 #import "Document.h"
+#import "LCVoice.h"
+
 
 @interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 {
@@ -33,6 +37,10 @@
     NSMutableArray *_appendixs;
     NSMutableArray *_appendixViews;
     NSMutableArray *_appendixPaths;
+    
+    NSInteger _previousCursorLocation;
+    
+    LCVoice *_voice;
 }
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
@@ -50,7 +58,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     _doc = [[LBDocumentContext defaultContext] prepareContext:_doc];
     // 1. init params
     [HPDragContainer shareContainer].responseDelegate = self;
@@ -74,6 +82,9 @@
     // 3. register notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertAppendix:) name:LB_INSERT_IMAGE_NOTIF object:nil];
 }
 
 - (void)updateInterfaceWithSettings
@@ -112,26 +123,69 @@
     _contentField.textContainer.exclusionPaths = _appendixPaths;
 }
 
+- (float)getMaxYOfTextView
+{
+    float oY = [_contentField maxContentSizeY];
+    
+    for (UIView *appendixView in _appendixViews) {
+        oY = MAX(oY, CGRectGetMaxY(appendixView.frame));
+    }
+    return oY + 5;
+}
+
 - (void)creatAppendixViewWithAppendix:(Appendix *)appendix
 {
     NSString *appendixPath = [[LBAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
-    
-    CGRect frame = CGRectFromString(appendix.frame);
-    
-    HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:frame];
-    appendixView.image    = [UIImage imageWithContentsOfFile:appendixPath];
-    appendixView.delegate = self;
-    appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
-    
-    [_appendixViews addObject:appendixView];
-    [_appendixPaths addObject:[self exclusionPathForFrame:frame]];
 
-    [_contentField addSubview:appendixView];
+    CGRect frame = CGRectZero;
+    
+    NSDictionary *settings = [LBAppContext context].settings;
+    
+    BOOL dragEnable = [settings[kLBDragSetting] boolValue];
+    
+    BOOL resizeEnable = [settings[kLBResizeSetting] boolValue];
+    
+    if ([appendix.type integerValue] == LBAppendixTypeAudio) {
+        
+        if (!appendix.frame) {
+            frame = CGRectMake(0, [self getMaxYOfTextView], 110, 30);
+            appendix.frame = NSStringFromCGRect(frame);
+        } else {
+            frame = CGRectFromString(appendix.frame);
+        }
+        FSVoiceBubble *voiceBubble = [[FSVoiceBubble alloc] initWithFrame:frame];
+        voiceBubble.tag = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
+        voiceBubble.disablePan = !dragEnable;
+        voiceBubble.duration = [appendix.duration intValue];
+        voiceBubble.durationInsideBubble = YES;
+        voiceBubble.touchDelegate = self;
+        voiceBubble.contentURL = [NSURL fileURLWithPath:appendixPath];
+        [_appendixViews addObject:voiceBubble];
+        [_appendixPaths addObject:[self exclusionPathForFrame:voiceBubble.frame]];
+        [_contentField addSubview:voiceBubble];
+        
+    } else {
+    
+        CGRect frame = CGRectFromString(appendix.frame);
+        
+        HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:frame];
+        appendixView.disablePan = !dragEnable;
+        appendixView.disablePinch = !resizeEnable;
+        appendixView.image    = [UIImage imageWithContentsOfFile:appendixPath];
+        appendixView.touchDelegate = self;
+        appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
+        
+        [_appendixViews addObject:appendixView];
+        [_appendixPaths addObject:[self exclusionPathForFrame:frame]];
+        
+        [_contentField addSubview:appendixView];
+    }
 }
 
 - (UIBezierPath *)exclusionPathForFrame:(CGRect)frame
 {
     float offset = _contentField.font.pointSize * 0.5;
+    
     return [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
 }
 
@@ -155,41 +209,38 @@
     
     if (_editButton.tag == 0) {
         
-        if (_titleField.isFirstResponder || _contentField.isFirstResponder) {
-            // close key board if need
-            [_titleField resignFirstResponder];
-            [_contentField resignFirstResponder];
-        } else {
-            // else close it
-            [self keyboardWillHide:nil];
-        }
     
         // open edit panel
         [UIView animateWithDuration:LB_SPRING_ANIMATION_TIME delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
             
             _editContainerView.frame = CGRectMake(0, halfToolBarHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
 
+            _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), LB_DOCUMENT_CONTENT_OY_EDIT, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds) - LB_DOCUMENT_CONTENT_OY_EDIT + LB_DOCUMENT_CONTENT_OY_NOMARL);
+            
         } completion:^(BOOL finished) {
             _editButton.enabled = TRUE;
+            [self hideKeyboardButtonClicked:nil];
         }];
 
     } else {
-        if (_titleField.text.length == 0) {
-            [_titleField becomeFirstResponder];
-        } else {
-            [_contentField becomeFirstResponder];
-        }
     
         // close edit panel
         [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
-            
             _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
+            
+            _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), LB_DOCUMENT_CONTENT_OY_NOMARL, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds) + LB_DOCUMENT_CONTENT_OY_EDIT - LB_DOCUMENT_CONTENT_OY_NOMARL);
             
         } completion:^(BOOL finished) {
             _editButton.enabled = TRUE;
         }];
     }
     _editButton.tag = !_editButton.tag;
+}
+- (IBAction)hideKeyboardButtonClicked:(id)sender
+{
+    
+    [_titleField resignFirstResponder];
+    [_contentField resignFirstResponder];
 }
 
 - (IBAction)backButtonClicked:(UIButton *)sender
@@ -198,10 +249,37 @@
     [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
 }
 
-- (IBAction)audioButtonClicked:(id)sender
+-(IBAction)audioButtonTouchDown:(id)sender
 {
+    [self hideKeyboardButtonClicked:nil];
     
+    if (!_voice) {
+        _voice = [[LCVoice alloc] init];
+    }
+    [_voice startRecordWithPath:nil];
 }
+
+-(IBAction)audioButtonUpInside:(id)sender
+{
+    [_voice stopRecordWithCompletionBlock:^{
+        
+        if (_voice.recordTime > 1.0f) {
+            Appendix *appendix =[LBAppendixManager createAudioAppendixWithFilePath:_voice.recordPath andDuration:_voice.recordTime];
+            appendix.parentID = _doc.documentID;
+            [_appendixs addObject:appendix];
+            [self creatAppendixViewWithAppendix:appendix];
+            _contentField.textContainer.exclusionPaths = _appendixPaths;
+        }
+        
+    }];
+}
+
+-(IBAction)audioButtonUpOutside:(id)sender
+{
+    [_voice cancelled];
+    _voice = nil;
+}
+
 
 - (IBAction)cameraButtonClicked:(id)sender
 {
@@ -219,11 +297,6 @@
     
     }];
 }
-//- (IBAction)seperatorButtonClicked:(id)sender
-//{
-//    [_contentField insertSeperatorLineAtPoint:[_contentField cursourLocation]];
-//}
-
 - (IBAction)leftArrowButtonClicked:(id)sender
 {
     [_contentField moveCursor:-1];
@@ -239,7 +312,26 @@
     [_contentField moveCursorToPreviousLine];
 }
 
-#pragma mark - UITextFieldDelegate
+
+#pragma mark - notification handlers
+
+- (void)insertAppendix:(NSNotification *)notif
+{
+    [self editButtonClicked:_editButton];
+    
+    NSDictionary *appendixInfo = notif.object;
+    
+    CGSize appendixSize = CGSizeFromString(appendixInfo[@"size"]);
+
+    CGRect frame = CGRectMake(0, [self getMaxYOfTextView], appendixSize.width, appendixSize.height);
+    
+    // creat Appendix
+    Appendix *appendix = [[LBDocumentContext defaultContext] addAppendix:appendixInfo[@"image"] type:LBAppendixTypeImage];
+    appendix.frame = NSStringFromCGRect(frame);
+    [_appendixs addObject:appendix];
+    
+    [self creatAppendixViewWithAppendix:appendix];
+}
 
 - (void)keyboardWillShow:(NSNotification *)notif
 {
@@ -247,43 +339,32 @@
     CGSize kbSize = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     float kbHeight = kbSize.height;
 
-    float editViewHeight = CGRectGetHeight(_editContainerView.bounds);
-
-    if (_isMediaEditViewVisible) {
-        
-        _isMediaEditViewVisible = FALSE;
-        // close edit panel
-        [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
-            
-            _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
-        } completion:^(BOOL finished) {
-            _isMediaEditViewVisible = FALSE;
-        }];
-    }
+    float oY =  _isMediaEditViewVisible ? LB_DOCUMENT_CONTENT_OY_EDIT : LB_DOCUMENT_CONTENT_OY_NOMARL;
+    
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
     
-        _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), LB_DOCUMENT_CONTENT_OY_NOMARL, CGRectGetWidth(_contentView.frame), CGRectGetHeight(self.view.bounds) - LB_DOCUMENT_CONTENT_OY_NOMARL - kbHeight);
+        _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(self.view.bounds) - oY - kbHeight);
         
     } completion:^(BOOL finished) {
+        
+        if (_isMediaEditViewVisible) {
+            [self editButtonClicked:_editButton];
+        }
     }];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notif
 {
-    float oY = LB_DOCUMENT_CONTENT_OY_NOMARL;
-    if (_isMediaEditViewVisible) {
-        oY = LB_DOCUMENT_CONTENT_OY_EDIT;
-    }
+    float oY =  _isMediaEditViewVisible ? LB_DOCUMENT_CONTENT_OY_EDIT : LB_DOCUMENT_CONTENT_OY_NOMARL;
     
-    [UIView animateWithDuration:LB_SPRING_ANIMATION_TIME delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
-        
-        _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.frame), CGRectGetHeight(self.view.bounds) - oY);
+    [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
+        _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(self.view.bounds) - oY);
         
     } completion:^(BOOL finished) {
-
     }];
 }
 
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -293,6 +374,7 @@
         title = [title substringToIndex:title.length - 1];
     } else if ([string isEqualToString:@"\n"]){
         [_contentField becomeFirstResponder];
+        return FALSE;
     } else {
         title = [title stringByReplacingCharactersInRange:range withString:string];
     }
@@ -307,14 +389,42 @@
 
 #pragma mark - UITextViewDelegate
 
+// fix bug : 如果不reload 接下来的 拖拽操作 ，exclusivepath 将发生异常
+- (void)reloadTextView
+{
+    _contentField.textContainer.exclusionPaths = nil;
+    _contentField.text = _doc.content;
+    
+    [_appendixPaths removeAllObjects];
+    
+    for (int i = 0 ; i < _appendixViews.count; i++) {
+        
+        UIView *appendixView = _appendixViews[i];
+        [_appendixPaths addObject:[self exclusionPathForFrame:appendixView.frame]];
+    }
+    _contentField.textContainer.exclusionPaths = _appendixPaths;
+
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     NSString *content = textView.text;
     
     if ([text isEqualToString:@""] && content.length > 0) {
+
         content = [content substringToIndex:content.length - 1];
-    } else if ([text isEqualToString:@"\n"]){
-        [_contentField becomeFirstResponder];
+        
+        
+    } else if ([text isEqualToString:@"\n"]) {
+        content = [content stringByReplacingCharactersInRange:range withString:text];
+        _doc.content = content;
+        
+        _previousCursorLocation = range.location + range.length + 1;
+        
+        [self reloadTextView];
+
+        return FALSE;
+    
     } else {
         content = [content stringByReplacingCharactersInRange:range withString:text];
     }
@@ -361,26 +471,14 @@
         // creat Appendix
         
         UIImageView *draggedItem = (UIImageView *)container.draggedItem;
-
         CGRect appendixViewFrame = [_contentField convertRect:draggedItem.frame fromView:win];
         
         Appendix *appendix = [[LBDocumentContext defaultContext] addAppendix:draggedItem.image type:LBAppendixTypeImage];
-//        appendix.frame = NSStringFromCGRect(draggedItem.frame);
         appendix.frame = NSStringFromCGRect(appendixViewFrame);
         
         [_appendixs addObject:appendix];
     
         [self creatAppendixViewWithAppendix:appendix];
-        
-//        HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:[_contentField convertRect:draggedItem.frame fromView:win]];
-//        appendixView.image = draggedItem.image;
-//        appendixView.delegate = self;
-//        appendixView.tag      = LB_DOCUMENT_APPENDIX_START_TAG + appendix.appendixID.intValue;
-//        
-//        [_appendixViews addObject:appendixView];
-//        [_appendixPaths addObject:[UIBezierPath bezierPath]];
-//        [self didOperateTouchImageView:appendixView];
-//        [_contentField addSubview:appendixView];
     }
     
     return !_isMediaEditViewVisible;
@@ -388,21 +486,36 @@
 
 #pragma mark - HPTouchImageViewProtocol
 
+- (CGRect)verifiedFrame:(CGRect)frame
+{
+
+    if (CGRectGetMaxX(frame) > CGRectGetWidth(_contentField.bounds)) {
+        frame.origin.x = CGRectGetWidth(_contentField.bounds) - CGRectGetWidth(frame);
+    }
+    
+    if (CGRectGetMinX(frame) < 0) {
+        frame.origin.x = 0;
+    }
+    
+    if (CGRectGetMinY(frame) < 0) {
+        frame.origin.y = 0;
+    }
+    
+    return frame;
+}
+
 - (void)didTapTouchImageView:(HPTouchImageView *)touchImageView
 {
-    [_contentField resignFirstResponder];
-    [_titleField resignFirstResponder];
+    [self hideKeyboardButtonClicked:nil];
 }
 
 - (void)willOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
-    //...
+    [self hideKeyboardButtonClicked:nil];
 }
 
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
-    NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));
-    
     CGRect frame = touchImageView.frame;
     
     NSInteger selectedIndex = [_appendixViews indexOfObject:touchImageView];
@@ -417,8 +530,6 @@
     
     // update content field
     _contentField.textContainer.exclusionPaths = _appendixPaths;
-    
-    NSLog(@"%@", NSStringFromCGPoint(_contentField.contentOffset));
 }
 
 - (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView
@@ -468,7 +579,7 @@
 
 - (void)exportAsPDF
 {
-    LBExportTemp *temp = [LBExportTemp tempForPDF:self.doc];
+//    LBExportTemp *temp = [LBExportTemp tempForPDF:self.doc];
     
 }
 

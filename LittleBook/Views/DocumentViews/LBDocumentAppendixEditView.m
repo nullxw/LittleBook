@@ -91,10 +91,8 @@ static float kLBMediaContentOffsetY = 25;
                                kTextEditCellIcon  : [UIImage imageNamed:@"save_icon"],
                                kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
                                    
-                                   UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"导出为" delegate:_parentViewController cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"PDF格式" ,@"图片", @"纯文本", nil];
-                                   [actionSheet showInView:_parentViewController.view];
-                                   
-                                   
+    
+                
                                 }};
     
     [_dataSource addObject:saveInfo];

@@ -23,6 +23,22 @@
     return appendix;
 }
 
++ (Appendix *)createAudioAppendixWithFilePath:(NSString *)filePath andDuration:(int)duration
+{
+    Appendix *appendix = [Appendix createEntity];
+    appendix.userID = [LBUserManager defaultManager].currentUser.userID;
+    appendix.appendixID = [[LBIndexInfoManager defaultManager] getAppendixID];
+    appendix.type     = @(LBAppendixTypeAudio);
+    appendix.duration = @(duration);
+    
+    NSString *appendixPath = [[LBAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
+    
+    [[NSFileManager defaultManager] moveItemAtPath:filePath toPath:appendixPath error:nil];
+
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    return appendix;
+}
+
 + (NSArray *)appendixs:(NSNumber *)parentID
 {
     return [LBAppendixManager appendixs:parentID inContext:nil];

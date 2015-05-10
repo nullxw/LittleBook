@@ -18,8 +18,10 @@
     <entity name="Appendix" representedClassName="Appendix" syncable="YES">
         <attribute name="appendixID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="createTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
         <attribute name="frame" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="parentID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Document" representedClassName="Document" syncable="YES">
@@ -58,7 +60,7 @@
     <elements>
         <element name="Account" positionX="-54" positionY="45" width="128" height="118"/>
         <element name="AccountDetail" positionX="-54" positionY="90" width="128" height="133"/>
-        <element name="Appendix" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Appendix" positionX="-54" positionY="-9" width="128" height="150"/>
         <element name="Document" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="105"/>
         <element name="LBUser" positionX="-45" positionY="63" width="128" height="103"/>

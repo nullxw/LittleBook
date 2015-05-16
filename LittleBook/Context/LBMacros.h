@@ -29,5 +29,17 @@ typedef enum {
 // notifications
 
 // this notif used between LBImageEditView(receiver) and LBImageFilterView(sender)
-#define LB_DID_APPLY_IMAGE_FILTER_NOTIF @"LB_DID_APPLY_IMAGE_FILTER_NOTIF"
-#define LB_INSERT_IMAGE_NOTIF           @"LB_INSERT_IMAGE_NOTIF"
+//#define LB_DID_APPLY_IMAGE_FILTER_NOTIF @"LB_DID_APPLY_IMAGE_FILTER_NOTIF"
+//#define LB_INSERT_IMAGE_NOTIF           @"LB_INSERT_IMAGE_NOTIF"
+
+#define LB_ACTION_TYPE_KEY @"actiontype"
+#define LB_ACTION_NOTIF    @"LB_ACTION_NOTIF"
+
+typedef enum {
+    LBActionTypeSaveAsDoc,
+    LBActionTypeSaveToLocal,
+    LBActionTypeSaveAsPDF,
+    LBActionTypeOpenIn,
+    LBActionTypeInsertAppendix,
+    LBActionTypeApplyFilter
+} LBActionType;

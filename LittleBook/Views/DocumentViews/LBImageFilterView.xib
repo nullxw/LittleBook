@@ -89,7 +89,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back_icon_white" width="57" height="57"/>
+        <image name="back_icon_white" width="50" height="38"/>
         <image name="done_icon" width="31" height="31"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

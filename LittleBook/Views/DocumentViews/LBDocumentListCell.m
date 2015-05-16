@@ -47,7 +47,7 @@
     
     Appendix *thumbnailAppendix = nil;
     
-    for (int i = (int)appendixs.count - 1; i >= 0; i--) {
+    for (int i = 0; i < appendixs.count; i++) {
         Appendix *appendix = appendixs[i];
         
         if (appendix.type.intValue == LBAppendixTypeAudio) {

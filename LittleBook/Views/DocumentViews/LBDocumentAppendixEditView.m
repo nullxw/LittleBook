@@ -7,6 +7,7 @@
 //
 
 #import "LBDocumentAppendixEditView.h"
+#import "LBDocumentActionSheet.h"
 #import "LBImageEditView.h"
 #import "LBEditMenuCell.h"
 #import "LBPresentTheme.h"
@@ -22,12 +23,43 @@ static float kLBMediaContentOffsetY = 25;
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UIView *mediaContentView;
+
+@property (nonatomic, strong) LBDocumentActionSheet *exportActionSheet;
+@property (nonatomic, strong) LBDocumentActionSheet *openInActionSheet;
 @property (nonatomic, strong) LBImageEditView *imageEditView;
 @property (nonatomic, strong) LBChartView *chartView;
 
 @end
 
 @implementation LBDocumentAppendixEditView
+
+- (CGRect)contentFrame
+{
+    CGRect frame = _mediaContentView.frame;
+    frame.origin.y = CGRectGetMinY(frame) + kLBMediaContentOffsetY;
+    frame.size.height = CGRectGetHeight(frame) - kLBMediaContentOffsetY;
+    return frame;
+}
+
+- (void)cleanContentExcept:(id)excludedView
+{
+    if (_exportActionSheet && ![_exportActionSheet isEqual:excludedView]) {
+        [_exportActionSheet removeFromSuperview];
+        _exportActionSheet = nil;
+    }
+    if (_openInActionSheet && ![_openInActionSheet isEqual:excludedView]) {
+        [_openInActionSheet removeFromSuperview];
+        _openInActionSheet = nil;
+    }
+    if (_imageEditView && ![_imageEditView isEqual:excludedView]) {
+        [_imageEditView removeFromSuperview];
+        _imageEditView = nil;
+    }
+    if (_chartView && ![_chartView isEqual:excludedView]) {
+        [_chartView removeFromSuperview];
+        _chartView = nil;
+    }
+}
 
 - (void)awakeFromNib
 {
@@ -40,19 +72,10 @@ static float kLBMediaContentOffsetY = 25;
                                   if (selfPoint.imageEditView) {
                                       return;
                                   }
-                                  if (selfPoint.chartView) {
-                                      [selfPoint.chartView removeFromSuperview];
-                                      selfPoint.chartView = nil;
-                                  }
-                                  
-                                  if (!selfPoint.imageEditView) {
-                                      selfPoint.imageEditView = [LBImageEditView loadNibForCurrentDevice];
-                                  }
-                                  
-                                  CGRect imageEditViewFrame = _mediaContentView.frame;
-                                  imageEditViewFrame.origin.y = CGRectGetMinY(imageEditViewFrame) + kLBMediaContentOffsetY;
-                                  imageEditViewFrame.size.height = CGRectGetHeight(imageEditViewFrame) - kLBMediaContentOffsetY;
-                                  selfPoint.imageEditView.frame = imageEditViewFrame;
+                                  [self cleanContentExcept:selfPoint.imageEditView];
+                      
+                                  selfPoint.imageEditView = [LBImageEditView loadNibForCurrentDevice];
+                                  selfPoint.imageEditView.frame = [selfPoint contentFrame];
                                   selfPoint.imageEditView.parentViewController = selfPoint.parentViewController;
                                   [selfPoint.mediaContentView addSubview:selfPoint.imageEditView];
                                   
@@ -67,22 +90,14 @@ static float kLBMediaContentOffsetY = 25;
                                     if (selfPoint.chartView) {
                                         return;
                                     }
-                                    if (selfPoint.imageEditView) {
-                                        [selfPoint.imageEditView removeFromSuperview];
-                                        selfPoint.imageEditView = nil;
-                                    }
+                                    [self cleanContentExcept:selfPoint.chartView];
                                     
-                                    if (!selfPoint.chartView) {
-                                        selfPoint.chartView = [LBChartView loadNibForCurrentDevice];
-                                    }
-                                    
+                                    selfPoint.chartView = [LBChartView loadNibForCurrentDevice];
+                                    selfPoint.chartView.touchEnable = FALSE;
                                     selfPoint.chartView.theme = [CPTTheme themeNamed:kCPTLBPresentTheme];
-                                    
-                                    CGRect chartViewFrame = _mediaContentView.frame;
-                                    chartViewFrame.origin.y = CGRectGetMinY(chartViewFrame) + kLBMediaContentOffsetY;
-                                    chartViewFrame.size.height = CGRectGetHeight(chartViewFrame) - kLBMediaContentOffsetY;
-                                    selfPoint.chartView.frame = chartViewFrame;
-                                    [selfPoint.mediaContentView addSubview:_chartView];
+                        
+                                    selfPoint.chartView.frame = [selfPoint contentFrame];
+                                    [selfPoint.mediaContentView addSubview:selfPoint.chartView];
                               }};
     
     [_dataSource addObject:chartInfo];
@@ -91,8 +106,21 @@ static float kLBMediaContentOffsetY = 25;
                                kTextEditCellIcon  : [UIImage imageNamed:@"save_icon"],
                                kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
                                    
+                                   if (selfPoint.exportActionSheet) {
+                                       return;
+                                   }
+                                   
+                                   NSArray *dataSource = @[@{@"title":@"图片",LB_ACTION_TYPE_KEY:@(LBActionTypeSaveToLocal)},
+                                                                @{@"title":@"文档",LB_ACTION_TYPE_KEY:@(LBActionTypeSaveAsDoc)},
+                                                                @{@"title":@"阅读",LB_ACTION_TYPE_KEY:@(LBActionTypeSaveAsPDF)}];
+                                   
     
-                
+                                   [selfPoint cleanContentExcept:selfPoint.exportActionSheet];
+                                   
+                                   selfPoint.exportActionSheet  = [LBDocumentActionSheet loadNibForCurrentDevice];
+                                   selfPoint.exportActionSheet.dataSource = dataSource;
+                                   selfPoint.exportActionSheet.frame = [selfPoint contentFrame];
+                                   [selfPoint.mediaContentView addSubview:selfPoint.exportActionSheet];
                                 }};
     
     [_dataSource addObject:saveInfo];
@@ -100,7 +128,18 @@ static float kLBMediaContentOffsetY = 25;
     NSDictionary *shareInfo = @{kTextEditCellTitle : @"分享",
                                 kTextEditCellIcon  : [UIImage imageNamed:@"share_icon"],
                                 kTextEditCellAction: ^(LBDocumentAppendixEditView *selfPoint) {
-                   
+                                    if (selfPoint.openInActionSheet) {
+                                        return;
+                                    }
+                                    
+                                    NSArray *dataSource = @[@{@"title":@"打开方式",LB_ACTION_TYPE_KEY:@(LBActionTypeOpenIn)}];
+                                    
+                                    [selfPoint cleanContentExcept:selfPoint.openInActionSheet];
+                                    
+                                    selfPoint.openInActionSheet  = [LBDocumentActionSheet loadNibForCurrentDevice];
+                                    selfPoint.openInActionSheet.dataSource = dataSource;
+                                    selfPoint.openInActionSheet.frame = [selfPoint contentFrame];
+                                    [selfPoint.mediaContentView addSubview:selfPoint.openInActionSheet];
                                }};
     
     [_dataSource addObject:shareInfo];

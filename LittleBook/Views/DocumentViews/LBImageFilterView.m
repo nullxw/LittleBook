@@ -52,7 +52,7 @@
 
 - (IBAction)doneButtonClicked:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:LB_DID_APPLY_IMAGE_FILTER_NOTIF object:_imageView.image];
+    [[NSNotificationCenter defaultCenter] postNotificationName:LB_ACTION_TYPE_KEY object:_imageView.image userInfo:@{LB_ACTION_TYPE_KEY : @(LBActionTypeApplyFilter)}];
     [self removeFromSuperview];
 }
 

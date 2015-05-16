@@ -32,6 +32,7 @@
     CGFloat _startValue;
     
     NSMutableArray *_dataSource;
+    UIPanGestureRecognizer *_pan;
 }
 @end
 
@@ -39,8 +40,14 @@
 
 - (void)awakeFromNib
 {
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(changeBarValue:)];
-    [self addGestureRecognizer:pan];
+    _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(changeBarValue:)];
+    [self addGestureRecognizer:_pan];
+}
+
+- (void)setTouchEnable:(BOOL)touchEnable
+{
+    _touchEnable = touchEnable;
+    _pan.enabled = touchEnable;
 }
 
 - (void)setBarCount:(NSInteger)barCount

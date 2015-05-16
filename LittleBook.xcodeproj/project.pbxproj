@@ -41,15 +41,12 @@
 		671C1FE21AB9C41E005F5586 /* LBFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE11AB9C41E005F5586 /* LBFrameView.m */; };
 		671C1FE51AB9C485005F5586 /* LBNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE41AB9C485005F5586 /* LBNavigationBar.m */; };
 		671C20011AB9C6E5005F5586 /* LBAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FE81AB9C6E5005F5586 /* LBAccountViewController.m */; };
-		671C20021AB9C6E5005F5586 /* LBDocumentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FEB1AB9C6E5005F5586 /* LBDocumentEditViewController.m */; };
-		671C20031AB9C6E5005F5586 /* LBDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FED1AB9C6E5005F5586 /* LBDocumentViewController.m */; };
 		671C20041AB9C6E5005F5586 /* LBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF01AB9C6E5005F5586 /* LBAboutViewController.m */; };
 		671C20051AB9C6E5005F5586 /* LBCustomSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF21AB9C6E5005F5586 /* LBCustomSettingViewController.m */; };
 		671C20061AB9C6E5005F5586 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF41AB9C6E5005F5586 /* LoginViewController.m */; };
 		671C20071AB9C6E5005F5586 /* LBNotificationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF61AB9C6E5005F5586 /* LBNotificationSettingViewController.m */; };
 		671C20081AB9C6E5005F5586 /* LBPanelSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FF81AB9C6E5005F5586 /* LBPanelSettingViewController.m */; };
 		671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFA1AB9C6E5005F5586 /* LBSettingViewController.m */; };
-		671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */; };
 		671C200C1AB9C6E5005F5586 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20001AB9C6E5005F5586 /* ViewController.m */; };
 		671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C200E1AB9C70D005F5586 /* LBAccountEditViewController.m */; };
 		671C20151AB9CFF6005F5586 /* LBDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C20121AB9CFF6005F5586 /* LBDocumentManager.m */; };
@@ -193,6 +190,20 @@
 		67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */; };
 		67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */; };
 		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
+		67D2FF851B070E940001B594 /* LBDocumentActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */; };
+		67D2FF871B070F860001B594 /* LBDocumentActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */; };
+		67D2FF8A1B0710880001B594 /* LBActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF891B0710880001B594 /* LBActionSheetCell.m */; };
+		67D2FF8C1B0711170001B594 /* LBActionSheetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D2FF8B1B0711170001B594 /* LBActionSheetCell.xib */; };
+		67D2FF951B072E8C0001B594 /* KVNProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF8F1B072E8C0001B594 /* KVNProgress.m */; };
+		67D2FF961B072E8C0001B594 /* KVNProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D2FF901B072E8C0001B594 /* KVNProgressView.xib */; };
+		67D2FF971B072E8C0001B594 /* UIImage+KVNEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF921B072E8C0001B594 /* UIImage+KVNEmpty.m */; };
+		67D2FF981B072E8C0001B594 /* UIImage+KVNImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF941B072E8C0001B594 /* UIImage+KVNImageEffects.m */; };
+		67D2FF9B1B073CBA0001B594 /* LBReadFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF9A1B073CBA0001B594 /* LBReadFileManager.m */; };
+		67D2FF9E1B073CDE0001B594 /* ReadFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF9D1B073CDE0001B594 /* ReadFile.m */; };
+		67D2FFA11B073F140001B594 /* LBReadFileFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA01B073F140001B594 /* LBReadFileFileManager.m */; };
+		67D2FFA71B074A3F0001B594 /* LBDocumentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */; };
+		67D2FFA81B074A3F0001B594 /* LBDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */; };
+		67D2FFAC1B074A5E0001B594 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFAB1B074A5E0001B594 /* ReadViewController.m */; };
 		67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E112461AFA5F9A0029045C /* LBDocumentContext.m */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
@@ -288,10 +299,6 @@
 		671C1FE41AB9C485005F5586 /* LBNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNavigationBar.m; sourceTree = "<group>"; };
 		671C1FE71AB9C6E5005F5586 /* LBAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountViewController.h; sourceTree = "<group>"; };
 		671C1FE81AB9C6E5005F5586 /* LBAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAccountViewController.m; sourceTree = "<group>"; };
-		671C1FEA1AB9C6E5005F5586 /* LBDocumentEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentEditViewController.h; sourceTree = "<group>"; };
-		671C1FEB1AB9C6E5005F5586 /* LBDocumentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentEditViewController.m; sourceTree = "<group>"; };
-		671C1FEC1AB9C6E5005F5586 /* LBDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentViewController.h; sourceTree = "<group>"; };
-		671C1FED1AB9C6E5005F5586 /* LBDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentViewController.m; sourceTree = "<group>"; };
 		671C1FEF1AB9C6E5005F5586 /* LBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAboutViewController.h; sourceTree = "<group>"; };
 		671C1FF01AB9C6E5005F5586 /* LBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAboutViewController.m; sourceTree = "<group>"; };
 		671C1FF11AB9C6E5005F5586 /* LBCustomSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBCustomSettingViewController.h; sourceTree = "<group>"; };
@@ -304,8 +311,6 @@
 		671C1FF81AB9C6E5005F5586 /* LBPanelSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPanelSettingViewController.m; sourceTree = "<group>"; };
 		671C1FF91AB9C6E5005F5586 /* LBSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSettingViewController.h; sourceTree = "<group>"; };
 		671C1FFA1AB9C6E5005F5586 /* LBSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSettingViewController.m; sourceTree = "<group>"; };
-		671C1FFD1AB9C6E5005F5586 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
-		671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		671C1FFF1AB9C6E5005F5586 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		671C20001AB9C6E5005F5586 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		671C200D1AB9C70D005F5586 /* LBAccountEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAccountEditViewController.h; sourceTree = "<group>"; };
@@ -641,6 +646,31 @@
 		67CD9CB71ACC30BF00FC0455 /* HPHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHolidayManager.h; sourceTree = "<group>"; };
 		67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHolidayManager.m; sourceTree = "<group>"; };
 		67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolidayInfos_2015.plist; sourceTree = "<group>"; };
+		67D2FF831B070E940001B594 /* LBDocumentActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentActionSheet.h; sourceTree = "<group>"; };
+		67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentActionSheet.m; sourceTree = "<group>"; };
+		67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBDocumentActionSheet.xib; sourceTree = "<group>"; };
+		67D2FF881B0710880001B594 /* LBActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBActionSheetCell.h; sourceTree = "<group>"; };
+		67D2FF891B0710880001B594 /* LBActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBActionSheetCell.m; sourceTree = "<group>"; };
+		67D2FF8B1B0711170001B594 /* LBActionSheetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBActionSheetCell.xib; sourceTree = "<group>"; };
+		67D2FF8E1B072E8C0001B594 /* KVNProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVNProgress.h; sourceTree = "<group>"; };
+		67D2FF8F1B072E8C0001B594 /* KVNProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVNProgress.m; sourceTree = "<group>"; };
+		67D2FF901B072E8C0001B594 /* KVNProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVNProgressView.xib; sourceTree = "<group>"; };
+		67D2FF911B072E8C0001B594 /* UIImage+KVNEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNEmpty.h"; sourceTree = "<group>"; };
+		67D2FF921B072E8C0001B594 /* UIImage+KVNEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNEmpty.m"; sourceTree = "<group>"; };
+		67D2FF931B072E8C0001B594 /* UIImage+KVNImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KVNImageEffects.h"; sourceTree = "<group>"; };
+		67D2FF941B072E8C0001B594 /* UIImage+KVNImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KVNImageEffects.m"; sourceTree = "<group>"; };
+		67D2FF991B073CBA0001B594 /* LBReadFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBReadFileManager.h; sourceTree = "<group>"; };
+		67D2FF9A1B073CBA0001B594 /* LBReadFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBReadFileManager.m; sourceTree = "<group>"; };
+		67D2FF9C1B073CDE0001B594 /* ReadFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadFile.h; sourceTree = "<group>"; };
+		67D2FF9D1B073CDE0001B594 /* ReadFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadFile.m; sourceTree = "<group>"; };
+		67D2FF9F1B073F140001B594 /* LBReadFileFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBReadFileFileManager.h; sourceTree = "<group>"; };
+		67D2FFA01B073F140001B594 /* LBReadFileFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBReadFileFileManager.m; sourceTree = "<group>"; };
+		67D2FFA31B074A3F0001B594 /* LBDocumentEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentEditViewController.h; sourceTree = "<group>"; };
+		67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentEditViewController.m; sourceTree = "<group>"; };
+		67D2FFA51B074A3F0001B594 /* LBDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentViewController.h; sourceTree = "<group>"; };
+		67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentViewController.m; sourceTree = "<group>"; };
+		67D2FFAA1B074A5E0001B594 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
+		67D2FFAB1B074A5E0001B594 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		67E112451AFA5F9A0029045C /* LBDocumentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentContext.h; sourceTree = "<group>"; };
 		67E112461AFA5F9A0029045C /* LBDocumentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentContext.m; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
@@ -684,6 +714,7 @@
 		671C1F701AB9BE4B005F5586 /* OpenResources */ = {
 			isa = PBXGroup;
 			children = (
+				67D2FF8D1B072E8C0001B594 /* KVNProgress */,
 				67B2EA051AFFA4B600CD80E0 /* AudioClasses */,
 				67CCC8931AD1468500BDF574 /* CorePlotHeaders */,
 				67CCC8861AD145BE00BDF574 /* libCorePlot-CocoaTouch.a */,
@@ -839,17 +870,6 @@
 			path = AccountViewControllers;
 			sourceTree = "<group>";
 		};
-		671C1FE91AB9C6E5005F5586 /* OfficeViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				671C1FEA1AB9C6E5005F5586 /* LBDocumentEditViewController.h */,
-				671C1FEB1AB9C6E5005F5586 /* LBDocumentEditViewController.m */,
-				671C1FEC1AB9C6E5005F5586 /* LBDocumentViewController.h */,
-				671C1FED1AB9C6E5005F5586 /* LBDocumentViewController.m */,
-			);
-			path = OfficeViewControllers;
-			sourceTree = "<group>";
-		};
 		671C1FEE1AB9C6E5005F5586 /* SettingsViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +906,8 @@
 				67C016F21ABD50780004EFD4 /* LBAppendixManager.m */,
 				67C016F71ABD51BB0004EFD4 /* LBUserManager.h */,
 				67C016F81ABD51BB0004EFD4 /* LBUserManager.m */,
+				67D2FF991B073CBA0001B594 /* LBReadFileManager.h */,
+				67D2FF9A1B073CBA0001B594 /* LBReadFileManager.m */,
 			);
 			path = ModalManagers;
 			sourceTree = "<group>";
@@ -939,12 +961,11 @@
 		671E94421AA5EFCA00697DBD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				67D2FFA91B074A5E0001B594 /* ReadViewControllers */,
+				67D2FFA21B074A3F0001B594 /* DocumentViewControllers */,
 				67AAC9CC1AC6F446002E317F /* CalendarViewControllers */,
 				671C1FE61AB9C6E5005F5586 /* AccountViewControllers */,
-				671C1FE91AB9C6E5005F5586 /* OfficeViewControllers */,
 				671C1FEE1AB9C6E5005F5586 /* SettingsViewControllers */,
-				671C1FFD1AB9C6E5005F5586 /* ReadViewController.h */,
-				671C1FFE1AB9C6E5005F5586 /* ReadViewController.m */,
 				671C1FFF1AB9C6E5005F5586 /* ViewController.h */,
 				671C20001AB9C6E5005F5586 /* ViewController.m */,
 			);
@@ -1045,11 +1066,13 @@
 				67634C7B1AADE76F009FD0FA /* PanelStyleInfos.plist */,
 				677A31871AB725E10030FD08 /* LBImageFilterManager.h */,
 				677A31881AB725E10030FD08 /* LBImageFilterManager.m */,
+				6757E6141ACC3EAF0071B662 /* LBAudioManager.h */,
+				6757E6151ACC3EAF0071B662 /* LBAudioManager.m */,
 				677A31861AB725E10030FD08 /* ILSFilters.plist */,
 				671C1F6D1AB9B620005F5586 /* LBAppendixFileManager.h */,
 				671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */,
-				6757E6141ACC3EAF0071B662 /* LBAudioManager.h */,
-				6757E6151ACC3EAF0071B662 /* LBAudioManager.m */,
+				67D2FF9F1B073F140001B594 /* LBReadFileFileManager.h */,
+				67D2FFA01B073F140001B594 /* LBReadFileFileManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1079,6 +1102,8 @@
 		677A31E61AB7287D0030FD08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				67D2FF9C1B073CDE0001B594 /* ReadFile.h */,
+				67D2FF9D1B073CDE0001B594 /* ReadFile.m */,
 				67AAC9D61AC700BB002E317F /* Notification.h */,
 				67AAC9D71AC700BB002E317F /* Notification.m */,
 				67C0170E1ABD627E0004EFD4 /* Appendix.h */,
@@ -1265,6 +1290,12 @@
 				67CCC8811AD140B900BDF574 /* LBImageEditView.h */,
 				67CCC8821AD140B900BDF574 /* LBImageEditView.m */,
 				67CCC8841AD140CE00BDF574 /* LBImageEditView.xib */,
+				67D2FF831B070E940001B594 /* LBDocumentActionSheet.h */,
+				67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */,
+				67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */,
+				67D2FF881B0710880001B594 /* LBActionSheetCell.h */,
+				67D2FF891B0710880001B594 /* LBActionSheetCell.m */,
+				67D2FF8B1B0711170001B594 /* LBActionSheetCell.xib */,
 				67CCC8711AD1223C00BDF574 /* LBImageFilterView.h */,
 				67CCC8721AD1223C00BDF574 /* LBImageFilterView.m */,
 				67CCC8731AD1223C00BDF574 /* LBImageFilterView.xib */,
@@ -1420,6 +1451,40 @@
 				67417F3C1AF7A6F500D69B7E /* LBCustomSettingCell.m */,
 			);
 			path = SettingViews;
+			sourceTree = "<group>";
+		};
+		67D2FF8D1B072E8C0001B594 /* KVNProgress */ = {
+			isa = PBXGroup;
+			children = (
+				67D2FF8E1B072E8C0001B594 /* KVNProgress.h */,
+				67D2FF8F1B072E8C0001B594 /* KVNProgress.m */,
+				67D2FF901B072E8C0001B594 /* KVNProgressView.xib */,
+				67D2FF911B072E8C0001B594 /* UIImage+KVNEmpty.h */,
+				67D2FF921B072E8C0001B594 /* UIImage+KVNEmpty.m */,
+				67D2FF931B072E8C0001B594 /* UIImage+KVNImageEffects.h */,
+				67D2FF941B072E8C0001B594 /* UIImage+KVNImageEffects.m */,
+			);
+			path = KVNProgress;
+			sourceTree = "<group>";
+		};
+		67D2FFA21B074A3F0001B594 /* DocumentViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				67D2FFA31B074A3F0001B594 /* LBDocumentEditViewController.h */,
+				67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */,
+				67D2FFA51B074A3F0001B594 /* LBDocumentViewController.h */,
+				67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */,
+			);
+			path = DocumentViewControllers;
+			sourceTree = "<group>";
+		};
+		67D2FFA91B074A5E0001B594 /* ReadViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				67D2FFAA1B074A5E0001B594 /* ReadViewController.h */,
+				67D2FFAB1B074A5E0001B594 /* ReadViewController.m */,
+			);
+			path = ReadViewControllers;
 			sourceTree = "<group>";
 		};
 		67EF19E31AAB02C200F97940 /* Views */ = {
@@ -1632,9 +1697,11 @@
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
 				674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */,
 				67B2EA161AFFA4B600CD80E0 /* mic_normal_358x358@2x.png in Resources */,
+				67D2FF961B072E8C0001B594 /* KVNProgressView.xib in Resources */,
 				6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */,
 				67B2EA221AFFA83100CD80E0 /* fs_icon_wave_1@2x.png in Resources */,
 				67CCC8FC1AD1843700BDF574 /* LBChartView.xib in Resources */,
+				67D2FF8C1B0711170001B594 /* LBActionSheetCell.xib in Resources */,
 				67B2EA211AFFA83100CD80E0 /* fs_icon_wave_0@2x.png in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
 				67B2EA121AFFA4B600CD80E0 /* black_bg_ip5@2x.png in Resources */,
@@ -1643,6 +1710,7 @@
 				67AAC96D1AC6A445002E317F /* CalendarHeaderView_320.xib in Resources */,
 				67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */,
 				67CCC8781AD1223C00BDF574 /* LBImageFilterView.xib in Resources */,
+				67D2FF871B070F860001B594 /* LBDocumentActionSheet.xib in Resources */,
 				67AAC9731AC6A445002E317F /* CalendarView_414.xib in Resources */,
 				67CCC87E1AD1237100BDF574 /* LBFilterCell.xib in Resources */,
 				67AAC9761AC6A445002E317F /* CalendarViewCell_375.xib in Resources */,
@@ -1681,9 +1749,9 @@
 				671C1FCE1AB9BE4B005F5586 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				67AAC92F1AC69225002E317F /* UIImage+ImageExt.m in Sources */,
 				671C1FC21AB9BE4B005F5586 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				67D2FF971B072E8C0001B594 /* UIImage+KVNEmpty.m in Sources */,
 				672B04701AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m in Sources */,
 				6757E6161ACC3EAF0071B662 /* LBAudioManager.m in Sources */,
-				671C200B1AB9C6E5005F5586 /* ReadViewController.m in Sources */,
 				67C016F31ABD50780004EFD4 /* LBAppendixManager.m in Sources */,
 				671C1FB61AB9BE4B005F5586 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				67C0171A1ABD627E0004EFD4 /* LBUser.m in Sources */,
@@ -1703,6 +1771,7 @@
 				6794AC861AD0263600EC1DB2 /* HPCommonFunctions.m in Sources */,
 				67CCC8EB1AD14A4000BDF574 /* LBAnimatedBarChart.m in Sources */,
 				67AAC96C1AC6A445002E317F /* CalendarHeaderView.m in Sources */,
+				67D2FF9B1B073CBA0001B594 /* LBReadFileManager.m in Sources */,
 				6794AC761ACFE82D00EC1DB2 /* Account.m in Sources */,
 				67C017171ABD627E0004EFD4 /* Appendix.m in Sources */,
 				671C1FC51AB9BE4B005F5586 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
@@ -1751,6 +1820,8 @@
 				671C20161AB9CFF6005F5586 /* LBIndexInfoManager.m in Sources */,
 				671C1FBE1AB9BE4B005F5586 /* NSManagedObject+MagicalFinders.m in Sources */,
 				671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */,
+				67D2FF951B072E8C0001B594 /* KVNProgress.m in Sources */,
+				67D2FF851B070E940001B594 /* LBDocumentActionSheet.m in Sources */,
 				67CCC8F71AD17D8C00BDF574 /* LBSimpleTheme.m in Sources */,
 				671C1F6F1AB9B620005F5586 /* LBAppendixFileManager.m in Sources */,
 				67AAC92D1AC69225002E317F /* NSString+StringExt.m in Sources */,
@@ -1760,24 +1831,29 @@
 				677A31E91AB728930030FD08 /* LittleBook.xcdatamodeld in Sources */,
 				674A7EDD1AFB95B60049A97C /* HPLocalizedButton.m in Sources */,
 				67AAC9BE1AC6AF81002E317F /* HPRoundCornerView.m in Sources */,
+				67D2FF8A1B0710880001B594 /* LBActionSheetCell.m in Sources */,
 				67CD9C9A1ACC1DE700FC0455 /* LBDatePickerCell.m in Sources */,
 				67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */,
 				67AAC9311AC69225002E317F /* UIView+ViewExt.m in Sources */,
 				6794AC6B1ACFDFE700EC1DB2 /* LBAccountCell.m in Sources */,
 				67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */,
 				677E65A11AED3D4900931C24 /* HPTextView.m in Sources */,
+				67D2FFAC1B074A5E0001B594 /* ReadViewController.m in Sources */,
+				67D2FFA11B073F140001B594 /* LBReadFileFileManager.m in Sources */,
 				674A7ECC1AFB94040049A97C /* SSKeychain.m in Sources */,
 				67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */,
-				671C20021AB9C6E5005F5586 /* LBDocumentEditViewController.m in Sources */,
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				671C20041AB9C6E5005F5586 /* LBAboutViewController.m in Sources */,
 				6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */,
 				67AAC9741AC6A445002E317F /* CalendarViewCell.m in Sources */,
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
+				67D2FFA71B074A3F0001B594 /* LBDocumentEditViewController.m in Sources */,
 				671C200F1AB9C70D005F5586 /* LBAccountEditViewController.m in Sources */,
+				67D2FF981B072E8C0001B594 /* UIImage+KVNImageEffects.m in Sources */,
 				677A31821AB723820030FD08 /* HPFileSystem.m in Sources */,
 				67B2EA131AFFA4B600CD80E0 /* FSVoiceBubble.m in Sources */,
 				67B2EA151AFFA4B600CD80E0 /* LCVoiceHud.m in Sources */,
+				67D2FF9E1B073CDE0001B594 /* ReadFile.m in Sources */,
 				674A7ED11AFB94C70049A97C /* HPTaskManager.m in Sources */,
 				67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */,
 				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,
@@ -1802,7 +1878,7 @@
 				672B04661AF47F32004BB1D8 /* LBExportTemp.m in Sources */,
 				67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */,
 				67AAC9391AC69261002E317F /* UINib+NibExt.m in Sources */,
-				671C20031AB9C6E5005F5586 /* LBDocumentViewController.m in Sources */,
+				67D2FFA81B074A3F0001B594 /* LBDocumentViewController.m in Sources */,
 				671C1FB91AB9BE4B005F5586 /* NSObject+MagicalDataImport.m in Sources */,
 				671D530B1AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m in Sources */,
 				671C20091AB9C6E5005F5586 /* LBSettingViewController.m in Sources */,

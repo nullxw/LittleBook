@@ -12,7 +12,6 @@
 
 @interface LBExportTemp : HPRoundCornerView
 
-+ (instancetype)tempForPDF:(Document *)document;
-+ (instancetype)tempForImage:(Document *)document;
-+ (instancetype)tempForText:(Document *)document;
+@property (nonatomic, strong) Document *document;
+
 @end

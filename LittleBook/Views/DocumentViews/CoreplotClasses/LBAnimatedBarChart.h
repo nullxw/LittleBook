@@ -14,5 +14,5 @@
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) CPTTheme *theme;
 @property (nonatomic, assign) NSInteger barCount;
-
+@property (nonatomic, assign) BOOL touchEnable;
 @end

@@ -26,4 +26,6 @@ extern const NSString *kLBDragSetting;
 
 - (void)updateSettings;
 
+@property (nonatomic, strong) NSString *tempPath;
+
 @end

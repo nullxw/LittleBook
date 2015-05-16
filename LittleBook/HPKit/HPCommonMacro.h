@@ -19,4 +19,3 @@
 
 //common params
 #define HP_COMMON_CORNER_RADIUS  5.0
-

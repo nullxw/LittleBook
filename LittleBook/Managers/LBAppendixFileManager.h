@@ -6,7 +6,6 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "HPFileSystem.h"
 
 @interface LBAppendixFileManager : HPFileSystem

@@ -20,6 +20,7 @@ const NSString *kLBDragSetting     = @"kLBDragSetting";
 
 
 #import "LBAppContext.h"
+#import "HPFileSystem.h"
 
 @interface LBAppContext ()
 {
@@ -72,4 +73,13 @@ const NSString *kLBDragSetting     = @"kLBDragSetting";
     [_userDefaults setObject:self.settings forKey:kLBAppSettingKey];
 }
 
+
+- (NSString *)tempPath
+{
+    NSString *tempPath = [HPFileSystem cachePath];
+
+    tempPath = [tempPath stringByAppendingPathComponent:@"temp.jpg"];
+    
+    return tempPath;
+}
 @end

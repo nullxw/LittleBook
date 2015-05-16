@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 
-#define LB_APPENDIX_NAME(APPENDIXID) [NSString stringWithFormat:@"APPENDIX_%@", APPENDIXID]
+#define LB_APPENDIX_NAME(APPENDIXID) [NSString stringWithFormat:@"APPENDIX_%@.jpg", APPENDIXID]
 
-#define LB_APPENDIX_THUMBNAIL_NAME(APPENDIXID) [NSString stringWithFormat:@"APPENDIX_THUMBNAIL_%@", APPENDIXID]
+#define LB_APPENDIX_THUMBNAIL_NAME(APPENDIXID) [NSString stringWithFormat:@"APPENDIX_THUMBNAIL_%@.jpg", APPENDIXID]
 
 #import "LBAppendixFileManager.h"
 

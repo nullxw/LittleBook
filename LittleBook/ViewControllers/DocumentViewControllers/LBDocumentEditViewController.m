@@ -14,9 +14,11 @@
 #import "UIViewController+LBSegueExt.h"
 #import "LBDocumentAppendixEditView.h"
 #import "UITextView+TextViewExt.h"
+#import "LBReadFileFileManager.h"
 #import "LBAppendixFileManager.h"
 #import "LBPanelStyleManager.h"
 #import "LBIndexInfoManager.h"
+#import "LBReadFileManager.h"
 #import "LBAppendixManager.h"
 #import "LBDocumentContext.h"
 #import "HPTouchImageView.h"
@@ -25,12 +27,13 @@
 #import "FSVoiceBubble.h"
 #import "LBExportTemp.h"
 #import "LBAppContext.h"
+#import "KVNProgress.h"
 #import "Appendix.h"
 #import "Document.h"
 #import "LCVoice.h"
 
 
-@interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate>
 {
     BOOL _isMediaEditViewVisible;
     
@@ -51,9 +54,15 @@
 
 @property (weak, nonatomic) IBOutlet LBDocumentAppendixEditView *editContainerView;
 
+@property (nonatomic, strong) UIDocumentInteractionController *documentViewController;
 @end
 
 @implementation LBDocumentEditViewController
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidLoad
 {
@@ -84,7 +93,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertAppendix:) name:LB_INSERT_IMAGE_NOTIF object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseToAction:) name:LB_ACTION_NOTIF object:nil];
 }
 
 - (void)updateInterfaceWithSettings
@@ -238,7 +247,6 @@
 }
 - (IBAction)hideKeyboardButtonClicked:(id)sender
 {
-    
     [_titleField resignFirstResponder];
     [_contentField resignFirstResponder];
 }
@@ -311,26 +319,153 @@
 {
     [_contentField moveCursorToPreviousLine];
 }
+#pragma mark - action handlers
 
-
-#pragma mark - notification handlers
-
-- (void)insertAppendix:(NSNotification *)notif
+- (void)insertAppendixWithInfo:(NSDictionary *)appendixInfo
 {
     [self editButtonClicked:_editButton];
-    
-    NSDictionary *appendixInfo = notif.object;
-    
     CGSize appendixSize = CGSizeFromString(appendixInfo[@"size"]);
-
+    
     CGRect frame = CGRectMake(0, [self getMaxYOfTextView], appendixSize.width, appendixSize.height);
     
     // creat Appendix
     Appendix *appendix = [[LBDocumentContext defaultContext] addAppendix:appendixInfo[@"image"] type:LBAppendixTypeImage];
     appendix.frame = NSStringFromCGRect(frame);
     [_appendixs addObject:appendix];
-    
     [self creatAppendixViewWithAppendix:appendix];
+}
+
+- (void)exportAsPDF
+{
+    if (_editButton) {
+        [self editButtonClicked:_editButton];
+    }
+    
+    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
+    temp.frame = _contentView.frame;
+    temp.document = _doc;
+    
+    [KVNProgress showWithStatus:@"导出中/Exporting..."];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
+        NSString *filePath = [fileManager pathForReadFile:_doc.documentID];
+        
+        [self createPDFfromUIView:temp saveToPath:filePath];
+    });
+    
+}
+
+- (void)exportToLocal
+{
+    if (_editButton) {
+        [self editButtonClicked:_editButton];
+    }
+    
+    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
+    temp.frame = _contentView.frame;
+    temp.document = _doc;
+    
+    UIImage *image = [temp toImage];
+    
+    [KVNProgress showWithStatus:@"导出中/Exporting..."];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), @"exportToLocal");
+    });
+}
+
+- (void)exportAsDoc
+{
+    [self backButtonClicked:nil];
+}
+
+- (void)openIn
+{
+//    if (_editButton) {
+//        [self editButtonClicked:_editButton];
+//    }
+//    
+    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
+    temp.frame = _contentView.frame;
+    temp.document = _doc;
+    
+    UIImage *image = [temp toImage];
+    
+    NSString *filePath = [LBAppContext context].tempPath;
+    
+    NSData *data = UIImageJPEGRepresentation(image, 0.8);
+    [data writeToFile:filePath atomically:TRUE];
+    
+     _documentViewController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:filePath]];
+    _documentViewController.delegate = self;
+    _documentViewController.UTI = @"public.image";
+    _documentViewController.annotation = @{@"Little Book" : @"#Little Book"};
+    [_documentViewController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:TRUE];
+    
+}
+
+- (void)createPDFfromUIView:(UIView*)view saveToPath:(NSString*)filePath
+{
+    NSMutableData *pdfData = [NSMutableData data];
+
+    UIGraphicsBeginPDFContextToData(pdfData, view.bounds, nil);
+    UIGraphicsBeginPDFPage();
+    CGContextRef pdfContext = UIGraphicsGetCurrentContext();
+    [view.layer renderInContext:pdfContext];
+    
+    UIGraphicsEndPDFContext();
+
+    [pdfData writeToFile:filePath atomically:YES];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [LBReadFileManager createReadFileFromDocument:_doc];
+        [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [KVNProgress dismiss];
+        });
+        
+    });
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!error) {
+            [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
+        } else {
+            [KVNProgress showErrorWithStatus:@"导出失败/Failed"];
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [KVNProgress dismiss];
+        });
+
+    });
+}
+#pragma mark - UIDocumentInteractionControllerDelegate
+
+- (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
+{
+
+}
+
+#pragma mark - notification handlers
+
+- (void)responseToAction:(NSNotification *)notif
+{
+    LBActionType actionType = [notif.userInfo[LB_ACTION_TYPE_KEY] intValue];
+    
+    if (actionType == LBActionTypeInsertAppendix) {
+        [self insertAppendixWithInfo:notif.object];
+    } else if (actionType == LBActionTypeSaveAsDoc) {
+        [self exportAsDoc];
+    } else if (actionType == LBActionTypeSaveAsPDF) {
+        [self exportAsPDF];
+    } else if (actionType == LBActionTypeSaveToLocal) {
+        [self exportToLocal];
+    } else if (actionType == LBActionTypeOpenIn) {
+        [self openIn];
+    }
 }
 
 - (void)keyboardWillShow:(NSNotification *)notif
@@ -558,38 +693,4 @@
     }];
 }
 
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex) {
-        case 0:
-            [self exportAsPDF];
-            break;
-        case 1:
-            [self exportAsImage];
-            break;
-        case 2:
-            [self exportAsText];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)exportAsPDF
-{
-//    LBExportTemp *temp = [LBExportTemp tempForPDF:self.doc];
-    
-}
-
-- (void)exportAsImage
-{
-
-    
-}
-- (void)exportAsText
-{
-
-}
 @end

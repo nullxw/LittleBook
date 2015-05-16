@@ -26,6 +26,11 @@
 
 @implementation LBImageEditView
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)awakeFromNib
 {
     _imageEditMenuView.separateLineColor = [UIColor whiteColor];
@@ -37,7 +42,7 @@
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(openCanvas:)];
     [_imageView addGestureRecognizer:longPress];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImageView:) name:LB_DID_APPLY_IMAGE_FILTER_NOTIF object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateImageView:) name:LB_ACTION_NOTIF object:nil];
 }
 
 - (void)setImage:(UIImage *)image
@@ -49,6 +54,9 @@
 
 - (void)updateImageView:(NSNotification *)notif
 {
+    if ([notif.userInfo[LB_ACTION_TYPE_KEY] intValue] != LBActionTypeApplyFilter) {
+        return;
+    }
     _originalImage = notif.object;
     _imageView.contentMode = UIViewContentModeScaleToFill;
     _imageView.image = [_originalImage clipToSize:_imageView.frame.size];
@@ -120,7 +128,7 @@
     NSDictionary *imageInfo = @{@"image" : _originalImage,
                                 @"size"  : NSStringFromCGSize(imageSize)};
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:LB_INSERT_IMAGE_NOTIF object:imageInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:LB_ACTION_NOTIF object:imageInfo userInfo:@{LB_ACTION_TYPE_KEY:@(LBActionTypeInsertAppendix)}];
     
     [self deleteButtonClicked:nil];
 }

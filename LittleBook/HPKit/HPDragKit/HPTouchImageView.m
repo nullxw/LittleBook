@@ -71,6 +71,8 @@ typedef enum {
     pinchGesture.delegate = self;
     [self addGestureRecognizer:pinchGesture];
 
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    [self addGestureRecognizer:longPressGesture];
 }
 
 #pragma mark - gesture handlers
@@ -140,7 +142,6 @@ typedef enum {
         }
     }
     
-    
     float w = _startRect.size.width * scale;
     float h = _startRect.size.height * scale;
    
@@ -166,6 +167,12 @@ typedef enum {
     if (_touchDelegate && [_touchDelegate respondsToSelector:@selector(didOperateTouchImageView:)]) {
         [_touchDelegate didOperateTouchImageView:self];
     }
+}
+
+- (void)handleLongPress:(UILongPressGestureRecognizer *)gesture
+{
+
+    
 }
 
 #pragma mark - UIGestureRecognizerDelegate

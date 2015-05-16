@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HPTabBarChildController.h"
 
-@interface ReadViewController : HPTabBarChildController
+@interface LBReadViewController : HPTabBarChildController
 
 @end

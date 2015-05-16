@@ -11,12 +11,12 @@
 
 @implementation Document
 
+@dynamic title;
 @dynamic content;
 @dynamic createTime;
 @dynamic documentID;
 @dynamic documentSize;
 @dynamic modifiedTime;
-@dynamic title;
 @dynamic userID;
 @dynamic favourite;
 

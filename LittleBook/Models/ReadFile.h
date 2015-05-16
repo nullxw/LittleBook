@@ -12,6 +12,8 @@
 
 @interface ReadFile : NSManagedObject
 
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSDate * createTime;
 @property (nonatomic, retain) NSNumber * fileID;
 @property (nonatomic, retain) NSNumber * favourite;

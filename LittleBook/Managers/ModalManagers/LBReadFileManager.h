@@ -19,4 +19,8 @@
 // Retrieve
 + (NSArray *)findAll;
 
+// Delete
+
++ (void)deleteReadFile:(ReadFile *)file;
+
 @end

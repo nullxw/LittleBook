@@ -27,4 +27,9 @@
     return [ReadFile findByAttribute:@"userID" withValue:[LBUserManager defaultManager].currentUser.userID andOrderBy:@"createTime" ascending:NO];
 }
 
++ (void)deleteReadFile:(ReadFile *)file;
+{
+    [file deleteEntity];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+}
 @end

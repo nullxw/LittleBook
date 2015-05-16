@@ -345,14 +345,19 @@
     temp.frame = _contentView.frame;
     temp.document = _doc;
     
-    [KVNProgress showWithStatus:@"导出中/Exporting..."];
+//    [KVNProgress showWithStatus:@"导出中/Exporting..."];
+//    
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
+//        NSString *filePath = [fileManager pathForReadFile:_doc.documentID];
+//        
+//        [self createPDFfromUIView:temp saveToPath:filePath];
+//    });
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
-        NSString *filePath = [fileManager pathForReadFile:_doc.documentID];
-        
-        [self createPDFfromUIView:temp saveToPath:filePath];
-    });
+    LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
+    NSString *filePath = [fileManager pathForReadFile:_doc.documentID];
+    
+    [self createPDFfromUIView:temp saveToPath:filePath];
     
 }
 
@@ -382,10 +387,10 @@
 
 - (void)openIn
 {
-//    if (_editButton) {
-//        [self editButtonClicked:_editButton];
-//    }
-//    
+    if (_editButton) {
+        [self editButtonClicked:_editButton];
+    }
+    
     LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
     temp.frame = _contentView.frame;
     temp.document = _doc;
@@ -418,14 +423,16 @@
 
     [pdfData writeToFile:filePath atomically:YES];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [LBReadFileManager createReadFileFromDocument:_doc];
-        [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [KVNProgress dismiss];
-        });
-        
-    });
+    [LBReadFileManager createReadFileFromDocument:_doc];
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [LBReadFileManager createReadFileFromDocument:_doc];
+//        [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [KVNProgress dismiss];
+//        });
+//        
+//    });
 }
 
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo

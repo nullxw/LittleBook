@@ -8,9 +8,10 @@
 
 #import "ReadFile.h"
 
-
 @implementation ReadFile
 
+@dynamic title;
+@dynamic content;
 @dynamic createTime;
 @dynamic fileID;
 @dynamic favourite;

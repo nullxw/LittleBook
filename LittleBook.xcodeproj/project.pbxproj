@@ -203,7 +203,8 @@
 		67D2FFA11B073F140001B594 /* LBReadFileFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA01B073F140001B594 /* LBReadFileFileManager.m */; };
 		67D2FFA71B074A3F0001B594 /* LBDocumentEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */; };
 		67D2FFA81B074A3F0001B594 /* LBDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */; };
-		67D2FFAC1B074A5E0001B594 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFAB1B074A5E0001B594 /* ReadViewController.m */; };
+		67D2FFAC1B074A5E0001B594 /* LBReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFAB1B074A5E0001B594 /* LBReadViewController.m */; };
+		67D2FFAF1B0754870001B594 /* LBFileBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFAE1B0754870001B594 /* LBFileBrowserViewController.m */; };
 		67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E112461AFA5F9A0029045C /* LBDocumentContext.m */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
@@ -669,8 +670,10 @@
 		67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentEditViewController.m; sourceTree = "<group>"; };
 		67D2FFA51B074A3F0001B594 /* LBDocumentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentViewController.h; sourceTree = "<group>"; };
 		67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentViewController.m; sourceTree = "<group>"; };
-		67D2FFAA1B074A5E0001B594 /* ReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
-		67D2FFAB1B074A5E0001B594 /* ReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
+		67D2FFAA1B074A5E0001B594 /* LBReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBReadViewController.h; sourceTree = "<group>"; };
+		67D2FFAB1B074A5E0001B594 /* LBReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBReadViewController.m; sourceTree = "<group>"; };
+		67D2FFAD1B0754870001B594 /* LBFileBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBFileBrowserViewController.h; sourceTree = "<group>"; };
+		67D2FFAE1B0754870001B594 /* LBFileBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBFileBrowserViewController.m; sourceTree = "<group>"; };
 		67E112451AFA5F9A0029045C /* LBDocumentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentContext.h; sourceTree = "<group>"; };
 		67E112461AFA5F9A0029045C /* LBDocumentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentContext.m; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
@@ -1470,10 +1473,10 @@
 		67D2FFA21B074A3F0001B594 /* DocumentViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				67D2FFA31B074A3F0001B594 /* LBDocumentEditViewController.h */,
-				67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */,
 				67D2FFA51B074A3F0001B594 /* LBDocumentViewController.h */,
 				67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */,
+				67D2FFA31B074A3F0001B594 /* LBDocumentEditViewController.h */,
+				67D2FFA41B074A3F0001B594 /* LBDocumentEditViewController.m */,
 			);
 			path = DocumentViewControllers;
 			sourceTree = "<group>";
@@ -1481,8 +1484,10 @@
 		67D2FFA91B074A5E0001B594 /* ReadViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				67D2FFAA1B074A5E0001B594 /* ReadViewController.h */,
-				67D2FFAB1B074A5E0001B594 /* ReadViewController.m */,
+				67D2FFAA1B074A5E0001B594 /* LBReadViewController.h */,
+				67D2FFAB1B074A5E0001B594 /* LBReadViewController.m */,
+				67D2FFAD1B0754870001B594 /* LBFileBrowserViewController.h */,
+				67D2FFAE1B0754870001B594 /* LBFileBrowserViewController.m */,
 			);
 			path = ReadViewControllers;
 			sourceTree = "<group>";
@@ -1838,7 +1843,7 @@
 				6794AC6B1ACFDFE700EC1DB2 /* LBAccountCell.m in Sources */,
 				67C016F91ABD51BB0004EFD4 /* LBUserManager.m in Sources */,
 				677E65A11AED3D4900931C24 /* HPTextView.m in Sources */,
-				67D2FFAC1B074A5E0001B594 /* ReadViewController.m in Sources */,
+				67D2FFAC1B074A5E0001B594 /* LBReadViewController.m in Sources */,
 				67D2FFA11B073F140001B594 /* LBReadFileFileManager.m in Sources */,
 				674A7ECC1AFB94040049A97C /* SSKeychain.m in Sources */,
 				67CD9CB31ACC22E800FC0455 /* LBNotificationContentView.m in Sources */,
@@ -1870,6 +1875,7 @@
 				67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */,
 				672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,
+				67D2FFAF1B0754870001B594 /* LBFileBrowserViewController.m in Sources */,
 				677E659C1AED232100931C24 /* HPDragContainer.m in Sources */,
 				67CCC8ED1AD14A4000BDF574 /* LBPresentTheme.m in Sources */,
 				6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */,

@@ -13,10 +13,15 @@
 
 + (ReadFile *)createReadFileFromDocument:(Document *)doc
 {
-    ReadFile *readFile = [ReadFile createEntity];
-    readFile.createTime = [NSDate new];
-    readFile.fileID = doc.documentID;
-    readFile.userID = [LBUserManager defaultManager].currentUser.userID;
+    ReadFile *readFile = [self findByID:doc.documentID];
+    if (!readFile) {
+        readFile = [ReadFile createEntity];
+        readFile.createTime = [NSDate new];
+        readFile.userID = [LBUserManager defaultManager].currentUser.userID;
+        readFile.fileID = doc.documentID;
+    }
+    readFile.title = doc.title;
+    readFile.content = doc.content;
     
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     return readFile;
@@ -27,7 +32,12 @@
     return [ReadFile findByAttribute:@"userID" withValue:[LBUserManager defaultManager].currentUser.userID andOrderBy:@"createTime" ascending:NO];
 }
 
-+ (void)deleteReadFile:(ReadFile *)file;
++ (ReadFile *)findByID:(NSNumber *)fileID
+{
+    return [ReadFile findFirstWithPredicate:[NSPredicate predicateWithFormat:@"fileID=%@ and userID=%@", fileID, [LBUserManager defaultManager].currentUser.userID]];
+}
+
++ (void)deleteReadFile:(ReadFile *)file
 {
     [file deleteEntity];
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];

@@ -18,6 +18,7 @@
 
 // Retrieve
 + (NSArray *)findAll;
++ (ReadFile *)findByID:(NSNumber *)fileID;
 
 // Delete
 

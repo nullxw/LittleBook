@@ -7,7 +7,13 @@
 //
 
 #import "LBSearchBar.h"
+#import <Foundation/Foundation.h>
 
 @implementation LBSearchBar
+
+- (void)awakeFromNib
+{
+    [self setSearchFieldBackgroundImage:[UIImage imageWithColor:[UIColor redColor]] forState:UIControlStateNormal];
+}
 
 @end

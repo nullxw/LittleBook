@@ -32,4 +32,6 @@ typedef enum {
 // 不通用的方法！！！
 - (UIImage *)rotateImage:(float)angle mirrored:(BOOL)mirrored;
 
++ (UIImage *)imageWithColor:(UIColor *)color;
+
 @end

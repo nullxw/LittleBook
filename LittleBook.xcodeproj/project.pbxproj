@@ -205,6 +205,7 @@
 		67D2FFA81B074A3F0001B594 /* LBDocumentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFA61B074A3F0001B594 /* LBDocumentViewController.m */; };
 		67D2FFAC1B074A5E0001B594 /* LBReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFAB1B074A5E0001B594 /* LBReadViewController.m */; };
 		67D2FFAF1B0754870001B594 /* LBFileBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFAE1B0754870001B594 /* LBFileBrowserViewController.m */; };
+		67D2FFC41B08DE1D0001B594 /* LBExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FFC31B08DE1D0001B594 /* LBExportManager.m */; };
 		67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E112461AFA5F9A0029045C /* LBDocumentContext.m */; };
 		67EF19ED1AAB0FBA00F97940 /* HPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19EC1AAB0FBA00F97940 /* HPLine.m */; };
 		67EF19FA1AAB43D400F97940 /* LBAppContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 67EF19F91AAB43D400F97940 /* LBAppContext.m */; };
@@ -674,6 +675,8 @@
 		67D2FFAB1B074A5E0001B594 /* LBReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBReadViewController.m; sourceTree = "<group>"; };
 		67D2FFAD1B0754870001B594 /* LBFileBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBFileBrowserViewController.h; sourceTree = "<group>"; };
 		67D2FFAE1B0754870001B594 /* LBFileBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBFileBrowserViewController.m; sourceTree = "<group>"; };
+		67D2FFC21B08DE1D0001B594 /* LBExportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBExportManager.h; sourceTree = "<group>"; };
+		67D2FFC31B08DE1D0001B594 /* LBExportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBExportManager.m; sourceTree = "<group>"; };
 		67E112451AFA5F9A0029045C /* LBDocumentContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentContext.h; sourceTree = "<group>"; };
 		67E112461AFA5F9A0029045C /* LBDocumentContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentContext.m; sourceTree = "<group>"; };
 		67EF19EB1AAB0FBA00F97940 /* HPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLine.h; sourceTree = "<group>"; };
@@ -1076,6 +1079,8 @@
 				671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */,
 				67D2FF9F1B073F140001B594 /* LBReadFileFileManager.h */,
 				67D2FFA01B073F140001B594 /* LBReadFileFileManager.m */,
+				67D2FFC21B08DE1D0001B594 /* LBExportManager.h */,
+				67D2FFC31B08DE1D0001B594 /* LBExportManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1802,6 +1807,7 @@
 				677A318A1AB725E10030FD08 /* LBImageFilterManager.m in Sources */,
 				671C1FCF1AB9BE4B005F5586 /* MagicalRecord.m in Sources */,
 				67AAC9D81AC700BB002E317F /* Notification.m in Sources */,
+				67D2FFC41B08DE1D0001B594 /* LBExportManager.m in Sources */,
 				67417F361AF6861300D69B7E /* LBNotificationSettingCell.m in Sources */,
 				677E658B1AECEC5C00931C24 /* LBAuidoView.m in Sources */,
 				6777D6201AA69EFE009E78DD /* HPTabBarChildController.m in Sources */,

@@ -10,14 +10,21 @@
 #import "LBDocumentEditViewController.h"
 #import "LBDocumentListCell.h"
 #import "LBDocumentManager.h"
+#import "LBExportManager.h"
 
-@interface LBDocumentViewController () <UITableViewDataSource ,UITableViewDelegate, HPCallBackProtocol>
+@interface LBDocumentViewController () <UITableViewDataSource ,UITableViewDelegate, HPCallBackProtocol, UISearchBarDelegate>
 {
     NSMutableArray *_dataSource;
     Document *_selectedDocument;
+    
+    LBExportManager *_exportManager;
+    
+    BOOL _isSearching;
+    NSMutableArray *_searchResult;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -55,13 +62,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataSource.count;
+    if (_isSearching) {
+        return _searchResult.count;
+    } else {
+        return _dataSource.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LBDocumentListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBDocumentListCell"];
-    cell.document = _dataSource[indexPath.row];
+    if (_isSearching) {
+        cell.document = _searchResult[indexPath.row];
+    } else {
+        cell.document = _dataSource[indexPath.row];
+    }
     cell.tableView = tableView;
     cell.delegate  = self;
     return cell;
@@ -69,9 +84,66 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _selectedDocument = _dataSource[indexPath.row];
+    if (_isSearching) {
+        _selectedDocument = _searchResult[indexPath.row];
+    } else {
+        _selectedDocument = _dataSource[indexPath.row];
+    }
+
     [self performSegueWithIdentifier:@"openEditPage" sender:self];
 }
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if ([_searchBar isFirstResponder]) {
+        [_searchBar resignFirstResponder];
+    }
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    _searchResult = nil;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [_tableView reloadData];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if (!searchText || searchText.length < 1) {
+        _isSearching = FALSE;
+        [_tableView reloadData];
+    } else {
+        _isSearching = TRUE;
+        _searchResult = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        for (int i = 0; i < _dataSource.count; i++) {
+            Document *doc = _dataSource[i];
+            
+            if ([doc.title.lowercaseString rangeOfString:searchText.lowercaseString].length > 0) {
+                [_searchResult addObject:doc];
+            }
+        }
+        [_tableView reloadData];
+    }
+    
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    if (searchBar.text && searchBar.text.length > 0) {
+        _isSearching = TRUE;
+        [_tableView reloadData];
+    } else {
+        _isSearching = FALSE;
+        [_tableView reloadData];
+    }
+}
+
 
 #pragma mark - HPCallBackProtocol
 
@@ -85,6 +157,10 @@
     NSInteger tag = ((UIButton *)actionInfo).tag;
     
     if (tag == 0) {
+        if (!_exportManager) {
+            _exportManager =[[LBExportManager alloc] init];
+        }
+        [_exportManager openDoc:doc withHolder:self];
         
     } else if (tag == 1) {
     
@@ -98,7 +174,5 @@
         [LBDocumentManager deleteDocument:doc];
         [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
     }
-    
-
 }
 @end

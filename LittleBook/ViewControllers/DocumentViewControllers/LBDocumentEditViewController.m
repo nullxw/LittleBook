@@ -22,24 +22,25 @@
 #import "LBAppendixManager.h"
 #import "LBDocumentContext.h"
 #import "HPTouchImageView.h"
+#import "LBExportManager.h"
 #import "HPDragContainer.h"
 #import "LBSectionView.h"
 #import "FSVoiceBubble.h"
-#import "LBExportTemp.h"
 #import "LBAppContext.h"
-#import "KVNProgress.h"
 #import "Appendix.h"
 #import "Document.h"
 #import "LCVoice.h"
 
 
-@interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate>
+@interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     BOOL _isMediaEditViewVisible;
     
     NSMutableArray *_appendixs;
     NSMutableArray *_appendixViews;
     NSMutableArray *_appendixPaths;
+    
+    LBExportManager *_exportManager;
     
     NSInteger _previousCursorLocation;
     
@@ -341,23 +342,9 @@
         [self editButtonClicked:_editButton];
     }
     
-    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
-    temp.frame = _contentView.frame;
-    temp.document = _doc;
-    
-//    [KVNProgress showWithStatus:@"导出中/Exporting..."];
-//    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
-//        NSString *filePath = [fileManager pathForReadFile:_doc.documentID];
-//        
-//        [self createPDFfromUIView:temp saveToPath:filePath];
-//    });
-    
-    LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
-    NSString *filePath = [fileManager pathForReadFile:_doc.documentID];
-    
-    [self createPDFfromUIView:temp saveToPath:filePath];
+    [LBExportManager exportAsPDF:_doc withCompletionBlock:^{
+        
+    }];
     
 }
 
@@ -367,17 +354,14 @@
         [self editButtonClicked:_editButton];
     }
     
-    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
-    temp.frame = _contentView.frame;
-    temp.document = _doc;
+    if (!_exportManager) {
+        _exportManager = [[LBExportManager alloc] init];
+        
+    }
     
-    UIImage *image = [temp toImage];
-    
-    [KVNProgress showWithStatus:@"导出中/Exporting..."];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), @"exportToLocal");
-    });
+    [_exportManager exportToLocal:_doc withCompletionBlock:^{
+        
+    }];
 }
 
 - (void)exportAsDoc
@@ -391,70 +375,14 @@
         [self editButtonClicked:_editButton];
     }
     
-    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
-    temp.frame = _contentView.frame;
-    temp.document = _doc;
-    
-    UIImage *image = [temp toImage];
-    
-    NSString *filePath = [LBAppContext context].tempPath;
-    
-    NSData *data = UIImageJPEGRepresentation(image, 0.8);
-    [data writeToFile:filePath atomically:TRUE];
-    
-     _documentViewController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:filePath]];
-    _documentViewController.delegate = self;
-    _documentViewController.UTI = @"public.image";
-    _documentViewController.annotation = @{@"Little Book" : @"#Little Book"};
-    [_documentViewController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:TRUE];
+    if (!_exportManager) {
+        _exportManager = [[LBExportManager alloc] init];
+        
+    }
+    [_exportManager openDoc:_doc withHolder:self];
     
 }
 
-- (void)createPDFfromUIView:(UIView*)view saveToPath:(NSString*)filePath
-{
-    NSMutableData *pdfData = [NSMutableData data];
-
-    UIGraphicsBeginPDFContextToData(pdfData, view.bounds, nil);
-    UIGraphicsBeginPDFPage();
-    CGContextRef pdfContext = UIGraphicsGetCurrentContext();
-    [view.layer renderInContext:pdfContext];
-    
-    UIGraphicsEndPDFContext();
-
-    [pdfData writeToFile:filePath atomically:YES];
-    
-    [LBReadFileManager createReadFileFromDocument:_doc];
-    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [LBReadFileManager createReadFileFromDocument:_doc];
-//        [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [KVNProgress dismiss];
-//        });
-//        
-//    });
-}
-
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (!error) {
-            [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
-        } else {
-            [KVNProgress showErrorWithStatus:@"导出失败/Failed"];
-        }
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [KVNProgress dismiss];
-        });
-
-    });
-}
-#pragma mark - UIDocumentInteractionControllerDelegate
-
-- (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
-{
-
-}
 
 #pragma mark - notification handlers
 

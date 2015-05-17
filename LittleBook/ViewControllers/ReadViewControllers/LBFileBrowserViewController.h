@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class ReadFile;
 @interface LBFileBrowserViewController : UIViewController
+
+@property (nonatomic, strong) ReadFile *readFile;
 
 @end

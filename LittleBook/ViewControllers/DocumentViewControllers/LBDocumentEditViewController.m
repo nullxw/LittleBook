@@ -9,6 +9,7 @@
 #define LB_DOCUMENT_APPENDIX_START_TAG 999
 #define LB_DOCUMENT_CONTENT_OY_NOMARL  80
 #define LB_DOCUMENT_CONTENT_OY_EDIT    275
+#define LB_DOCUMENT_CONTENT_FIELD_OY   49
 
 #import "LBDocumentEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
@@ -58,6 +59,8 @@
 @property (nonatomic, strong) UIDocumentInteractionController *documentViewController;
 
 @property (weak, nonatomic) IBOutlet UIView *dummyView;
+@property (weak, nonatomic) IBOutlet UIView *toolBar;
+
 @end
 
 @implementation LBDocumentEditViewController
@@ -70,17 +73,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     _doc = [[LBDocumentContext defaultContext] prepareContext:_doc];
     // 1. init params
     [HPDragContainer shareContainer].responseDelegate = self;
-
+    
     _isMediaEditViewVisible = FALSE;
     
     // 2. update UI
     _sectionView.sectionNumber = 3;
     _sectionView.separateLineColor = LB_LIGHT_GRAY_LINE_COLOR;
-
+    
     float editViewHeight = CGRectGetHeight(_editContainerView.bounds);
     _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
     
@@ -106,6 +109,7 @@
     int fontSize = [settings[kLBFontSizeSetting] intValue];
     PanelStyle *currentStyle = [[LBPanelStyleManager defaultManager] currentStyle];
     
+    _toolBar.backgroundColor = currentStyle.panelColor;
     _contentView.backgroundColor = currentStyle.panelColor;
     _dummyView.backgroundColor = currentStyle.panelColor;
     
@@ -150,7 +154,7 @@
 - (void)creatAppendixViewWithAppendix:(Appendix *)appendix
 {
     NSString *appendixPath = [[LBAppendixFileManager defaultManager] pathForAppendix:appendix.appendixID];
-
+    
     CGRect frame = CGRectZero;
     
     NSDictionary *settings = [LBAppContext context].settings;
@@ -179,7 +183,7 @@
         [_contentField addSubview:voiceBubble];
         
     } else {
-    
+        
         CGRect frame = CGRectFromString(appendix.frame);
         
         HPTouchImageView *appendixView = [[HPTouchImageView alloc] initWithFrame:frame];
@@ -215,7 +219,7 @@
 - (IBAction)editButtonClicked:(UIButton *)sender
 {
     _isMediaEditViewVisible = !_isMediaEditViewVisible;
-
+    
     sender.enabled = FALSE;
     
     float editViewHeight = CGRectGetHeight(_editContainerView.bounds);
@@ -223,21 +227,21 @@
     
     if (_editButton.tag == 0) {
         
-    
+        
         // open edit panel
         [UIView animateWithDuration:LB_SPRING_ANIMATION_TIME delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
             
             _editContainerView.frame = CGRectMake(0, halfToolBarHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
-
+            
             _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), LB_DOCUMENT_CONTENT_OY_EDIT, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(_contentView.bounds) - LB_DOCUMENT_CONTENT_OY_EDIT + LB_DOCUMENT_CONTENT_OY_NOMARL);
             
         } completion:^(BOOL finished) {
             _editButton.enabled = TRUE;
             [self hideKeyboardButtonClicked:nil];
         }];
-
+        
     } else {
-    
+        
         // close edit panel
         [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
             _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
@@ -307,7 +311,7 @@
     cameraViewController.sourceType = UIImagePickerControllerSourceTypeCamera;
     cameraViewController.delegate = self;
     [self presentViewController:cameraViewController animated:YES completion:^{
-    
+        
     }];
 }
 - (IBAction)leftArrowButtonClicked:(id)sender
@@ -411,11 +415,11 @@
     NSDictionary *info = [notif userInfo];
     CGSize kbSize = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     float kbHeight = kbSize.height;
-
+    
     float oY =  _isMediaEditViewVisible ? LB_DOCUMENT_CONTENT_OY_EDIT : LB_DOCUMENT_CONTENT_OY_NOMARL;
     
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
-    
+        
         _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(self.view.bounds) - oY - kbHeight);
         
     } completion:^(BOOL finished) {
@@ -467,18 +471,18 @@
 //{
 //    _contentField.textContainer.exclusionPaths = nil;
 //    _contentField.text = _doc.content;
-//    
+//
 //    [_appendixPaths removeAllObjects];
-//    
+//
 //    for (int i = 0 ; i < _appendixViews.count; i++) {
-//        
+//
 //        UIView *appendixView = _appendixViews[i];
 //        [_appendixPaths addObject:[self exclusionPathForFrame:appendixView.frame]];
 //    }
 //    _contentField.textContainer.exclusionPaths = _appendixPaths;
-//    
+//
 //    NSLog(@"%f", -CGRectGetHeight(_contentField.bounds) + _contentField.contentSize.height);
-//    
+//
 //    _contentField.contentOffset = CGPointMake(0, -CGRectGetHeight(_contentField.bounds) + _contentField.contentSize.height);
 //}
 
@@ -487,14 +491,10 @@
     NSString *content = textView.text;
     
     if ([text isEqualToString:@""] && content.length > 0) {
-
+        
         content = [content substringToIndex:content.length - 1];
         
         
-    } else if ([text isEqualToString:@"\n"]) {
-
-        return TRUE;
-    
     } else {
         content = [content stringByReplacingCharactersInRange:range withString:text];
     }
@@ -546,7 +546,7 @@
         appendix.frame = NSStringFromCGRect(appendixViewFrame);
         
         [_appendixs addObject:appendix];
-    
+        
         [self creatAppendixViewWithAppendix:appendix];
     }
     
@@ -557,7 +557,7 @@
 
 - (CGRect)verifiedFrame:(CGRect)frame
 {
-
+    
     if (CGRectGetMaxX(frame) > CGRectGetWidth(_contentField.bounds)) {
         frame.origin.x = CGRectGetWidth(_contentField.bounds) - CGRectGetWidth(frame);
     }
@@ -586,10 +586,9 @@
     
     CGRect frame = _contentField.frame;
     frame.origin.y = frame.origin.y - _contentField.contentOffset.y;
-    frame.size.height = _contentField.contentSize.height;
+    frame.size.height = MAX(_contentField.contentSize.height, CGRectGetHeight(frame));
     
     _contentField.frame = frame;
-//    _contentField.frame = CGRectMake(, <#CGFloat width#>, <#CGFloat height#>)
 }
 
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
@@ -614,15 +613,17 @@
 {
     _contentField.scrollEnabled = TRUE;
     
+    float offsetY = LB_DOCUMENT_CONTENT_FIELD_OY - CGRectGetMinY(_contentField.frame);
+    
     CGRect frame = _contentField.frame;
-    frame.origin.y = 49;
+    frame.origin.y = LB_DOCUMENT_CONTENT_FIELD_OY;
     frame.size.height = CGRectGetHeight(_contentView.bounds) - 49 - 30;;
     
     _contentField.frame = frame;
     
-    [_contentField scrollRectToVisible:touchImageView.bounds animated:FALSE];
+    offsetY = MAX(0, offsetY);
     
-//    [_contentField becomeFirstResponder];
+    _contentField.contentOffset = CGPointMake(0, offsetY);
 }
 
 #pragma mark -  UIImagePickerControllerDelegate
@@ -630,7 +631,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-
+    
     [picker dismissViewControllerAnimated:YES completion:^{
         if (!_isMediaEditViewVisible) {
             [self editButtonClicked:_editButton];

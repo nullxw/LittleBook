@@ -124,8 +124,8 @@
 - (IBAction)insertButtonClicked:(id)sender
 {
     CGSize imageSize = [_originalImage sizeForContainer:_imageView.frame.size];
-    
-    NSDictionary *imageInfo = @{@"image" : _originalImage,
+    UIImage *image = [_originalImage clipToSize:imageSize];
+    NSDictionary *imageInfo = @{@"image" : image,
                                 @"size"  : NSStringFromCGSize(imageSize)};
     
     [[NSNotificationCenter defaultCenter] postNotificationName:LB_ACTION_NOTIF object:imageInfo userInfo:@{LB_ACTION_TYPE_KEY:@(LBActionTypeInsertAppendix)}];

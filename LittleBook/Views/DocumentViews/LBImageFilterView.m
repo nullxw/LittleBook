@@ -52,7 +52,7 @@
 
 - (IBAction)doneButtonClicked:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:LB_ACTION_TYPE_KEY object:_imageView.image userInfo:@{LB_ACTION_TYPE_KEY : @(LBActionTypeApplyFilter)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:LB_ACTION_NOTIF object:_imageView.image userInfo:@{LB_ACTION_TYPE_KEY : @(LBActionTypeApplyFilter)}];
     [self removeFromSuperview];
 }
 
@@ -86,6 +86,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
     if (indexPath.row == _filters.count) {
         _imageView.image = _image;
     } else {

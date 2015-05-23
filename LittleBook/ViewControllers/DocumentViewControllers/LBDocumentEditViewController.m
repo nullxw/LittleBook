@@ -56,6 +56,8 @@
 @property (weak, nonatomic) IBOutlet LBDocumentAppendixEditView *editContainerView;
 
 @property (nonatomic, strong) UIDocumentInteractionController *documentViewController;
+
+@property (weak, nonatomic) IBOutlet UIView *dummyView;
 @end
 
 @implementation LBDocumentEditViewController
@@ -105,6 +107,8 @@
     PanelStyle *currentStyle = [[LBPanelStyleManager defaultManager] currentStyle];
     
     _contentView.backgroundColor = currentStyle.panelColor;
+    _dummyView.backgroundColor = currentStyle.panelColor;
+    
     _contentField.textColor = currentStyle.fontColor;
     _titleField.textColor   = currentStyle.fontColor;
     
@@ -345,7 +349,6 @@
     [LBExportManager exportAsPDF:_doc withCompletionBlock:^{
         
     }];
-    
 }
 
 - (void)exportToLocal
@@ -459,22 +462,25 @@
 
 #pragma mark - UITextViewDelegate
 
-// fix bug : 如果不reload 接下来的 拖拽操作 ，exclusivepath 将发生异常
-- (void)reloadTextView
-{
-    _contentField.textContainer.exclusionPaths = nil;
-    _contentField.text = _doc.content;
-    
-    [_appendixPaths removeAllObjects];
-    
-    for (int i = 0 ; i < _appendixViews.count; i++) {
-        
-        UIView *appendixView = _appendixViews[i];
-        [_appendixPaths addObject:[self exclusionPathForFrame:appendixView.frame]];
-    }
-    _contentField.textContainer.exclusionPaths = _appendixPaths;
-
-}
+//// fix bug : 如果不reload 接下来的 拖拽操作 ，exclusivepath 将发生异常
+//- (void)reloadTextView
+//{
+//    _contentField.textContainer.exclusionPaths = nil;
+//    _contentField.text = _doc.content;
+//    
+//    [_appendixPaths removeAllObjects];
+//    
+//    for (int i = 0 ; i < _appendixViews.count; i++) {
+//        
+//        UIView *appendixView = _appendixViews[i];
+//        [_appendixPaths addObject:[self exclusionPathForFrame:appendixView.frame]];
+//    }
+//    _contentField.textContainer.exclusionPaths = _appendixPaths;
+//    
+//    NSLog(@"%f", -CGRectGetHeight(_contentField.bounds) + _contentField.contentSize.height);
+//    
+//    _contentField.contentOffset = CGPointMake(0, -CGRectGetHeight(_contentField.bounds) + _contentField.contentSize.height);
+//}
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -486,14 +492,8 @@
         
         
     } else if ([text isEqualToString:@"\n"]) {
-        content = [content stringByReplacingCharactersInRange:range withString:text];
-        _doc.content = content;
-        
-        _previousCursorLocation = range.location + range.length + 1;
-        
-        [self reloadTextView];
 
-        return FALSE;
+        return TRUE;
     
     } else {
         content = [content stringByReplacingCharactersInRange:range withString:text];
@@ -527,7 +527,6 @@
         
     } else {
         _contentField.textContainer.exclusionPaths = _appendixPaths;
-    
     }
 }
 
@@ -582,6 +581,15 @@
 - (void)willOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
     [self hideKeyboardButtonClicked:nil];
+    
+    _contentField.scrollEnabled = FALSE;
+    
+    CGRect frame = _contentField.frame;
+    frame.origin.y = frame.origin.y - _contentField.contentOffset.y;
+    frame.size.height = _contentField.contentSize.height;
+    
+    _contentField.frame = frame;
+//    _contentField.frame = CGRectMake(, <#CGFloat width#>, <#CGFloat height#>)
 }
 
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
@@ -604,6 +612,16 @@
 
 - (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
+    _contentField.scrollEnabled = TRUE;
+    
+    CGRect frame = _contentField.frame;
+    frame.origin.y = 49;
+    frame.size.height = CGRectGetHeight(_contentView.bounds) - 49 - 30;;
+    
+    _contentField.frame = frame;
+    
+    [_contentField scrollRectToVisible:touchImageView.bounds animated:FALSE];
+    
 //    [_contentField becomeFirstResponder];
 }
 

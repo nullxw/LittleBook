@@ -1166,6 +1166,21 @@
                                 <rect key="frame" x="10" y="275" width="300" height="293"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="g6f-nq-JMJ">
+                                        <rect key="frame" x="10" y="49" width="280" height="213"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3cv-YX-Yfb" id="s8Q-Ri-LTc"/>
+                                        </connections>
+                                    </textView>
+                                    <view contentMode="scaleToFill" id="Dvy-nK-3kF">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleToFill" id="qh0-M6-A8b" customClass="HPLine">
                                         <rect key="frame" x="10" y="40" width="280" height="1"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -1256,16 +1271,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="g6f-nq-JMJ">
-                                        <rect key="frame" x="10" y="49" width="280" height="213"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="3cv-YX-Yfb" id="s8Q-Ri-LTc"/>
-                                        </connections>
-                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1275,6 +1280,7 @@
                     <connections>
                         <outlet property="contentField" destination="g6f-nq-JMJ" id="eTI-sX-NSy"/>
                         <outlet property="contentView" destination="vXD-Dc-gfl" id="lg5-rw-dPt"/>
+                        <outlet property="dummyView" destination="Dvy-nK-3kF" id="f4J-sQ-dld"/>
                         <outlet property="editButton" destination="rnA-9w-Bwc" id="gvn-D9-VJi"/>
                         <outlet property="editContainerView" destination="fWn-Gw-LyG" id="vdl-JV-jLh"/>
                         <outlet property="sectionView" destination="hcB-VC-AWU" id="4lr-Fa-eUq"/>
@@ -3003,7 +3009,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cki-Ad-vdS">
-                                        <rect key="frame" x="232.99999985537107" y="8" width="34" height="34"/>
+                                        <rect key="frame" x="232.99999969286665" y="8" width="34" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" image="share_icon">

@@ -26,6 +26,7 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
+    _appendixView.image = nil;
     _createTimeLabel.textColor = [UIColor colorWithR:47 g:138 b:193 a:1.0];
     _titleLabel.textColor = [UIColor colorWithR:47 g:138 b:193 a:1.0];
 }

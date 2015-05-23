@@ -13,8 +13,7 @@
 @interface IndexInfo : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * maxAppendixID;
-@property (nonatomic, retain) NSNumber * maxDocumentID;
-@property (nonatomic, retain) NSNumber * maxAccountDetailID;
+@property (nonatomic, retain) NSNumber * maxAppendixParentID;
 @property (nonatomic, retain) NSNumber * maxNotificationID;
 @property (nonatomic, retain) NSString * userID;
 

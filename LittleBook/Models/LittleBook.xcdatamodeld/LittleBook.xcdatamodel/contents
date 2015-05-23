@@ -35,9 +35,8 @@
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="IndexInfo" representedClassName="IndexInfo" syncable="YES">
-        <attribute name="maxAccountDetailID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="maxAppendixID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="maxDocumentID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="maxAppendixParentID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="maxNotificationID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="LBUser" representedClassName="LBUser" syncable="YES">
@@ -71,7 +70,7 @@
         <element name="AccountDetail" positionX="-54" positionY="90" width="128" height="133"/>
         <element name="Appendix" positionX="-54" positionY="-9" width="128" height="150"/>
         <element name="Document" positionX="-63" positionY="-18" width="128" height="165"/>
-        <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="105"/>
+        <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="90"/>
         <element name="LBUser" positionX="-45" positionY="63" width="128" height="103"/>
         <element name="Notification" positionX="-54" positionY="54" width="128" height="180"/>
         <element name="ReadFile" positionX="-54" positionY="90" width="128" height="150"/>

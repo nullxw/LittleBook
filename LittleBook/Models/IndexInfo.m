@@ -12,8 +12,7 @@
 @implementation IndexInfo
 
 @dynamic maxAppendixID;
-@dynamic maxDocumentID;
-@dynamic maxAccountDetailID;
+@dynamic maxAppendixParentID;
 @dynamic maxNotificationID;
 @dynamic userID;
 

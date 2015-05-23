@@ -13,8 +13,7 @@
 {
     IndexInfo *_indexInfo;
     unsigned long _maxAppendixID;
-    unsigned long _maxDocumentID;
-    unsigned long _maxAccountDetailID;
+    unsigned long _maxAppendixParentID;
     unsigned long _maxNotificationID;
 }
 @end
@@ -33,15 +32,13 @@
         _indexInfo = [IndexInfo findFirst];
         if (!_indexInfo) {
             _indexInfo = [IndexInfo createEntity];
-            _indexInfo.maxAppendixID     = @(0);
-            _indexInfo.maxDocumentID     = @(0);
-            _indexInfo.maxAccountDetailID= @(0);
-            _indexInfo.maxNotificationID = @(0);
+            _indexInfo.maxAppendixID       = @(0);
+            _indexInfo.maxAppendixParentID = @(0);
+            _indexInfo.maxNotificationID   = @(0);
         }
-        _maxAppendixID = _indexInfo.maxAppendixID.unsignedLongValue;
-        _maxDocumentID = _indexInfo.maxDocumentID.unsignedLongValue;
-        _maxAccountDetailID = _indexInfo.maxAccountDetailID.unsignedLongValue;
-        _maxNotificationID  = _indexInfo.maxNotificationID.unsignedIntegerValue;
+        _maxAppendixID       = _indexInfo.maxAppendixID.unsignedLongValue;
+        _maxAppendixParentID = _indexInfo.maxAppendixParentID.unsignedLongValue;
+        _maxNotificationID   = _indexInfo.maxNotificationID.unsignedIntegerValue;
     }
     return self;
 }
@@ -55,19 +52,20 @@
 
 - (NSNumber *)getDocumentID
 {
-    _indexInfo.maxDocumentID = @(++_maxDocumentID);
+    _indexInfo.maxAppendixParentID = @(++_maxAppendixParentID);
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     
-    return _indexInfo.maxDocumentID;
+    return _indexInfo.maxAppendixParentID;
 }
 
 - (NSNumber *)getAccountDetailID
 {
-    _indexInfo.maxAccountDetailID = @(++_maxAccountDetailID);
+    _indexInfo.maxAppendixParentID = @(++_maxAppendixParentID);
     
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-    return _indexInfo.maxAccountDetailID;
+    return _indexInfo.maxAppendixParentID;
 }
+
 - (NSNumber *)getNotificationID
 {
     _indexInfo.maxNotificationID = @(++_maxNotificationID);

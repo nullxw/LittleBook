@@ -7,15 +7,21 @@
 //
 
 #import "LBDatePickerCell.h"
+#import "LBNotificationManager.h"
 
 @implementation LBDatePickerCell
 
 - (void)awakeFromNib
 {
-    NSDate *now = [NSDate new];
-    [_datePicker setDate:now];
-    _datePicker.minimumDate = now;
+    Notification *notif = [LBNotificationManager defaultManager].preparedEntity;
+    _datePicker.minimumDate = [NSDate new];
+    _datePicker.date = notif.fireDate;
 }
 
+
+- (IBAction)didSelectDate:(UIDatePicker *)sender
+{
+    [LBNotificationManager defaultManager].preparedEntity.fireDate = sender.date;
+}
 
 @end

@@ -155,7 +155,7 @@
         [self.recorder stop];
     }
     
-    self.recorder = nil;    
+//    self.recorder = nil;    
 }
 
 - (void)cancelled

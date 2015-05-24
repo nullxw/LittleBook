@@ -23,6 +23,8 @@
 
 - (CGRect)verifiedFrame:(CGRect)frame;
 
+- (void)didRemoveTouchImageView:(HPTouchImageView *)touchImageView;
+
 @end
 
 @interface HPTouchImageView : UIImageView;

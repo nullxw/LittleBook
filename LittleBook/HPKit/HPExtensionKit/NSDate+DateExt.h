@@ -14,6 +14,8 @@
 
 - (NSInteger)getWeekIndex;
 
+- (NSInteger)getDateComponent:(NSCalendarUnit)calUnit;
+
 // pattern like @"yyyy-MM-dd'T'HH:mm:ss"
 - (NSString *)formattedString:(NSString *)pattern;
 

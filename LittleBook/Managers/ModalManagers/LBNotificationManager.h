@@ -11,7 +11,7 @@
 
 @interface LBNotificationManager : NSObject
 
-@property (nonatomic, weak) Notification *preparedEntity;
+@property (nonatomic, strong) Notification *preparedEntity;
 
 + (LBNotificationManager *)defaultManager;
 

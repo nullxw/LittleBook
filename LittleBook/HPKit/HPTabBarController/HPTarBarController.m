@@ -47,6 +47,8 @@
     if (childViewController.navigationBar) {
         [childViewController.navigationBar startHideAnimationWithDuration:LB_LINEAR_ANIMATION_TIME completion:nil];
     }
+    
+    [self viewWillAppear:TRUE];
   
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
         childViewController.contentView.alpha = 0.0;

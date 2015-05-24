@@ -43,10 +43,6 @@
     [alert show];
    
 }
-- (IBAction)didSelectDate:(UIDatePicker *)sender
-{
-    [LBNotificationManager defaultManager].preparedEntity.fireDate = sender.date;
-}
 
 - (IBAction)saveButtonClicked:(id)sender
 {
@@ -76,7 +72,6 @@
 {
     if (indexPath.row == 0) {
         LBDatePickerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dataPickerCell"];
-        cell.datePicker.date = [NSDate new];
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detailCell"];
@@ -90,6 +85,19 @@
     if (indexPath.row == 1) {
         [self performSegueWithIdentifier:@"openLabelEditPage" sender:self];
     }
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return HP_ONE_PX_SIZE;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 15, CGRectGetWidth(tableView.bounds) - 30, HP_ONE_PX_SIZE)];
+    line.backgroundColor = [UIColor colorWithR:71 g:166 b:223 a:1.0];
+    return line;
 }
 
 #pragma mark - UIAlertViewDelegate

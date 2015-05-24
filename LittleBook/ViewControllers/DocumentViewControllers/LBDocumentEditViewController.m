@@ -294,7 +294,6 @@
 -(IBAction)audioButtonUpOutside:(id)sender
 {
     [_voice cancelled];
-    _voice = nil;
 }
 
 
@@ -342,6 +341,11 @@
     appendix.frame = NSStringFromCGRect(frame);
     [_appendixs addObject:appendix];
     [self creatAppendixViewWithAppendix:appendix];
+    
+    float offsetY = CGRectGetMaxY(frame) - CGRectGetHeight(_contentField.frame);
+    offsetY = MAX(0, offsetY);
+    
+    _contentField.contentOffset = CGPointMake(0, offsetY);
 }
 
 - (void)exportAsPDF
@@ -349,7 +353,6 @@
     if (_editButton) {
         [self editButtonClicked:_editButton];
     }
-    
     [LBExportManager exportAsPDF:_doc withCompletionBlock:^{
         
     }];
@@ -466,39 +469,15 @@
 
 #pragma mark - UITextViewDelegate
 
-//// fix bug : 如果不reload 接下来的 拖拽操作 ，exclusivepath 将发生异常
-//- (void)reloadTextView
-//{
-//    _contentField.textContainer.exclusionPaths = nil;
-//    _contentField.text = _doc.content;
-//
-//    [_appendixPaths removeAllObjects];
-//
-//    for (int i = 0 ; i < _appendixViews.count; i++) {
-//
-//        UIView *appendixView = _appendixViews[i];
-//        [_appendixPaths addObject:[self exclusionPathForFrame:appendixView.frame]];
-//    }
-//    _contentField.textContainer.exclusionPaths = _appendixPaths;
-//
-//    NSLog(@"%f", -CGRectGetHeight(_contentField.bounds) + _contentField.contentSize.height);
-//
-//    _contentField.contentOffset = CGPointMake(0, -CGRectGetHeight(_contentField.bounds) + _contentField.contentSize.height);
-//}
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     NSString *content = textView.text;
-    
     if ([text isEqualToString:@""] && content.length > 0) {
-        
         content = [content substringToIndex:content.length - 1];
-        
-        
     } else {
         content = [content stringByReplacingCharactersInRange:range withString:text];
     }
-    
     _doc.content = content;
     return TRUE;
 }
@@ -555,11 +534,30 @@
 
 #pragma mark - HPTouchImageViewProtocol
 
+- (void)didRemoveTouchImageView:(HPTouchImageView *)touchImageView
+{
+    NSInteger selectedIndex = [_appendixViews indexOfObject:touchImageView];
+    
+    // update appendix
+    Appendix *appendix = [_appendixs objectAtIndex:selectedIndex];
+    
+    [LBAppendixManager deleteAppendix:appendix];
+    
+    [_appendixPaths removeObjectAtIndex:selectedIndex];
+    [_appendixs removeObjectAtIndex:selectedIndex];
+    [_appendixViews removeObjectAtIndex:selectedIndex];
+    
+    // update content field
+    _contentField.textContainer.exclusionPaths = _appendixPaths;
+
+}
+
 - (CGRect)verifiedFrame:(CGRect)frame
 {
+    float w = CGRectGetWidth(_contentField.bounds);
     
-    if (CGRectGetMaxX(frame) > CGRectGetWidth(_contentField.bounds)) {
-        frame.origin.x = CGRectGetWidth(_contentField.bounds) - CGRectGetWidth(frame);
+    if (CGRectGetMaxX(frame) > w) {
+        frame.origin.x = w - CGRectGetWidth(frame);
     }
     
     if (CGRectGetMinX(frame) < 0) {
@@ -568,6 +566,15 @@
     
     if (CGRectGetMinY(frame) < 0) {
         frame.origin.y = 0;
+    }
+    
+    if (frame.size.width > w) {
+        
+        float ratio = frame.size.height/frame.size.width;
+        
+        frame.size.width = w;
+        frame.size.height = w * ratio;
+        
     }
     
     return frame;

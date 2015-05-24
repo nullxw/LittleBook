@@ -18,7 +18,6 @@
 }
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *switchControl;
-@property (weak, nonatomic) IBOutlet HPLine *seperatorLine;
 
 @end
 

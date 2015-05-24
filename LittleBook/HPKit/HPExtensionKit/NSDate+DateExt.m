@@ -105,6 +105,12 @@
     }
 }
 
+- (NSInteger)getDateComponent:(NSCalendarUnit)calUnit
+{
+    NSCalendar *cal = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    return [cal component:calUnit fromDate:self];
+}
+
 - (NSString *)formattedString:(NSString *)pattern
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

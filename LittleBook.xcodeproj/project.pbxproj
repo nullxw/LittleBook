@@ -77,7 +77,6 @@
 		674A7EC61AFB93690049A97C /* HPPPBuildInTimeSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */; };
 		674A7ECC1AFB94040049A97C /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EC91AFB94040049A97C /* SSKeychain.m */; };
 		674A7ECD1AFB94040049A97C /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */; };
-		674A7ED11AFB94C70049A97C /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ED01AFB94C70049A97C /* HPTaskManager.m */; };
 		674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 674A7ED21AFB95590049A97C /* HPKitAsset.xcassets */; };
 		674A7EDD1AFB95B60049A97C /* HPLocalizedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ED61AFB95B60049A97C /* HPLocalizedButton.m */; };
 		674A7EDE1AFB95B60049A97C /* HPLocalizedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ED81AFB95B60049A97C /* HPLocalizedLabel.m */; };
@@ -216,6 +215,7 @@
 		67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6941AA2F3D00032A5FD /* Images.xcassets */; };
 		67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */; };
 		67F7B6A41AA2F3D00032A5FD /* LittleBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6A31AA2F3D00032A5FD /* LittleBookTests.m */; };
+		67F7CEB21B11DFDE00C99C58 /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7CEB11B11DFDE00C99C58 /* HPTaskManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,8 +373,6 @@
 		674A7EC91AFB94040049A97C /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		674A7ECA1AFB94040049A97C /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		674A7ECF1AFB94C70049A97C /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
-		674A7ED01AFB94C70049A97C /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
 		674A7ED21AFB95590049A97C /* HPKitAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HPKitAsset.xcassets; sourceTree = "<group>"; };
 		674A7ED51AFB95B60049A97C /* HPLocalizedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPLocalizedButton.h; sourceTree = "<group>"; };
 		674A7ED61AFB95B60049A97C /* HPLocalizedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPLocalizedButton.m; sourceTree = "<group>"; };
@@ -696,6 +694,8 @@
 		67F7B69D1AA2F3D00032A5FD /* LittleBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F7B6A21AA2F3D00032A5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F7B6A31AA2F3D00032A5FD /* LittleBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LittleBookTests.m; sourceTree = "<group>"; };
+		67F7CEB01B11DFDE00C99C58 /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
+		67F7CEB11B11DFDE00C99C58 /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -717,7 +717,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		671C1F701AB9BE4B005F5586 /* OpenResources */ = {
+		671C1F701AB9BE4B005F5586 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 				67D2FF8D1B072E8C0001B594 /* KVNProgress */,
@@ -727,6 +727,7 @@
 				671C1F711AB9BE4B005F5586 /* LunarCalendar */,
 				671C1F741AB9BE4B005F5586 /* MagicalRecord */,
 			);
+			name = Vendor;
 			path = OpenResources;
 			sourceTree = "<group>";
 		};
@@ -943,8 +944,8 @@
 				672B046F1AF4FEBE004BB1D8 /* HPDownFrequenceMachine.m */,
 				674A7EC41AFB93690049A97C /* HPPPBuildInTimeSystem.h */,
 				674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */,
+				67F7CEAF1B11DFDE00C99C58 /* HPTaskManager */,
 				674A7ED41AFB95B60049A97C /* HPLocalizedView */,
-				674A7ECE1AFB94C70049A97C /* HPTaskManager */,
 				674A7EC71AFB94040049A97C /* SSKeyChain */,
 				67417F371AF79FC300D69B7E /* HPManagers */,
 				671D53021AF5006B00AF4BE9 /* HPLockView */,
@@ -1037,15 +1038,6 @@
 				674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */,
 			);
 			path = SSKeyChain;
-			sourceTree = "<group>";
-		};
-		674A7ECE1AFB94C70049A97C /* HPTaskManager */ = {
-			isa = PBXGroup;
-			children = (
-				674A7ECF1AFB94C70049A97C /* HPTaskManager.h */,
-				674A7ED01AFB94C70049A97C /* HPTaskManager.m */,
-			);
-			path = HPTaskManager;
 			sourceTree = "<group>";
 		};
 		674A7ED41AFB95B60049A97C /* HPLocalizedView */ = {
@@ -1560,7 +1552,7 @@
 		67F7B6831AA2F3D00032A5FD /* LittleBook */ = {
 			isa = PBXGroup;
 			children = (
-				671C1F701AB9BE4B005F5586 /* OpenResources */,
+				671C1F701AB9BE4B005F5586 /* Vendor */,
 				677A31E61AB7287D0030FD08 /* Models */,
 				6721C2271AB4003F00D1FF99 /* Segues */,
 				67634C771AADE609009FD0FA /* Managers */,
@@ -1604,6 +1596,15 @@
 				67F7B6A21AA2F3D00032A5FD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		67F7CEAF1B11DFDE00C99C58 /* HPTaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				67F7CEB01B11DFDE00C99C58 /* HPTaskManager.h */,
+				67F7CEB11B11DFDE00C99C58 /* HPTaskManager.m */,
+			);
+			path = HPTaskManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1751,6 +1752,7 @@
 				67C017181ABD627E0004EFD4 /* Document.m in Sources */,
 				67634C7A1AADE625009FD0FA /* LBPanelStyleManager.m in Sources */,
 				6721C22A1AB4003F00D1FF99 /* LBPresentFromBottomSegue.m in Sources */,
+				67F7CEB21B11DFDE00C99C58 /* HPTaskManager.m in Sources */,
 				677E659D1AED232100931C24 /* HPTouchImageView.m in Sources */,
 				671C1FC81AB9BE4B005F5586 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				671D530C1AF5006B00AF4BE9 /* HPLockView.m in Sources */,
@@ -1865,7 +1867,6 @@
 				67B2EA131AFFA4B600CD80E0 /* FSVoiceBubble.m in Sources */,
 				67B2EA151AFFA4B600CD80E0 /* LCVoiceHud.m in Sources */,
 				67D2FF9E1B073CDE0001B594 /* ReadFile.m in Sources */,
-				674A7ED11AFB94C70049A97C /* HPTaskManager.m in Sources */,
 				67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */,
 				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,

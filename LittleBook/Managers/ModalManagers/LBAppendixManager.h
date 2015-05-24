@@ -26,5 +26,6 @@
 
 // Delete
 + (void)deleteAppendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context;
++ (void)deleteAppendix:(Appendix *)appendix;
 
 @end

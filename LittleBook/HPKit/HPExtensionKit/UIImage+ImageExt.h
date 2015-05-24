@@ -34,4 +34,6 @@ typedef enum {
 
 + (UIImage *)imageWithColor:(UIColor *)color;
 
+//+ (UIImage *)imageNamed:(NSString *)name;
+
 @end

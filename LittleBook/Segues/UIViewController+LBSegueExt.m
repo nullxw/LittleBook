@@ -63,6 +63,7 @@
     [sourceViewController removeFromParentViewController];
     
     [self.parentViewController viewWillAppear:YES];
+    [viewControllerToPresent viewWillAppear:TRUE];
     [self viewDidDisappear:YES];
     
     [UIView animateWithDuration:0.3 animations:^{

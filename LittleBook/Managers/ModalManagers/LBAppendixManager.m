@@ -90,9 +90,15 @@
     NSArray *appendixs = [LBAppendixManager appendixs:parentID inContext:context];
     
     for (Appendix *appendix in appendixs) {
-        
         [[LBAppendixFileManager defaultManager] removeFilesForAppendix:appendix.appendixID];
         [appendix deleteEntityInContext:context];
     }
+}
+
++ (void)deleteAppendix:(Appendix *)appendix
+{
+    [[LBAppendixFileManager defaultManager] removeFilesForAppendix:appendix.appendixID];
+    [appendix deleteEntity];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
 }
 @end

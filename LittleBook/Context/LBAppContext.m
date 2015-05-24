@@ -9,15 +9,16 @@
 static NSString *kLBUserDefaultSuiteName = @"kLBUserDefaultSuiteName";
 static NSString *kLBAppSettingKey        = @"kLBAppSettingKey";
 
-const NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
-const NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
-const NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
-const NSString *kLBPanelStyleSetting = @"kLBPanelSetting";
-const NSString *kLBFontSizeSetting = @"kLBFontSizeSetting";
-const NSString *kLBFontNameSetting = @"kLBFontNameSetting";
-const NSString *kLBResizeSetting   = @"kLBResizeSetting";
-const NSString *kLBDragSetting     = @"kLBDragSetting";
+NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
+NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
+NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
+NSString *kLBPanelStyleSetting = @"kLBPanelSetting";
+NSString *kLBFontSizeSetting = @"kLBFontSizeSetting";
+NSString *kLBFontNameSetting = @"kLBFontNameSetting";
+NSString *kLBResizeSetting   = @"kLBResizeSetting";
+NSString *kLBDragSetting     = @"kLBDragSetting";
 
+#define LB_ACCOUNT_NOTIF_ID @"LB_ACCOUNT_NOTIF_ID"
 
 #import "LBAppContext.h"
 #import "HPFileSystem.h"
@@ -82,4 +83,35 @@ const NSString *kLBDragSetting     = @"kLBDragSetting";
     
     return tempPath;
 }
+
+- (void)updateAccountNotifIfNeeded
+{
+    BOOL enableNotif = [self.settings[kLBNotificationSettingChargeUp] boolValue];
+    
+    UILocalNotification *notif = [self accountNotif];
+    
+    if (enableNotif) {
+        
+        notif.fireDate = [NSDate dateWithTimeInterval:7*24*3600 sinceDate:[NSDate new]];
+    } else {
+        [[UIApplication sharedApplication] cancelLocalNotification:notif];
+    }
+}
+
+- (UILocalNotification *)accountNotif
+{
+    UILocalNotification *localNotification = [UILocalNotification findByID:LB_ACCOUNT_NOTIF_ID];
+    
+    if (!localNotification) {
+        localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeInterval:7*24*3600 sinceDate:[NSDate new]];
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        localNotification.alertBody= @"亲，您已经一礼拜没有使用记帐本了。";
+        localNotification.soundName= @"sound.wav";
+        [localNotification setID:LB_ACCOUNT_NOTIF_ID];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }
+    return localNotification;
+}
+
 @end

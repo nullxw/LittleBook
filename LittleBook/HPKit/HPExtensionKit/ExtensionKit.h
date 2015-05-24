@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 Hu Peng. All rights reserved.
 //
 #import "UIViewController+ControllerExt.h"
+#import "UILocalNotification+NotifExt.h"
 #import "UITextView+TextViewExt.h"
 #import "NSString+StringExt.h"
 #import "UIScreen+ScreenExt.h"

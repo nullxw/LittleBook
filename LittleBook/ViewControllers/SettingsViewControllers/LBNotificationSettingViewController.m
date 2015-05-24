@@ -58,6 +58,7 @@
             break;
         case 1:
             settings[kLBNotificationSettingChargeUp] = @(sender.on);
+            [[LBAppContext context] updateAccountNotifIfNeeded];
             break;
         case 2:
             settings[kLBNotificationSettingCalendar] = @(sender.on);

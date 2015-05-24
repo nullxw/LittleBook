@@ -10,6 +10,7 @@
 #import "LBIndexInfoManager.h"
 #import "LBAppendixManager.h"
 #import "LBAccountManager.h"
+#import "LBAppContext.h"
 
 @implementation LBAccountDetailManager
 
@@ -48,6 +49,8 @@
     accountDetail.parentID = account.accountID;
     
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+    [[LBAppContext context] updateAccountNotifIfNeeded];
     
     return accountDetail;
 }

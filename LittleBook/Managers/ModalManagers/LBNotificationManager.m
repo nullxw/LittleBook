@@ -72,7 +72,7 @@
 
 - (void)updateLocalNotification:(Notification *)notification
 {
-    UILocalNotification *localNotification = [self findLocalNotificationBy:notification.notifID];
+    UILocalNotification *localNotification = [UILocalNotification findByID:notification.notifID];
     
     if (localNotification) {
         
@@ -93,25 +93,14 @@
             localNotification.soundName= @"sound.wav";
 //            localNotification.alertAction = @"稍后提醒";
 //            localNotification.repeatInterval = kCFCalendarUnitMinute;
-            localNotification.userInfo = @{@"notifID" : notification.notifID};
+            
+            [localNotification setID:notification.notifID];
             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
         }
     
     }
 }
 
-- (UILocalNotification *)findLocalNotificationBy:(NSNumber *)notifID
-{
-    NSArray *localNotificaitons = [[UIApplication sharedApplication] scheduledLocalNotifications];
-    
-    for (UILocalNotification *localNotification in localNotificaitons) {
-    
-        if ([localNotification.userInfo[@"notifID"] isEqual:notifID]) {
-            return localNotification;
-        }
-    }
-    return nil;
-}
 @end
 
 @implementation LBNotificationManager (RetrieveExt)
@@ -130,7 +119,7 @@
 
 - (void)deleteNotification:(Notification *)notification
 {
-    UILocalNotification *localNotif = [self findLocalNotificationBy:notification.notifID];
+    UILocalNotification *localNotif = [UILocalNotification findByID:notification.notifID];
     
     if (localNotif) {
         [[UIApplication sharedApplication] cancelLocalNotification:localNotif];

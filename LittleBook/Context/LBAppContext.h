@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-extern const NSString *kLBNotificationSettingLowStorage;
-extern const NSString *kLBNotificationSettingChargeUp;
-extern const NSString *kLBNotificationSettingCalendar;
-extern const NSString *kLBPanelStyleSetting;
-extern const NSString *kLBFontSizeSetting;
-extern const NSString *kLBFontNameSetting;
-extern const NSString *kLBResizeSetting;
-extern const NSString *kLBDragSetting;
+extern NSString *kLBNotificationSettingLowStorage;
+extern NSString *kLBNotificationSettingChargeUp;
+extern NSString *kLBNotificationSettingCalendar;
+extern NSString *kLBPanelStyleSetting;
+extern NSString *kLBFontSizeSetting;
+extern NSString *kLBFontNameSetting;
+extern NSString *kLBResizeSetting;
+extern NSString *kLBDragSetting;
 
 
 @interface LBAppContext : NSObject
@@ -27,5 +27,8 @@ extern const NSString *kLBDragSetting;
 - (void)updateSettings;
 
 @property (nonatomic, strong) NSString *tempPath;
+
+
+- (void)updateAccountNotifIfNeeded;
 
 @end

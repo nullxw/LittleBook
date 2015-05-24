@@ -216,6 +216,7 @@
 		67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */; };
 		67F7B6A41AA2F3D00032A5FD /* LittleBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6A31AA2F3D00032A5FD /* LittleBookTests.m */; };
 		67F7CEB21B11DFDE00C99C58 /* HPTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7CEB11B11DFDE00C99C58 /* HPTaskManager.m */; };
+		67F7CEB81B1202C900C99C58 /* UILocalNotification+NotifExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7CEB71B1202C900C99C58 /* UILocalNotification+NotifExt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -696,6 +697,8 @@
 		67F7B6A31AA2F3D00032A5FD /* LittleBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LittleBookTests.m; sourceTree = "<group>"; };
 		67F7CEB01B11DFDE00C99C58 /* HPTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTaskManager.h; sourceTree = "<group>"; };
 		67F7CEB11B11DFDE00C99C58 /* HPTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTaskManager.m; sourceTree = "<group>"; };
+		67F7CEB61B1202C900C99C58 /* UILocalNotification+NotifExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILocalNotification+NotifExt.h"; sourceTree = "<group>"; };
+		67F7CEB71B1202C900C99C58 /* UILocalNotification+NotifExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalNotification+NotifExt.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1195,6 +1198,8 @@
 				677E65871AECE36400931C24 /* UITextView+TextViewExt.m */,
 				677E658F1AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.h */,
 				677E65901AECFA7D00931C24 /* NSLayoutManager+LayoutManagerExt.m */,
+				67F7CEB61B1202C900C99C58 /* UILocalNotification+NotifExt.h */,
+				67F7CEB71B1202C900C99C58 /* UILocalNotification+NotifExt.m */,
 			);
 			path = HPExtensionKit;
 			sourceTree = "<group>";
@@ -1879,6 +1884,7 @@
 				671C1FC61AB9BE4B005F5586 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				671D530D1AF5006B00AF4BE9 /* HPPasscodeView.m in Sources */,
 				67CCC8791AD1223C00BDF574 /* LBEditMenuCell.m in Sources */,
+				67F7CEB81B1202C900C99C58 /* UILocalNotification+NotifExt.m in Sources */,
 				67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */,
 				672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */,
 				671C1FCA1AB9BE4B005F5586 /* MagicalRecord+ErrorHandling.m in Sources */,

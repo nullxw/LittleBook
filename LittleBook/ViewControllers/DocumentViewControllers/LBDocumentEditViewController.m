@@ -207,13 +207,6 @@
     return [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    _doc.documentSize = NSStringFromCGSize(_contentView.frame.size);
-}
-
 #pragma mark - button events
 
 - (IBAction)editButtonClicked:(UIButton *)sender
@@ -226,8 +219,6 @@
     float halfToolBarHeight = 25;
     
     if (_editButton.tag == 0) {
-        
-        
         // open edit panel
         [UIView animateWithDuration:LB_SPRING_ANIMATION_TIME delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
             
@@ -279,7 +270,6 @@
 -(IBAction)audioButtonUpInside:(id)sender
 {
     [_voice stopRecordWithCompletionBlock:^{
-        
         if (_voice.recordTime > 1.0f) {
             Appendix *appendix =[LBAppendixManager createAudioAppendixWithFilePath:_voice.recordPath andDuration:_voice.recordTime];
             appendix.parentID = _doc.documentID;
@@ -287,7 +277,6 @@
             [self creatAppendixViewWithAppendix:appendix];
             _contentField.textContainer.exclusionPaths = _appendixPaths;
         }
-        
     }];
 }
 
@@ -295,8 +284,6 @@
 {
     [_voice cancelled];
 }
-
-
 - (IBAction)cameraButtonClicked:(id)sender
 {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -390,7 +377,6 @@
         
     }
     [_exportManager openDoc:_doc withHolder:self];
-    
 }
 
 

@@ -132,10 +132,21 @@
 
 -(float)maxContentSizeY
 {
-    float oY = 0;
-    if(self.text && self.text.length > 0) {
-        oY = self.contentSize.height;
+    if (!self.text || self.text.length == 0) {
+        return 0;
     }
+    NSLog(@"%@", self.text);
+    __block float oY = 0;
+    [self.layoutManager enumerateLineFragmentsForGlyphRange:NSMakeRange(0, self.text.length) usingBlock:^(CGRect rect, CGRect usedRect, NSTextContainer *textContainer, NSRange glyphRange, BOOL *stop) {
+        NSLog(@"%@", [self.text substringWithRange:glyphRange]);
+        oY = MAX(oY, CGRectGetMaxY(usedRect));
+    }];
+    
     return oY;
+//    float oY = 0;
+//    if(self.text && self.text.length > 0) {
+//        oY = self.contentSize.height;
+//    }
+//    return oY;
 }
 @end

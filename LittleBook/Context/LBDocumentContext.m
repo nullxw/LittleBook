@@ -91,7 +91,6 @@
 
 - (void)autoSave
 {
-   
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         
         Document *locDoc = [LBDocumentManager findByID:_document.documentID inContext:localContext];
@@ -103,10 +102,7 @@
             
             Appendix *localAppendix = [LBAppendixManager findByID:appendix.appendixID inContext:localContext];
             localAppendix.frame = appendix.frame;
-            
-            NSLog(@"%@", localAppendix.frame);
         }
-        NSLog(@"Auto Saving at time %@", [NSDate date]);
     }];
 }
 

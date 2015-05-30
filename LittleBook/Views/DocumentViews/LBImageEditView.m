@@ -123,6 +123,9 @@
 
 - (IBAction)insertButtonClicked:(id)sender
 {
+    if (!_originalImage) {
+        return;
+    }
     CGSize imageSize = [_originalImage sizeForContainer:_imageView.frame.size];
     UIImage *image = [_originalImage clipToSize:imageSize];
     NSDictionary *imageInfo = @{@"image" : image,

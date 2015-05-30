@@ -103,15 +103,6 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(LB_AFTER_TIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [KVNProgress dismiss];
         });
-        
     });
 }
-
-#pragma mark - UIDocumentInteractionControllerDelegate
-
-- (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application
-{
-    
-}
-
 @end

@@ -3018,7 +3018,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cki-Ad-vdS">
-                                        <rect key="frame" x="232.99999930512104" y="8" width="34" height="34"/>
+                                        <rect key="frame" x="232.99999907460816" y="8" width="34" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" image="share_icon">

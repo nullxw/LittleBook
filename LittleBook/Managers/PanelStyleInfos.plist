@@ -113,11 +113,11 @@
 		<key>panelColor</key>
 		<dict>
 			<key>r</key>
-			<integer>248</integer>
+			<integer>255</integer>
 			<key>g</key>
-			<integer>247</integer>
+			<integer>255</integer>
 			<key>b</key>
-			<integer>243</integer>
+			<integer>255</integer>
 			<key>a</key>
 			<integer>1</integer>
 		</dict>

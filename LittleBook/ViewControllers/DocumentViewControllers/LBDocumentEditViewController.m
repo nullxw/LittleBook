@@ -270,6 +270,9 @@
     [[LBReadFileFileManager defaultManager] saveReadFileImage:_doc.documentID withData:UIImageJPEGRepresentation(image, 0.6)];
     [self contractTextField];
 
+    _doc.title = _titleField.text;
+    _doc.content = _contentField.text;
+    
     [[LBDocumentContext defaultContext] saveContext];
     [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
 }
@@ -363,7 +366,6 @@
     
     contentFieldFrame.size.height = contentFieldHeight;
     _contentField.frame = contentFieldFrame;
-    
     _toolBar.hidden = FALSE;
 }
 
@@ -492,6 +494,7 @@
     if ([string isEqualToString:@""] && title.length > 0) {
         title = [title substringToIndex:title.length - 1];
     } else if ([string isEqualToString:@"\n"]){
+        _doc.title = title;
         [_contentField becomeFirstResponder];
         return FALSE;
     } else {
@@ -518,6 +521,11 @@
     }
     _doc.content = content;
     return TRUE;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    _doc.content = textView.text;
 }
 #pragma mark - HPDragContainerResponseDelegate
 

@@ -60,10 +60,11 @@
     if (!_exportManager) {
         _exportManager = [[LBExportManager alloc] init];
     }
+
+    NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:_readFile.fileID];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
     
-    Document *doc = [LBDocumentManager findByID:_readFile.fileID];
-    [_exportManager openDoc:doc withHolder:self];
-    
+    [_exportManager openDocImage:image withHolder:self];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView

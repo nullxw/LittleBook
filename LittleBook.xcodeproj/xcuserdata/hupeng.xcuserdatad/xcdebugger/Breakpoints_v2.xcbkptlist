@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LittleBook/HPKit/HPExtensionKit/UITextView+TextViewExt.m"
-            timestampString = "454699165.096449"
+            filePath = "LittleBook/Views/DocumentViews/LBExportTemp.m"
+            timestampString = "454737501.924913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "-maxContentSizeY"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-updateInterfaceWithDocument"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LittleBook/HPKit/HPExtensionKit/UITextView+TextViewExt.m"
-            timestampString = "454699344.620169"
+            filePath = "LittleBook/ViewControllers/ReadViewControllers/LBFileBrowserViewController.m"
+            timestampString = "454749543.630216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-maxContentSizeY"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-shareButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

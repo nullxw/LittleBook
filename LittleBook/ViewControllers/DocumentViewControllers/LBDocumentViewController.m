@@ -8,6 +8,7 @@
 
 #import "LBDocumentViewController.h"
 #import "LBDocumentEditViewController.h"
+#import "LBReadFileFileManager.h"
 #import "LBDocumentListCell.h"
 #import "LBDocumentManager.h"
 #import "LBExportManager.h"
@@ -160,7 +161,10 @@
         if (!_exportManager) {
             _exportManager =[[LBExportManager alloc] init];
         }
-        [_exportManager openDoc:doc withHolder:self];
+        NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:doc.documentID];
+        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+        
+        [_exportManager openDocImage:image withHolder:self];
         
     } else if (tag == 1) {
     

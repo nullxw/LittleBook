@@ -10,7 +10,7 @@
 #define LB_DOCUMENT_CONTENT_OY_NOMARL  80
 #define LB_DOCUMENT_CONTENT_OY_EDIT    275
 #define LB_DOCUMENT_CONTENT_FIELD_OY   49
-
+#define LB_DOCUMENT_TOOLBAR_HEIGHT     30
 #import "LBDocumentEditViewController.h"
 #import "UIViewController+LBSegueExt.h"
 #import "LBDocumentAppendixEditView.h"
@@ -90,8 +90,10 @@
     float offsetY = editViewHeight - 25;
     _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), CGRectGetMinY(_contentView.frame) - offsetY, CGRectGetWidth(_contentView.frame), CGRectGetHeight(_contentView.frame) + offsetY);
     
-    [self updateInterfaceWithSettings];
+    _contentField.editable = TRUE;
+    _contentField.selectable = TRUE;
     
+    [self updateInterfaceWithSettings];
     [self updateInterfaceWithDocument];
     
     // 3. register notification
@@ -100,6 +102,14 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseToAction:) name:LB_ACTION_NOTIF object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+//    _contentField.selectable = TRUE;
+//    _contentField.text = _doc.content;
 }
 
 - (void)updateInterfaceWithSettings
@@ -123,6 +133,7 @@
 - (void)updateInterfaceWithDocument
 {
     _titleField.text = _doc.title;
+
     _contentField.text = _doc.content;
     
     NSArray *appendixs = [LBAppendixManager appendixs:_doc.documentID];
@@ -253,6 +264,12 @@
 
 - (IBAction)backButtonClicked:(UIButton *)sender
 {
+    [self extendTextField];
+    UIImage *image = [_contentView toImage];
+    
+    [[LBReadFileFileManager defaultManager] saveReadFileImage:_doc.documentID withData:UIImageJPEGRepresentation(image, 0.6)];
+    [self contractTextField];
+
     [[LBDocumentContext defaultContext] saveContext];
     [self dismissViewControllerPresentFromBottonWithMovingDirection:HPPresentViewMovingDirectionDown];
 }
@@ -316,6 +333,41 @@
 }
 #pragma mark - action handlers
 
+- (void)extendTextField
+{
+    CGRect contentFieldFrame = _contentField.frame;
+    int oHeight = CGRectGetHeight(contentFieldFrame);
+    
+    int height = MAX(_contentField.contentSize.height, oHeight);
+    contentFieldFrame.size.height = height;
+    
+    CGRect contentViewFrame = _contentView.frame;
+    int dH = height - oHeight;
+    contentViewFrame.size.height += dH;
+    _contentView.frame = contentViewFrame;
+    _contentField.frame = contentFieldFrame;
+    _toolBar.hidden = TRUE;
+}
+
+- (void)contractTextField
+{
+    int contentViewHeight = CGRectGetHeight(self.view.frame) - CGRectGetMinY(_contentView.frame);
+    
+    CGRect contentViewFrame = _contentView.frame;
+    contentViewFrame.size.height = contentViewHeight;
+    _contentView.frame = contentViewFrame;
+    
+    CGRect contentFieldFrame = _contentField.frame;
+    
+    int contentFieldHeight = contentViewHeight - LB_DOCUMENT_CONTENT_FIELD_OY - LB_DOCUMENT_TOOLBAR_HEIGHT;
+    
+    contentFieldFrame.size.height = contentFieldHeight;
+    _contentField.frame = contentFieldFrame;
+    
+    _toolBar.hidden = FALSE;
+}
+
+
 - (void)insertAppendixWithInfo:(NSDictionary *)appendixInfo
 {
     [self editButtonClicked:_editButton];
@@ -340,9 +392,10 @@
     if (_editButton) {
         [self editButtonClicked:_editButton];
     }
-    [LBExportManager exportAsPDF:_doc withCompletionBlock:^{
-        
-    }];
+    
+    [self extendTextField];
+    [LBExportManager exportDocument:_doc asPDF:_contentView];
+    [self contractTextField];
 }
 
 - (void)exportToLocal
@@ -353,12 +406,12 @@
     
     if (!_exportManager) {
         _exportManager = [[LBExportManager alloc] init];
-        
     }
     
-    [_exportManager exportToLocal:_doc withCompletionBlock:^{
-        
-    }];
+    [self extendTextField];
+    UIImage *image = [_contentView toImage];
+    [_exportManager exportToLocal:image];
+    [self contractTextField];
 }
 
 - (void)exportAsDoc
@@ -370,15 +423,15 @@
 {
     if (_editButton) {
         [self editButtonClicked:_editButton];
-    }
-    
+    }    
     if (!_exportManager) {
         _exportManager = [[LBExportManager alloc] init];
-        
     }
-    [_exportManager openDoc:_doc withHolder:self];
+    [self extendTextField];
+    UIImage *image = [_contentView toImage];
+    [_exportManager openDocImage:image withHolder:self];
+    [self contractTextField];
 }
-
 
 #pragma mark - notification handlers
 
@@ -454,7 +507,6 @@
 }
 
 #pragma mark - UITextViewDelegate
-
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -580,8 +632,8 @@
     CGRect frame = _contentField.frame;
     frame.origin.y = frame.origin.y - _contentField.contentOffset.y;
     frame.size.height = MAX(_contentField.contentSize.height, CGRectGetHeight(frame));
-    
     _contentField.frame = frame;
+    
 }
 
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
@@ -610,12 +662,9 @@
     
     CGRect frame = _contentField.frame;
     frame.origin.y = LB_DOCUMENT_CONTENT_FIELD_OY;
-    frame.size.height = CGRectGetHeight(_contentView.bounds) - 49 - 30;;
-    
+    frame.size.height = CGRectGetHeight(_contentView.bounds) - LB_DOCUMENT_CONTENT_FIELD_OY - LB_DOCUMENT_TOOLBAR_HEIGHT;
     _contentField.frame = frame;
-    
     offsetY = MAX(0, offsetY);
-    
     _contentField.contentOffset = CGPointMake(0, offsetY);
 }
 

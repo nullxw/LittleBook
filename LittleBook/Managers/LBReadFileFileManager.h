@@ -13,9 +13,12 @@
 + (LBReadFileFileManager *)defaultManager;
 
 // Create
+- (void)saveReadFileImage:(NSNumber *)fileID withData:(NSData *)data;
 
 // Retrieve
 - (NSString *)pathForReadFile:(NSNumber *)fileID;
+
+- (NSString *)pathForReadFileImage:(NSNumber *)fileID;
 
 - (NSString *)pathForThumbnail:(NSNumber *)fileID;
 

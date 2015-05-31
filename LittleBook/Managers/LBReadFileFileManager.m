@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 hupeng. All rights reserved.
 //
 #define LB_READFILE_NAME(FILEID) [NSString stringWithFormat:@"READFILE_%@.pdf", FILEID]
+#define LB_READFILE_IMAGE_NAME(FILEID) [NSString stringWithFormat:@"READFILE_IMAGE_%@.jpg", FILEID]
 
 #define LB_READFILE_THUMBNAIL_NAME(FILEID) [NSString stringWithFormat:@"READFILE_THUMBNAIL_%@.jpg", FILEID]
 
@@ -28,14 +29,19 @@
     return NSDocumentDirectory;
 }
 
-//- (void)saveAppendix:(NSData *)appendixData forAppendixID:(NSNumber *)appendxID
-//{
-//    [appendixData writeToFile:[self pathForAppendix:appendxID] atomically:YES];
-//}
+- (void)saveReadFileImage:(NSNumber *)fileID withData:(NSData *)data;
+{
+    [data writeToFile:[self pathForReadFileImage:fileID] atomically:YES];
+}
 
 - (NSString *)pathForReadFile:(NSNumber *)fileID
 {
     return [self fullPathForName:LB_READFILE_NAME(fileID)];
+}
+
+- (NSString *)pathForReadFileImage:(NSNumber *)fileID
+{
+    return [self fullPathForName:LB_READFILE_IMAGE_NAME(fileID)];
 }
 
 - (NSString *)pathForThumbnail:(NSNumber *)fileID

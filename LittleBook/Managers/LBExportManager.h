@@ -12,9 +12,10 @@
 
 @interface LBExportManager : NSObject
 
-- (void)openDoc:(Document *)doc withHolder:(UIViewController *)holder;
+- (void)openDocImage:(UIImage *)image withHolder:(UIViewController *)holder;
 
-+ (void)exportAsPDF:(Document *)doc withCompletionBlock:(void(^)())block;
++ (void)exportDocument:(Document *)doc asPDF:(UIView *)docView;
 
-- (void)exportToLocal:(Document *)doc withCompletionBlock:(void(^)())block;
+- (void)exportToLocal:(UIImage *)image;
+
 @end

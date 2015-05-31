@@ -29,7 +29,8 @@
 
 - (void)awakeFromNib
 {
-    _contentField.textContainer.heightTracksTextView = TRUE;
+    _contentField.editable   =TRUE;
+    _contentField.selectable = FALSE;
 }
 
 - (void)setDocument:(Document *)document
@@ -59,15 +60,26 @@
     _contentField.textColor = currentStyle.fontColor;
     _titleField.textColor   = currentStyle.fontColor;
     
-    _contentField.font = [UIFont fontWithName:_contentField.font.fontName size:fontSize];
+//    _contentField.font = [UIFont fontWithName:_contentField.font.fontName size:fontSize];
     _titleField.font = [UIFont fontWithName:_titleField.font.fontName size:fontSize + 2];
 }
 
 - (void)updateInterfaceWithDocument
 {
     _titleField.text = _document.title;
-    _contentField.text = _document.content;
-
+//    _contentField.text = _document.content;
+    
+    NSDictionary *settings = [LBAppContext context].settings;
+    
+    int fontSize = [settings[kLBFontSizeSetting] intValue];
+    //
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:_document.content];
+    NSRange rang = NSMakeRange(0, _document.content.length);
+    
+    [attrStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:_contentField.font.fontName size:fontSize] range:rang];
+    
+    _contentField.attributedText = attrStr;
+    
     NSArray *appendixs = [LBAppendixManager appendixs:_document.documentID];
 
     _appendixPaths = [[NSMutableArray alloc] initWithCapacity:appendixs.count];

@@ -24,14 +24,8 @@
 
 @implementation LBExportManager
 
-- (void)openDoc:(Document *)doc withHolder:(UIViewController *)holder
+- (void)openDocImage:(UIImage *)image withHolder:(UIViewController *)holder
 {
-    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
-    temp.frame = CGRectInset([UIScreen mainScreen].bounds, 10, 10);
-    temp.document = doc;
-    
-    UIImage *image = [temp toImage];
-    
     NSString *filePath = [LBAppContext context].tempPath;
     
     NSData *data = UIImageJPEGRepresentation(image, 0.8);
@@ -44,16 +38,12 @@
     [_documentViewController presentOpenInMenuFromRect:CGRectZero inView:holder.view animated:TRUE];
 }
 
-+ (void)exportAsPDF:(Document *)doc withCompletionBlock:(void(^)())block
++ (void)exportDocument:(Document *)doc asPDF:(UIView *)docView
 {
-    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
-    temp.frame = CGRectInset([UIScreen mainScreen].bounds, 10, 10);
-    temp.document = doc;
-    
     LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
     NSString *filePath = [fileManager pathForReadFile:doc.documentID];
     
-    [LBExportManager createPDFfromUIView:temp saveToPath:filePath];
+    [LBExportManager createPDFfromUIView:docView saveToPath:filePath];
     [LBReadFileManager createReadFileFromDocument:doc];
     
     [KVNProgress showSuccessWithStatus:@"导出完成,请在阅读小本中查看/Completed"];
@@ -77,14 +67,8 @@
     [pdfData writeToFile:filePath atomically:YES];
 }
 
-- (void)exportToLocal:(Document *)doc withCompletionBlock:(void(^)())block
+- (void)exportToLocal:(UIImage *)image
 {
-    LBExportTemp *temp = [LBExportTemp loadNibForCurrentDevice];
-    temp.frame = CGRectInset([UIScreen mainScreen].bounds, 10, 10);
-    temp.document = doc;
-    
-    UIImage *image = [temp toImage];
-    
     [KVNProgress showWithStatus:@"导出中/Exporting..."];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

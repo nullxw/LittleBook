@@ -31,7 +31,7 @@
     //1.
     NotificationSetting *storageSetting = [[NotificationSetting alloc] init];
     storageSetting.notificationDesc = @"储存容量较小提醒";
-    storageSetting.notificationKey  = kLBNotificationSettingLowStorage;
+    storageSetting.notificationKey  = kLBNotificationSettingLowDiskSpace;
     [_dataSource addObject:storageSetting];
     
     NotificationSetting *chargeSetting = [[NotificationSetting alloc] init];
@@ -54,7 +54,7 @@
     
     switch (sender.tag) {
         case 0:
-            settings[kLBNotificationSettingLowStorage] = @(sender.on);
+            settings[kLBNotificationSettingLowDiskSpace] = @(sender.on);
             break;
         case 1:
             settings[kLBNotificationSettingChargeUp] = @(sender.on);

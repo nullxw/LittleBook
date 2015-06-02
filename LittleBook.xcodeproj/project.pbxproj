@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67131D031B1DEE1D00F92453 /* LBDiskSpaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */; };
 		671C1F6F1AB9B620005F5586 /* LBAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */; };
 		671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F731AB9BE4B005F5586 /* LunarCalendar.m */; };
 		671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F781AB9BE4B005F5586 /* MagicalImportFunctions.m */; };
@@ -189,6 +190,7 @@
 		67CD9CB61ACC22E800FC0455 /* LBPanelSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB01ACC22E800FC0455 /* LBPanelSettingCell.m */; };
 		67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */; };
 		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
+		67CDDF8F1B1B4888005307F4 /* LBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDDF8E1B1B4888005307F4 /* LBTextView.m */; };
 		67D2FF851B070E940001B594 /* LBDocumentActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */; };
 		67D2FF871B070F860001B594 /* LBDocumentActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */; };
 		67D2FF8A1B0710880001B594 /* LBActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF891B0710880001B594 /* LBActionSheetCell.m */; };
@@ -230,6 +232,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		67131D011B1DEE1D00F92453 /* LBDiskSpaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDiskSpaceManager.h; sourceTree = "<group>"; };
+		67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDiskSpaceManager.m; sourceTree = "<group>"; };
 		671C1F6D1AB9B620005F5586 /* LBAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppendixFileManager.h; sourceTree = "<group>"; };
 		671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppendixFileManager.m; sourceTree = "<group>"; };
 		671C1F721AB9BE4B005F5586 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
@@ -647,6 +651,8 @@
 		67CD9CB71ACC30BF00FC0455 /* HPHolidayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHolidayManager.h; sourceTree = "<group>"; };
 		67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHolidayManager.m; sourceTree = "<group>"; };
 		67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolidayInfos_2015.plist; sourceTree = "<group>"; };
+		67CDDF8D1B1B4888005307F4 /* LBTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTextView.h; sourceTree = "<group>"; };
+		67CDDF8E1B1B4888005307F4 /* LBTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTextView.m; sourceTree = "<group>"; };
 		67D2FF831B070E940001B594 /* LBDocumentActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentActionSheet.h; sourceTree = "<group>"; };
 		67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentActionSheet.m; sourceTree = "<group>"; };
 		67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBDocumentActionSheet.xib; sourceTree = "<group>"; };
@@ -1076,6 +1082,8 @@
 				67D2FFA01B073F140001B594 /* LBReadFileFileManager.m */,
 				67D2FFC21B08DE1D0001B594 /* LBExportManager.h */,
 				67D2FFC31B08DE1D0001B594 /* LBExportManager.m */,
+				67131D011B1DEE1D00F92453 /* LBDiskSpaceManager.h */,
+				67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1502,6 +1510,8 @@
 				67CD9CA51ACC22E800FC0455 /* SettingViews */,
 				67CD9C951ACC1DE700FC0455 /* CalendarViews */,
 				671C1FD01AB9BFFD005F5586 /* LBCommonViews */,
+				67CDDF8D1B1B4888005307F4 /* LBTextView.h */,
+				67CDDF8E1B1B4888005307F4 /* LBTextView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1827,6 +1837,7 @@
 				67417F3D1AF7A6F500D69B7E /* LBCustomSettingCell.m in Sources */,
 				6794AC801AD0217900EC1DB2 /* LBImagePreviewView.m in Sources */,
 				67AAC9BC1AC6AF81002E317F /* HPRoundCornerButton.m in Sources */,
+				67CDDF8F1B1B4888005307F4 /* LBTextView.m in Sources */,
 				671D530E1AF5006B00AF4BE9 /* HPSecurityInputPasscodeView.m in Sources */,
 				67CCC8761AD1223C00BDF574 /* LBDocumentAppendixEditView.m in Sources */,
 				67C016F01ABD505D0004EFD4 /* LBAccountManager.m in Sources */,
@@ -1863,6 +1874,7 @@
 				67F7B6871AA2F3D00032A5FD /* main.m in Sources */,
 				671C20041AB9C6E5005F5586 /* LBAboutViewController.m in Sources */,
 				6721C2331AB40D2900D1FF99 /* UIViewController+LBSegueExt.m in Sources */,
+				67131D031B1DEE1D00F92453 /* LBDiskSpaceManager.m in Sources */,
 				67AAC9741AC6A445002E317F /* CalendarViewCell.m in Sources */,
 				671C1FBF1AB9BE4B005F5586 /* NSManagedObject+MagicalRecord.m in Sources */,
 				67D2FFA71B074A3F0001B594 /* LBDocumentEditViewController.m in Sources */,

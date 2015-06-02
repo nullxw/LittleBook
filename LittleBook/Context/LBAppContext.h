@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *kLBNotificationSettingLowStorage;
+extern NSString *kLBNotificationSettingLowDiskSpace;
 extern NSString *kLBNotificationSettingChargeUp;
 extern NSString *kLBNotificationSettingCalendar;
 extern NSString *kLBPanelStyleSetting;

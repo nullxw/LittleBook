@@ -9,7 +9,7 @@
 static NSString *kLBUserDefaultSuiteName = @"kLBUserDefaultSuiteName";
 static NSString *kLBAppSettingKey        = @"kLBAppSettingKey";
 
-NSString *kLBNotificationSettingLowStorage = @"kLBNotificationSettingLowStorage";
+NSString *kLBNotificationSettingLowDiskSpace = @"kLBNotificationSettingLowDiskSpace";
 NSString *kLBNotificationSettingChargeUp   = @"kLBNotificationSettingChargeUp";
 NSString *kLBNotificationSettingCalendar   = @"kLBNotificationSettingCalendar";
 NSString *kLBPanelStyleSetting = @"kLBPanelSetting";
@@ -52,7 +52,7 @@ NSString *kLBDragSetting     = @"kLBDragSetting";
         self.settings = [[_userDefaults objectForKey:kLBAppSettingKey] mutableCopy];
         
         if (!self.settings) {
-            self.settings = @{kLBNotificationSettingLowStorage : @(TRUE),
+            self.settings = @{kLBNotificationSettingLowDiskSpace : @(TRUE),
                               kLBNotificationSettingChargeUp   : @(TRUE),
                               kLBNotificationSettingCalendar   : @(TRUE),
                               kLBPanelStyleSetting             : @"panelColor",

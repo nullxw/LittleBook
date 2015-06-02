@@ -7,6 +7,7 @@
 //
 
 #import "LBAppendixManager.h"
+#import "LBDiskSpaceManager.h"
 #import "LBIndexInfoManager.h"
 #import "LBAppendixFileManager.h"
 
@@ -20,6 +21,8 @@
     
     [[LBAppendixFileManager defaultManager] saveAppendix:data forAppendixID:appendix.appendixID];
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+    [LBDiskSpaceManager checkDiskSpace];
     return appendix;
 }
 
@@ -36,6 +39,9 @@
     [[NSFileManager defaultManager] moveItemAtPath:filePath toPath:appendixPath error:nil];
 
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
+    
+    [LBDiskSpaceManager checkDiskSpace];
+    
     return appendix;
 }
 

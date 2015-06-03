@@ -14,6 +14,7 @@
     CGRect _rightButtonsArea;
     
     float _offsetX;
+    
     BOOL _canEditing;
 }
 
@@ -26,6 +27,8 @@
 
 - (void)updateInterface
 {
+    _isAnmating = FALSE;
+    
     int w = CGRectGetWidth(self.bounds);
     int h = CGRectGetHeight(self.bounds);
     
@@ -33,7 +36,7 @@
     _rightButtonsArea = CGRectMake(w, 0, 0, h);
     
     for (UIButton *button in _leftButtons) {
-        _leftButtonsArea.size.width = MAX(CGRectGetMaxX(button.frame), _leftButtonsArea.size.width) ;
+        _leftButtonsArea.size.width += CGRectGetWidth(button.frame);
     }
     
     for (UIButton *button in _rightButtons) {
@@ -44,10 +47,9 @@
     _offsetX = CGRectGetWidth(_leftButtonsArea);
     
     _scrollView.contentSize = CGSizeMake(w + CGRectGetWidth(_rightButtonsArea) + CGRectGetWidth(_leftButtonsArea), h);
-    
     _scrollView.contentOffset = CGPointMake(_offsetX, 0);
-    
     _editCellContentView.frame = CGRectMake(_offsetX, 0, w, h);
+
 }
 
 - (void)prepareForReuse
@@ -75,6 +77,18 @@
     UITapGestureRecognizer *tapCell = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapCell:)];
     
     [_editCellContentView addGestureRecognizer:tapCell];
+    
+    _isAnmating = FALSE;
+    
+    [tapButtons requireGestureRecognizerToFail:tapCell];
+    
+    for (UIGestureRecognizer *gesture in _scrollView.gestureRecognizers) {
+        
+        if([gesture isKindOfClass:[UIPanGestureRecognizer class]]) {
+            [gesture requireGestureRecognizerToFail:tapButtons];
+            break;
+        }
+    }
 }
 
 - (void)cancelEditing
@@ -85,6 +99,8 @@
     [_scrollView scrollRectToVisible:_editCellContentView.frame animated:YES];
     self.isEditing = FALSE;
     self.currentStatus = HPEditCellStatusNormal;
+    self.isAnmating = FALSE;
+    
     [self cellDidEndEditing];
 }
 
@@ -92,18 +108,17 @@
 
 - (void)tapCell:(UITapGestureRecognizer *)tapGesture
 {
-    if (_isAnimating) {
+    if (_isAnmating) {
         return;
     }
     if (self.isEditing) {
         [self cancelEditing];
         return;
     }
-    NSIndexPath *indexPath = [_tableView indexPathForCell:self];
-    [_tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [_tableView selectRowAtIndexPath:[_tableView indexPathForCell:self] animated:YES scrollPosition:UITableViewScrollPositionNone];
     
     if (_tableView.delegate && [_tableView.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-        [_tableView.delegate tableView:_tableView didSelectRowAtIndexPath:indexPath];
+        [_tableView.delegate tableView:_tableView didSelectRowAtIndexPath:[_tableView indexPathForCell:self]];
     }
 }
 
@@ -164,19 +179,26 @@
             [cell cancelEditing];
             _canEditing = FALSE;
             return;
-        } if (cell.isAnimating) {
+        } else if (cell.isAnmating) {
             _canEditing = FALSE;
             return;
         }
     }
-    _isAnimating = TRUE;
+    
+    if (self.disableEditing || !_canEditing || _tableView.isEditing) {
+        return;
+    }
+    
+    _isAnmating = TRUE;
+
+//    _tableView.scrollEnabled = FALSE;
     
     [self cellWillBeginTranslate];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.disableEditing || !_canEditing) {
+    if (self.disableEditing || !_canEditing || _tableView.isEditing) {
         scrollView.contentOffset = CGPointMake(_offsetX, 0);
         return;
     }
@@ -184,12 +206,14 @@
     
     if (offsetX > _offsetX && CGRectGetWidth(_rightButtonsArea) == 0) {
         scrollView.contentOffset = CGPointMake(_offsetX, 0);
+        _isAnmating = FALSE;
         [self cellDidEndEditing];
         return;
     }
 
     if (offsetX < _offsetX && CGRectGetWidth(_leftButtonsArea) == 0) {
         scrollView.contentOffset = CGPointMake(_offsetX, 0);
+        _isAnmating = FALSE;
         [self cellDidEndEditing];
         return;
     }
@@ -197,7 +221,7 @@
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-    if (self.disableEditing || !_canEditing) {
+    if (self.disableEditing || !_canEditing || _tableView.isEditing) {
         *targetContentOffset = CGPointMake(_offsetX, 0);
         return;
     }
@@ -227,20 +251,23 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    _isAnimating = FALSE;
-    
+    _isAnmating = FALSE;
     if (scrollView.contentOffset.x == _offsetX) {
         self.currentStatus = HPEditCellStatusNormal;
         self.isEditing = FALSE;
         [self cellDidEndEditing];
+//        _tableView.scrollEnabled = TRUE;
     } else if (scrollView.contentOffset.x == 0) {
         self.currentStatus = HPEditCellStatusLeftEditing;
         self.isEditing = TRUE;
         [self cellDidBeginEditing];
+//        _tableView.scrollEnabled = FALSE;
     } else {
         self.currentStatus = HPEditCellStatusRightEditing;
         self.isEditing = TRUE;
         [self cellDidBeginEditing];
+//        _tableView.scrollEnabled = FALSE;
     }
 }
+
 @end

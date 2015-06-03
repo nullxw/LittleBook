@@ -68,13 +68,13 @@
 		672B047C1AF4FEE3004BB1D8 /* HPAutoResizeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04731AF4FEE3004BB1D8 /* HPAutoResizeCell.m */; };
 		672B047F1AF4FEE3004BB1D8 /* HPHightLightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */; };
 		672B04801AF4FEE3004BB1D8 /* HPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */; };
-		67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417EF91AF6766E00D69B7E /* HPEditCell.m */; };
 		67417F331AF6831700D69B7E /* HPRoundCornerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F321AF6831700D69B7E /* HPRoundCornerLabel.m */; };
 		67417F361AF6861300D69B7E /* LBNotificationSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F351AF6861300D69B7E /* LBNotificationSettingCell.m */; };
 		67417F3A1AF79FE600D69B7E /* HPCustomFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F391AF79FE600D69B7E /* HPCustomFontManager.m */; };
 		67417F3D1AF7A6F500D69B7E /* LBCustomSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F3C1AF7A6F500D69B7E /* LBCustomSettingCell.m */; };
 		67417F401AF7C0A100D69B7E /* LBCalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F3F1AF7C0A100D69B7E /* LBCalButton.m */; };
 		67417F431AF7C0AC00D69B7E /* LBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 67417F421AF7C0AC00D69B7E /* LBSearchBar.m */; };
+		674A63C51B1F43F2009EBE7F /* HPEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A63C41B1F43F2009EBE7F /* HPEditCell.m */; };
 		674A7EC61AFB93690049A97C /* HPPPBuildInTimeSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */; };
 		674A7ECC1AFB94040049A97C /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7EC91AFB94040049A97C /* SSKeychain.m */; };
 		674A7ECD1AFB94040049A97C /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A7ECB1AFB94040049A97C /* SSKeychainQuery.m */; };
@@ -357,8 +357,6 @@
 		672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHightLightCell.m; sourceTree = "<group>"; };
 		672B047A1AF4FEE3004BB1D8 /* HPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTouchView.h; sourceTree = "<group>"; };
 		672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTouchView.m; sourceTree = "<group>"; };
-		67417EF81AF6766E00D69B7E /* HPEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPEditCell.h; sourceTree = "<group>"; };
-		67417EF91AF6766E00D69B7E /* HPEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPEditCell.m; sourceTree = "<group>"; };
 		67417EFB1AF6767A00D69B7E /* HPCallBackProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPCallBackProtocol.h; sourceTree = "<group>"; };
 		67417F311AF6831700D69B7E /* HPRoundCornerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPRoundCornerLabel.h; sourceTree = "<group>"; };
 		67417F321AF6831700D69B7E /* HPRoundCornerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPRoundCornerLabel.m; sourceTree = "<group>"; };
@@ -372,6 +370,8 @@
 		67417F3F1AF7C0A100D69B7E /* LBCalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBCalButton.m; sourceTree = "<group>"; };
 		67417F411AF7C0AC00D69B7E /* LBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSearchBar.h; sourceTree = "<group>"; };
 		67417F421AF7C0AC00D69B7E /* LBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSearchBar.m; sourceTree = "<group>"; };
+		674A63C31B1F43F2009EBE7F /* HPEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPEditCell.h; sourceTree = "<group>"; };
+		674A63C41B1F43F2009EBE7F /* HPEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPEditCell.m; sourceTree = "<group>"; };
 		674A7EC41AFB93690049A97C /* HPPPBuildInTimeSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPPBuildInTimeSystem.h; sourceTree = "<group>"; };
 		674A7EC51AFB93690049A97C /* HPPPBuildInTimeSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPPBuildInTimeSystem.m; sourceTree = "<group>"; };
 		674A7EC81AFB94040049A97C /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -1022,8 +1022,8 @@
 				672B04791AF4FEE3004BB1D8 /* HPHightLightCell.m */,
 				672B047A1AF4FEE3004BB1D8 /* HPTouchView.h */,
 				672B047B1AF4FEE3004BB1D8 /* HPTouchView.m */,
-				67417EF81AF6766E00D69B7E /* HPEditCell.h */,
-				67417EF91AF6766E00D69B7E /* HPEditCell.m */,
+				674A63C31B1F43F2009EBE7F /* HPEditCell.h */,
+				674A63C41B1F43F2009EBE7F /* HPEditCell.m */,
 				674A7ED21AFB95590049A97C /* HPKitAsset.xcassets */,
 			);
 			path = HPEditTableView;
@@ -1885,7 +1885,6 @@
 				67B2EA151AFFA4B600CD80E0 /* LCVoiceHud.m in Sources */,
 				67D2FF9E1B073CDE0001B594 /* ReadFile.m in Sources */,
 				67E112471AFA5F9A0029045C /* LBDocumentContext.m in Sources */,
-				67417EFA1AF6766E00D69B7E /* HPEditCell.m in Sources */,
 				671C1FCB1AB9BE4B005F5586 /* MagicalRecord+iCloud.m in Sources */,
 				671D53111AF5029300AF4BE9 /* LBDocumentListCell.m in Sources */,
 				671C1FBD1AB9BE4B005F5586 /* NSManagedObject+MagicalDataImport.m in Sources */,
@@ -1909,6 +1908,7 @@
 				672B04661AF47F32004BB1D8 /* LBExportTemp.m in Sources */,
 				67AAC9BD1AC6AF81002E317F /* HPRoundCornerImageView.m in Sources */,
 				67AAC9391AC69261002E317F /* UINib+NibExt.m in Sources */,
+				674A63C51B1F43F2009EBE7F /* HPEditCell.m in Sources */,
 				67D2FFA81B074A3F0001B594 /* LBDocumentViewController.m in Sources */,
 				671C1FB91AB9BE4B005F5586 /* NSObject+MagicalDataImport.m in Sources */,
 				671D530B1AF5006B00AF4BE9 /* HPFixedLengthPasscodeView.m in Sources */,

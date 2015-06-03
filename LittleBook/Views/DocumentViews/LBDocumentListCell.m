@@ -37,7 +37,7 @@
     
     _createTimeLabel.text = [_document.createTime formattedString:@"yyyy | MM | dd"];
     _titleLabel.text      = document.title;
-    _contentLabel.text    = document.content;
+    _contentLabel.text    = [document.content truncateNewLine];
     
     if (document.favourite.boolValue) {
         _createTimeLabel.textColor = [UIColor colorWithR:237 g:115 b:118 a:1.0];

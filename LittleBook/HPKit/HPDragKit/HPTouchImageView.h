@@ -29,7 +29,6 @@
 
 @interface HPTouchImageView : UIImageView;
 
-@property (nonatomic, assign) BOOL disableTap;
 @property (nonatomic, assign) BOOL disablePinch;
 @property (nonatomic, assign) BOOL disablePan;
 

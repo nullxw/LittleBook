@@ -52,7 +52,6 @@
 - (void)initialize
 {
     self.disablePinch = TRUE;
-    self.disableTap = TRUE;
     
     self.backgroundColor = [UIColor clearColor];
     self.clipsToBounds = NO;
@@ -72,6 +71,7 @@
     button.imageView.contentMode          = UIViewContentModeCenter;
     button.contentHorizontalAlignment     = UIControlContentHorizontalAlignmentRight;
     [self addSubview:button];
+    
     self.contentButton = button;
     
     self.waveColor = [UIColor colorWithRed:0/255.0 green:102/255.0 blue:51/255.0 alpha:1.0];

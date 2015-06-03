@@ -12,12 +12,20 @@
 
 - (BOOL)isEmpty;
 
+
+
+- (NSDate *)dateFromPattern:(NSString *)pattern;
+
+- (NSString *)truncateNewLine;
+
+@end
+
+@interface NSString  (Encrypt)
+
 - (NSString*)MD5;
 
 - (NSString*)SHA1;
 
 - (NSString*)SHA256;
-
-- (NSDate *)dateFromPattern:(NSString *)pattern;
 
 @end

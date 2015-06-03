@@ -32,7 +32,6 @@
 #import "Document.h"
 #import "LCVoice.h"
 
-
 @interface LBDocumentEditViewController () <UITextFieldDelegate, UITextViewDelegate, HPDragContainerResponseDelegate, HPTouchImageViewProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     BOOL _isMediaEditViewVisible;
@@ -51,6 +50,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *contentField;
 
@@ -86,9 +86,7 @@
     
     float editViewHeight = CGRectGetHeight(_editContainerView.bounds);
     _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
-    
-    float offsetY = editViewHeight - 25;
-    _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), CGRectGetMinY(_contentView.frame) - offsetY, CGRectGetWidth(_contentView.frame), CGRectGetHeight(_contentView.frame) + offsetY);
+    _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), LB_DOCUMENT_CONTENT_OY_NOMARL, CGRectGetWidth(_contentView.frame), CGRectGetHeight(self.view.frame) - LB_DOCUMENT_CONTENT_OY_NOMARL);
     
     _contentField.editable = TRUE;
     _contentField.selectable = TRUE;
@@ -102,14 +100,6 @@
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseToAction:) name:LB_ACTION_NOTIF object:nil];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-//    _contentField.selectable = TRUE;
-//    _contentField.text = _doc.content;
 }
 
 - (void)updateInterfaceWithSettings
@@ -128,14 +118,16 @@
     
     _contentField.font = [UIFont fontWithName:_contentField.font.fontName size:fontSize];
     _titleField.font = [UIFont fontWithName:_titleField.font.fontName size:fontSize + 2];
+    
+    //
+    _contentView.backgroundColor = [UIColor redColor];
+    _dummyView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)updateInterfaceWithDocument
 {
     _titleField.text = _doc.title;
-
     _contentField.text = _doc.content;
-    
     NSArray *appendixs = [LBAppendixManager appendixs:_doc.documentID];
     
     _appendixs = [[NSMutableArray alloc] initWithCapacity:0];
@@ -150,6 +142,11 @@
     }
     
     _contentField.textContainer.exclusionPaths = _appendixPaths;
+    CGRect frame = _contentField.frame;
+    frame.size.height = [self getMaxYOfTextView];
+    _contentField.frame = frame;
+    
+    _contentScrollView.contentSize = frame.size;
 }
 
 - (float)getMaxYOfTextView
@@ -456,6 +453,10 @@
 
 - (void)keyboardWillShow:(NSNotification *)notif
 {
+    if (!_titleField.isFirstResponder && ![_contentField isFirstResponder]) {
+        return;
+    }
+    
     NSDictionary *info = [notif userInfo];
     CGSize kbSize = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     float kbHeight = kbSize.height;
@@ -465,9 +466,10 @@
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
         
         _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(self.view.bounds) - oY - kbHeight);
+    
         
     } completion:^(BOOL finished) {
-        
+  
         if (_isMediaEditViewVisible) {
             [self editButtonClicked:_editButton];
         }
@@ -476,6 +478,10 @@
 
 - (void)keyboardWillHide:(NSNotification *)notif
 {
+    if (!_titleField.isFirstResponder && ![_contentField isFirstResponder]) {
+        return;
+    }
+    
     float oY =  _isMediaEditViewVisible ? LB_DOCUMENT_CONTENT_OY_EDIT : LB_DOCUMENT_CONTENT_OY_NOMARL;
     
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
@@ -635,12 +641,12 @@
 {
     [self hideKeyboardButtonClicked:nil];
     
-    _contentField.scrollEnabled = FALSE;
-    
-    CGRect frame = _contentField.frame;
-    frame.origin.y = frame.origin.y - _contentField.contentOffset.y;
-    frame.size.height = MAX(_contentField.contentSize.height, CGRectGetHeight(frame));
-    _contentField.frame = frame;
+//    _contentField.scrollEnabled = FALSE;
+//    
+//    CGRect frame = _contentField.frame;
+//    frame.origin.y = frame.origin.y - _contentField.contentOffset.y;
+//    frame.size.height = MAX(_contentField.contentSize.height, CGRectGetHeight(frame));
+//    _contentField.frame = frame;
     
 }
 
@@ -664,16 +670,16 @@
 
 - (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
-    _contentField.scrollEnabled = TRUE;
-    
-    float offsetY = LB_DOCUMENT_CONTENT_FIELD_OY - CGRectGetMinY(_contentField.frame);
-    
-    CGRect frame = _contentField.frame;
-    frame.origin.y = LB_DOCUMENT_CONTENT_FIELD_OY;
-    frame.size.height = CGRectGetHeight(_contentView.bounds) - LB_DOCUMENT_CONTENT_FIELD_OY - LB_DOCUMENT_TOOLBAR_HEIGHT;
-    _contentField.frame = frame;
-    offsetY = MAX(0, offsetY);
-    _contentField.contentOffset = CGPointMake(0, offsetY);
+//    _contentField.scrollEnabled = TRUE;
+//    
+//    float offsetY = LB_DOCUMENT_CONTENT_FIELD_OY - CGRectGetMinY(_contentField.frame);
+//    
+//    CGRect frame = _contentField.frame;
+//    frame.origin.y = LB_DOCUMENT_CONTENT_FIELD_OY;
+//    frame.size.height = CGRectGetHeight(_contentView.bounds) - LB_DOCUMENT_CONTENT_FIELD_OY - LB_DOCUMENT_TOOLBAR_HEIGHT;
+//    _contentField.frame = frame;
+//    offsetY = MAX(0, offsetY);
+//    _contentField.contentOffset = CGPointMake(0, offsetY);
 }
 
 #pragma mark -  UIImagePickerControllerDelegate

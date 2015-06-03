@@ -13,11 +13,16 @@
 
 - (BOOL)isEmpty
 {
+    // check nil
     if (!self) {
         return YES;
     }
     // check null
-    if ([self isEqual:[NSNull null]]) {
+    if ([self isKindOfClass:[NSNull class]]) {
+        return YES;
+    }
+    
+    if (self.length == 0) {
         return YES;
     }
     
@@ -28,6 +33,47 @@
     
     return NO;
 }
+
+
+- (NSString*)toHexString:(unsigned char*)data length:(unsigned int)length
+{
+    NSMutableString* hash = [NSMutableString stringWithCapacity:length * 2];
+    for (unsigned int i = 0; i < length; i++) {
+        [hash appendFormat:@"%02x", data[i]];
+        data[i] = 0;
+    }
+    return hash;
+}
+
+- (NSDate *)dateFromPattern:(NSString *)pattern
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = pattern;
+    return [formatter dateFromString:self];
+}
+
+- (NSString *)truncateNewLine
+{
+    NSArray *components = [self componentsSeparatedByString:@"\n"];
+
+    NSString *toStr = @"";
+    
+    for(NSString *component in components) {
+    
+        if ([component isEqual:@""]) {
+            continue;
+        }
+        
+        NSLog(@"%@", component);
+        toStr = [toStr stringByAppendingString:component];
+        toStr = [toStr stringByAppendingString:@"\n"];
+    }
+    return toStr;
+}
+
+@end
+
+@implementation NSString (Encrypt)
 
 - (NSString*)MD5
 {
@@ -61,20 +107,4 @@
     return (unsigned int) [self lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (NSString*)toHexString:(unsigned char*)data length:(unsigned int)length
-{
-    NSMutableString* hash = [NSMutableString stringWithCapacity:length * 2];
-    for (unsigned int i = 0; i < length; i++) {
-        [hash appendFormat:@"%02x", data[i]];
-        data[i] = 0;
-    }
-    return hash;
-}
-
-- (NSDate *)dateFromPattern:(NSString *)pattern
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = pattern;
-    return [formatter dateFromString:self];
-}
 @end

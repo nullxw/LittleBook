@@ -282,6 +282,9 @@
         return;
     }
     if (!_player.playing) {
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+        
         [_player play];
         [self startAnimating];
     }

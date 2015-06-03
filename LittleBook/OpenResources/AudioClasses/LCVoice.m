@@ -154,8 +154,6 @@
     if (self.recorder.isRecording) {
         [self.recorder stop];
     }
-    
-//    self.recorder = nil;    
 }
 
 - (void)cancelled

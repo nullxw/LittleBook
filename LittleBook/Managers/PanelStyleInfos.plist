@@ -6,11 +6,11 @@
 		<key>fontColor</key>
 		<dict>
 			<key>r</key>
-			<integer>0</integer>
+			<integer>30</integer>
 			<key>g</key>
-			<integer>0</integer>
+			<integer>75</integer>
 			<key>b</key>
-			<integer>255</integer>
+			<integer>123</integer>
 			<key>a</key>
 			<integer>1</integer>
 		</dict>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67131D031B1DEE1D00F92453 /* LBDiskSpaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */; };
+		67131D051B1F4A7B00F92453 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67131D041B1F4A7B00F92453 /* Main.storyboard */; };
 		671C1F6F1AB9B620005F5586 /* LBAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */; };
 		671C1FB41AB9BE4B005F5586 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F731AB9BE4B005F5586 /* LunarCalendar.m */; };
 		671C1FB51AB9BE4B005F5586 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F781AB9BE4B005F5586 /* MagicalImportFunctions.m */; };
@@ -213,7 +214,6 @@
 		67F5321E1ACD3FC500B10CD7 /* HPCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F5321D1ACD3FC500B10CD7 /* HPCycleView.m */; };
 		67F7B6871AA2F3D00032A5FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6861AA2F3D00032A5FD /* main.m */; };
 		67F7B68A1AA2F3D00032A5FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6891AA2F3D00032A5FD /* AppDelegate.m */; };
-		67F7B6931AA2F3D00032A5FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6911AA2F3D00032A5FD /* Main.storyboard */; };
 		67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6941AA2F3D00032A5FD /* Images.xcassets */; };
 		67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */; };
 		67F7B6A41AA2F3D00032A5FD /* LittleBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F7B6A31AA2F3D00032A5FD /* LittleBookTests.m */; };
@@ -234,6 +234,7 @@
 /* Begin PBXFileReference section */
 		67131D011B1DEE1D00F92453 /* LBDiskSpaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDiskSpaceManager.h; sourceTree = "<group>"; };
 		67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDiskSpaceManager.m; sourceTree = "<group>"; };
+		67131D041B1F4A7B00F92453 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		671C1F6D1AB9B620005F5586 /* LBAppendixFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBAppendixFileManager.h; sourceTree = "<group>"; };
 		671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBAppendixFileManager.m; sourceTree = "<group>"; };
 		671C1F721AB9BE4B005F5586 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
@@ -695,7 +696,6 @@
 		67F7B6861AA2F3D00032A5FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		67F7B6881AA2F3D00032A5FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		67F7B6891AA2F3D00032A5FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		67F7B6921AA2F3D00032A5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67F7B6941AA2F3D00032A5FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		67F7B6971AA2F3D00032A5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		67F7B69D1AA2F3D00032A5FD /* LittleBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1577,11 +1577,11 @@
 				671E942D1AA5E12000697DBD /* HPKit */,
 				67F7B6881AA2F3D00032A5FD /* AppDelegate.h */,
 				67F7B6891AA2F3D00032A5FD /* AppDelegate.m */,
-				67F7B6911AA2F3D00032A5FD /* Main.storyboard */,
 				67F7B6941AA2F3D00032A5FD /* Images.xcassets */,
 				67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */,
 				676EE3571AAC44B60076B715 /* LittleBook.pch */,
 				6757E6121ACC3E6D0071B662 /* sound.wav */,
+				67131D041B1F4A7B00F92453 /* Main.storyboard */,
 				67F7B6841AA2F3D00032A5FD /* Supporting Files */,
 			);
 			path = LittleBook;
@@ -1705,7 +1705,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67AAC9751AC6A445002E317F /* CalendarViewCell_320.xib in Resources */,
-				67F7B6931AA2F3D00032A5FD /* Main.storyboard in Resources */,
 				677A31891AB725E10030FD08 /* ILSFilters.plist in Resources */,
 				67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */,
 				67AAC96F1AC6A445002E317F /* CalendarHeaderView_414.xib in Resources */,
@@ -1722,6 +1721,7 @@
 				67CCC8851AD140CE00BDF574 /* LBImageEditView.xib in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
 				674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */,
+				67131D051B1F4A7B00F92453 /* Main.storyboard in Resources */,
 				67B2EA161AFFA4B600CD80E0 /* mic_normal_358x358@2x.png in Resources */,
 				67D2FF961B072E8C0001B594 /* KVNProgressView.xib in Resources */,
 				6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */,
@@ -1953,14 +1953,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		67F7B6911AA2F3D00032A5FD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				67F7B6921AA2F3D00032A5FD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		67F7B6961AA2F3D00032A5FD /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

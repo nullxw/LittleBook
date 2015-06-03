@@ -43,6 +43,15 @@
     [_tableView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    CGRect frame = _tableView.frame;
+    frame.size.height = CGRectGetHeight(self.view.bounds) - frame.origin.y;
+    _tableView.frame = frame;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"openEditPage"]) {

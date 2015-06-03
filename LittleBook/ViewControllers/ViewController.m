@@ -27,7 +27,7 @@
     
     NSInteger currentHour = [[NSDate new] getDateComponent:NSCalendarUnitHour];
     
-   // _Logo.image = currentHour >= 6 ? [UIImage imageNamed:@"topLogo_night"] : [UIImage imageNamed:@"topLogo_moring"];
+    self.view.backgroundColor = currentHour >= 18 ? [UIColor colorWithR:0 g:0 b:70 a:1.0] : [UIColor colorWithR:0 g:32 b:206 a:1.0];
 }
 
 #pragma mark - tabbar events

@@ -7,7 +7,7 @@
 //
 
 #import "HPAutoResizeCell.h"
-#import "ILSPPCallBackProtocol.h"
+#import "HPCallBackProtocol.h"
 
 typedef enum {
     HPEditCellStatusLeftEditing,
@@ -20,7 +20,7 @@ typedef enum {
 @property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *leftButtons;
 @property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *rightButtons;
 
-@property (nonatomic, assign) id<ILSPPCallBackProtocol> delegate;
+@property (nonatomic, assign) id<HPCallBackProtocol> delegate;
 
 @property (nonatomic, weak) UITableView *tableView;
 

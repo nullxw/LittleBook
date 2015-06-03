@@ -120,8 +120,8 @@
     _titleField.font = [UIFont fontWithName:_titleField.font.fontName size:fontSize + 2];
     
     //
-    _contentView.backgroundColor = [UIColor redColor];
-    _dummyView.backgroundColor = [UIColor clearColor];
+   // _contentView.backgroundColor = [UIColor redColor];
+   // _dummyView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)updateInterfaceWithDocument

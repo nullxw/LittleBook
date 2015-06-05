@@ -192,6 +192,8 @@
 		67CD9CB91ACC30BF00FC0455 /* HPHolidayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CD9CB81ACC30BF00FC0455 /* HPHolidayManager.m */; };
 		67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */; };
 		67CDDF8F1B1B4888005307F4 /* LBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CDDF8E1B1B4888005307F4 /* LBTextView.m */; };
+		67CE8EBE1B2213A900BBB125 /* LBGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CE8EBD1B2213A800BBB125 /* LBGuideViewController.m */; };
+		67CE8EC11B22175A00BBB125 /* LBTaskCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CE8EC01B22175A00BBB125 /* LBTaskCenter.m */; };
 		67D2FF851B070E940001B594 /* LBDocumentActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */; };
 		67D2FF871B070F860001B594 /* LBDocumentActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */; };
 		67D2FF8A1B0710880001B594 /* LBActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D2FF891B0710880001B594 /* LBActionSheetCell.m */; };
@@ -654,6 +656,10 @@
 		67CD9CBA1ACC30FE00FC0455 /* HolidayInfos_2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HolidayInfos_2015.plist; sourceTree = "<group>"; };
 		67CDDF8D1B1B4888005307F4 /* LBTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTextView.h; sourceTree = "<group>"; };
 		67CDDF8E1B1B4888005307F4 /* LBTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTextView.m; sourceTree = "<group>"; };
+		67CE8EBC1B2213A800BBB125 /* LBGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideViewController.h; sourceTree = "<group>"; };
+		67CE8EBD1B2213A800BBB125 /* LBGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideViewController.m; sourceTree = "<group>"; };
+		67CE8EBF1B22175A00BBB125 /* LBTaskCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBTaskCenter.h; sourceTree = "<group>"; };
+		67CE8EC01B22175A00BBB125 /* LBTaskCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBTaskCenter.m; sourceTree = "<group>"; };
 		67D2FF831B070E940001B594 /* LBDocumentActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDocumentActionSheet.h; sourceTree = "<group>"; };
 		67D2FF841B070E940001B594 /* LBDocumentActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDocumentActionSheet.m; sourceTree = "<group>"; };
 		67D2FF861B070F860001B594 /* LBDocumentActionSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBDocumentActionSheet.xib; sourceTree = "<group>"; };
@@ -984,6 +990,8 @@
 				671C1FEE1AB9C6E5005F5586 /* SettingsViewControllers */,
 				671C1FFF1AB9C6E5005F5586 /* ViewController.h */,
 				671C20001AB9C6E5005F5586 /* ViewController.m */,
+				67CE8EBC1B2213A800BBB125 /* LBGuideViewController.h */,
+				67CE8EBD1B2213A800BBB125 /* LBGuideViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1533,6 +1541,8 @@
 				67E112451AFA5F9A0029045C /* LBDocumentContext.h */,
 				67E112461AFA5F9A0029045C /* LBDocumentContext.m */,
 				676EE3541AAC43930076B715 /* LBMacros.h */,
+				67CE8EBF1B22175A00BBB125 /* LBTaskCenter.h */,
+				67CE8EC01B22175A00BBB125 /* LBTaskCenter.m */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1809,6 +1819,7 @@
 				671C1FC31AB9BE4B005F5586 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				671C1FE21AB9C41E005F5586 /* LBFrameView.m in Sources */,
 				67AAC9CF1AC6F45B002E317F /* LBCalendarViewController.m in Sources */,
+				67CE8EC11B22175A00BBB125 /* LBTaskCenter.m in Sources */,
 				67CCC8F21AD174F500BDF574 /* LBChartEditView.m in Sources */,
 				671C1FC41AB9BE4B005F5586 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				67CCC8FA1AD1821700BDF574 /* LBChartView.m in Sources */,
@@ -1903,6 +1914,7 @@
 				677E659C1AED232100931C24 /* HPDragContainer.m in Sources */,
 				67CCC8ED1AD14A4000BDF574 /* LBPresentTheme.m in Sources */,
 				6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */,
+				67CE8EBE1B2213A900BBB125 /* LBGuideViewController.m in Sources */,
 				67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */,
 				67CD9C9B1ACC1DE700FC0455 /* LBNotificationCell.m in Sources */,
 				672B04661AF47F32004BB1D8 /* LBExportTemp.m in Sources */,

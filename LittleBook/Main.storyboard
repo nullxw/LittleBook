@@ -625,6 +625,29 @@
             </objects>
             <point key="canvasLocation" x="658" y="1723"/>
         </scene>
+        <!--Guide View Controller-->
+        <scene sceneID="9z7-TJ-Mu6">
+            <objects>
+                <viewController id="iDQ-P5-HOZ" customClass="LBGuideViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Ae-Xw-4AX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="E7S-pK-lS9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="E7S-pK-lS9" id="hJS-b7-NrE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5N-g1-N1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="1003"/>
+        </scene>
         <!--Calendar View Controller-->
         <scene sceneID="e7e-jw-rQC">
             <objects>
@@ -1186,9 +1209,9 @@
                                         <rect key="frame" x="10" y="49" width="280" height="213"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="g6f-nq-JMJ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="g6f-nq-JMJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="213"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1217,88 +1240,88 @@
                                             <outlet property="delegate" destination="3cv-YX-Yfb" id="KW7-Id-NUa"/>
                                         </connections>
                                     </textField>
-                                    <view contentMode="scaleToFill" id="xP4-a5-Gcl">
-                                        <rect key="frame" x="0.0" y="263" width="300" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="xP4-a5-Gcl">
+                                <rect key="frame" x="10" y="538" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="sT5-WJ-Iv4">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" id="sT5-WJ-Iv4">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mLL-eC-Vkt">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <state key="normal" image="dismiss_keyboard_icon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hideKeyboardButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="E6y-LL-j0Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jVF-HN-lcs">
+                                                <rect key="frame" x="83" y="0.0" width="70" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <state key="normal" image="camera">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cameraButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="ATl-9a-au9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="roa-5J-die">
+                                                <rect key="frame" x="42" y="0.0" width="40" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <state key="normal" image="audioIcon">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="audioButtonTouchDown:" destination="3cv-YX-Yfb" eventType="touchDown" id="xry-tn-zGm"/>
+                                                    <action selector="audioButtonUpInside:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="Pef-rK-svi"/>
+                                                    <action selector="audioButtonUpOutside:" destination="3cv-YX-Yfb" eventType="touchUpOutside" id="UMN-7h-ecf"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" id="SYZ-Ex-tzb">
+                                                <rect key="frame" x="155" y="0.0" width="145" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mLL-eC-Vkt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                        <state key="normal" image="dismiss_keyboard_icon">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYX-Tf-QWY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
+                                                        <state key="normal" image="leftArrow">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="hideKeyboardButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="E6y-LL-j0Z"/>
+                                                            <action selector="leftArrowButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="Ned-or-Idl"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jVF-HN-lcs">
-                                                        <rect key="frame" x="83" y="0.0" width="70" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                        <state key="normal" image="camera">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QZ4-Ha-3vR">
+                                                        <rect key="frame" x="95" y="0.0" width="50" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
+                                                        <state key="normal" image="rightArrow">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="cameraButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="ATl-9a-au9"/>
+                                                            <action selector="rightArrowClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="QTO-tz-fR4"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="roa-5J-die">
-                                                        <rect key="frame" x="42" y="0.0" width="40" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
-                                                        <state key="normal" image="audioIcon">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CvR-7p-0Cs">
+                                                        <rect key="frame" x="51" y="0.0" width="43" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
+                                                        <state key="normal" image="topArrow">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="audioButtonTouchDown:" destination="3cv-YX-Yfb" eventType="touchDown" id="xry-tn-zGm"/>
-                                                            <action selector="audioButtonUpInside:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="Pef-rK-svi"/>
-                                                            <action selector="audioButtonUpOutside:" destination="3cv-YX-Yfb" eventType="touchUpOutside" id="UMN-7h-ecf"/>
+                                                            <action selector="topArrowClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="6cB-4p-67x"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" id="SYZ-Ex-tzb">
-                                                        <rect key="frame" x="155" y="0.0" width="145" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cYX-Tf-QWY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
-                                                                <state key="normal" image="leftArrow">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="leftArrowButtonClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="Ned-or-Idl"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QZ4-Ha-3vR">
-                                                                <rect key="frame" x="95" y="0.0" width="50" height="30"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
-                                                                <state key="normal" image="rightArrow">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="rightArrowClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="QTO-tz-fR4"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CvR-7p-0Cs">
-                                                                <rect key="frame" x="51" y="0.0" width="43" height="30"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
-                                                                <state key="normal" image="topArrow">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="topArrowClicked:" destination="3cv-YX-Yfb" eventType="touchUpInside" id="6cB-4p-67x"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2068,6 +2091,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="F27-fR-4P3"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <segue destination="iDQ-P5-HOZ" kind="modal" identifier="openGuideView" id="YcC-gG-ESK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cI0-sL-Nkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

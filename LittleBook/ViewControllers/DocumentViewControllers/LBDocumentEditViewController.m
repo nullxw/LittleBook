@@ -43,9 +43,9 @@
     LBExportManager *_exportManager;
     
     NSInteger _previousCursorLocation;
-    
     LCVoice *_voice;
 }
+
 @property (weak, nonatomic) IBOutlet LBSectionView *sectionView;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 
@@ -53,7 +53,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *contentField;
-
 @property (weak, nonatomic) IBOutlet LBDocumentAppendixEditView *editContainerView;
 
 @property (nonatomic, strong) UIDocumentInteractionController *documentViewController;
@@ -88,19 +87,25 @@
     _editContainerView.frame = CGRectMake(0, -editViewHeight, CGRectGetWidth(_editContainerView.bounds), editViewHeight);
     _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), LB_DOCUMENT_CONTENT_OY_NOMARL, CGRectGetWidth(_contentView.frame), CGRectGetHeight(self.view.frame) - LB_DOCUMENT_CONTENT_OY_NOMARL);
     
-    _contentField.editable = TRUE;
-    _contentField.selectable = TRUE;
-    
     [self updateInterfaceWithSettings];
     [self updateInterfaceWithDocument];
+    
     
     // 3. register notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(responseToAction:) name:LB_ACTION_NOTIF object:nil];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self updateContentField];
+}
+
+
+#pragma mark - 
 
 - (void)updateInterfaceWithSettings
 {
@@ -109,27 +114,33 @@
     int fontSize = [settings[kLBFontSizeSetting] intValue];
     PanelStyle *currentStyle = [[LBPanelStyleManager defaultManager] currentStyle];
     
-    _toolBar.backgroundColor = currentStyle.panelColor;
-    _contentView.backgroundColor = currentStyle.panelColor;
-    _dummyView.backgroundColor = currentStyle.panelColor;
+    UIColor *panelColor = currentStyle.panelColor;
+    UIColor *fontColor = currentStyle.fontColor;
     
-    _contentField.textColor = currentStyle.fontColor;
-    _titleField.textColor   = currentStyle.fontColor;
+    _toolBar.backgroundColor     = panelColor;
+    _contentView.backgroundColor = panelColor;
+    _dummyView.backgroundColor   = panelColor;
     
-    _contentField.font = [UIFont fontWithName:_contentField.font.fontName size:fontSize];
     _titleField.font = [UIFont fontWithName:_titleField.font.fontName size:fontSize + 2];
-    
-    //
-   // _contentView.backgroundColor = [UIColor redColor];
-   // _dummyView.backgroundColor = [UIColor clearColor];
+    _titleField.textColor   = fontColor;
+
+    _contentField.textColor = fontColor;
+    _contentField.font = [UIFont fontWithName:_contentField.font.fontName size:fontSize];
+
 }
 
 - (void)updateInterfaceWithDocument
 {
     _titleField.text = _doc.title;
-    _contentField.text = _doc.content;
-    NSArray *appendixs = [LBAppendixManager appendixs:_doc.documentID];
     
+    _contentField.text = _doc.content;
+    
+    if (_appendixViews) {
+        for (UIView *appendixView in _appendixViews) {
+            [appendixView removeFromSuperview];
+        }
+    }
+    NSArray *appendixs = [LBAppendixManager appendixs:_doc.documentID];
     _appendixs = [[NSMutableArray alloc] initWithCapacity:0];
     _appendixViews = [[NSMutableArray alloc] initWithCapacity:0];
     _appendixPaths = [[NSMutableArray alloc] initWithCapacity:0];
@@ -142,21 +153,6 @@
     }
     
     _contentField.textContainer.exclusionPaths = _appendixPaths;
-    CGRect frame = _contentField.frame;
-    frame.size.height = [self getMaxYOfTextView];
-    _contentField.frame = frame;
-    
-    _contentScrollView.contentSize = frame.size;
-}
-
-- (float)getMaxYOfTextView
-{
-    float oY = [_contentField maxContentSizeY];
-    
-    for (UIView *appendixView in _appendixViews) {
-        oY = MAX(oY, CGRectGetMaxY(appendixView.frame));
-    }
-    return oY + 5;
 }
 
 - (void)creatAppendixViewWithAppendix:(Appendix *)appendix
@@ -168,7 +164,6 @@
     NSDictionary *settings = [LBAppContext context].settings;
     
     BOOL dragEnable = [settings[kLBDragSetting] boolValue];
-    
     BOOL resizeEnable = [settings[kLBResizeSetting] boolValue];
     
     if ([appendix.type integerValue] == LBAppendixTypeAudio) {
@@ -203,7 +198,6 @@
         
         [_appendixViews addObject:appendixView];
         [_appendixPaths addObject:[self exclusionPathForFrame:frame]];
-        
         [_contentField addSubview:appendixView];
     }
 }
@@ -213,6 +207,42 @@
     float offset = _contentField.font.pointSize * 0.5;
     
     return [UIBezierPath bezierPathWithRect:CGRectMake(frame.origin.x - offset, frame.origin.y - offset, frame.size.width + 2 * offset, frame.size.height)];
+}
+
+- (float)getMaxYOfTextView
+{
+    float maxY = [_contentField sizeThatFits:CGSizeMake(CGRectGetWidth(_contentField.frame), FLT_MAX)].height;
+
+    for (UIView *appendixView in _appendixViews) {
+        maxY = MAX(maxY, CGRectGetMaxY(appendixView.frame));
+    }
+    return maxY + 5;
+}
+
+
+- (void)updateContentField
+{
+    CGRect frame = _contentField.frame;
+    float height = [_contentField sizeThatFits:CGSizeMake(CGRectGetWidth(frame), FLT_MAX)].height;
+    height = MAX(height, CGRectGetHeight(_contentScrollView.frame));
+    
+    for(UIView *appendixView in _appendixViews) {
+        height = MAX(height, CGRectGetMaxY(appendixView.frame));
+    }
+    
+    frame.size.height = height;
+    _contentField.frame = frame;
+    _contentScrollView.contentSize = frame.size;
+}
+
+- (void)updateAndScrollToBottom
+{
+    [self updateContentField];
+    
+    float offsetY = CGRectGetHeight(_contentField.frame) - CGRectGetHeight(_contentScrollView.frame);
+    offsetY = MAX(0, offsetY);
+    
+    _contentScrollView.contentOffset = CGPointMake(0, offsetY);
 }
 
 #pragma mark - button events
@@ -293,6 +323,8 @@
             [_appendixs addObject:appendix];
             [self creatAppendixViewWithAppendix:appendix];
             _contentField.textContainer.exclusionPaths = _appendixPaths;
+            
+            [self updateAndScrollToBottom];
         }
     }];
 }
@@ -335,37 +367,22 @@
 
 - (void)extendTextField
 {
-    CGRect contentFieldFrame = _contentField.frame;
-    int oHeight = CGRectGetHeight(contentFieldFrame);
+    float dH = CGRectGetHeight(_contentField.frame) - CGRectGetHeight(_contentScrollView.frame);
     
-    int height = MAX(_contentField.contentSize.height, oHeight);
-    contentFieldFrame.size.height = height;
-    
-    CGRect contentViewFrame = _contentView.frame;
-    int dH = height - oHeight;
-    contentViewFrame.size.height += dH;
-    _contentView.frame = contentViewFrame;
-    _contentField.frame = contentFieldFrame;
+    CGRect frame = _contentView.frame;
+    frame.size.height += dH;
+    _contentView.frame = frame;
     _toolBar.hidden = TRUE;
 }
 
 - (void)contractTextField
 {
     int contentViewHeight = CGRectGetHeight(self.view.frame) - CGRectGetMinY(_contentView.frame);
-    
-    CGRect contentViewFrame = _contentView.frame;
-    contentViewFrame.size.height = contentViewHeight;
-    _contentView.frame = contentViewFrame;
-    
-    CGRect contentFieldFrame = _contentField.frame;
-    
-    int contentFieldHeight = contentViewHeight - LB_DOCUMENT_CONTENT_FIELD_OY - LB_DOCUMENT_TOOLBAR_HEIGHT;
-    
-    contentFieldFrame.size.height = contentFieldHeight;
-    _contentField.frame = contentFieldFrame;
+    CGRect frame = _contentView.frame;
+    frame.size.height = contentViewHeight;
+    _contentField.frame = frame;
     _toolBar.hidden = FALSE;
 }
-
 
 - (void)insertAppendixWithInfo:(NSDictionary *)appendixInfo
 {
@@ -380,10 +397,7 @@
     [_appendixs addObject:appendix];
     [self creatAppendixViewWithAppendix:appendix];
     
-    float offsetY = CGRectGetMaxY(frame) - CGRectGetHeight(_contentField.frame);
-    offsetY = MAX(0, offsetY);
-    
-    _contentField.contentOffset = CGPointMake(0, offsetY);
+    [self updateAndScrollToBottom];
 }
 
 - (void)exportAsPDF
@@ -461,12 +475,17 @@
     CGSize kbSize = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     float kbHeight = kbSize.height;
     
-    float oY =  _isMediaEditViewVisible ? LB_DOCUMENT_CONTENT_OY_EDIT : LB_DOCUMENT_CONTENT_OY_NOMARL;
+    CGRect contentFrame = CGRectMake(CGRectGetMinX(_contentScrollView.frame), LB_DOCUMENT_CONTENT_FIELD_OY, CGRectGetWidth(_contentScrollView.frame), CGRectGetHeight(_contentView.frame) - LB_DOCUMENT_CONTENT_FIELD_OY - kbHeight - LB_DOCUMENT_TOOLBAR_HEIGHT);
+    
+    CGRect toolBarFrame = _toolBar.frame;
+    toolBarFrame.origin.y = CGRectGetHeight(self.view.bounds) - kbHeight - CGRectGetHeight(toolBarFrame);
+    
+    CGPoint contentOffset = _contentScrollView.contentOffset;
+    contentOffset.y += kbHeight;
     
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
-        
-        _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(self.view.bounds) - oY - kbHeight);
-    
+        _contentScrollView.frame = contentFrame;
+        _toolBar.frame = toolBarFrame;
         
     } completion:^(BOOL finished) {
   
@@ -482,10 +501,15 @@
         return;
     }
     
-    float oY =  _isMediaEditViewVisible ? LB_DOCUMENT_CONTENT_OY_EDIT : LB_DOCUMENT_CONTENT_OY_NOMARL;
+    CGRect contentFrame =  CGRectMake(CGRectGetMinX(_contentScrollView.frame), LB_DOCUMENT_CONTENT_FIELD_OY, CGRectGetWidth(_contentScrollView.frame), CGRectGetHeight(_contentView.frame) - LB_DOCUMENT_CONTENT_FIELD_OY  - LB_DOCUMENT_TOOLBAR_HEIGHT);
+    
+    CGRect toolBarFrame = _toolBar.frame;
+    toolBarFrame.origin.y = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(toolBarFrame);
     
     [UIView animateWithDuration:LB_LINEAR_ANIMATION_TIME animations:^{
-        _contentView.frame = CGRectMake(CGRectGetMinX(_contentView.frame), oY, CGRectGetWidth(_contentView.bounds), CGRectGetHeight(self.view.bounds) - oY);
+        
+        _contentScrollView.frame = contentFrame;
+        _toolBar.frame = toolBarFrame;
         
     } completion:^(BOOL finished) {
     }];
@@ -493,46 +517,26 @@
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSString *title = textField.text;
-    
-    if ([string isEqualToString:@""] && title.length > 0) {
-        title = [title substringToIndex:title.length - 1];
-    } else if ([string isEqualToString:@"\n"]){
-        _doc.title = title;
-        [_contentField becomeFirstResponder];
-        return FALSE;
-    } else {
-        title = [title stringByReplacingCharactersInRange:range withString:string];
-    }
-    _doc.title = title;
+    _doc.title = textField.text;
+    [_contentField becomeFirstResponder];
     return TRUE;
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+- (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    return TRUE;
+    _doc.title = textField.text;
 }
 
 #pragma mark - UITextViewDelegate
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    NSString *content = textView.text;
-    if ([text isEqualToString:@""] && content.length > 0) {
-        content = [content substringToIndex:content.length - 1];
-    } else {
-        content = [content stringByReplacingCharactersInRange:range withString:text];
-    }
-    _doc.content = content;
-    return TRUE;
-}
-
-- (void)textViewDidEndEditing:(UITextView *)textView
+- (void)textViewDidChange:(UITextView *)textView
 {
     _doc.content = textView.text;
+    [self updateContentField];
 }
+
 #pragma mark - HPDragContainerResponseDelegate
 
 - (void)container:(HPDragContainer *)container didMoveItemToRect:(CGRect)rect
@@ -572,14 +576,15 @@
         
         UIImageView *draggedItem = (UIImageView *)container.draggedItem;
         CGRect appendixViewFrame = [_contentField convertRect:draggedItem.frame fromView:win];
-        
+        appendixViewFrame = [self verifiedFrame:appendixViewFrame];
         Appendix *appendix = [[LBDocumentContext defaultContext] addAppendix:draggedItem.image type:LBAppendixTypeImage];
         appendix.frame = NSStringFromCGRect(appendixViewFrame);
-        
         [_appendixs addObject:appendix];
-        
         [self creatAppendixViewWithAppendix:appendix];
+        
+        [self updateContentField];
     }
+    
     
     return !_isMediaEditViewVisible;
 }
@@ -641,13 +646,6 @@
 {
     [self hideKeyboardButtonClicked:nil];
     
-//    _contentField.scrollEnabled = FALSE;
-//    
-//    CGRect frame = _contentField.frame;
-//    frame.origin.y = frame.origin.y - _contentField.contentOffset.y;
-//    frame.size.height = MAX(_contentField.contentSize.height, CGRectGetHeight(frame));
-//    _contentField.frame = frame;
-    
 }
 
 - (void)didOperateTouchImageView:(HPTouchImageView *)touchImageView
@@ -670,16 +668,7 @@
 
 - (void)didEndOperateTouchImageView:(HPTouchImageView *)touchImageView
 {
-//    _contentField.scrollEnabled = TRUE;
-//    
-//    float offsetY = LB_DOCUMENT_CONTENT_FIELD_OY - CGRectGetMinY(_contentField.frame);
-//    
-//    CGRect frame = _contentField.frame;
-//    frame.origin.y = LB_DOCUMENT_CONTENT_FIELD_OY;
-//    frame.size.height = CGRectGetHeight(_contentView.bounds) - LB_DOCUMENT_CONTENT_FIELD_OY - LB_DOCUMENT_TOOLBAR_HEIGHT;
-//    _contentField.frame = frame;
-//    offsetY = MAX(0, offsetY);
-//    _contentField.contentOffset = CGPointMake(0, offsetY);
+    [self updateContentField];
 }
 
 #pragma mark -  UIImagePickerControllerDelegate

@@ -63,8 +63,6 @@
         if ([component isEqual:@""]) {
             continue;
         }
-        
-        NSLog(@"%@", component);
         toStr = [toStr stringByAppendingString:component];
         toStr = [toStr stringByAppendingString:@"\n"];
     }

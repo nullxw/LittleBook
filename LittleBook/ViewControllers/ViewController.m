@@ -7,18 +7,25 @@
 //
 #import "ViewController.h"
 #import "LBSectionView.h"
+#import "LBTaskCenter.h"
 #import "HPTabBar.h"
 
 @implementation ViewController
 
-- (BOOL)prefersStatusBarHidden
-{
-    return TRUE;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (![[LBTaskCenter defaultCenter] taskHasComplete:LB_GUIDE_TASK_KEY]) {
+        [[LBTaskCenter defaultCenter] completeTask:LB_GUIDE_TASK_KEY];
+        [self performSegueWithIdentifier:@"openGuideView" sender:self];
+    }
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

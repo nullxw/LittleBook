@@ -25,6 +25,9 @@ typedef enum {
 #define LB_BLUE_LINE_COLOR       [UIColor colorWithR:56 g:162 b:219 a:1.0]
 #define LB_CP_BLUE_LINE_COLOR    [CPTColor colorWithComponentRed:0.2190 green:0.6353 blue:0.8588 alpha:1.0]
 
+// TASK KEYS
+#define LB_DEFAULT_USER    @"LB_DEFAULT_USER"
+#define LB_GUIDE_TASK_KEY  @"LB_GUIDE_TASK_KEY"
 
 // notifications
 

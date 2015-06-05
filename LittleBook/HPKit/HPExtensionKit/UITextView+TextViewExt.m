@@ -134,7 +134,8 @@
 {
     float oY = 0;
     if(self.text && self.text.length > 0) {
-        oY = self.contentSize.height;
+        oY = ceilf([self sizeThatFits:self.frame.size].height) + self.font.pointSize;
+//        oY = self.contentSize.height + self.contentInset.top +self.contentInset.bottom;
     }
     return oY;
 }

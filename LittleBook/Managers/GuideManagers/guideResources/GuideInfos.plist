@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_0</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_0.png</string>
+		<key>title</key>
+		<string>little book的功能介绍 (1) 图片编辑功能</string>
+		<key>content</key>
+		<string>（1）图片编辑功能
+
+首先十分感谢您能够下载little book这款自定义记录App。我们力求在功能上给予所有用户最大的自定义与个性编排。
+
+little book的最大特点是通过最直接的方式来对图文（未来的声音与视频）进行位置，大小的编排以获得更大个性化的编排效果，进而充分利用大屏手机的屏幕面积。</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_1</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_1.png</string>
+		<key>title</key>
+		<string>little book的功能介绍 (2) 表格编辑功能</string>
+		<key>content</key>
+		<string>（2）表格编辑功能
+
+little book最有趣的功能莫过于表格的自定义编辑功能，在日常的编辑文本工作中，我们时常会需要依赖到表格的编辑，例如工作汇报或者数据统计等。一旦遇到需要表格的情况，你将不得不使用电脑来编辑，并且十分麻烦。</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_2</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_2.png</string>
+		<key>title</key>
+		<string>little book的功能介绍 (3) 关于拖拽和手势</string>
+		<key>content</key>
+		<string>（3）关于拖拽和手势
+
+little book具有非常强大且流畅的图、表拖拽与手势放大缩小功能，甚至能够神奇的将语音拖拽放置到你想要放置的编辑区内任意位置。（你要拖拽放置到首页上？-_-#，如果你有这需求，给我们提出来，未来我们会满足你！）</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_3</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_3.png</string>
+		<key>title</key>
+		<string>RESUME FOR SANZOGAO (Demo 1)</string>
+		<key>content</key>
+		<string>THIS IS DEMO CONTENT</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_4</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_4.png</string>
+		<key>title</key>
+		<string>CLASS NOTES (Demo 2)</string>
+		<key>content</key>
+		<string>THIS IS DEMO CONTENT</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_5</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_5.png</string>
+		<key>title</key>
+		<string>CONFERENCE RECORDS (Demo 3)</string>
+		<key>content</key>
+		<string>THIS IS DEMO CONTENT</string>
+	</dict>
+	<dict>
+		<key>fileName</key>
+		<string>demopdf_6</string>
+		<key>thumbnailName</key>
+		<string>demothumbnail_6.jpg</string>
+		<key>title</key>
+		<string>TRAVEL REVIEW (Demo 4)</string>
+		<key>content</key>
+		<string>THIS IS DEMO CONTENT</string>
+	</dict>
+</array>
+</plist>

@@ -53,9 +53,11 @@
     // 1. 相册列表-相册缩略图页面（俩页面功用该任务） 下拉提示引导
     // 用户进行下拉操作后完成改任务，不再出现该引导
 
-    [_keyChainTaskManger registerNoramlTask:LB_GUIDE_TASK_KEY forUser:LB_DEFAULT_USER taskTimes:1];
-    _taskManagerInfos[LB_GUIDE_TASK_KEY] = _keyChainTaskManger;
+    [_userDefaultTaskManger registerNoramlTask:LB_GUIDE_TASK_KEY forUser:LB_DEFAULT_USER taskTimes:1];
+    _taskManagerInfos[LB_GUIDE_TASK_KEY] = _userDefaultTaskManger;
 
+    [_userDefaultTaskManger registerNoramlTask:LB_GUIDE_FILE_IMPORT_TASK_KEY forUser:LB_DEFAULT_USER taskTimes:1];
+    _taskManagerInfos[LB_GUIDE_FILE_IMPORT_TASK_KEY] = _userDefaultTaskManger;
 }
 
 

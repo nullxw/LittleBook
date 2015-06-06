@@ -7,21 +7,25 @@
 //
 
 #import "LBReadFileManager.h"
+#import "LBAppendixManager.h"
+#import "LBIndexInfoManager.h"
 #import "Document.h"
 
 @implementation LBReadFileManager
 
 + (ReadFile *)createReadFileFromDocument:(Document *)doc
 {
-    ReadFile *readFile = [self findByID:doc.documentID];
-    if (!readFile) {
-        readFile = [ReadFile createEntity];
-        readFile.createTime = [NSDate new];
-        readFile.userID = [LBUserManager defaultManager].currentUser.userID;
-        readFile.fileID = doc.documentID;
-    }
+    ReadFile *readFile = [ReadFile createEntity];
+    readFile.createTime = [NSDate new];
+    readFile.userID = [LBUserManager defaultManager].currentUser.userID;
+    readFile.fileID = [[LBIndexInfoManager defaultManager] getFileID];
     readFile.title = doc.title;
     readFile.content = doc.content;
+    
+    Appendix *thumbnailAppendix = [LBAppendixManager thumbnailAppendixOf:doc.documentID];
+    if (thumbnailAppendix) {
+        readFile.thumbnailID = thumbnailAppendix.appendixID;
+    }
     
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     return readFile;

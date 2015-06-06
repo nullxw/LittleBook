@@ -16,7 +16,7 @@
 {
     Document *doc = [Document createEntity];
     
-    doc.documentID = [[LBIndexInfoManager defaultManager] getDocumentID];
+    doc.documentID = [[LBIndexInfoManager defaultManager] getFileID];
     doc.createTime = [NSDate date];
     doc.userID = [LBUserManager defaultManager].currentUser.userID;
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];

@@ -50,18 +50,9 @@
     return _indexInfo.maxAppendixID;
 }
 
-- (NSNumber *)getDocumentID
+- (NSNumber *)getFileID
 {
     _indexInfo.maxAppendixParentID = @(++_maxAppendixParentID);
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
-    
-    return _indexInfo.maxAppendixParentID;
-}
-
-- (NSNumber *)getAccountDetailID
-{
-    _indexInfo.maxAppendixParentID = @(++_maxAppendixParentID);
-    
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
     return _indexInfo.maxAppendixParentID;
 }

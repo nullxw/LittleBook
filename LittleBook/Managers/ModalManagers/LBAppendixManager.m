@@ -91,6 +91,23 @@
     return appendixs;
 }
 
++ (Appendix *)thumbnailAppendixOf:(NSNumber *)documentID
+{
+    NSArray *appendixs = [LBAppendixManager appendixs:documentID];
+    
+    Appendix *thumbnailAppendix = nil;
+    
+    for (int i = 0; i < appendixs.count; i++) {
+        Appendix *appendix = appendixs[i];
+        if (appendix.type.intValue == LBAppendixTypeAudio) {
+            continue;
+        }
+        thumbnailAppendix = appendix;
+        break;
+    }
+    return thumbnailAppendix;
+}
+
 + (void)deleteAppendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context
 {
     NSArray *appendixs = [LBAppendixManager appendixs:parentID inContext:context];

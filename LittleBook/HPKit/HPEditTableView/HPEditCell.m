@@ -190,9 +190,6 @@
     }
     
     _isAnmating = TRUE;
-
-//    _tableView.scrollEnabled = FALSE;
-    
     [self cellWillBeginTranslate];
 }
 

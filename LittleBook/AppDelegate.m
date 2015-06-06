@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LBAudioManager.h"
+#import "LBGuideManager.h"
 #import "LBTaskCenter.h"
 
 @interface AppDelegate ()
@@ -27,7 +28,12 @@
 
     [MagicalRecord setupAutoMigratingCoreDataStack];
     
-     [[LBTaskCenter defaultCenter] registerAppTasks];
+    [[LBTaskCenter defaultCenter] registerAppTasks];
+    
+    if ([[LBTaskCenter defaultCenter] completeTask:LB_GUIDE_FILE_IMPORT_TASK_KEY]) {
+        [[[LBGuideManager alloc] init] importGuideInfo];
+    }
+    
     
     return YES;
 }

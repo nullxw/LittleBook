@@ -24,6 +24,8 @@
 
 + (NSArray *)findByIDs:(NSArray *)appendixIDs;
 
++ (Appendix *)thumbnailAppendixOf:(NSNumber *)documentID;
+
 // Delete
 + (void)deleteAppendixs:(NSNumber *)parentID inContext:(NSManagedObjectContext *)context;
 + (void)deleteAppendix:(Appendix *)appendix;

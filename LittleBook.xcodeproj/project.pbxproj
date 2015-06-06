@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6705301B1B230B5700AF69C1 /* GuideInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6705301A1B230B5700AF69C1 /* GuideInfos.plist */; };
+		670530261B230BE400AF69C1 /* demopdf_3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6705301F1B230BE400AF69C1 /* demopdf_3.pdf */; };
+		670530271B230BE400AF69C1 /* demopdf_4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 670530201B230BE400AF69C1 /* demopdf_4.pdf */; };
+		670530281B230BE400AF69C1 /* demopdf_5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 670530211B230BE400AF69C1 /* demopdf_5.pdf */; };
+		670530291B230BE400AF69C1 /* demopdf_6.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 670530221B230BE400AF69C1 /* demopdf_6.pdf */; };
+		6705302D1B230CB700AF69C1 /* demopdf_0.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6705302A1B230CB700AF69C1 /* demopdf_0.pdf */; };
+		670530311B230D4200AF69C1 /* demothumbnail_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 670530301B230D4200AF69C1 /* demothumbnail_0.png */; };
+		670530381B230DB900AF69C1 /* demothumbnail_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670530321B230DB900AF69C1 /* demothumbnail_1.png */; };
+		670530391B230DB900AF69C1 /* demothumbnail_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 670530331B230DB900AF69C1 /* demothumbnail_2.png */; };
+		6705303A1B230DB900AF69C1 /* demothumbnail_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 670530341B230DB900AF69C1 /* demothumbnail_3.png */; };
+		6705303B1B230DB900AF69C1 /* demothumbnail_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 670530351B230DB900AF69C1 /* demothumbnail_4.png */; };
+		6705303C1B230DB900AF69C1 /* demothumbnail_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 670530361B230DB900AF69C1 /* demothumbnail_5.png */; };
+		6705303D1B230DB900AF69C1 /* demothumbnail_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 670530371B230DB900AF69C1 /* demothumbnail_6.jpg */; };
+		670530401B23102F00AF69C1 /* LBGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6705303F1B23102F00AF69C1 /* LBGuideManager.m */; };
+		670530431B2329D900AF69C1 /* demopdf_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 670530411B2329D900AF69C1 /* demopdf_1.pdf */; };
+		670530441B2329D900AF69C1 /* demopdf_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 670530421B2329D900AF69C1 /* demopdf_2.pdf */; };
 		67131D031B1DEE1D00F92453 /* LBDiskSpaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */; };
 		67131D051B1F4A7B00F92453 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67131D041B1F4A7B00F92453 /* Main.storyboard */; };
 		671C1F6F1AB9B620005F5586 /* LBAppendixFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 671C1F6E1AB9B620005F5586 /* LBAppendixFileManager.m */; };
@@ -234,6 +250,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6705301A1B230B5700AF69C1 /* GuideInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GuideInfos.plist; sourceTree = "<group>"; };
+		6705301F1B230BE400AF69C1 /* demopdf_3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_3.pdf; sourceTree = "<group>"; };
+		670530201B230BE400AF69C1 /* demopdf_4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_4.pdf; sourceTree = "<group>"; };
+		670530211B230BE400AF69C1 /* demopdf_5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_5.pdf; sourceTree = "<group>"; };
+		670530221B230BE400AF69C1 /* demopdf_6.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_6.pdf; sourceTree = "<group>"; };
+		6705302A1B230CB700AF69C1 /* demopdf_0.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_0.pdf; sourceTree = "<group>"; };
+		670530301B230D4200AF69C1 /* demothumbnail_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demothumbnail_0.png; sourceTree = "<group>"; };
+		670530321B230DB900AF69C1 /* demothumbnail_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demothumbnail_1.png; sourceTree = "<group>"; };
+		670530331B230DB900AF69C1 /* demothumbnail_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demothumbnail_2.png; sourceTree = "<group>"; };
+		670530341B230DB900AF69C1 /* demothumbnail_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demothumbnail_3.png; sourceTree = "<group>"; };
+		670530351B230DB900AF69C1 /* demothumbnail_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demothumbnail_4.png; sourceTree = "<group>"; };
+		670530361B230DB900AF69C1 /* demothumbnail_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demothumbnail_5.png; sourceTree = "<group>"; };
+		670530371B230DB900AF69C1 /* demothumbnail_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demothumbnail_6.jpg; sourceTree = "<group>"; };
+		6705303E1B23102F00AF69C1 /* LBGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBGuideManager.h; sourceTree = "<group>"; };
+		6705303F1B23102F00AF69C1 /* LBGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBGuideManager.m; sourceTree = "<group>"; };
+		670530411B2329D900AF69C1 /* demopdf_1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_1.pdf; sourceTree = "<group>"; };
+		670530421B2329D900AF69C1 /* demopdf_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = demopdf_2.pdf; sourceTree = "<group>"; };
 		67131D011B1DEE1D00F92453 /* LBDiskSpaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDiskSpaceManager.h; sourceTree = "<group>"; };
 		67131D021B1DEE1D00F92453 /* LBDiskSpaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDiskSpaceManager.m; sourceTree = "<group>"; };
 		67131D041B1F4A7B00F92453 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -732,6 +765,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		670530181B230B0E00AF69C1 /* GuideManagers */ = {
+			isa = PBXGroup;
+			children = (
+				670530191B230B2000AF69C1 /* guideResources */,
+				6705303E1B23102F00AF69C1 /* LBGuideManager.h */,
+				6705303F1B23102F00AF69C1 /* LBGuideManager.m */,
+			);
+			path = GuideManagers;
+			sourceTree = "<group>";
+		};
+		670530191B230B2000AF69C1 /* guideResources */ = {
+			isa = PBXGroup;
+			children = (
+				6705301A1B230B5700AF69C1 /* GuideInfos.plist */,
+				6705302A1B230CB700AF69C1 /* demopdf_0.pdf */,
+				670530411B2329D900AF69C1 /* demopdf_1.pdf */,
+				670530421B2329D900AF69C1 /* demopdf_2.pdf */,
+				6705301F1B230BE400AF69C1 /* demopdf_3.pdf */,
+				670530201B230BE400AF69C1 /* demopdf_4.pdf */,
+				670530211B230BE400AF69C1 /* demopdf_5.pdf */,
+				670530221B230BE400AF69C1 /* demopdf_6.pdf */,
+				670530301B230D4200AF69C1 /* demothumbnail_0.png */,
+				670530321B230DB900AF69C1 /* demothumbnail_1.png */,
+				670530331B230DB900AF69C1 /* demothumbnail_2.png */,
+				670530341B230DB900AF69C1 /* demothumbnail_3.png */,
+				670530351B230DB900AF69C1 /* demothumbnail_4.png */,
+				670530361B230DB900AF69C1 /* demothumbnail_5.png */,
+				670530371B230DB900AF69C1 /* demothumbnail_6.jpg */,
+			);
+			path = guideResources;
+			sourceTree = "<group>";
+		};
+		670530451B2332B400AF69C1 /* GuideResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GuideResources;
+			sourceTree = "<group>";
+		};
 		671C1F701AB9BE4B005F5586 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1075,6 +1147,7 @@
 		67634C771AADE609009FD0FA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				670530181B230B0E00AF69C1 /* GuideManagers */,
 				671C20101AB9CFF6005F5586 /* ModalManagers */,
 				67634C781AADE625009FD0FA /* LBPanelStyleManager.h */,
 				67634C791AADE625009FD0FA /* LBPanelStyleManager.m */,
@@ -1577,6 +1650,7 @@
 		67F7B6831AA2F3D00032A5FD /* LittleBook */ = {
 			isa = PBXGroup;
 			children = (
+				670530451B2332B400AF69C1 /* GuideResources */,
 				671C1F701AB9BE4B005F5586 /* Vendor */,
 				677A31E61AB7287D0030FD08 /* Models */,
 				6721C2271AB4003F00D1FF99 /* Segues */,
@@ -1715,30 +1789,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				67AAC9751AC6A445002E317F /* CalendarViewCell_320.xib in Resources */,
+				670530291B230BE400AF69C1 /* demopdf_6.pdf in Resources */,
 				677A31891AB725E10030FD08 /* ILSFilters.plist in Resources */,
 				67F7B6981AA2F3D00032A5FD /* LaunchScreen.xib in Resources */,
 				67AAC96F1AC6A445002E317F /* CalendarHeaderView_414.xib in Resources */,
+				670530281B230BE400AF69C1 /* demopdf_5.pdf in Resources */,
 				67CCC8F41AD1750D00BDF574 /* LBChartEditView.xib in Resources */,
 				67B2EA191AFFA4B600CD80E0 /* wave70x117@2x.png in Resources */,
 				67AAC9771AC6A445002E317F /* CalendarViewCell_414.xib in Resources */,
+				6705303B1B230DB900AF69C1 /* demothumbnail_4.png in Resources */,
+				670530441B2329D900AF69C1 /* demopdf_2.pdf in Resources */,
 				67B2EA171AFFA4B600CD80E0 /* mic_talk_358x358@2x.png in Resources */,
 				67F7B6951AA2F3D00032A5FD /* Images.xcassets in Resources */,
 				67AAC96E1AC6A445002E317F /* CalendarHeaderView_375.xib in Resources */,
 				6794AC821AD0219400EC1DB2 /* LBImagePreviewView.xib in Resources */,
 				67B2EA201AFFA83100CD80E0 /* fs_chat_bubble@2x.png in Resources */,
+				670530311B230D4200AF69C1 /* demothumbnail_0.png in Resources */,
+				670530381B230DB900AF69C1 /* demothumbnail_1.png in Resources */,
 				67CD9CB21ACC22E800FC0455 /* LBCustomSettingHeaderView.xib in Resources */,
 				6757E6131ACC3E6D0071B662 /* sound.wav in Resources */,
 				67CCC8851AD140CE00BDF574 /* LBImageEditView.xib in Resources */,
 				67AAC9711AC6A445002E317F /* CalendarView_320.xib in Resources */,
 				674A7ED31AFB95590049A97C /* HPKitAsset.xcassets in Resources */,
 				67131D051B1F4A7B00F92453 /* Main.storyboard in Resources */,
+				670530271B230BE400AF69C1 /* demopdf_4.pdf in Resources */,
 				67B2EA161AFFA4B600CD80E0 /* mic_normal_358x358@2x.png in Resources */,
 				67D2FF961B072E8C0001B594 /* KVNProgressView.xib in Resources */,
 				6794AC5D1ACFC35E00EC1DB2 /* IndicatorImages.xcassets in Resources */,
 				67B2EA221AFFA83100CD80E0 /* fs_icon_wave_1@2x.png in Resources */,
 				67CCC8FC1AD1843700BDF574 /* LBChartView.xib in Resources */,
 				67D2FF8C1B0711170001B594 /* LBActionSheetCell.xib in Resources */,
+				6705303A1B230DB900AF69C1 /* demothumbnail_3.png in Resources */,
+				6705303D1B230DB900AF69C1 /* demothumbnail_6.jpg in Resources */,
 				67B2EA211AFFA83100CD80E0 /* fs_icon_wave_0@2x.png in Resources */,
+				670530261B230BE400AF69C1 /* demopdf_3.pdf in Resources */,
+				6705301B1B230B5700AF69C1 /* GuideInfos.plist in Resources */,
+				670530391B230DB900AF69C1 /* demothumbnail_2.png in Resources */,
+				670530431B2329D900AF69C1 /* demopdf_1.pdf in Resources */,
 				67AAC9721AC6A445002E317F /* CalendarView_375.xib in Resources */,
 				67B2EA121AFFA4B600CD80E0 /* black_bg_ip5@2x.png in Resources */,
 				67B2EA231AFFA83100CD80E0 /* fs_icon_wave_2@2x.png in Resources */,
@@ -1746,12 +1833,14 @@
 				67AAC96D1AC6A445002E317F /* CalendarHeaderView_320.xib in Resources */,
 				67CD9CBB1ACC30FE00FC0455 /* HolidayInfos_2015.plist in Resources */,
 				67CCC8781AD1223C00BDF574 /* LBImageFilterView.xib in Resources */,
+				6705303C1B230DB900AF69C1 /* demothumbnail_5.png in Resources */,
 				67D2FF871B070F860001B594 /* LBDocumentActionSheet.xib in Resources */,
 				67AAC9731AC6A445002E317F /* CalendarView_414.xib in Resources */,
 				67CCC87E1AD1237100BDF574 /* LBFilterCell.xib in Resources */,
 				67AAC9761AC6A445002E317F /* CalendarViewCell_375.xib in Resources */,
 				67634C7C1AADE76F009FD0FA /* PanelStyleInfos.plist in Resources */,
 				672B046A1AF47F7A004BB1D8 /* LBExportTemp.xib in Resources */,
+				6705302D1B230CB700AF69C1 /* demopdf_0.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1913,6 +2002,7 @@
 				67D2FFAF1B0754870001B594 /* LBFileBrowserViewController.m in Sources */,
 				677E659C1AED232100931C24 /* HPDragContainer.m in Sources */,
 				67CCC8ED1AD14A4000BDF574 /* LBPresentTheme.m in Sources */,
+				670530401B23102F00AF69C1 /* LBGuideManager.m in Sources */,
 				6794AC5E1ACFC35E00EC1DB2 /* UIScrollView+IndicatorExt.m in Sources */,
 				67CE8EBE1B2213A900BBB125 /* LBGuideViewController.m in Sources */,
 				67CD9CB41ACC22E800FC0455 /* LBNotificationDotView.m in Sources */,

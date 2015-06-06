@@ -76,10 +76,7 @@
     LBDocumentListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LBDocumentListCell"];
     
     ReadFile *readFile = _isSearching ? _searchResult[indexPath.row] : _dataSource[indexPath.row];
-
-    Document *doc = [LBDocumentManager findByID:readFile.fileID];
-    
-    cell.document = doc;
+    cell.readFile  = readFile;
     cell.tableView = tableView;
     cell.delegate  = self;
     
@@ -153,7 +150,7 @@
 {
     LBDocumentListCell *cell = obj;
     
-    Document *doc = cell.document;
+    ReadFile *readFile = cell.readFile;
     
     NSIndexPath *indexPath = [_tableView indexPathForCell:cell];
     
@@ -161,17 +158,16 @@
     
     if (tag == 0) {
         
-        if (!_exportManager) {
-            _exportManager =[[LBExportManager alloc] init];
-        }
-        NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:doc.documentID];
-        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-        [_exportManager openDocImage:image withHolder:self];
+//        if (!_exportManager) {
+//            _exportManager =[[LBExportManager alloc] init];
+//        }
+//        NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:doc.documentID];
+//        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+//        [_exportManager openDocImage:image withHolder:self];
         
     } else if (tag == 1) {
         
-        doc.favourite = @(!doc.favourite.boolValue);
-        
+        readFile.favourite = @(!readFile.favourite.boolValue);
         [_tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         [[NSManagedObjectContext defaultContext] saveToPersistentStoreAndWait];
         
@@ -181,7 +177,6 @@
         [LBReadFileManager deleteReadFile:file];
         [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
     }
-    
 }
 
 @end

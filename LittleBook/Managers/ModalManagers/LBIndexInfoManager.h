@@ -15,9 +15,6 @@
 - (NSNumber *)getAppendixID;
 - (NSNumber *)getNotificationID;
 
-// 共用maxAppendixParentID
-// 避免appendix 检索冲突
-- (NSNumber *)getDocumentID;
-- (NSNumber *)getAccountDetailID;
+- (NSNumber *)getFileID;
 
 @end

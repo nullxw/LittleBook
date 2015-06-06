@@ -22,7 +22,7 @@
     AccountDetail *accountDetail = [AccountDetail createEntity];
     accountDetail.userID     = [LBUserManager defaultManager].currentUser.userID;
     accountDetail.createTime = [NSDate new];
-    accountDetail.accountID  = [[LBIndexInfoManager defaultManager] getAccountDetailID];
+    accountDetail.accountID  = [[LBIndexInfoManager defaultManager] getFileID];
     accountDetail.desc       = desc;
     accountDetail.cost       = cost;
     

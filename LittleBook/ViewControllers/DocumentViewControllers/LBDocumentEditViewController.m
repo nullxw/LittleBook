@@ -104,7 +104,6 @@
     [self updateContentField];
 }
 
-
 #pragma mark - 
 
 - (void)updateInterfaceWithSettings
@@ -218,7 +217,6 @@
     }
     return maxY + 5;
 }
-
 
 - (void)updateContentField
 {
@@ -380,7 +378,7 @@
     int contentViewHeight = CGRectGetHeight(self.view.frame) - CGRectGetMinY(_contentView.frame);
     CGRect frame = _contentView.frame;
     frame.size.height = contentViewHeight;
-    _contentField.frame = frame;
+    _contentView.frame = frame;
     _toolBar.hidden = FALSE;
 }
 

@@ -19,5 +19,6 @@
 @property (nonatomic, retain) NSNumber * favourite;
 @property (nonatomic, retain) NSDate * modifiedTime;
 @property (nonatomic, retain) NSString * userID;
+@property (nonatomic, retain) NSNumber * thumbnailID;
 
 @end

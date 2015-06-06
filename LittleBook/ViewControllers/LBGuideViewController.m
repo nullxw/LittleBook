@@ -19,7 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     CGRect bounds = [UIScreen mainScreen].bounds;
     int w = CGRectGetWidth(bounds);
     int h = CGRectGetHeight(bounds);

@@ -8,8 +8,10 @@
 
 #import "HPEditCell.h"
 
-@class Document;
+@class Document, ReadFile;
 @interface LBDocumentListCell : HPEditCell
 
 @property (nonatomic, strong) Document *document;
+@property (nonatomic, strong) ReadFile *readFile;
+
 @end

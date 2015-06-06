@@ -40,13 +40,12 @@
 
 + (void)exportDocument:(Document *)doc asPDF:(UIView *)docView
 {
+    ReadFile *readFile = [LBReadFileManager createReadFileFromDocument:doc];
     LBReadFileFileManager *fileManager = [LBReadFileFileManager defaultManager];
-    NSString *filePath = [fileManager pathForReadFile:doc.documentID];
-    
+    NSString *filePath = [fileManager pathForReadFile:readFile.fileID];
     [LBExportManager createPDFfromUIView:docView saveToPath:filePath];
-    [LBReadFileManager createReadFileFromDocument:doc];
     
-    [KVNProgress showSuccessWithStatus:@"导出完成,请在阅读小本中查看/Completed"];
+    [KVNProgress showSuccessWithStatus:@"导出完成,请在阅读小本中查看"];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(LB_AFTER_TIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [KVNProgress dismiss];
@@ -69,7 +68,7 @@
 
 - (void)exportToLocal:(UIImage *)image
 {
-    [KVNProgress showWithStatus:@"导出中/Exporting..."];
+    [KVNProgress showWithStatus:@"导出中..."];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), @"exportToLocal");
@@ -80,9 +79,9 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (!error) {
-            [KVNProgress showSuccessWithStatus:@"导出完成/Completed"];
+            [KVNProgress showSuccessWithStatus:@"导出完成"];
         } else {
-            [KVNProgress showErrorWithStatus:@"导出失败/Failed"];
+            [KVNProgress showErrorWithStatus:@"导出失败!"];
         }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(LB_AFTER_TIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [KVNProgress dismiss];

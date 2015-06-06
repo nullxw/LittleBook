@@ -17,5 +17,6 @@
 @dynamic favourite;
 @dynamic modifiedTime;
 @dynamic userID;
+@dynamic thumbnailID;
 
 @end

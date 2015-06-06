@@ -62,6 +62,7 @@
         <attribute name="favourite" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="fileID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="modifiedTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="thumbnailID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -73,6 +74,6 @@
         <element name="IndexInfo" positionX="-54" positionY="45" width="128" height="90"/>
         <element name="LBUser" positionX="-45" positionY="63" width="128" height="103"/>
         <element name="Notification" positionX="-54" positionY="54" width="128" height="180"/>
-        <element name="ReadFile" positionX="-54" positionY="90" width="128" height="150"/>
+        <element name="ReadFile" positionX="-54" positionY="90" width="128" height="165"/>
     </elements>
 </model>

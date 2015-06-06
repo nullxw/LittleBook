@@ -38,7 +38,7 @@
     NSError * err = nil;
     
 	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-	[audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:&err];
+	[audioSession setCategory:AVAudioSessionCategoryRecord error:&err];
     
 	if(err){
         return;

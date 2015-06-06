@@ -63,7 +63,6 @@
 
     NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:_readFile.fileID];
     UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-    
     [_exportManager openDocImage:image withHolder:self];
 }
 

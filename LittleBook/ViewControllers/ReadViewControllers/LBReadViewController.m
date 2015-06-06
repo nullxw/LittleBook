@@ -158,12 +158,13 @@
     
     if (tag == 0) {
         
-//        if (!_exportManager) {
-//            _exportManager =[[LBExportManager alloc] init];
-//        }
-//        NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:doc.documentID];
-//        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-//        [_exportManager openDocImage:image withHolder:self];
+        if (!_exportManager) {
+            _exportManager =[[LBExportManager alloc] init];
+        }
+        
+        NSString *filePath = [[LBReadFileFileManager defaultManager] pathForReadFileImage:readFile.fileID];
+        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+        [_exportManager openDocImage:image withHolder:self];
         
     } else if (tag == 1) {
         

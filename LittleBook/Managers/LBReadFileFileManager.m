@@ -11,6 +11,7 @@
 #define LB_READFILE_THUMBNAIL_NAME(FILEID) [NSString stringWithFormat:@"READFILE_THUMBNAIL_%@.jpg", FILEID]
 
 #import "LBReadFileFileManager.h"
+#import "UIImage+PDF.h"
 
 @implementation LBReadFileFileManager
 
@@ -41,7 +42,16 @@
 
 - (NSString *)pathForReadFileImage:(NSNumber *)fileID
 {
-    return [self fullPathForName:LB_READFILE_IMAGE_NAME(fileID)];
+    NSString *imagePath = [self fullPathForName:LB_READFILE_IMAGE_NAME(fileID)];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:imagePath isDirectory:nil]) {
+        NSString *pdfPath = [self pathForReadFile:fileID];
+        UIImage *image = [UIImage imageOrPDFWithContentsOfFile:pdfPath];
+        
+        [UIImageJPEGRepresentation(image, 0.6) writeToFile:imagePath atomically:YES];
+    }
+    
+    return imagePath;
 }
 
 - (NSString *)pathForThumbnail:(NSNumber *)fileID

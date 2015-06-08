@@ -32,18 +32,6 @@
     _titleLabel.textColor = [UIColor colorWithR:47 g:138 b:193 a:1.0];
 }
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    if (CGRectGetWidth([UIScreen mainScreen].bounds) == 320) {
-        
-        UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:12.0f];
-        _createTimeLabel.font = font;
-        _titleLabel.font = font;
-        _contentLabel.font =  [UIFont fontWithName:@"HelveticaNeue-Medium" size:10.0f];
-    }
-}
-
 - (void)setDocument:(Document *)document
 {
     _document = document;

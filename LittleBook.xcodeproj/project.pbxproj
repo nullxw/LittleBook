@@ -1784,7 +1784,7 @@
 				TargetAttributes = {
 					67F7B6801AA2F3D00032A5FD = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 48RZ5K988A;
+						DevelopmentTeam = 6VMC829853;
 					};
 					67F7B69C1AA2F3D00032A5FD = {
 						CreatedOnToolsVersion = 6.1;
@@ -2200,8 +2200,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai San Shuo Qian Feng Advertising Design Co.,Ltd (6VMC829853)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai San Shuo Qian Feng Advertising Design Co.,Ltd (6VMC829853)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleBook/LittleBook.pch";
 				INFOPLIST_FILE = LittleBook/Info.plist;

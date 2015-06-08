@@ -119,6 +119,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    [_searchBar resignFirstResponder];
     [_tableView reloadData];
 }
 

@@ -38,14 +38,7 @@
 - (void)setImage:(UIImage *)image
 {
     _image = image;
-    
-    CGSize imageSize = [image sizeForContainer:_imageView.frame.size];
-    
-    CGPoint center = _imageView.center;
-    
     _imageView.image = image;
-    _imageView.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
-    _imageView.center = center;
 }
 
 #pragma mark - button events

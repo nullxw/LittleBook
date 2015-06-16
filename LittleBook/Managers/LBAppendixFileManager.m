@@ -26,7 +26,7 @@
 
 - (NSSearchPathDirectory)rootDirectory
 {
-    return NSDocumentDirectory;
+    return NSLibraryDirectory;
 }
 
 - (void)saveAppendix:(NSData *)appendixData forAppendixID:(NSNumber *)appendxID

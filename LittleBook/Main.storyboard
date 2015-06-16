@@ -2136,8 +2136,8 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cwf-Da-liq" customClass="HPRoundCornerButton">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="109"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                                    <rect key="frame" x="140" y="0.0" width="60" height="109"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" red="0.24313725489999999" green="0.67843137249999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <state key="normal" image="share_icon">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2149,8 +2149,8 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2LH-zX-y7M" customClass="HPRoundCornerButton">
-                                                                    <rect key="frame" x="61" y="0.0" width="60" height="109"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                                    <rect key="frame" x="200" y="0.0" width="60" height="109"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" red="0.92941176469999998" green="0.45098039220000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <state key="normal" image="favorite_icon">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2162,8 +2162,8 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="97t-3r-j2l" customClass="HPRoundCornerButton">
-                                                                    <rect key="frame" x="122" y="0.0" width="60" height="109"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                                    <rect key="frame" x="260" y="0.0" width="60" height="109"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" red="0.46274509800000002" green="0.78823529410000004" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <state key="normal" image="cell_delete_icon">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2228,9 +2228,9 @@
                                                     <outlet property="editCellContentView" destination="paA-TE-Uah" id="678-4r-MTr"/>
                                                     <outlet property="scrollView" destination="fLR-Hj-tOD" id="p4V-76-k8T"/>
                                                     <outlet property="titleLabel" destination="gBE-hg-duo" id="kQh-30-9WX"/>
-                                                    <outletCollection property="leftButtons" destination="Cwf-Da-liq" id="rNe-hT-rBG"/>
-                                                    <outletCollection property="leftButtons" destination="2LH-zX-y7M" id="CuP-h2-qqo"/>
-                                                    <outletCollection property="leftButtons" destination="97t-3r-j2l" id="I9d-LR-BbH"/>
+                                                    <outletCollection property="rightButtons" destination="Cwf-Da-liq" id="LNK-av-OYK"/>
+                                                    <outletCollection property="rightButtons" destination="2LH-zX-y7M" id="DHw-J0-5Gu"/>
+                                                    <outletCollection property="rightButtons" destination="97t-3r-j2l" id="FFQ-vq-1c5"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -2363,8 +2363,8 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9xf-6h-TP8" customClass="HPRoundCornerButton">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="109"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                                    <rect key="frame" x="140" y="0.0" width="60" height="109"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" red="0.24313725490196078" green="0.67843137254901964" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <state key="normal" image="share_icon">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2376,8 +2376,8 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c8R-U2-5La" customClass="HPRoundCornerButton">
-                                                                    <rect key="frame" x="61" y="0.0" width="60" height="109"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                                    <rect key="frame" x="200" y="0.0" width="60" height="109"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" red="0.92941176470588238" green="0.45098039215686275" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <state key="normal" image="favorite_icon">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2389,8 +2389,8 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QIl-AR-P1d" customClass="HPRoundCornerButton">
-                                                                    <rect key="frame" x="122" y="0.0" width="60" height="109"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                                    <rect key="frame" x="260" y="0.0" width="60" height="109"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                                                     <color key="backgroundColor" red="0.46274509803921571" green="0.78823529411764703" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <state key="normal" image="cell_delete_icon">
                                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2455,9 +2455,9 @@
                                                     <outlet property="editCellContentView" destination="4Cu-XX-Ji8" id="0md-8c-6UU"/>
                                                     <outlet property="scrollView" destination="kEw-AR-Ait" id="fMY-Lm-pQg"/>
                                                     <outlet property="titleLabel" destination="SQA-gv-4v5" id="OBD-Fc-DRd"/>
-                                                    <outletCollection property="leftButtons" destination="9xf-6h-TP8" id="fDr-Ig-fgz"/>
-                                                    <outletCollection property="leftButtons" destination="c8R-U2-5La" id="V4F-dl-MbT"/>
-                                                    <outletCollection property="leftButtons" destination="QIl-AR-P1d" id="rvC-NL-Kq9"/>
+                                                    <outletCollection property="rightButtons" destination="9xf-6h-TP8" id="dSm-fg-H2n"/>
+                                                    <outletCollection property="rightButtons" destination="c8R-U2-5La" id="md9-k5-CRv"/>
+                                                    <outletCollection property="rightButtons" destination="QIl-AR-P1d" id="WN7-xd-kCS"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

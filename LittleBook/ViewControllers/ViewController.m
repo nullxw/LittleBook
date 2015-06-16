@@ -25,7 +25,6 @@
         [[LBTaskCenter defaultCenter] completeTask:LB_GUIDE_TASK_KEY];
         [self performSegueWithIdentifier:@"openGuideView" sender:self];
     }
-
 }
 
 - (void)viewWillAppear:(BOOL)animated

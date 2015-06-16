@@ -27,7 +27,7 @@
 
 - (NSSearchPathDirectory)rootDirectory
 {
-    return NSDocumentDirectory;
+    return NSLibraryDirectory;
 }
 
 - (void)saveReadFileImage:(NSNumber *)fileID withData:(NSData *)data;

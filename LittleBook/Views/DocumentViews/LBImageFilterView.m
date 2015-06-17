@@ -79,8 +79,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     if (indexPath.row == _filters.count) {
         _imageView.image = _image;
     } else {

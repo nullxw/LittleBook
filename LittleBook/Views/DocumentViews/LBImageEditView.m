@@ -57,9 +57,9 @@
     if ([notif.userInfo[LB_ACTION_TYPE_KEY] intValue] != LBActionTypeApplyFilter) {
         return;
     }
-    _originalImage = [notif.object clipToSize:_imageView.frame.size];
+    _originalImage = notif.object;
     _imageView.contentMode = UIViewContentModeScaleToFill;
-    _imageView.image = _originalImage;
+    _imageView.image = [_originalImage clipToSize:_imageView.frame.size];
 }
 
 - (void)openAlbumPage

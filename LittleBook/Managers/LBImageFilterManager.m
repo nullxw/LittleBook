@@ -42,11 +42,11 @@
     dispatch_async(_queue, ^{
         
         CIImage *outputImage = [self applyFilter:filterIndex withInputUIImage:inputImage];
-
+        UIImage *image = [[UIImage imageWithCIImage:outputImage] scaleToSize:inputImage.size];
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (completionHandler) {
-                completionHandler([UIImage imageWithCIImage:outputImage]);
+                completionHandler(image);
             }
         });
     });
